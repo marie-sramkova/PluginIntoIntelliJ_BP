@@ -1,0 +1,37 @@
+Snažila jsem se vytvořit soubor pomocí návodu z https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/kotlin_demo.
+Tento návod jsem již viděla a snažila se jej zprovoznit již v červenci, avšak neúspěšně. Tak jsem stáhla výše zmíněnou funkční
+verzi a zkusila ji poupravit.
+
+Spustit to šlo, fungovalo to. Upravila jsem dialogové okno a nápisy. Opět vše fungovalo. Dále jsem vytvořila novou třídu pro
+vytvoření nového souboru (zatím jen jednoduše). Z dialogového okna jsem vytáhla vstup (absolutní cesta ke složce, kde má být soubor
+uložen + přidání jména souboru v kódu - zatím defaultně). Tuto cestu jsem použila pro vytvoření souboru, avšak při zavolání třídy
+("NewFileClass"), ve které je kód pro vytvoření souboru, mi to vypsalo chybu: 
+
+Caused by: java.lang.ClassNotFoundException: lib.NewFileClass PluginClassLoader[PluginDescriptor(name=SDK: Kotlin Demo, 
+id=org.intellij.sdk.kotlin, path=D:\sramk\Documents\vysoka_skola\bakalarka\git_download_others\intellij-sdk-code-samples-main
+\intellij-sdk-code-samples-main\kotlin_demo\build\idea-sandbox\plugins\kotlin, version=2.0.0)] com.intellij.ide.plugins
+.cl.PluginClassLoader@4b3a9019
+
+
+
+
+Při hledání řešení jsem našla možnost, zabalit to do:
+
+ClassLoader current = Thread.currentThread().getContextClassLoader();
+try {
+    Thread.currentThread().setContextClassLoader(this.getClass().getClassLoader());
+    
+	...zde vytvářím soubor...
+
+} finally {
+    Thread.currentThread().setContextClassLoader(current);
+}
+
+, jak je to popsáno také na https://plugins.jetbrains.com/docs/intellij/plugin-class-loaders.html.
+Bohužel, nepomohlo to (řešení zůstalo v kódu).
+
+Ponechala jsem také zkušební kód, zda mi to vytvoří soubor přímo v GenerateAction (vše poté ještě přejmenuju
+a upravím, aby to dávalo smysl, nyní je to jen provizorní, aby to fungovalo), aniž bych se odkazovala na jinou třídu a fungovalo to
+(zakomentovaná část).
+
+Avšak to nechce pracovat s nově vytvořenou třídou (pod posledním komentářem odkomentovaná část) a nenašla jsem zatím řešení.
