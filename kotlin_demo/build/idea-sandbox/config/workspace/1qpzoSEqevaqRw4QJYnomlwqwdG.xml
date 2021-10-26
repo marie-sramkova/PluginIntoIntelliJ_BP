@@ -9,8 +9,6 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -33,6 +31,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="TerminalArrangementManager">
@@ -51,7 +51,7 @@
   </component>
   <component name="ToolWindowManager">
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28382838" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28778878" />
       <window_info id="Structure" order="1" side_tool="true" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Commit" order="3" />
@@ -65,7 +65,7 @@
       <window_info anchor="bottom" id="Problems View" order="5" weight="0.32872927" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.40055248" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.4116022" />
       <window_info anchor="bottom" id="Services" order="9" show_stripe_button="false" />
     </layout>
   </component>
