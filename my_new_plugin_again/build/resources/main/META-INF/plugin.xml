@@ -1,0 +1,23 @@
+<idea-plugin>
+  <version>1.0-SNAPSHOT</version>
+  <change-notes>Add change notes here.&lt;br&gt;
+      &lt;em&gt;most HTML tags may be used&lt;/em&gt;</change-notes>
+  <idea-version since-build="212.5457" until-build="212.*" />
+  <id>org.example.my_new_plugin_again</id>
+  <name>Plugin display name here</name>
+  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+  <description><![CDATA[Enter short description for your plugin here.<br>
+    <em>most HTML tags may be used</em>]]></description>
+  <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+  <actions>
+    <group id="MyPlugin.GenerateMenu" text="Generate" description="Generate menu">
+      <add-to-group group-id="MainMenu" anchor="last" />
+      <action id="MyPlugin.Generate" class="cz.osu.kip.GenerateAction" text="Generate the file" description="generate the file" />
+    </group>
+  </actions>
+</idea-plugin>
