@@ -1,11 +1,6 @@
 <project version="4">
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="mock:///What's New in IntelliJ IDEA">
-          <provider selected="true" editor-type-id="html-editor" />
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="-1">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Application.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -73,7 +68,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Services" order="9" show_stripe_button="false" />
       <window_info anchor="right" id="Space Automation" order="0" />
-      <window_info anchor="right" id="Layout Validation" order="7" />
+      <window_info anchor="right" id="Layout Validation" order="1" />
     </layout>
     <recentWindows>
       <value>Project</value>

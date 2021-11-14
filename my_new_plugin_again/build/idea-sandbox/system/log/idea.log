@@ -917,3 +917,293 @@ Arguments:
 2021-11-14 21:42:02,230 [ 525892]   INFO - stubs.SerializationManagerImpl - Finished shutting down D:\sramk\Documents\vysoka_skola\bakalarka\my_new_plugin_again\build\idea-sandbox\system\index\rep.names 
 2021-11-14 21:42:02,301 [ 525963]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
 2021-11-14 21:42:02,304 [ 525966]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2021-11-14 21:55:08,021 [      0]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE STARTED ------------------------------------------------------ 
+2021-11-14 21:55:08,079 [     58]   INFO -        #com.intellij.idea.Main - IDE: IntelliJ IDEA (build #IC-212.5457.46, 12 Oct 2021 15:22) 
+2021-11-14 21:55:08,080 [     59]   INFO -        #com.intellij.idea.Main - OS: Windows 10 (10.0, amd64) 
+2021-11-14 21:55:08,091 [     70]   INFO -        #com.intellij.idea.Main - JRE: 11.0.12+7-b1504.40 (JetBrains s.r.o.) 
+2021-11-14 21:55:08,092 [     71]   INFO -        #com.intellij.idea.Main - JVM: 11.0.12+7-b1504.40 (OpenJDK 64-Bit Server VM) 
+2021-11-14 21:55:08,118 [     97]   INFO -        #com.intellij.idea.Main - JVM Args: -Didea.auto.reload.plugins=true -Didea.classpath.index.enabled=false -Didea.config.path=D:\sramk\Documents\vysoka_skola\bakalarka\gitKraken_bp\PluginIntoIntelliJ_BP\PluginIntoIntelliJ_BP\my_new_plugin_again\build\idea-sandbox\config -Didea.is.internal=true -Didea.platform.prefix=Idea -Didea.plugins.path=D:\sramk\Documents\vysoka_skola\bakalarka\gitKraken_bp\PluginIntoIntelliJ_BP\PluginIntoIntelliJ_BP\my_new_plugin_again\build\idea-sandbox\plugins -Didea.required.plugins.id=org.example.my_new_plugin_again -Didea.system.path=D:\sramk\Documents\vysoka_skola\bakalarka\gitKraken_bp\PluginIntoIntelliJ_BP\PluginIntoIntelliJ_BP\my_new_plugin_again\build\idea-sandbox\system -Xms256m -Xmx512m -Dfile.encoding=windows-1250 -Duser.country=CZ -Duser.language=cs -Duser.variant -ea 
+2021-11-14 21:55:08,118 [     97]   INFO -        #com.intellij.idea.Main - library path: C:\Users\sramk\.gradle\caches\modules-2\files-2.1\com.jetbrains\jbre\jbr_jcef-11_0_12-windows-x64-b1504.40\extracted\jbr\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Users\sramk\AppData\Local\Microsoft\WindowsApps;C:\Users\sramk\.dotnet\tools;C:\Users\sramk\AppData\Local\gitkraken\bin;C:\Program Files\apache-maven-3.8.3-bin\apache-maven-3.8.3\bin;C:\Users\sramk\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\java\bin;;. 
+2021-11-14 21:55:08,119 [     98]   INFO -        #com.intellij.idea.Main - boot library path: C:\Users\sramk\.gradle\caches\modules-2\files-2.1\com.jetbrains\jbre\jbr_jcef-11_0_12-windows-x64-b1504.40\extracted\jbr\bin 
+2021-11-14 21:55:08,152 [    131]   INFO -        #com.intellij.idea.Main - locale=cs_CZ JNU=Cp1250 file.encoding=windows-1250
+  idea.config.path=D:\sramk\Documents\vysoka_skola\bakalarka\gitKraken_bp\PluginIntoIntelliJ_BP\PluginIntoIntelliJ_BP\my_new_plugin_again\build\idea-sandbox\config
+  idea.system.path=D:\sramk\Documents\vysoka_skola\bakalarka\gitKraken_bp\PluginIntoIntelliJ_BP\PluginIntoIntelliJ_BP\my_new_plugin_again\build\idea-sandbox\system
+  idea.plugins.path=D:\sramk\Documents\vysoka_skola\bakalarka\gitKraken_bp\PluginIntoIntelliJ_BP\PluginIntoIntelliJ_BP\my_new_plugin_again\build\idea-sandbox\plugins
+  idea.log.path=D:\sramk\Documents\vysoka_skola\bakalarka\gitKraken_bp\PluginIntoIntelliJ_BP\PluginIntoIntelliJ_BP\my_new_plugin_again\build\idea-sandbox\system/log 
+2021-11-14 21:55:08,173 [    152]   INFO -        #com.intellij.idea.Main - CPU cores: 8; ForkJoinPool.commonPool: java.util.concurrent.ForkJoinPool@cc185a[Running, parallelism = 7, size = 7, active = 3, running = 3, steals = 3, tasks = 0, submissions = 0]; factory: com.intellij.concurrency.IdeaForkJoinWorkerThreadFactory@23a053b9 
+2021-11-14 21:55:08,382 [    361]   INFO - llij.ide.plugins.PluginManager - Plugin PluginDescriptor(name=Groovy, id=org.intellij.groovy, descriptorPath=plugin.xml, path=~\.gradle\caches\modules-2\files-2.1\com.jetbrains.intellij.idea\ideaIC\2021.2.3\baee9296b4b83198b699c8888c3e9f88457089f7\ideaIC-2021.2.3\plugins\Groovy, version=212.5457.46, package=org.jetbrains.plugins.groovy) misses optional descriptor duplicates-groovy.xml 
+2021-11-14 21:55:08,382 [    361]   INFO - llij.ide.plugins.PluginManager - Plugin PluginDescriptor(name=Groovy, id=org.intellij.groovy, descriptorPath=plugin.xml, path=~\.gradle\caches\modules-2\files-2.1\com.jetbrains.intellij.idea\ideaIC\2021.2.3\baee9296b4b83198b699c8888c3e9f88457089f7\ideaIC-2021.2.3\plugins\Groovy, version=212.5457.46, package=org.jetbrains.plugins.groovy) misses optional descriptor duplicates-detection-groovy.xml 
+2021-11-14 21:55:08,977 [    956]   INFO -        #com.intellij.idea.Main - JNA library (64-bit) loaded in 803 ms 
+2021-11-14 21:55:08,988 [    967]   INFO - penapi.util.io.win32.IdeaWin32 - Native filesystem for Windows is operational 
+2021-11-14 21:55:09,349 [   1328]   INFO - llij.ide.plugins.PluginManager - Loaded bundled plugins: IDEA CORE (212.5457.46), JetBrains maven model api classes (212.5457.46), JetBrains Repository Search (212.5457.46), WSL File System Support (212.5457.46), Dependency Management Api for External Build Tools (212.5457.46), Configuration Script (212.5457.46), Perforce Helix Core (212.5457.46), Terminal (212.5457.46), IDE Features Trainer (212.5457.46), Smali Support (212.5457.46), Subversion (212.5457.46), Settings Repository (212.5457.46), Git (212.5457.46), ChangeReminder (212.5457.46), XPathView + XSLT (212.5457.46), XSLT Debugger (212.5457.46), WebP Support (212.5457.46), YAML (212.5457.46), macOS Light Theme (212.5457.46), TextMate Bundles (212.5457.46), Mercurial (212.5457.46), Copyright (212.5457.46), Shell Script (212.5457.46), Properties (212.5457.46), EditorConfig (212.5457.46), Images (212.5457.46), Java (212.5457.46), Eclipse Interoperability (212.5457.46), Code With Me (212.5457.46), Java Stream Debugger (212.5457.46), JUnit (212.5457.46), Shared Indexes (212.5457.46), Task Management (212.5457.46), JavaFX (212.5457.46), Ant (212.5457.46), Bytecode Viewer (212.5457.46), Java Bytecode Decompiler (212.5457.46), Lombok (212.5457.46), IntelliLang (212.5457.46), Groovy (212.5457.46), Maven (212.5457.46), TestNG (212.5457.46), Code Coverage for Java (212.5457.46), Markdown (212.5457.46), GitHub (212.5457.46), Java IDE Customization (212.5457.46), Emoji Picker (212.5457.46), JetBrains Marketplace Licensing Support (212.5457.46), IDE Features Trainer: Git Lessons (212.5457.46), Java Internationalization (212.5457.46), UI Designer (212.5457.46), Gradle (212.5457.46), Gradle-Java (212.5457.46), Gradle-Maven (212.5457.46), Plugin DevKit (212.5457.46), Grazie (212.5457.46), Windows 10 Light Theme (212.5457.46), Machine Learning Code Completion (212.5457.46), Kotlin (212-1.5.10-release-IJ5457.46), Gradle DSL API (212.5457.46), Gradle Dependency Updater Implementation (212.5457.46), Android (10.4.2.212.5457.46), Space (212.5457.46), Package Search (212.5457.46) 
+2021-11-14 21:55:09,349 [   1328]   INFO - llij.ide.plugins.PluginManager - Loaded custom plugins: Plugin display name here (1.0-SNAPSHOT) 
+2021-11-14 21:55:10,638 [   2617]   INFO - ication.options.PathMacrosImpl - Loaded path macros: {MAVEN_REPOSITORY=C:\Users\sramk\.m2\repository, KOTLIN_BUNDLED=C:\Users\sramk\.gradle\caches\modules-2\files-2.1\com.jetbrains.intellij.idea\ideaIC\2021.2.3\baee9296b4b83198b699c8888c3e9f88457089f7\ideaIC-2021.2.3\plugins\Kotlin\kotlinc} 
+2021-11-14 21:55:10,669 [   2648]   INFO - rains.ide.BuiltInServerManager - built-in server started, port 63343 
+2021-11-14 21:55:10,690 [   2669]   INFO - intellij.util.io.FilePageCache - lower=100; upper=492; buffer=10; max=492 
+2021-11-14 21:55:10,694 [   2673]   WARN - j.internal.DebugAttachDetector - Unable to start DebugAttachDetector, please add `--add-exports java.base/jdk.internal.vm=ALL-UNNAMED` to VM options 
+2021-11-14 21:55:10,722 [   2701]   INFO - til.net.ssl.CertificateManager - Default SSL context initialized 
+2021-11-14 21:55:10,775 [   2754]   INFO - intellij.diagnostic.JitWatcher - JIT compilation state checking enabled 
+2021-11-14 21:55:10,784 [   2763]   INFO - lij.diagnostic.DebugLogManager - Set TRACE for the following categories: #com.jetbrains.rdserver.requests, #com.jetbrains.rd.ide.document, #com.jetbrains.rdserver.document, #com.jetbrains.rdserver.editors, #com.jetbrains.rdserver.actions, #com.jetbrains.rdserver.permissions 
+2021-11-14 21:55:11,352 [   3331]   INFO - BridgeArtifactManagerRedefiner - Using workspace model to open project 
+2021-11-14 21:55:11,417 [   3396]   INFO - penapi.application.Experiments - Experimental features enabled for user: wsl.p9.support, wsl.prefer.p9.support, wsl.p9.show.roots.in.file.chooser, wsl.execute.with.wsl.exe, linux.native.menu, recent.and.edited.files.together, show.create.new.element.in.popup, search.everywhere.mixed.results, editor.reader.mode, new.large.text.file.viewer, wsl.fsd.content.loader, terminal.shell.command.handling 
+2021-11-14 21:55:11,668 [   3647]   INFO - pl.local.NativeFileWatcherImpl - Starting file watcher: C:\Users\sramk\.gradle\caches\modules-2\files-2.1\com.jetbrains.intellij.idea\ideaIC\2021.2.3\baee9296b4b83198b699c8888c3e9f88457089f7\ideaIC-2021.2.3\bin\win\fsnotifier.exe 
+2021-11-14 21:55:11,692 [   3671]   INFO - pl.local.NativeFileWatcherImpl - Native file watcher is operational. 
+2021-11-14 21:55:11,701 [   3680]   INFO - tellij.wsl.fs.WslContentLoader - fsd server found and will be used for WSL content loading 
+2021-11-14 21:55:11,712 [   3691]   INFO - pi.vfs.impl.wsl.WslFileWatcher - WSL file watcher: C:\Users\sramk\.gradle\caches\modules-2\files-2.1\com.jetbrains.intellij.idea\ideaIC\2021.2.3\baee9296b4b83198b699c8888c3e9f88457089f7\ideaIC-2021.2.3\bin\fsnotifier-wsl 
+2021-11-14 21:55:11,909 [   3888]   INFO - impl.SharedIndexMainZipStorage - Shared Indexes Storage is opened and empty 
+2021-11-14 21:55:12,344 [   4323]   INFO - el.ide.impl.WorkspaceModelImpl - Load workspace model from cache in 695 ms 
+2021-11-14 21:55:12,448 [   4427]   INFO - lij.diagnostic.DebugLogManager - Set TRACE for the following categories: #com.jetbrains.rdserver.requests, #com.jetbrains.rd.ide.document, #com.jetbrains.rdserver.document, #com.jetbrains.rdserver.editors, #com.jetbrains.rdserver.actions, #com.jetbrains.rdserver.permissions 
+2021-11-14 21:55:12,462 [   4441]   WARN - l.NotificationGroupManagerImpl - Notification group CodeWithMe is already registered (group=com.intellij.notification.NotificationGroup@4c3258f). Plugin descriptor: PluginDescriptor(name=Code With Me, id=com.jetbrains.codeWithMe, descriptorPath=plugin.xml, path=~\.gradle\caches\modules-2\files-2.1\com.jetbrains.intellij.idea\ideaIC\2021.2.3\baee9296b4b83198b699c8888c3e9f88457089f7\ideaIC-2021.2.3\plugins\cwm-plugin, version=212.5457.46, package=null) 
+2021-11-14 21:55:12,552 [   4531]   INFO - tests.impl.DistributedTestHost - Host address=localhost/127.0.0.1 
+2021-11-14 21:55:12,650 [   4629]   INFO - ins.rd.platform.codeWithMe.a.h - sessionStatus: null 
+2021-11-14 21:55:12,651 [   4630]   INFO - ins.rd.platform.codeWithMe.a.h - freeSessionRemainingTimeMs: null null 
+2021-11-14 21:55:12,942 [   4921]   INFO - rojectCodeStyleSettingsManager - Initialized from default code style settings. 
+2021-11-14 21:55:13,547 [   5526]   INFO - ar.ExperimentalToolbarSettings - Loading old state, main toolbar: false navBar true 
+2021-11-14 21:55:15,260 [   7239]  DEBUG - BackendServerFileEditorManager - Opening host editor for D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore/src/com/company/Application.java 
+2021-11-14 21:55:16,472 [   8451]   INFO - System.impl.PopupMenuPreloader - Popup menu 'Edit' preloaded at 'MainMenu' in 1249 ms 
+2021-11-14 21:55:17,243 [   9222]   INFO - leBasedIndexDataInitialization - Index data initialization done: 6134 ms. Initialized indexes: [FilenameIndex, FrameworkDetectionIndex, TodoIndex, IdIndex, filetypes, Stubs, Trigram.Index, fileIncludes, DomFileIndex, RelaxSymbolIndex, XmlTagNames, XmlNamespaces, html5.custom.attributes.index, SchemaTypeInheritance, json.file.root.values, XsltSymbolIndex, yaml.keys.name, xmlProperties, editorconfig.index.name, bytecodeAnalysis, java.auto.module.name, java.source.module.name, java.null.method.argument, java.fun.expression, java.binary.plus.expression, JavaFxControllerClassIndex, javafx.id.name, javafx.custom.component, ant-imports, LombokConfigIndex, groovy.trait.fields, groovy.trait.methods, com.intellij.uiDesigner.FormClassIndex, IdeaPluginRegistrationIndex, PluginIdModuleIndex, PluginIdDependenciesIndex, devkit.ExtensionPointIndex, devkit.ExtensionPointClassIndex, org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex, org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex, org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex, org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex, org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex, org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex, org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex, org.jetbrains.kotlin.idea.vfilefinder.KotlinPackageSourcesMemberNamesIndex, org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex, org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex, org.jetbrains.kotlin.idea.vfilefinder.KotlinStdlibIndex, org.jetbrains.kotlin.idea.vfilefinder.KlibMetaFileIndex, com.android.tools.idea.model.AndroidManifestIndex$Companion$NAME$1.NAME, BindingXmlIndex, MlModelFileIndex, NavXmlIndex]. 
+2021-11-14 21:55:17,339 [   9318]   WARN - ctionSystem.impl.ActionUpdater - 1856 ms to expand group child FileOpenGroup 
+2021-11-14 21:55:17,918 [   9897]   INFO - ings.impl.UpdateCheckerService - channel: release 
+2021-11-14 21:55:18,000 [   9979]   INFO - .packagesearch.intellij-plugin - [1, source=INIT] refreshKnownRepositories() — Known repositories refreshed. We know of 7 repo(s). Refreshing data... 
+2021-11-14 21:55:18,670 [  10649]   INFO - exImpl$StubIndexInitialization - Index data initialization done: 1426 ms. Initialized stub indexes: {gr.annot.method.name, java.anonymous.baseref, org.jetbrains.kotlin.idea.stubindex.KotlinProbablyNothingPropertyShortNameIndex, org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelFunctionByPackageIndex, org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelPropertyByPackageIndex, org.jetbrains.kotlin.idea.stubindex.KotlinOverridableInternalMembersShortNameIndex, gr.annot.members, org.jetbrains.kotlin.idea.stubindex.KotlinScriptFqnIndex, gr.method.name, java.method.parameter.types, dom.namespaceKey, jvm.static.member.type, dom.elementClass, java.class.shortname, java.field.name, gr.anonymous.class, java.module.name, org.jetbrains.kotlin.idea.stubindex.KotlinFullClassNameIndex, markdown.header, org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeClassByPackageIndex, org.jetbrains.kotlin.idea.stubindex.KotlinFilePartClassIndex, gr.class.super, properties.index, org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeShortNameIndex, java.class.extlist, java.class.fqn, gr.script.fqn, gr.class.fqn, java.method.name, jvm.static.member.name, java.annotations, gr.field.name, org.jetbrains.kotlin.idea.stubindex.KotlinMultifileClassPartIndex, gr.script.class, org.jetbrains.kotlin.idea.stubindex.KotlinJvmNameAnnotationIndex, org.jetbrains.kotlin.idea.stubindex.KotlinExactPackagesIndex, org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelTypeAliasByPackageIndex, org.jetbrains.kotlin.idea.stubindex.KotlinProbablyContractedFunctionShortNameIndex, org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeFqNameIndex, org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelClassByPackageIndex, org.jetbrains.kotlin.idea.stubindex.KotlinTypeAliasShortNameIndex, org.jetbrains.kotlin.idea.stubindex.KotlinFunctionShortNameIndex, org.jetbrains.kotlin.idea.stubindex.KotlinSuperClassIndex, org.jetbrains.kotlin.idea.stubindex.KotlinPropertyShortNameIndex, org.jetbrains.kotlin.idea.stubindex.KotlinClassShortNameIndex, org.jetbrains.kotlin.idea.stubindex.KotlinProbablyNothingFunctionShortNameIndex, org.jetbrains.kotlin.idea.stubindex.KotlinAnnotationsIndex, org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelFunctionFqnNameIndex, org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelPropertyFqnNameIndex, org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelTypeAliasFqNameIndex, org.jetbrains.kotlin.idea.stubindex.KotlinExtensionsInObjectsByReceiverTypeIndex, org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelExtensionsByReceiverTypeIndex, org.jetbrains.kotlin.idea.stubindex.KotlinTypeAliasByExpansionShortNameIndex}. 
+2021-11-14 21:55:19,231 [  11210]   INFO - erver.followMe.FollowMeManager - Register new user 0:'sramk' with ClientId=ClientId(value=Host) 
+2021-11-14 21:55:19,511 [  11490]   INFO - ion.DelayedProjectSynchronizer - Workspace model loaded from cache. Syncing real project state into workspace model in 1391 ms. Thread[main,5,main] 
+2021-11-14 21:55:19,661 [  11640]   INFO - roject.DumbServiceGuiTaskQueue - Running dumb mode task: OnDiskSharedIndexChunkLocator 
+2021-11-14 21:55:19,691 [  11670]   INFO - roject.DumbServiceGuiTaskQueue - Running dumb mode task: UnindexedFilesUpdater[appStore] 
+2021-11-14 21:55:19,698 [  11677]   INFO - ij.psi.search.LogFileTypeIndex - Loading file type index snapshot 
+2021-11-14 21:55:19,743 [  11722]   INFO - indexing.UnindexedFilesUpdater - Started indexing of appStore. Reason: On project open 
+2021-11-14 21:55:19,751 [  11730]   INFO - indexing.UnindexedFilesUpdater - Performing delayed pushing properties tasks for appStore took 0ms; general responsiveness: ok; EDT responsiveness: ok 
+2021-11-14 21:55:19,754 [  11733]   INFO - ge.ExternalProjectsDataStorage - Load external projects data in 5 millis (read time: 2) 
+2021-11-14 21:55:19,782 [  11761]   INFO - .deployment.AsyncDevicesGetter - adb not found 
+2021-11-14 21:55:19,928 [  11907]   INFO - ramework.util.RdCoroutineScope - RdCoroutineHost overridden 
+2021-11-14 21:55:19,940 [  11919]   INFO - indexing.UnindexedFilesUpdater - Scanning of appStore uses 7 scanning threads 
+2021-11-14 21:55:20,598 [  12577]   INFO - ProjectRootPostStartUpActivity - D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore/.idea case-sensitivity: expected=false actual=false 
+2021-11-14 21:55:20,626 [  12605]   INFO - j.ide.script.IdeStartupScripts - 0 startup script(s) found 
+2021-11-14 21:55:20,683 [  12662]   INFO - .diagnostic.PerformanceWatcher - Post-startup activities under progress took 2770ms; general responsiveness: ok; EDT responsiveness: 1/3 sluggish, 1/3 very slow 
+2021-11-14 21:55:20,812 [  12791]   INFO - tor.impl.FileEditorManagerImpl - Project opening took 9547 ms 
+2021-11-14 21:55:23,318 [  15297]   INFO - System.impl.PopupMenuPreloader - Popup menu 'View' preloaded at 'MainMenu' in 70 ms 
+2021-11-14 21:55:23,377 [  15356]   INFO - System.impl.PopupMenuPreloader - Popup menu 'File' preloaded at 'MainMenu' in 130 ms 
+2021-11-14 21:55:23,427 [  15406]   INFO - System.impl.PopupMenuPreloader - Popup menu 'Navigate' preloaded at 'MainMenu' in 180 ms 
+2021-11-14 21:55:23,451 [  15430]   INFO - System.impl.PopupMenuPreloader - Popup menu 'Code' preloaded at 'MainMenu' in 204 ms 
+2021-11-14 21:55:23,492 [  15471]   INFO - System.impl.PopupMenuPreloader - Popup menu 'Build' preloaded at 'MainMenu' in 244 ms 
+2021-11-14 21:55:23,541 [  15520]   INFO - indexing.UnindexedFilesUpdater - Scanning completed for appStore. Number of scanned files: 49784; Number of files for indexing: 0 took 3789ms; general responsiveness: ok; EDT responsiveness: ok 
+2021-11-14 21:55:23,548 [  15527]   INFO - indexing.UnindexedFilesUpdater - Finished for appStore. No files to index with loading content. 
+2021-11-14 21:55:23,549 [  15528]   INFO - ij.psi.search.LogFileTypeIndex - File type index snapshot dropped 
+2021-11-14 21:55:23,553 [  15532]   INFO - roject.DumbServiceGuiTaskQueue - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRepositoryFileCacheImpl$PruneTask@43e899fa 
+2021-11-14 21:55:23,608 [  15587]   INFO - roject.DumbServiceGuiTaskQueue - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRepositoryFileCacheImpl$ManageLruProjectFilesTask@5a32be7e 
+2021-11-14 21:55:23,630 [  15609]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2021-11-14 21:55:23,660 [  15639]   INFO - tFileBasedIndexStartupActivity - Has changed files: false; project=Project(name=appStore, containerState=COMPONENT_CREATED, componentStore=D:\sramk\Documents\vysoka_skola\1_rocnik\java\projekty\appStore) 
+2021-11-14 21:55:25,622 [  17601]   INFO - roject.DumbServiceGuiTaskQueue - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRegistry$PopulateCachesTask@78f9877f 
+2021-11-14 21:55:25,776 [  17755]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2021-11-14 21:55:25,776 [  17755]   INFO - tFileBasedIndexStartupActivity - Has changed files: false; project=Project(name=appStore, containerState=COMPONENT_CREATED, componentStore=D:\sramk\Documents\vysoka_skola\1_rocnik\java\projekty\appStore) 
+2021-11-14 21:55:25,784 [  17763]   INFO - .services.SpaceKtsFileDetector - SpaceKtsFileDetector 
+2021-11-14 21:55:26,109 [  18088]   INFO - gnostic.WindowsDefenderChecker - Windows Defender status: not used 
+2021-11-14 21:55:26,408 [  18387]   INFO - m.codeWithMe.CodeWithMeCleanup - running activity to cleanup old thin clients... Root path is 'C:\Users\sramk\AppData\Local\JetBrains' 
+2021-11-14 21:55:26,410 [  18389]   INFO - m.codeWithMe.CodeWithMeCleanup - found 0 Code With Me client system folders to check 
+2021-11-14 21:55:26,417 [  18396]   INFO - m.codeWithMe.CodeWithMeCleanup - found 0 Code With Me client config folders to check 
+2021-11-14 21:55:26,421 [  18400]   INFO - m.codeWithMe.CodeWithMeCleanup - keep only [] major versions 
+2021-11-14 21:55:26,422 [  18401]   INFO - ectsystem.ProjectSystemService - DefaultProjectSystem project system has been detected 
+2021-11-14 21:55:26,695 [  18674]   INFO -                         STDOUT - Starting 
+2021-11-14 21:55:26,696 [  18675]   INFO -                         STDOUT - Dynamic je 22.2 
+2021-11-14 21:55:26,696 [  18675]   INFO -                         STDOUT - Static je -11.1 
+2021-11-14 21:55:26,696 [  18675]   INFO -                         STDOUT - ... done for the third time. 
+2021-11-14 21:55:29,840 [  21819]   INFO - CompilerWorkspaceConfiguration - Available processors: 8 
+2021-11-14 21:55:30,915 [  22894]   INFO - rationStore.ComponentStoreImpl - Saving appFileTypeManager took 15 ms 
+2021-11-14 21:55:31,879 [  23858]   INFO - System.impl.PopupMenuPreloader - Popup menu 'Run' preloaded at 'MainMenu' in 46 ms 
+2021-11-14 21:55:32,018 [  23997]   INFO - System.impl.PopupMenuPreloader - Popup menu 'Tools' preloaded at 'MainMenu' in 184 ms 
+2021-11-14 21:55:32,206 [  24185]   INFO - System.impl.PopupMenuPreloader - Popup menu 'Git' preloaded at 'MainMenu' in 372 ms 
+2021-11-14 21:55:32,239 [  24218]   INFO - System.impl.PopupMenuPreloader - Popup menu 'Window' preloaded at 'MainMenu' in 405 ms 
+2021-11-14 21:55:32,242 [  24221]   INFO - System.impl.PopupMenuPreloader - Popup menu 'Refactor' preloaded at 'MainMenu' in 407 ms 
+2021-11-14 21:55:32,243 [  24222]   INFO - System.impl.PopupMenuPreloader - Popup menu 'Generate' preloaded at 'MainMenu' in 409 ms 
+2021-11-14 21:55:32,345 [  24324]   INFO - .script.IdeScriptEngineManager - javax.script.ScriptEngineManager initialized in 411 ms 
+2021-11-14 21:55:32,466 [  24445]   INFO - System.impl.PopupMenuPreloader - Popup menu 'Help' preloaded at 'MainMenu' in 631 ms 
+2021-11-14 21:55:32,988 [  24967]   INFO - System.impl.PopupMenuPreloader - Popup menu 'Editor Popup Menu' preloaded at 'EditorPopup' in 1152 ms 
+2021-11-14 21:55:32,990 [  24969]   INFO - System.impl.PopupMenuPreloader - Popup menu 'Editor Popup Menu' preloaded at 'EditorPopup' in 1155 ms 
+2021-11-14 21:55:33,105 [  25084]   INFO - System.impl.PopupMenuPreloader - Popup menu 'Project View Popup Menu' preloaded at 'ProjectViewPopup' in 1269 ms 
+2021-11-14 21:55:33,773 [  25752]   WARN - ion.wsl.WslDistributionManager - Failed to run C:\Windows\system32\wsl.exe --list --verbose: {exitCode=1, timeout=false, cancelled=false, stdout=
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+Usage: wsl.exe [Argument]
+
+Arguments:
+
+    --install <Options>
+        Install Windows Subsystem for Linux features. If no options are specified,
+        the recommended features will be installed along with the default distribution.
+
+        To view the default distribution as well as a list of other valid distributions,
+        use 'wsl --list --online'.
+
+        Options:
+            --distribution, -d [Argument]
+                Specifies the distribution to be downloaded and installed by name.
+
+                Arguments:
+                    A valid distribution name (not case sensitive).
+                    
+                Examples:
+                    wsl --install -d Ubuntu
+                    wsl --install --distribution Debian
+
+    --list, -l [Options]
+        Lists distributions.
+
+        Options:
+            --online, -o
+                Displays a list of available distributions for install with 'wsl --install'.
+
+    --help
+        Display usage information.
+, stderr=} 
+java.io.IOException: Failed to run C:\Windows\system32\wsl.exe --list --verbose: {exitCode=1, timeout=false, cancelled=false, stdout=
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+Usage: wsl.exe [Argument]
+
+Arguments:
+
+    --install <Options>
+        Install Windows Subsystem for Linux features. If no options are specified,
+        the recommended features will be installed along with the default distribution.
+
+        To view the default distribution as well as a list of other valid distributions,
+        use 'wsl --list --online'.
+
+        Options:
+            --distribution, -d [Argument]
+                Specifies the distribution to be downloaded and installed by name.
+
+                Arguments:
+                    A valid distribution name (not case sensitive).
+                    
+                Examples:
+                    wsl --install -d Ubuntu
+                    wsl --install --distribution Debian
+
+    --list, -l [Options]
+        Lists distributions.
+
+        Options:
+            --online, -o
+                Displays a list of available distributions for install with 'wsl --install'.
+
+    --help
+        Display usage information.
+, stderr=}
+	at com.intellij.execution.wsl.WslDistributionManagerImpl.loadInstalledDistributionsWithVersions(WslDistributionManagerImpl.java:78)
+	at com.intellij.execution.wsl.WslDistributionManager.loadInstalledDistributions(WslDistributionManager.java:120)
+	at com.intellij.execution.wsl.WslDistributionManager.getInstalledDistributions(WslDistributionManager.java:61)
+	at com.intellij.openapi.projectRoots.impl.jdkDownloader.JdkUpdatesCollector$updateWithSnapshot$jdkFeed$2.invoke(JdkUpdater.kt:165)
+	at com.intellij.openapi.projectRoots.impl.jdkDownloader.JdkUpdatesCollector$updateWithSnapshot$jdkFeed$2.invoke(JdkUpdater.kt:68)
+	at kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:74)
+	at com.intellij.openapi.projectRoots.impl.jdkDownloader.JdkUpdatesCollector.updateWithSnapshot(JdkUpdater.kt:177)
+	at com.intellij.openapi.projectRoots.impl.jdkDownloader.JdkUpdatesCollector.access$updateWithSnapshot(JdkUpdater.kt:68)
+	at com.intellij.openapi.projectRoots.impl.jdkDownloader.JdkUpdatesCollector$updateNotifications$1$onLookupCompleted$1.run(JdkUpdater.kt:151)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.startTask(CoreProgressManager.java:450)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.startTask(ProgressManagerImpl.java:117)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcessWithProgressAsync$5(CoreProgressManager.java:510)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$submit$3(ProgressRunner.java:243)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$2(CoreProgressManager.java:183)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:705)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:647)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:63)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:170)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$submit$4(ProgressRunner.java:243)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1700)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:668)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:665)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1.run(Executors.java:665)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2021-11-14 21:55:33,879 [  25858]   INFO - ion.wsl.WslDistributionManager - Cannot parse WSL distributions 
+java.io.IOException: Failed to run C:\Windows\system32\wsl.exe --list --quiet: {exitCode=1, timeout=false, cancelled=false, stdout=
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+Usage: wsl.exe [Argument]
+
+Arguments:
+
+    --install <Options>
+        Install Windows Subsystem for Linux features. If no options are specified,
+        the recommended features will be installed along with the default distribution.
+
+        To view the default distribution as well as a list of other valid distributions,
+        use 'wsl --list --online'.
+
+        Options:
+            --distribution, -d [Argument]
+                Specifies the distribution to be downloaded and installed by name.
+
+                Arguments:
+                    A valid distribution name (not case sensitive).
+                    
+                Examples:
+                    wsl --install -d Ubuntu
+                    wsl --install --distribution Debian
+
+    --list, -l [Options]
+        Lists distributions.
+
+        Options:
+            --online, -o
+                Displays a list of available distributions for install with 'wsl --install'.
+
+    --help
+        Display usage information.
+, stderr=}
+	at com.intellij.execution.wsl.WslDistributionManagerImpl.doFetchDistributionsFromWslCli(WslDistributionManagerImpl.java:141)
+	at com.intellij.execution.wsl.WslDistributionManagerImpl.loadInstalledDistributionMsIds(WslDistributionManagerImpl.java:39)
+	at com.intellij.execution.wsl.WslDistributionManager.loadInstalledDistributions(WslDistributionManager.java:135)
+	at com.intellij.execution.wsl.WslDistributionManager.getInstalledDistributions(WslDistributionManager.java:61)
+	at com.intellij.openapi.projectRoots.impl.jdkDownloader.JdkUpdatesCollector$updateWithSnapshot$jdkFeed$2.invoke(JdkUpdater.kt:165)
+	at com.intellij.openapi.projectRoots.impl.jdkDownloader.JdkUpdatesCollector$updateWithSnapshot$jdkFeed$2.invoke(JdkUpdater.kt:68)
+	at kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:74)
+	at com.intellij.openapi.projectRoots.impl.jdkDownloader.JdkUpdatesCollector.updateWithSnapshot(JdkUpdater.kt:177)
+	at com.intellij.openapi.projectRoots.impl.jdkDownloader.JdkUpdatesCollector.access$updateWithSnapshot(JdkUpdater.kt:68)
+	at com.intellij.openapi.projectRoots.impl.jdkDownloader.JdkUpdatesCollector$updateNotifications$1$onLookupCompleted$1.run(JdkUpdater.kt:151)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.startTask(CoreProgressManager.java:450)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.startTask(ProgressManagerImpl.java:117)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcessWithProgressAsync$5(CoreProgressManager.java:510)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$submit$3(ProgressRunner.java:243)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$2(CoreProgressManager.java:183)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:705)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:647)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:63)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:170)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$submit$4(ProgressRunner.java:243)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1700)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:668)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:665)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1.run(Executors.java:665)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2021-11-14 21:55:43,593 [  35572]   INFO -                         STDOUT - File 		'temp' is made. 
+2021-11-14 21:55:43,593 [  35572]   INFO -                         STDOUT -  
+2021-11-14 21:55:43,593 [  35572]   INFO -                         STDOUT - New file was created. 
+2021-11-14 21:55:45,336 [  37315]   INFO - rationStore.ComponentStoreImpl - Saving Project(name=appStore, containerState=COMPONENT_CREATED, componentStore=D:\sramk\Documents\vysoka_skola\1_rocnik\java\projekty\appStore)RunManager took 21 ms 
+2021-11-14 21:55:59,813 [  51792]   INFO - rationStore.ComponentStoreImpl - Saving Project(name=appStore, containerState=COMPONENT_CREATED, componentStore=D:\sramk\Documents\vysoka_skola\1_rocnik\java\projekty\appStore)XDebuggerManager took 16 ms 
+2021-11-14 21:55:59,920 [  51899]   INFO - erver.followMe.FollowMeManager - Unregister user 0:'sramk' with ClientId=ClientId(value=Host) 
+2021-11-14 21:55:59,989 [  51968]   INFO - ramework.util.RdCoroutineScope - RdCoroutineHost has been reset 
+2021-11-14 21:55:59,993 [  51972]   INFO - ramework.util.RdCoroutineScope - RdCoroutineHost disposed 
+2021-11-14 21:56:00,004 [  51983]   INFO -                         STDERR - SLF4J: Class path contains multiple SLF4J bindings. 
+2021-11-14 21:56:00,004 [  51983]   INFO -                         STDERR - SLF4J: Found binding in [jar:file:/C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/wsl-fs-helper/lib/logback-classic-1.2.3.jar!/org/slf4j/impl/StaticLoggerBinder.class] 
+2021-11-14 21:56:00,004 [  51983]   INFO -                         STDERR - SLF4J: Found binding in [jar:file:/C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/lib/slf4j.jar!/org/slf4j/impl/StaticLoggerBinder.class] 
+2021-11-14 21:56:00,004 [  51983]   INFO -                         STDERR - SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation. 
+2021-11-14 21:56:00,042 [  52021]   INFO -                         STDERR - SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder] 
+2021-11-14 21:56:00,044 [  52023]   INFO - tellij.wsl.fs.WslContentLoader - Wsl fsd server hub has been shutdown 
+2021-11-14 21:56:00,048 [  52027]   INFO - pl.local.NativeFileWatcherImpl - Watcher terminated with exit code 0 
+2021-11-14 21:56:00,055 [  52034]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2021-11-14 21:56:00,069 [  52048]   INFO - .impl.FileTypeDetectionService - 0 auto-detected files. Detection took 0 ms 
+2021-11-14 21:56:00,070 [  52049]   INFO - il.indexing.FileBasedIndexImpl - START INDEX SHUTDOWN 
+2021-11-14 21:56:00,407 [  52386]   INFO - tellij.psi.stubs.StubIndexImpl - StubIndexExtension-s were unloaded 
+2021-11-14 21:56:00,849 [  52828]   INFO - il.indexing.FileBasedIndexImpl - END INDEX SHUTDOWN 
+2021-11-14 21:56:00,849 [  52828]   INFO - newvfs.persistent.PersistentFS - VFS dispose started 
+2021-11-14 21:56:00,855 [  52834]   INFO - newvfs.persistent.PersistentFS - VFS dispose completed 
+2021-11-14 21:56:00,855 [  52834]   INFO - stubs.SerializationManagerImpl - Start shutting down D:\sramk\Documents\vysoka_skola\bakalarka\gitKraken_bp\PluginIntoIntelliJ_BP\PluginIntoIntelliJ_BP\my_new_plugin_again\build\idea-sandbox\system\index\rep.names 
+2021-11-14 21:56:00,858 [  52837]   INFO - stubs.SerializationManagerImpl - Finished shutting down D:\sramk\Documents\vysoka_skola\bakalarka\gitKraken_bp\PluginIntoIntelliJ_BP\PluginIntoIntelliJ_BP\my_new_plugin_again\build\idea-sandbox\system\index\rep.names 
+2021-11-14 21:56:00,947 [  52926]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
+2021-11-14 21:56:00,951 [  52930]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
