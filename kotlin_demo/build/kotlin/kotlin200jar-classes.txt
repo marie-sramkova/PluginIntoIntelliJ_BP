@@ -1,1 +1,0 @@
-D:\sramk\Documents\vysoka_skola\bakalarka\gitKraken_bp\PluginIntoIntelliJ_BP\kotlin_demo\build\classes\java\main-instrumented\org\intellij\sdk\kotlin\GenerateAction.class
