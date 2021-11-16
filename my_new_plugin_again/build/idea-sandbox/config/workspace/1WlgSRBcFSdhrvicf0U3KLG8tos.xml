@@ -65,8 +65,9 @@
       <window_info anchor="bottom" id="Problems View" order="5" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Services" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Build" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Services" order="10" show_stripe_button="false" />
       <window_info anchor="right" id="Space Automation" order="0" />
       <window_info anchor="right" id="Layout Validation" order="1" />
     </layout>
