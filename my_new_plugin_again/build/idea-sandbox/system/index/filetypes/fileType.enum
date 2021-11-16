@@ -1,24 +1,24 @@
-PLAIN_TEXT
-JSON
-XML
 JAVA
-DTD
+XML
 GitIgnore file
 HTML
 IDEA_MODULE
+DTD
+XHTML
 textmate
+PLAIN_TEXT
 RNG Compact
 PATCH
+JSON
 Shell Script
-XHTML
 CLASS
 Properties
 UNKNOWN
+gdsl
 SPI
 Image
 CSS
 JavaScript
-gdsl
 Kotlin
 script-definition-marker
 Shrinker Config File

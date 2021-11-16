@@ -1,0 +1,47 @@
+2021-11-16 08:48:37,792 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2021-11-16 08:48:37,793 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2021-11-16 08:48:38,537 [    745]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 707 ms
+2021-11-16 08:48:38,856 [   1064]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/my_new_plugin_again/build/idea-sandbox/config/options
+2021-11-16 08:48:39,411 [   1619]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 555 ms
+2021-11-16 08:48:39,411 [   1619]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2021-11-16 08:48:39,578 [   1786]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2021-11-16 08:48:39,992 [   2200]   INFO - .incremental.IncProjectBuilder - Building project; isRebuild:true; isMake:false parallel compilation:false
+2021-11-16 08:48:40,000 [   2208]   INFO - kotlin.jps.build.KotlinBuilder - is Kotlin incremental compilation enabled for JVM: true
+2021-11-16 08:48:40,000 [   2208]   INFO - kotlin.jps.build.KotlinBuilder - is Kotlin incremental compilation enabled for JS: true
+2021-11-16 08:48:40,009 [   2217]   INFO - kotlin.jps.build.KotlinBuilder - is Kotlin compiler daemon enabled: true
+2021-11-16 08:48:40,009 [   2217]   INFO - kotlin.jps.build.KotlinBuilder - Label in local history: build started b656f1cd
+2021-11-16 08:48:40,026 [   2234]   INFO - s.index.CompilerReferenceIndex - backward reference index version doesn't exist
+2021-11-16 08:48:42,941 [   5149]   INFO - .incremental.IncProjectBuilder - Cleaned output directories in 925 ms
+2021-11-16 08:48:44,495 [   6703]   WARN - channel.DefaultChannelPipeline - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: Stávající připojení bylo vynuceně ukončeno vzdáleným hostitelem
+	at java.base/sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at java.base/sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:276)
+	at java.base/sun.nio.ch.IOUtil.read(IOUtil.java:233)
+	at java.base/sun.nio.ch.IOUtil.read(IOUtil.java:223)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:356)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:620)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2021-11-16 08:49:38,518 [      1]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2021-11-16 08:49:38,518 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2021-11-16 08:49:44,777 [   6260]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 6197 ms
+2021-11-16 08:49:45,348 [   6831]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/my_new_plugin_again/build/idea-sandbox/config/options
+2021-11-16 08:49:51,469 [  12952]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 6119 ms
+2021-11-16 08:49:51,469 [  12952]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2021-11-16 08:49:51,855 [  13338]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2021-11-16 08:51:23,248 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2021-11-16 08:51:23,248 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2021-11-16 08:51:24,841 [   1593]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 1553 ms
+2021-11-16 08:51:25,356 [   2108]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/my_new_plugin_again/build/idea-sandbox/config/options
+2021-11-16 08:51:26,073 [   2825]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 716 ms
+2021-11-16 08:51:26,073 [   2825]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2021-11-16 08:51:26,267 [   3019]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
