@@ -19,5 +19,9 @@
       <add-to-group group-id="MainMenu" anchor="last" />
       <action id="MyPlugin.Generate" class="cz.osu.kip.GenerateAction" text="Generate the file" description="generate the file" />
     </group>
+    <group id="MySecondPlugin.ProjectMenuAction" text="Generate" description="Generate menu 2">
+      <add-to-group group-id="ProjectViewPopupMenu" anchor="last" />
+      <action id="MySecondPlugin.ProjectMenu" class="cz.osu.kip.ProjectMenuAction" text="Generate the file" description="generate the file" />
+    </group>
   </actions>
 </idea-plugin>
