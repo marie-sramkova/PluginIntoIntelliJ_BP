@@ -4,21 +4,21 @@ GitIgnore file
 HTML
 IDEA_MODULE
 DTD
-XHTML
 textmate
 PLAIN_TEXT
 RNG Compact
+XHTML
 PATCH
 JSON
 Shell Script
 CLASS
 Properties
 UNKNOWN
-gdsl
 SPI
 Image
 CSS
 JavaScript
+gdsl
 Kotlin
 script-definition-marker
 Shrinker Config File

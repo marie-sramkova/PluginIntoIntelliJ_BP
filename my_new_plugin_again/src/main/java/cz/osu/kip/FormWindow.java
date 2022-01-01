@@ -14,6 +14,7 @@ import java.util.Arrays;
 
 public class FormWindow extends JFrame {
 
+
     public void showFormWindow(Project currentProject, File filePath){
         JFrame frame = new JFrame();
         JPanel panel = makeContentPanel(currentProject, filePath);
