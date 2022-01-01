@@ -14,15 +14,6 @@ import java.util.Arrays;
 
 public class FormWindow extends JFrame {
 
-    JTextField source;
-    JTextField target;
-    JCheckBox privateCheckBox;
-    JCheckBoxMenuItem publicCheckBoxMenuItem;
-    JColorChooser colorChooser;
-    List<String> text;
-    JComboBox<String> comboBox;
-    JFileChooser defaultTargetFile;
-
     public void showFormWindow(Project currentProject, File filePath){
         JFrame frame = new JFrame();
         JPanel panel = makeContentPanel(currentProject, filePath);
