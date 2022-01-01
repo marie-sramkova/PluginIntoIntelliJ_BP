@@ -12,6 +12,6 @@ public class GenerateAction extends DumbAwareAction {
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
 
-        FormWindow.showFormWindow();
+//        FormWindow.showFormWindow();
     }
 }
