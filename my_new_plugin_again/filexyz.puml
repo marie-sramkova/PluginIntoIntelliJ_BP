@@ -1,0 +1,27 @@
+@startuml
+class cz.osu.kip.GenerateAction {
++ void actionPerformed(AnActionEvent)
+}
+class cz.osu.kip.NewFileClass {
++ {static} void makeNewFile(String)
+- {static} void controlePath(File)
+- {static} void createFile(File)
+}
+class cz.osu.kip.ProjectMenuAction {
++ void actionPerformed(AnActionEvent)
+}
+class cz.osu.kip.BackupProvider {
++ void doBackup(String,String)
+- void backupFolderFolders(String,String)
+- void backupFolderFiles(String,String)
+- boolean hasBothFilesTheSameContent(File,File)
+- int tryGetTargetFileIndex(File[],File)
+}
+class cz.osu.kip.FormWindow {
++ {static} void showFormWindow()
+}
+
+
+com.intellij.openapi.project.DumbAwareAction <|-- cz.osu.kip.GenerateAction
+com.intellij.openapi.actionSystem.AnAction <|-- cz.osu.kip.ProjectMenuAction
+@enduml
