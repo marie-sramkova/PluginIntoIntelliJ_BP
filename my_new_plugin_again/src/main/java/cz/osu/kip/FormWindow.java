@@ -17,61 +17,7 @@ import static javax.swing.GroupLayout.Alignment.LEADING;
 
 public class FormWindow extends JFrame {
 
-    public static void makePanel() {
-        JFrame frame = new JFrame("GroupLayoutExample");
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        Container myPanel = frame.getContentPane();
-
-
-        GroupLayout groupLayout = new GroupLayout(myPanel);
-        groupLayout.setAutoCreateGaps(true);
-        groupLayout.setAutoCreateContainerGaps(true);
-        myPanel.setLayout(groupLayout);
-
-        JButton b1 = new JButton("Button One");
-        JButton b2 = new JButton("Button Two");
-        JButton b3 = new JButton("Button Three");
-        JButton b4 = new JButton("Button Four");
-        JButton b5 = new JButton("Button 5");
-        JButton b6 = new JButton("Button 6");
-
-        JButton investButton = new JButton("Invest");
-        JButton articleButton = new JButton("Article");
-        JButton ignoreButton = new JButton("Ignore");
-        JButton i = new JButton("i");
-        JButton j = new JButton("j");
-        JButton k = new JButton("k");
-
-        groupLayout.setVerticalGroup(
-                groupLayout.createSequentialGroup()
-                        .addGroup(groupLayout.createParallelGroup(BASELINE)
-                                .addComponent(investButton)
-                                .addComponent(i))
-                        .addGroup(groupLayout.createParallelGroup(BASELINE)
-                                .addComponent(ignoreButton)
-                                .addComponent(j))
-                        .addGroup(groupLayout.createParallelGroup(BASELINE)
-                                .addComponent(articleButton)
-                                .addComponent(k)));
-
-
-        groupLayout.setHorizontalGroup(
-                groupLayout.createSequentialGroup()
-                        .addGroup(groupLayout.createParallelGroup(LEADING)
-                                .addComponent(investButton)
-                                .addComponent(ignoreButton)
-                                .addComponent(articleButton))
-                        .addGroup(groupLayout.createParallelGroup(LEADING)
-                                .addComponent(i)
-                                .addComponent(j)
-                                .addComponent(k)));
-
-        frame.pack();
-        frame.setVisible(true);
-    }
-
-
-    public void showFormWindow(Project currentProject, File filePath) {
+    public static void showFormWindow(Project currentProject, File filePath) {
         JFrame frame = new JFrame();
         JPanel panel = makeContentPanel(currentProject, filePath);
         JPanel contentPane = makeScrollablePanel(panel);
@@ -110,11 +56,11 @@ public class FormWindow extends JFrame {
     }
 
     @NotNull
-    private JPanel makeScrollablePanel(JPanel panel) {
+    private static JPanel makeScrollablePanel(JPanel panel) {
         JBScrollPane scrollPane = new JBScrollPane(panel);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-        scrollPane.setBounds(50, 30, 400, 400);
+        scrollPane.setBounds(0, 20, 500, 480);
         JPanel contentPane = new JPanel(null);
         contentPane.setPreferredSize(new Dimension(500, 500));
         contentPane.add(scrollPane);
@@ -122,19 +68,28 @@ public class FormWindow extends JFrame {
     }
 
     @NotNull
-    private JPanel makeContentPanel(Project currentProject, File filePath) {
+    private static JPanel makeContentPanel(Project currentProject, File filePath) {
         JPanel myPanel = new JPanel();
         GroupLayout groupLayout = new GroupLayout(myPanel);
         groupLayout.setAutoCreateGaps(true);
         groupLayout.setAutoCreateContainerGaps(true);
         myPanel.setLayout(groupLayout);
 
-        JButton b1 = new JButton("Button One");
-        JButton b2 = new JButton("Button Two");
-        JButton b3 = new JButton("Button Three");
-        JButton b4 = new JButton("Button Four");
-        JButton b5 = new JButton("Button 5");
-        JButton b6 = new JButton("Button 6");
+        JLabel sourceLabel = new JLabel("Source location: ");
+        JLabel targetLabel = new JLabel("Target location: ");
+        JTextField source = new JTextField(20);
+        JTextField target = new JTextField(20);
+        JCheckBox privateCheckBox = new JCheckBox("Private");
+        JCheckBox publicCheckBox = new JCheckBox("Public");
+        JCheckBox protectedCheckBox = new JCheckBox("Protected");
+        JCheckBox defaultCheckBox = new JCheckBox("Default");
+
+        JCheckBoxMenuItem publicCheckBoxMenuItem = new JCheckBoxMenuItem("ahoj");
+        JColorChooser colorChooser = new JColorChooser();
+        List<String> text = new ArrayList<>(Arrays.asList("private", "public", "protected"));
+        JComboBox<String> comboBox = new ComboBox(text.toArray());
+        JFileChooser defaultTargetFile = new JFileChooser();
+        defaultTargetFile.setCurrentDirectory(new File(filePath.toPath().toFile().toString()));
 
         JButton investButton = new JButton("Invest");
         JButton articleButton = new JButton("Article");
@@ -146,11 +101,16 @@ public class FormWindow extends JFrame {
         groupLayout.setVerticalGroup(
                 groupLayout.createSequentialGroup()
                         .addGroup(groupLayout.createParallelGroup(BASELINE)
-                                .addComponent(investButton)
-                                .addComponent(i))
+                                .addComponent(sourceLabel)
+                                .addComponent(source))
                         .addGroup(groupLayout.createParallelGroup(BASELINE)
-                                .addComponent(ignoreButton)
-                                .addComponent(j))
+                                .addComponent(targetLabel)
+                                .addComponent(target))
+                        .addGroup(groupLayout.createParallelGroup(BASELINE)
+                                .addComponent(privateCheckBox)
+                                .addComponent(publicCheckBox)
+                                .addComponent(protectedCheckBox)
+                                .addComponent(defaultCheckBox))
                         .addGroup(groupLayout.createParallelGroup(BASELINE)
                                 .addComponent(articleButton)
                                 .addComponent(k)));
@@ -159,13 +119,19 @@ public class FormWindow extends JFrame {
         groupLayout.setHorizontalGroup(
                 groupLayout.createSequentialGroup()
                         .addGroup(groupLayout.createParallelGroup(LEADING)
-                                .addComponent(investButton)
-                                .addComponent(ignoreButton)
+                                .addComponent(sourceLabel)
+                                .addComponent(targetLabel)
+                                .addComponent(privateCheckBox)
                                 .addComponent(articleButton))
                         .addGroup(groupLayout.createParallelGroup(LEADING)
-                                .addComponent(i)
-                                .addComponent(j)
-                                .addComponent(k)));
+                                .addComponent(source)
+                                .addComponent(target)
+                                .addGroup(groupLayout.createParallelGroup(LEADING)
+                                        .addComponent(publicCheckBox)
+                                        .addComponent(protectedCheckBox)
+                                        .addComponent(defaultCheckBox))
+                                .addComponent(k))
+                        );
 
 //        JPanel panel = new JPanel();
 //        panel.setLayout(new GridLayout(9, 4));
