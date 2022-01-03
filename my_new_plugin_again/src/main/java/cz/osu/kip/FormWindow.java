@@ -8,14 +8,70 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
+import static javax.swing.GroupLayout.Alignment.BASELINE;
+import static javax.swing.GroupLayout.Alignment.LEADING;
 
 public class FormWindow extends JFrame {
 
+    public static void makePanel() {
+        JFrame frame = new JFrame("GroupLayoutExample");
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        Container myPanel = frame.getContentPane();
 
-    public void showFormWindow(Project currentProject, File filePath){
+
+        GroupLayout groupLayout = new GroupLayout(myPanel);
+        groupLayout.setAutoCreateGaps(true);
+        groupLayout.setAutoCreateContainerGaps(true);
+        myPanel.setLayout(groupLayout);
+
+        JButton b1 = new JButton("Button One");
+        JButton b2 = new JButton("Button Two");
+        JButton b3 = new JButton("Button Three");
+        JButton b4 = new JButton("Button Four");
+        JButton b5 = new JButton("Button 5");
+        JButton b6 = new JButton("Button 6");
+
+        JButton investButton = new JButton("Invest");
+        JButton articleButton = new JButton("Article");
+        JButton ignoreButton = new JButton("Ignore");
+        JButton i = new JButton("i");
+        JButton j = new JButton("j");
+        JButton k = new JButton("k");
+
+        groupLayout.setVerticalGroup(
+                groupLayout.createSequentialGroup()
+                        .addGroup(groupLayout.createParallelGroup(BASELINE)
+                                .addComponent(investButton)
+                                .addComponent(i))
+                        .addGroup(groupLayout.createParallelGroup(BASELINE)
+                                .addComponent(ignoreButton)
+                                .addComponent(j))
+                        .addGroup(groupLayout.createParallelGroup(BASELINE)
+                                .addComponent(articleButton)
+                                .addComponent(k)));
+
+
+        groupLayout.setHorizontalGroup(
+                groupLayout.createSequentialGroup()
+                        .addGroup(groupLayout.createParallelGroup(LEADING)
+                                .addComponent(investButton)
+                                .addComponent(ignoreButton)
+                                .addComponent(articleButton))
+                        .addGroup(groupLayout.createParallelGroup(LEADING)
+                                .addComponent(i)
+                                .addComponent(j)
+                                .addComponent(k)));
+
+        frame.pack();
+        frame.setVisible(true);
+    }
+
+
+    public void showFormWindow(Project currentProject, File filePath) {
         JFrame frame = new JFrame();
         JPanel panel = makeContentPanel(currentProject, filePath);
         JPanel contentPane = makeScrollablePanel(panel);
@@ -67,40 +123,84 @@ public class FormWindow extends JFrame {
 
     @NotNull
     private JPanel makeContentPanel(Project currentProject, File filePath) {
-        JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(9, 4));
+        JPanel myPanel = new JPanel();
+        GroupLayout groupLayout = new GroupLayout(myPanel);
+        groupLayout.setAutoCreateGaps(true);
+        groupLayout.setAutoCreateContainerGaps(true);
+        myPanel.setLayout(groupLayout);
 
-//        String src = "D:\sramk\Documents\vysoka_skola\bakalarka\temp\backup";
-//        String trg = "D:\sramk\Documents\vysoka_skola\2_rocnik\2_semestr\7OPR2\projects\cviceni12\slozka2";
+        JButton b1 = new JButton("Button One");
+        JButton b2 = new JButton("Button Two");
+        JButton b3 = new JButton("Button Three");
+        JButton b4 = new JButton("Button Four");
+        JButton b5 = new JButton("Button 5");
+        JButton b6 = new JButton("Button 6");
 
-        System.out.println(filePath.toString());
+        JButton investButton = new JButton("Invest");
+        JButton articleButton = new JButton("Article");
+        JButton ignoreButton = new JButton("Ignore");
+        JButton i = new JButton("i");
+        JButton j = new JButton("j");
+        JButton k = new JButton("k");
 
-        JTextField source = new JTextField(20);
-        JTextField target = new JTextField(20);
-        JCheckBox privateCheckBox = new JCheckBox();
-        JCheckBoxMenuItem publicCheckBoxMenuItem = new JCheckBoxMenuItem("ahoj");
-        JColorChooser colorChooser = new JColorChooser();
-        List<String> text = new ArrayList<>(Arrays.asList("private", "public", "protected"));
-        JComboBox<String> comboBox = new ComboBox(text.toArray());
-        JFileChooser defaultTargetFile = new JFileChooser();
-        defaultTargetFile.setCurrentDirectory(new File(filePath.toPath().toFile().toString()));
-        //  Nefunkční - dopracovat
-        System.out.println(new File(filePath.toPath().resolve("PlantUmlFiles").toFile().toString()));
+        groupLayout.setVerticalGroup(
+                groupLayout.createSequentialGroup()
+                        .addGroup(groupLayout.createParallelGroup(BASELINE)
+                                .addComponent(investButton)
+                                .addComponent(i))
+                        .addGroup(groupLayout.createParallelGroup(BASELINE)
+                                .addComponent(ignoreButton)
+                                .addComponent(j))
+                        .addGroup(groupLayout.createParallelGroup(BASELINE)
+                                .addComponent(articleButton)
+                                .addComponent(k)));
 
-        panel.add(new JLabel("source:"));
-        panel.add(source);
-        panel.add(new JLabel("target:"));
-        panel.add(target);
-        panel.add(privateCheckBox);
-        panel.add(publicCheckBoxMenuItem);
-        panel.add(colorChooser);
-        panel.add(comboBox);
-//        myPanel4.add(defaultSourceFile);
-        panel.add(defaultTargetFile);
 
-        return panel;
+        groupLayout.setHorizontalGroup(
+                groupLayout.createSequentialGroup()
+                        .addGroup(groupLayout.createParallelGroup(LEADING)
+                                .addComponent(investButton)
+                                .addComponent(ignoreButton)
+                                .addComponent(articleButton))
+                        .addGroup(groupLayout.createParallelGroup(LEADING)
+                                .addComponent(i)
+                                .addComponent(j)
+                                .addComponent(k)));
+
+//        JPanel panel = new JPanel();
+//        panel.setLayout(new GridLayout(9, 4));
+//
+////        String src = "D:\sramk\Documents\vysoka_skola\bakalarka\temp\backup";
+////        String trg = "D:\sramk\Documents\vysoka_skola\2_rocnik\2_semestr\7OPR2\projects\cviceni12\slozka2";
+//
+//        System.out.println(filePath.toString());
+//
+//        JTextField source = new JTextField(20);
+//        JTextField target = new JTextField(20);
+//        JCheckBox privateCheckBox = new JCheckBox();
+//        JCheckBoxMenuItem publicCheckBoxMenuItem = new JCheckBoxMenuItem("ahoj");
+//        JColorChooser colorChooser = new JColorChooser();
+//        List<String> text = new ArrayList<>(Arrays.asList("private", "public", "protected"));
+//        JComboBox<String> comboBox = new ComboBox(text.toArray());
+//        JFileChooser defaultTargetFile = new JFileChooser();
+//        defaultTargetFile.setCurrentDirectory(new File(filePath.toPath().toFile().toString()));
+//        //  Nefunkční - dopracovat
+//        System.out.println(new File(filePath.toPath().resolve("PlantUmlFiles").toFile().toString()));
+//
+//        panel.add(new JLabel("source:"));
+//        panel.add(source);
+//        panel.add(new JLabel("target:"));
+//        panel.add(target);
+//        panel.add(privateCheckBox);
+//        panel.add(publicCheckBoxMenuItem);
+//        panel.add(colorChooser);
+//        panel.add(comboBox);
+////        myPanel4.add(defaultSourceFile);
+//        panel.add(defaultTargetFile);
+
+//        return panel;
+            return myPanel;
     }
-
 
 
 //        String target = JOptionPane.showInputDialog("Type here the absolute target path:");

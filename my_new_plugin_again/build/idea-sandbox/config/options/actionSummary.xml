@@ -9,5 +9,8 @@
     <e n="WelcomeScreen.OpenProject">
       <i c="1" l="1636920303486" />
     </e>
+    <e n="com.intellij.openapi.ui.DialogWrapper$4">
+      <i c="1" l="1641235263017" />
+    </e>
   </component>
 </application>
