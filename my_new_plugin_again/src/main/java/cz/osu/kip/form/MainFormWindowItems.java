@@ -4,8 +4,26 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowEvent;
+import java.io.File;
 
 public class MainFormWindowItems {
+    private JRadioButton defaultTargetDestination = new JRadioButton(new AbstractAction("Default target destination") {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            defaultTargetDestinationDesc.setVisible(true);
+        }
+    });
+    private JRadioButton ownTargetDestination = new JRadioButton(new AbstractAction("Own target destination") {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            defaultTargetDestinationDesc.setVisible(false);
+        }
+    });
+    private ButtonGroup buttonGroup = setButtonGroup();
+
+    private JLabel defaultTargetDestinationDesc = new JLabel(new File(FormWindow.getFilePath().toPath().resolve("PlantUmlFiles").toFile().toString()).toString());
+
+
     private JLabel sourceLabel = new JLabel("Source location: ");
     private JLabel targetLabel = new JLabel("Target location: ");
     private JTextField source = new JTextField(20);
@@ -30,6 +48,30 @@ public class MainFormWindowItems {
             makeFormForNewTargetLocationChoice();
         }
     });
+
+    public MainFormWindowItems() {
+        defaultTargetDestinationDesc.setVisible(true);
+        defaultTargetDestination.setSelected(true);
+    }
+
+    private ButtonGroup setButtonGroup() {
+        buttonGroup = new ButtonGroup();
+        buttonGroup.add(defaultTargetDestination);
+        buttonGroup.add(ownTargetDestination);
+        return buttonGroup;
+    }
+
+    public JRadioButton getDefaultTargetDestination() {
+        return defaultTargetDestination;
+    }
+
+    public JRadioButton getOwnTargetDestination() {
+        return ownTargetDestination;
+    }
+
+    public JLabel getDefaultTargetDestinationDesc() {
+        return defaultTargetDestinationDesc;
+    }
 
     private void makeFormForNewTargetLocationChoice() {
         JFrame locationChoiceFrame = new JFrame();
@@ -56,6 +98,14 @@ public class MainFormWindowItems {
             System.out.println("Cancel was selected");
             locationChoiceFrame.dispatchEvent(new WindowEvent(locationChoiceFrame, WindowEvent.WINDOW_CLOSING));
         }
+    }
+
+    public ButtonGroup getButtonGroup() {
+        return buttonGroup;
+    }
+
+    public void setButtonGroup(ButtonGroup buttonGroup) {
+        this.buttonGroup = buttonGroup;
     }
 
     public JLabel getSourceLabel() {
