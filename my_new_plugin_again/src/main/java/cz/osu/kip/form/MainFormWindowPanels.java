@@ -16,8 +16,9 @@ public class MainFormWindowPanels {
 
     private Project currentProject;
     private File filePath;
-    private static MainFormWindowItems mainFormWindowItems = new MainFormWindowItems();
-    private static JPanel targetDestinationPanel = new JPanel();
+    private MainFormWindowItems mainFormWindowItems;
+    private JPanel targetUMLDestinationPanel = new JPanel();
+    private JPanel targetConfigDestinationPanel = new JPanel();
     private JPanel scrollablePanel;
     private JPanel contentPanel;
 
@@ -25,7 +26,8 @@ public class MainFormWindowPanels {
         this.currentProject = currentProject;
         this.filePath = filePath;
         this.mainFormWindowItems = mainFormWindowItems;
-        setTargetDestinationPanel();
+        setUMLTargetDestinationPanel();
+        setConfigTargetDestinationPanel();
         scrollablePanel = makeScrollablePanel();
     }
 
@@ -33,31 +35,63 @@ public class MainFormWindowPanels {
         return scrollablePanel;
     }
 
-    public void setTargetDestinationPanel(){
-        GroupLayout groupLayoutFirstPanel = new GroupLayout(targetDestinationPanel);
+    public void setUMLTargetDestinationPanel(){
+        GroupLayout groupLayoutFirstPanel = new GroupLayout(targetUMLDestinationPanel);
         groupLayoutFirstPanel.setAutoCreateGaps(true);
         groupLayoutFirstPanel.setAutoCreateContainerGaps(true);
-        targetDestinationPanel.setLayout(groupLayoutFirstPanel);
+        targetUMLDestinationPanel.setLayout(groupLayoutFirstPanel);
 
         groupLayoutFirstPanel.setHorizontalGroup(
                 groupLayoutFirstPanel.createSequentialGroup()
                         .addGroup(groupLayoutFirstPanel.createParallelGroup()
                                 .addGroup(groupLayoutFirstPanel.createSequentialGroup()
-                                        .addComponent(mainFormWindowItems.getDefaultTargetDestination())
+                                        .addComponent(mainFormWindowItems.getDefaultUMLTargetDestination())
                                         .addGap(80)
-                                        .addComponent(mainFormWindowItems.getOwnTargetDestination()))
-                                .addComponent(mainFormWindowItems.getDefaultTargetDestinationDesc()))
+                                        .addComponent(mainFormWindowItems.getOwnUMLTargetDestination()))
+                                .addComponent(mainFormWindowItems.getDefaultUMLTargetDestinationDesc())
+                                .addComponent(mainFormWindowItems.getDefaultUMLTargetFile()))
         );
         groupLayoutFirstPanel.setVerticalGroup(
                 groupLayoutFirstPanel.createSequentialGroup()
                         .addGroup(groupLayoutFirstPanel.createParallelGroup(BASELINE)
-                                .addComponent(mainFormWindowItems.getDefaultTargetDestination())
-                                .addComponent(mainFormWindowItems.getOwnTargetDestination()))
-                        .addComponent(mainFormWindowItems.getDefaultTargetDestinationDesc()));
+                                .addComponent(mainFormWindowItems.getDefaultUMLTargetDestination())
+                                .addComponent(mainFormWindowItems.getOwnUMLTargetDestination()))
+                        .addComponent(mainFormWindowItems.getDefaultUMLTargetDestinationDesc())
+                        .addComponent(mainFormWindowItems.getDefaultUMLTargetFile()));
     }
 
-    private JPanel getTargetDestinationPanel() {
-        return targetDestinationPanel;
+    private JPanel getUMLTargetDestinationPanel() {
+        return targetUMLDestinationPanel;
+    }
+
+    public void setConfigTargetDestinationPanel(){
+        GroupLayout groupLayoutFirstPanel = new GroupLayout(targetConfigDestinationPanel);
+        groupLayoutFirstPanel.setAutoCreateGaps(true);
+        groupLayoutFirstPanel.setAutoCreateContainerGaps(true);
+        targetConfigDestinationPanel.setLayout(groupLayoutFirstPanel);
+
+        groupLayoutFirstPanel.setHorizontalGroup(
+                groupLayoutFirstPanel.createSequentialGroup()
+                        .addGroup(groupLayoutFirstPanel.createParallelGroup()
+                                .addGroup(groupLayoutFirstPanel.createSequentialGroup()
+                                        .addComponent(mainFormWindowItems.getDefaultConfigTargetDestination())
+                                        .addGap(80)
+                                        .addComponent(mainFormWindowItems.getOwnConfigTargetDestination()))
+                                .addComponent(mainFormWindowItems.getDefaultConfigTargetDestinationDesc())
+                                .addComponent(mainFormWindowItems.getDefaultConfigTargetFile()))
+        );
+        groupLayoutFirstPanel.setVerticalGroup(
+                groupLayoutFirstPanel.createSequentialGroup()
+                        .addGroup(groupLayoutFirstPanel.createParallelGroup(BASELINE)
+                                .addComponent(mainFormWindowItems.getDefaultConfigTargetDestination())
+                                .addComponent(mainFormWindowItems.getOwnConfigTargetDestination())
+                                .addGap(80)
+                                .addComponent(mainFormWindowItems.getDefaultConfigTargetFile()))
+                        .addComponent(mainFormWindowItems.getDefaultConfigTargetDestinationDesc()));
+    }
+
+    private JPanel getConfigTargetDestinationPanel() {
+        return targetUMLDestinationPanel;
     }
 
     @NotNull
@@ -88,10 +122,10 @@ public class MainFormWindowPanels {
 //        JFileChooser defaultTargetFile = new JFileChooser();
 //        defaultTargetFile.setCurrentDirectory(new File(filePath.toPath().toFile().toString()));
 
-        JPanel targetDestinationPanel = getTargetDestinationPanel();
+//        JPanel targetUMLDestinationPanel = getUMLTargetDestinationPanel();
+//        JPanel targetConfigDestinationPanel = getConfigTargetDestinationPanel();
+        setLayout(groupLayout);
 
-        setVerticalGroupFroLayout(groupLayout, targetDestinationPanel);
-        setHorizontalGroupFroLayout(groupLayout, targetDestinationPanel);
 
 //        if (checkBoxForChooseDirs.isSelected()){
 //            showFormWindow(currentProject, filePath);
@@ -120,11 +154,18 @@ public class MainFormWindowPanels {
         return myPanel;
     }
 
-    private void setHorizontalGroupFroLayout(GroupLayout groupLayout, JPanel targetDestinationPanel) {
+    private void setLayout(GroupLayout groupLayout) {
+        setVerticalGroupLayout(groupLayout);
+        setHorizontalGroupLayout(groupLayout);
+    }
+
+
+    private void setHorizontalGroupLayout(GroupLayout groupLayout) {
         groupLayout.setHorizontalGroup(
                 groupLayout.createSequentialGroup()
                         .addGroup(groupLayout.createParallelGroup(LEADING)
-                                .addComponent(targetDestinationPanel)
+                                .addComponent(targetUMLDestinationPanel)
+                                .addComponent(targetConfigDestinationPanel)
                                 .addComponent(mainFormWindowItems.getCheckBoxForAllInDir())
                                 .addComponent(mainFormWindowItems.getCheckBoxForClasses())
                                 .addComponent(mainFormWindowItems.getCheckBoxForAttributes())
@@ -148,11 +189,13 @@ public class MainFormWindowPanels {
         );
     }
 
-    private void setVerticalGroupFroLayout(GroupLayout groupLayout, JPanel targetDestinationPanel) {
+    private void setVerticalGroupLayout(GroupLayout groupLayout) {
         groupLayout.setVerticalGroup(
                 groupLayout.createSequentialGroup()
                         .addGroup(groupLayout.createParallelGroup(BASELINE)
-                                .addComponent(targetDestinationPanel))
+                                .addComponent(targetUMLDestinationPanel))
+                        .addGroup(groupLayout.createParallelGroup(BASELINE)
+                                .addComponent(targetConfigDestinationPanel))
                         .addGroup(groupLayout.createParallelGroup(BASELINE)
                                 .addComponent(mainFormWindowItems.getCheckBoxForAllInDir())
                                 .addComponent(mainFormWindowItems.getCheckBoxForChooseDirs()))
