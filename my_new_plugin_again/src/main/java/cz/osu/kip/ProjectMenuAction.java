@@ -10,14 +10,14 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 
-public class ProjectMenuAction  extends AnAction {
+public class ProjectMenuAction extends AnAction {
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
-
-
+        e.getActionManager().getId(this);
         Project rootProject = e.getProject();
         VirtualFile file = e.getData(CommonDataKeys.VIRTUAL_FILE);
         File filePath = new File(file.getPath());
+        System.out.println("now");
         FormWindow formWindow = new FormWindow(rootProject, filePath);
         formWindow.showFormWindow();
 
@@ -32,4 +32,8 @@ public class ProjectMenuAction  extends AnAction {
 //        }
 //        Messages.showMessageDialog(currentProject, dlgMsg.toString(), dlgTitle, Messages.getInformationIcon());
     }
+
+
+
+
 }

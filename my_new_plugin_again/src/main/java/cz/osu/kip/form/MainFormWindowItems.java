@@ -3,27 +3,56 @@ package cz.osu.kip.form;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.io.File;
 
 public class MainFormWindowItems {
-    private JRadioButton defaultTargetDestination = new JRadioButton(new AbstractAction("Default target destination") {
+
+    private ActionListener defaultUMLTargetDestinationListener = new ActionListener() {
+        public void actionPerformed(ActionEvent actionEvent) {
+            AbstractButton aButton = (AbstractButton) actionEvent.getSource();
+            System.out.println("Selected: " + aButton.getText());
+            defaultUMLTargetDestinationDesc.setVisible(true);
+            defaultUMLTargetFile.setVisible(false);
+        }
+    };
+    private ActionListener ownUMLTargetDestinationListener = new ActionListener() {
+        public void actionPerformed(ActionEvent actionEvent) {
+            AbstractButton aButton = (AbstractButton) actionEvent.getSource();
+            System.out.println("Selected: " + aButton.getText());
+            defaultUMLTargetFile.setCurrentDirectory(new File(FormWindow.getFilePath().toPath().toFile().toString()));
+            defaultUMLTargetDestinationDesc.setVisible(false);
+            defaultUMLTargetFile.setVisible(true);
+        }
+    };
+
+    private JRadioButton defaultUMLTargetDestination = new JRadioButton("Default target destination for uml file");
+    private JRadioButton ownUMLTargetDestination = new JRadioButton("Own target destination for uml file");
+    private ButtonGroup buttonGroupUMLTargetDestination = setButtonGroup(defaultUMLTargetDestination, ownUMLTargetDestination);
+    private JLabel defaultUMLTargetDestinationDesc = new JLabel(new File(FormWindow.getFilePath().toPath().resolve("PlantUmlFiles").toFile().toString()).toString());
+
+    private JRadioButton defaultConfigTargetDestination = new JRadioButton(new AbstractAction("Default target destination for config file") {
         @Override
         public void actionPerformed(ActionEvent e) {
-            defaultTargetDestinationDesc.setVisible(true);
+            defaultConfigTargetDestinationDesc.setVisible(true);
+            defaultConfigTargetFile.setVisible(false);
         }
     });
-    private JRadioButton ownTargetDestination = new JRadioButton(new AbstractAction("Own target destination") {
+    private JRadioButton ownConfigTargetDestination = new JRadioButton(new AbstractAction("Own target destination for config file") {
         @Override
         public void actionPerformed(ActionEvent e) {
-            defaultTargetDestinationDesc.setVisible(false);
+            defaultConfigTargetDestinationDesc.setVisible(false);
+            defaultConfigTargetFile.setVisible(true);
+            defaultConfigTargetFile.setCurrentDirectory(new File(FormWindow.getFilePath().toPath().toFile().toString()));
         }
     });
-    private ButtonGroup buttonGroup = setButtonGroup();
+    private ButtonGroup buttonGroupConfigTargetDestination = setButtonGroup(defaultConfigTargetDestination, ownConfigTargetDestination);
+    private JLabel defaultConfigTargetDestinationDesc = new JLabel(new File(FormWindow.getFilePath().toPath().resolve("PlantUmlFiles").toFile().toString()).toString());
 
-    private JLabel defaultTargetDestinationDesc = new JLabel(new File(FormWindow.getFilePath().toPath().resolve("PlantUmlFiles").toFile().toString()).toString());
 
-
+    private JFileChooser defaultUMLTargetFile = new JFileChooser();
+    private JFileChooser defaultConfigTargetFile = new JFileChooser();
     private JLabel sourceLabel = new JLabel("Source location: ");
     private JLabel targetLabel = new JLabel("Target location: ");
     private JTextField source = new JTextField(20);
@@ -50,27 +79,50 @@ public class MainFormWindowItems {
     });
 
     public MainFormWindowItems() {
-        defaultTargetDestinationDesc.setVisible(true);
-        defaultTargetDestination.setSelected(true);
+        defaultUMLTargetDestination.setSelected(true);
+        defaultConfigTargetDestination.setSelected(true);
+        defaultUMLTargetFile.setVisible(false);
+//        defaultUMLTargetFile.setCurrentDirectory(new File(FormWindow.getFilePath().toPath().toFile().toString()));
+        defaultConfigTargetFile.setVisible(false);
+//        defaultConfigTargetFile.setCurrentDirectory(new File(FormWindow.getFilePath().toPath().toFile().toString()));
+        defaultUMLTargetDestination.addActionListener(defaultUMLTargetDestinationListener);
+        ownUMLTargetDestination.addActionListener(ownUMLTargetDestinationListener);
     }
 
-    private ButtonGroup setButtonGroup() {
-        buttonGroup = new ButtonGroup();
-        buttonGroup.add(defaultTargetDestination);
-        buttonGroup.add(ownTargetDestination);
-        return buttonGroup;
+    private ButtonGroup setButtonGroup(JRadioButton... buttons) {
+        ButtonGroup btnGroup = new ButtonGroup();
+        for (JRadioButton button : buttons) {
+            btnGroup.add(button);
+        }
+        return btnGroup;
     }
 
-    public JRadioButton getDefaultTargetDestination() {
-        return defaultTargetDestination;
+    public JFileChooser getDefaultUMLTargetFile() { return defaultUMLTargetFile; }
+
+    public JFileChooser getDefaultConfigTargetFile() { return defaultConfigTargetFile; }
+
+    public JRadioButton getDefaultUMLTargetDestination() {
+        return defaultUMLTargetDestination;
     }
 
-    public JRadioButton getOwnTargetDestination() {
-        return ownTargetDestination;
+    public JRadioButton getOwnUMLTargetDestination() {
+        return ownUMLTargetDestination;
     }
 
-    public JLabel getDefaultTargetDestinationDesc() {
-        return defaultTargetDestinationDesc;
+    public JLabel getDefaultUMLTargetDestinationDesc() {
+        return defaultUMLTargetDestinationDesc;
+    }
+
+    public JRadioButton getDefaultConfigTargetDestination() {
+        return defaultConfigTargetDestination;
+    }
+
+    public JRadioButton getOwnConfigTargetDestination() {
+        return ownConfigTargetDestination;
+    }
+
+    public JLabel getDefaultConfigTargetDestinationDesc() {
+        return defaultConfigTargetDestinationDesc;
     }
 
     private void makeFormForNewTargetLocationChoice() {
@@ -100,12 +152,20 @@ public class MainFormWindowItems {
         }
     }
 
-    public ButtonGroup getButtonGroup() {
-        return buttonGroup;
+    public ButtonGroup getButtonGroupUMLTargetDestination() {
+        return buttonGroupUMLTargetDestination;
     }
 
-    public void setButtonGroup(ButtonGroup buttonGroup) {
-        this.buttonGroup = buttonGroup;
+    public void setButtonGroupUMLTargetDestination(ButtonGroup buttonGroupUMLTargetDestination) {
+        this.buttonGroupUMLTargetDestination = buttonGroupUMLTargetDestination;
+    }
+
+    public ButtonGroup getButtonGroupConfigTargetDestination() {
+        return buttonGroupConfigTargetDestination;
+    }
+
+    public void setButtonGroupConfigTargetDestination(ButtonGroup buttonGroupConfigTargetDestination) {
+        this.buttonGroupConfigTargetDestination = buttonGroupConfigTargetDestination;
     }
 
     public JLabel getSourceLabel() {

@@ -1242,3 +1242,227 @@ java.io.IOException: Stávající připojení bylo vynuceně ukončeno vzdálen�
 2022-01-06 12:58:40,163 [   1030]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 209 ms
 2022-01-06 12:58:40,164 [   1031]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
 2022-01-06 12:58:40,245 [   1112]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-06 13:17:25,259 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-06 13:17:25,394 [    135]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-06 13:17:26,157 [    898]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 727 ms
+2022-01-06 13:17:26,562 [   1303]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-06 13:17:26,945 [   1686]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 383 ms
+2022-01-06 13:17:26,945 [   1686]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-06 13:17:27,100 [   1841]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-23 09:59:41,167 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-23 09:59:41,192 [     25]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-23 09:59:42,291 [   1124]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 1040 ms
+2022-01-23 09:59:42,774 [   1607]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-23 09:59:43,393 [   2226]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 619 ms
+2022-01-23 09:59:43,395 [   2228]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-23 09:59:43,721 [   2554]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-23 10:34:03,182 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-23 10:34:03,204 [     22]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-23 10:34:04,066 [    884]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 832 ms
+2022-01-23 10:34:04,277 [   1095]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-23 10:34:05,008 [   1826]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 731 ms
+2022-01-23 10:34:05,008 [   1826]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-23 10:34:05,234 [   2052]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-23 10:35:52,361 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-23 10:35:52,362 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-23 10:35:53,129 [    768]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 712 ms
+2022-01-23 10:35:53,534 [   1173]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-23 10:35:53,837 [   1476]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 302 ms
+2022-01-23 10:35:53,837 [   1476]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-23 10:35:53,983 [   1622]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-23 10:47:51,781 [      1]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-23 10:47:51,825 [     45]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-23 10:47:52,292 [    512]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 416 ms
+2022-01-23 10:47:52,498 [    718]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-23 10:47:52,754 [    974]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 255 ms
+2022-01-23 10:47:52,754 [    974]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-23 10:47:52,832 [   1052]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-23 11:15:41,571 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-23 11:15:41,571 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-23 11:15:42,023 [    452]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 426 ms
+2022-01-23 11:15:42,256 [    685]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-23 11:15:42,623 [   1052]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 367 ms
+2022-01-23 11:15:42,623 [   1052]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-23 11:15:42,866 [   1295]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-23 11:33:11,766 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-23 11:33:11,837 [     71]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-23 11:33:12,377 [    611]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 514 ms
+2022-01-23 11:33:12,621 [    855]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-23 11:33:12,920 [   1154]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 299 ms
+2022-01-23 11:33:12,920 [   1154]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-23 11:33:13,232 [   1466]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-23 11:35:57,933 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-23 11:35:57,934 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-23 11:35:58,493 [    560]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 524 ms
+2022-01-23 11:35:58,751 [    818]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-23 11:35:59,016 [   1083]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 265 ms
+2022-01-23 11:35:59,016 [   1083]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-23 11:35:59,242 [   1309]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-23 12:44:20,658 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-23 12:44:20,659 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-23 12:44:21,093 [    435]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 409 ms
+2022-01-23 12:44:21,435 [    777]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-23 12:44:21,683 [   1025]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 248 ms
+2022-01-23 12:44:21,683 [   1025]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-23 12:44:21,923 [   1265]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-23 21:22:21,957 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-23 21:22:22,036 [     79]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-23 21:22:22,699 [    742]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 607 ms
+2022-01-23 21:22:23,085 [   1128]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-23 21:22:23,394 [   1437]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 308 ms
+2022-01-23 21:22:23,394 [   1437]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-23 21:22:23,586 [   1629]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-23 21:27:21,283 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-23 21:27:21,295 [     12]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-23 21:27:22,082 [    799]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 741 ms
+2022-01-23 21:27:22,527 [   1244]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-23 21:27:22,888 [   1605]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 361 ms
+2022-01-23 21:27:22,888 [   1605]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-23 21:27:23,381 [   2098]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-23 21:30:51,273 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-23 21:30:51,275 [      2]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-23 21:30:52,387 [   1114]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 1069 ms
+2022-01-23 21:30:52,811 [   1538]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-23 21:30:53,224 [   1951]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 413 ms
+2022-01-23 21:30:53,225 [   1952]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-23 21:30:53,404 [   2131]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-23 21:32:35,013 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-23 21:32:35,013 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-23 21:32:35,814 [    801]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 738 ms
+2022-01-23 21:32:36,198 [   1185]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-23 21:32:38,095 [   3082]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 1896 ms
+2022-01-23 21:32:38,097 [   3084]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-23 21:32:39,491 [   4478]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-23 21:45:15,807 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-23 21:45:15,833 [     26]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-23 21:45:17,462 [   1655]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 1403 ms
+2022-01-23 21:45:18,005 [   2198]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-23 21:45:18,511 [   2704]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 505 ms
+2022-01-23 21:45:18,511 [   2704]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-23 21:45:20,435 [   4628]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-23 21:48:10,025 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-23 21:48:10,026 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-23 21:48:10,742 [    717]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 670 ms
+2022-01-23 21:48:11,132 [   1107]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-23 21:48:11,466 [   1441]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 333 ms
+2022-01-23 21:48:11,466 [   1441]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-23 21:48:11,594 [   1569]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-23 22:00:53,466 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-23 22:00:53,473 [      7]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-23 22:00:54,341 [    875]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 817 ms
+2022-01-23 22:00:54,705 [   1239]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-23 22:00:56,284 [   2818]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 1578 ms
+2022-01-23 22:00:56,286 [   2820]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-23 22:00:57,629 [   4163]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-23 22:03:11,449 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-23 22:03:11,451 [      2]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-23 22:03:14,639 [   3190]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 3150 ms
+2022-01-23 22:03:16,943 [   5494]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-23 22:03:17,915 [   6466]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 971 ms
+2022-01-23 22:03:17,915 [   6466]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-23 22:03:18,083 [   6634]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-23 22:11:24,513 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-23 22:11:24,530 [     17]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-23 22:11:25,408 [    895]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 827 ms
+2022-01-23 22:11:25,779 [   1266]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-23 22:11:29,141 [   4628]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 3361 ms
+2022-01-23 22:11:29,142 [   4629]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-23 22:11:30,243 [   5730]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-23 22:15:16,701 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-23 22:15:16,727 [     26]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-23 22:15:17,796 [   1095]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 1000 ms
+2022-01-23 22:15:18,717 [   2016]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-23 22:15:21,955 [   5254]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 3238 ms
+2022-01-23 22:15:21,957 [   5256]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-23 22:15:23,388 [   6687]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-23 22:27:13,331 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-23 22:27:13,353 [     22]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-23 22:27:13,744 [    413]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 364 ms
+2022-01-23 22:27:13,949 [    618]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-23 22:27:14,180 [    849]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 230 ms
+2022-01-23 22:27:14,180 [    849]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-23 22:27:14,262 [    931]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-23 22:29:41,890 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-23 22:29:41,891 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-23 22:29:42,694 [    804]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 752 ms
+2022-01-23 22:29:42,959 [   1069]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-23 22:29:43,267 [   1377]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 307 ms
+2022-01-23 22:29:43,267 [   1377]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-23 22:29:43,372 [   1482]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-23 22:31:17,267 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-23 22:31:17,268 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-23 22:31:17,985 [    718]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 682 ms
+2022-01-23 22:31:18,225 [    958]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-23 22:31:18,507 [   1240]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 282 ms
+2022-01-23 22:31:18,508 [   1241]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-23 22:31:18,624 [   1357]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-23 23:12:53,925 [      1]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-23 23:12:53,963 [     39]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-23 23:12:54,507 [    583]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 518 ms
+2022-01-23 23:12:54,751 [    827]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-23 23:12:55,143 [   1219]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 391 ms
+2022-01-23 23:12:55,143 [   1219]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-23 23:12:55,271 [   1347]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-23 23:20:45,623 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-23 23:20:45,623 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-23 23:20:46,165 [    542]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 502 ms
+2022-01-23 23:20:46,419 [    796]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-23 23:20:46,684 [   1061]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 265 ms
+2022-01-23 23:20:46,684 [   1061]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-23 23:20:46,805 [   1182]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-23 23:30:57,628 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-23 23:30:57,629 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-23 23:30:58,276 [    648]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 605 ms
+2022-01-23 23:30:58,559 [    931]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-23 23:30:58,853 [   1225]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 294 ms
+2022-01-23 23:30:58,854 [   1226]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-23 23:30:58,942 [   1314]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-23 23:31:35,380 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-23 23:31:35,381 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-23 23:31:36,033 [    653]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 622 ms
+2022-01-23 23:31:36,288 [    908]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-23 23:31:36,580 [   1200]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 291 ms
+2022-01-23 23:31:36,580 [   1200]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-23 23:31:36,738 [   1358]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-24 22:50:09,088 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-24 22:50:09,151 [     63]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-24 22:50:10,018 [    930]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 810 ms
+2022-01-24 22:50:10,624 [   1536]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-24 22:50:12,269 [   3181]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 1644 ms
+2022-01-24 22:50:12,269 [   3181]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-24 22:50:13,242 [   4154]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-24 22:54:48,269 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-24 22:54:48,282 [     13]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-24 22:54:50,571 [   2302]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 2236 ms
+2022-01-24 22:54:54,390 [   6121]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-24 22:54:55,087 [   6818]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 699 ms
+2022-01-24 22:54:55,087 [   6818]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-24 22:54:55,279 [   7010]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-24 22:58:59,378 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-24 22:58:59,392 [     14]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-24 22:59:05,130 [   5752]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 5663 ms
+2022-01-24 22:59:05,615 [   6237]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-24 22:59:06,110 [   6732]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 489 ms
+2022-01-24 22:59:06,110 [   6732]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-24 22:59:06,263 [   6885]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-24 23:00:28,449 [      2]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-24 23:00:28,454 [      7]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-24 23:00:30,706 [   2259]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 1967 ms
+2022-01-24 23:00:31,127 [   2680]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-24 23:00:31,634 [   3187]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 507 ms
+2022-01-24 23:00:31,634 [   3187]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-24 23:00:31,892 [   3445]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-24 23:02:18,482 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-24 23:02:18,487 [      5]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-24 23:02:19,571 [   1089]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 1007 ms
+2022-01-24 23:02:19,946 [   1464]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-24 23:02:23,116 [   4634]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 3173 ms
+2022-01-24 23:02:23,116 [   4634]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-24 23:02:23,974 [   5492]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680
+2022-01-24 23:15:46,653 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2022-01-24 23:15:46,672 [     19]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: C:/Users/sramk/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2.3/baee9296b4b83198b699c8888c3e9f88457089f7/ideaIC-2021.2.3/plugins/java/lib/jps-launcher.jar
+2022-01-24 23:15:47,580 [    927]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 814 ms
+2022-01-24 23:15:47,962 [   1309]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore, global options path = D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again/build/idea-sandbox/config/options
+2022-01-24 23:15:48,684 [   2031]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 722 ms
+2022-01-24 23:15:48,685 [   2032]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2022-01-24 23:15:48,876 [   2223]   INFO - intellij.util.io.FilePageCache - lower=100; upper=500; buffer=10; max=680

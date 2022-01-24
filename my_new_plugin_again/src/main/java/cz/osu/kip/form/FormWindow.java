@@ -1,22 +1,15 @@
 package cz.osu.kip.form;
 
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.ComboBox;
-import com.intellij.ui.components.JBScrollPane;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
-import java.awt.*;
 import java.io.File;
-
-import static javax.swing.GroupLayout.Alignment.BASELINE;
-import static javax.swing.GroupLayout.Alignment.LEADING;
 
 public class FormWindow extends JFrame {
     private static Project currentProject;
     private static File filePath;
-    private static MainFormWindowItems mainFormWindowItems;
-    private static MainFormWindowPanels mainFormWindowPanels;
+    private MainFormWindowItems mainFormWindowItems;
+    private MainFormWindowPanels mainFormWindowPanels;
 
     public FormWindow(Project currentProject, File filePath){
         this.currentProject = currentProject;
@@ -33,11 +26,11 @@ public class FormWindow extends JFrame {
         return filePath;
     }
 
-    public static MainFormWindowItems getMainFormWindowItems() {
+    public MainFormWindowItems getMainFormWindowItems() {
         return mainFormWindowItems;
     }
 
-    public static MainFormWindowPanels getMainFormWindowPanels() {
+    public MainFormWindowPanels getMainFormWindowPanels() {
         return mainFormWindowPanels;
     }
 
@@ -81,12 +74,11 @@ public class FormWindow extends JFrame {
 
     private void getValues() {
         boolean checked = mainFormWindowItems.getPrivateCheckBox().isSelected();
-        if(mainFormWindowItems.getPrivateCheckBox().isSelected()) {
+        if(mainFormWindowItems.getDefaultUMLTargetDestination().isSelected()) {
             System.out.println("selected");
-        } else if (!mainFormWindowItems.getPrivateCheckBox().isSelected()) {
+        } else if (!mainFormWindowItems.getDefaultUMLTargetDestination().isSelected()) {
             System.out.println("notSelected");
         }
-        System.out.println(mainFormWindowItems.getPrivateCheckBox().isSelected());
     }
 
 
