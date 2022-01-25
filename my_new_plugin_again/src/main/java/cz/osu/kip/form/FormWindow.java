@@ -73,10 +73,10 @@ public class FormWindow extends JFrame {
     }
 
     private void getValues() {
-        boolean checked = mainFormWindowItems.getPrivateCheckBox().isSelected();
-        if(mainFormWindowItems.getDefaultUMLTargetDestination().isSelected()) {
+        boolean checked = mainFormWindowItems.getOwnPackages().isSelected();
+        if(mainFormWindowItems.getOwnPackages().isSelected()) {
             System.out.println("selected");
-        } else if (!mainFormWindowItems.getDefaultUMLTargetDestination().isSelected()) {
+        } else if (!mainFormWindowItems.getOwnPackages().isSelected()) {
             System.out.println("notSelected");
         }
     }

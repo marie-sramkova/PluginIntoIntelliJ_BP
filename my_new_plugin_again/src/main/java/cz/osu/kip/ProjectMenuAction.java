@@ -17,7 +17,6 @@ public class ProjectMenuAction extends AnAction {
         Project rootProject = e.getProject();
         VirtualFile file = e.getData(CommonDataKeys.VIRTUAL_FILE);
         File filePath = new File(file.getPath());
-        System.out.println("now");
         FormWindow formWindow = new FormWindow(rootProject, filePath);
         formWindow.showFormWindow();
 
