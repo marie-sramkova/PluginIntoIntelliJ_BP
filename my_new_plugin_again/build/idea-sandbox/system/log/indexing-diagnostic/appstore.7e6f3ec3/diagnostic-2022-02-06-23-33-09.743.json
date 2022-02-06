@@ -1,9 +1,9 @@
 {
   "appInfo" : {
     "build" : "212.5457.46",
-    "buildDate" : "2021-10-12T13:22:20.875Z[UTC]",
+    "buildDate" : "2021-10-12T13:22:43.988Z[UTC]",
     "productCode" : "IC",
-    "generated" : "2022-02-06T18:35:10.7334709Z",
+    "generated" : "2022-02-06T22:33:09.7717814Z",
     "os" : "Windows 10 10.0",
     "runtime" : "JetBrains s.r.o. 11.0.12 11.0.12+7-b1504.40"
   },
@@ -18,14 +18,14 @@
     "projectName" : "appStore",
     "times" : {
       "indexingReason" : "On project open",
-      "totalUpdatingTime" : 20512512800,
+      "totalUpdatingTime" : 12351769800,
       "indexingTime" : 0,
       "contentLoadingTime" : 0,
-      "scanFilesTime" : 14779493300,
-      "pushPropertiesTime" : 11967400,
+      "scanFilesTime" : 2362183200,
+      "pushPropertiesTime" : 0,
       "indexExtensionsTime" : 0,
-      "updatingStart" : "2022-02-06T18:34:50.2037208Z",
-      "updatingEnd" : "2022-02-06T18:35:10.7195084Z",
+      "updatingStart" : "2022-02-06T22:32:57.3887896Z",
+      "updatingEnd" : "2022-02-06T22:33:09.7428613Z",
       "totalSuspendedTime" : 0,
       "wasInterrupted" : false
     },
@@ -45,29 +45,19 @@
       "numberOfSkippedFiles" : 0,
       "numberOfFilesForIndexing" : 0,
       "numberOfFilesFullyIndexedByInfrastructureExtensions" : 0,
-      "scanningTime" : 10034679200,
+      "scanningTime" : 1739339000,
       "timeProcessingUpToDateFiles" : 0,
-      "timeUpdatingContentLessIndexes" : 401295200,
+      "timeUpdatingContentLessIndexes" : 101345700,
       "timeIndexingWithoutContent" : 0
     }, {
-      "providerName" : "Indexable set contributor 'com.intellij.javaee.ExternalResourcesRootsProvider@52cbec47' (non-project)",
+      "providerName" : "Indexable set contributor 'com.intellij.javaee.ExternalResourcesRootsProvider@18bb2db2' (non-project)",
       "numberOfScannedFiles" : 222,
       "numberOfSkippedFiles" : 4,
       "numberOfFilesForIndexing" : 0,
       "numberOfFilesFullyIndexedByInfrastructureExtensions" : 0,
-      "scanningTime" : 581586300,
+      "scanningTime" : 217717100,
       "timeProcessingUpToDateFiles" : 0,
-      "timeUpdatingContentLessIndexes" : 10616000,
-      "timeIndexingWithoutContent" : 0
-    }, {
-      "providerName" : "Indexable set contributor 'Scratches & Consoles' (non-project)",
-      "numberOfScannedFiles" : 1,
-      "numberOfSkippedFiles" : 0,
-      "numberOfFilesForIndexing" : 0,
-      "numberOfFilesFullyIndexedByInfrastructureExtensions" : 0,
-      "scanningTime" : 333967400,
-      "timeProcessingUpToDateFiles" : 0,
-      "timeUpdatingContentLessIndexes" : 17000,
+      "timeUpdatingContentLessIndexes" : 2495300,
       "timeIndexingWithoutContent" : 0
     }, {
       "providerName" : "Module 'appStore'",
@@ -75,9 +65,19 @@
       "numberOfSkippedFiles" : 0,
       "numberOfFilesForIndexing" : 0,
       "numberOfFilesFullyIndexedByInfrastructureExtensions" : 0,
-      "scanningTime" : 110744800,
+      "scanningTime" : 165907700,
       "timeProcessingUpToDateFiles" : 0,
-      "timeUpdatingContentLessIndexes" : 429100,
+      "timeUpdatingContentLessIndexes" : 120800,
+      "timeIndexingWithoutContent" : 0
+    }, {
+      "providerName" : "Indexable set contributor 'Scratches & Consoles' (non-project)",
+      "numberOfScannedFiles" : 1,
+      "numberOfSkippedFiles" : 0,
+      "numberOfFilesForIndexing" : 0,
+      "numberOfFilesFullyIndexedByInfrastructureExtensions" : 0,
+      "scanningTime" : 101392300,
+      "timeProcessingUpToDateFiles" : 0,
+      "timeUpdatingContentLessIndexes" : 24600,
       "timeIndexingWithoutContent" : 0
     }, {
       "providerName" : "Indexable set contributor 'Scratches & Consoles' (project)",
@@ -90,7 +90,7 @@
       "timeUpdatingContentLessIndexes" : 0,
       "timeIndexingWithoutContent" : 0
     }, {
-      "providerName" : "Indexable set contributor 'com.intellij.javaee.ExternalResourcesRootsProvider@52cbec47' (project)",
+      "providerName" : "Indexable set contributor 'com.intellij.javaee.ExternalResourcesRootsProvider@18bb2db2' (project)",
       "numberOfScannedFiles" : 0,
       "numberOfSkippedFiles" : 0,
       "numberOfFilesForIndexing" : 0,

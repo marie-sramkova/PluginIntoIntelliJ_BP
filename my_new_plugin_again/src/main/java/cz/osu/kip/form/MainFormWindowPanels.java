@@ -32,7 +32,7 @@ public class MainFormWindowPanels {
         setConfigTargetDestinationPanel();
         setPackagesPanel();
         setClassesInterfacesPlusModifiersPanel();
-        setAttributesMethodsInnerClassesPanel();
+        //setAttributesMethodsInnerClassesPanel();
         scrollablePanel = makeScrollablePanel();
     }
 
@@ -65,38 +65,10 @@ public class MainFormWindowPanels {
 //        JColorChooser colorChooser = new JColorChooser();
 //        List<String> text = new ArrayList<>(Arrays.asList("private", "public", "protected"));
 //        JComboBox<String> comboBox = new ComboBox(text.toArray());
-//        JFileChooser defaultTargetFile = new JFileChooser();
-//        defaultTargetFile.setCurrentDirectory(new File(filePath.toPath().toFile().toString()));
 
 //        JPanel targetUMLDestinationPanel = getUMLTargetDestinationPanel();
 //        JPanel targetConfigDestinationPanel = getConfigTargetDestinationPanel();
         setLayout(groupLayout);
-
-
-//        if (checkBoxForChooseDirs.isSelected()){
-//            showFormWindow(currentProject, filePath);
-//        }
-
-//        JPanel panel = new JPanel();
-//        panel.setLayout(new GridLayout(9, 4));
-//
-////        String src = "D:\sramk\Documents\vysoka_skola\bakalarka\temp\backup";
-////        String trg = "D:\sramk\Documents\vysoka_skola\2_rocnik\2_semestr\7OPR2\projects\cviceni12\slozka2";
-//
-//        System.out.println(filePath.toString());
-//
-//        JTextField source = new JTextField(20);
-//        JTextField target = new JTextField(20);
-//        JCheckBox privateCheckBox = new JCheckBox();
-//        JCheckBoxMenuItem publicCheckBoxMenuItem = new JCheckBoxMenuItem("ahoj");
-//        JColorChooser colorChooser = new JColorChooser();
-//        List<String> text = new ArrayList<>(Arrays.asList("private", "public", "protected"));
-//        JComboBox<String> comboBox = new ComboBox(text.toArray());
-//        JFileChooser defaultTargetFile = new JFileChooser();
-//        defaultTargetFile.setCurrentDirectory(new File(filePath.toPath().toFile().toString()));
-//        //  Nefunkční - dopracovat
-//        System.out.println(new File(filePath.toPath().resolve("PlantUmlFiles").toFile().toString()));
-//
         return myPanel;
     }
 
@@ -211,29 +183,36 @@ public class MainFormWindowPanels {
         groupLayoutFirstPanel.setHorizontalGroup(
                 groupLayoutFirstPanel.createSequentialGroup()
                         .addGroup(groupLayoutFirstPanel.createParallelGroup()
-                                .addGroup(groupLayoutFirstPanel.createSequentialGroup()
-                                        .addComponent(mainFormWindowItems.getClassesCheckBox())
-                                        .addGap(80)
-                                        .addComponent(mainFormWindowItems.getInterfacesCheckBox()))
+                                .addComponent(mainFormWindowItems.getClassesCheckBox())
                                 .addGroup(groupLayoutFirstPanel.createSequentialGroup()
                                         .addComponent(mainFormWindowItems.getPublicForClassCheckBox())
                                         .addGap(80)
-                                        .addComponent(mainFormWindowItems.getPublicForInterfaceCheckBox()))
+                                        .addComponent(mainFormWindowItems.getDefaultForClassCheckBox()))
                                 .addGroup(groupLayoutFirstPanel.createSequentialGroup()
-                                        .addComponent(mainFormWindowItems.getDefaultForClassCheckBox())
+                                        .addComponent(mainFormWindowItems.getCheckBoxForClassAttributes())
+                                        .addGap(80)
+                                        .addComponent(mainFormWindowItems.getCheckBoxForClassMethods())
+                                        .addGap(80)
+                                        .addComponent(mainFormWindowItems.getCheckBoxForInnerClasses()))
+                                .addComponent(mainFormWindowItems.getInterfacesCheckBox())
+                                .addGroup(groupLayoutFirstPanel.createSequentialGroup()
+                                        .addComponent(mainFormWindowItems.getPublicForInterfaceCheckBox())
                                         .addGap(80)
                                         .addComponent(mainFormWindowItems.getDefaultForInterfaceCheckBox())))
         );
         groupLayoutFirstPanel.setVerticalGroup(
                 groupLayoutFirstPanel.createSequentialGroup()
-                        .addGroup(groupLayoutFirstPanel.createParallelGroup(BASELINE)
-                                .addComponent(mainFormWindowItems.getClassesCheckBox())
-                                .addComponent(mainFormWindowItems.getInterfacesCheckBox()))
+                        .addComponent(mainFormWindowItems.getClassesCheckBox())
                         .addGroup(groupLayoutFirstPanel.createParallelGroup(BASELINE)
                                 .addComponent(mainFormWindowItems.getPublicForClassCheckBox())
-                                .addComponent(mainFormWindowItems.getPublicForInterfaceCheckBox()))
+                                .addComponent(mainFormWindowItems.getDefaultForClassCheckBox()))
                         .addGroup(groupLayoutFirstPanel.createParallelGroup(BASELINE)
-                                .addComponent(mainFormWindowItems.getDefaultForClassCheckBox())
+                                .addComponent(mainFormWindowItems.getCheckBoxForClassAttributes())
+                                .addComponent(mainFormWindowItems.getCheckBoxForClassMethods())
+                                .addComponent(mainFormWindowItems.getCheckBoxForInnerClasses()))
+                        .addComponent(mainFormWindowItems.getInterfacesCheckBox())
+                        .addGroup(groupLayoutFirstPanel.createParallelGroup(BASELINE)
+                                .addComponent(mainFormWindowItems.getPublicForInterfaceCheckBox())
                                 .addComponent(mainFormWindowItems.getDefaultForInterfaceCheckBox())));
     }
 
