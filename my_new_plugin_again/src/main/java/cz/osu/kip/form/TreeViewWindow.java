@@ -1,6 +1,7 @@
 package cz.osu.kip.form;
 
 import com.intellij.ui.components.JBScrollPane;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
@@ -13,36 +14,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TreeViewWindow {
-    private JTree tree;
-    java.util.List<FolderLevel> folders = new ArrayList<>();
-    List<ActionListener> actionListeners = new ArrayList<>();
+    private static java.util.List<FolderLevel> folders = new ArrayList<>();
 
     public TreeViewWindow(File filePath) {
-        JFrame frame = new JFrame();
-
 
         if (filePath.exists()) {
             File[] directories = getDirectories(filePath);
             List<FolderLevel> firstFolders = makeLevels(filePath, directories);
             folders.addAll(firstFolders);
-//            Collections.sort(folders);
             for (FolderLevel folder : folders) {
                 System.out.println(folder);
             }
         }
 
+        makeFrame();
+    }
 
-        JPanel panel = new JPanel();
-        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        for (FolderLevel fl : folders) {
-            panel.add(fl.getjCheckBox());
-            JPanel newPanel = new JPanel();
-            newPanel.setLayout(new BoxLayout(newPanel, BoxLayout.Y_AXIS));
-            panel.add(newPanel);
-            fl.getjCheckBox().setVisible(true);
-            fl.getjCheckBox().addActionListener(makeListenerForEachCheckBox(fl, panel, frame, newPanel));
-        }
-
+    private void makeFrame() {
+        JFrame frame = new JFrame();
+        JPanel panel = makeContentPanel(frame);
 
         JBScrollPane scrollPane = new JBScrollPane(panel);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -54,12 +44,25 @@ public class TreeViewWindow {
         frame.setContentPane(contentPane);
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-
         frame.setSize(300, 450);
         frame.setVisible(true);
         frame.show();
+    }
 
+    @NotNull
+    private JPanel makeContentPanel(JFrame frame) {
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        for (FolderLevel fl : folders) {
+            panel.add(fl.getjCheckBox());
+            JPanel newPanel = new JPanel();
+            newPanel.setLayout(new BoxLayout(newPanel, BoxLayout.Y_AXIS));
+            newPanel.setBorder(BorderFactory.createEmptyBorder(0,10,0,0));
+            panel.add(newPanel);
+            fl.getjCheckBox().setVisible(true);
+            fl.getjCheckBox().addActionListener(makeListenerForEachCheckBox(fl, panel, frame, newPanel));
+        }
+        return panel;
     }
 
     private ActionListener makeListenerForEachCheckBox(FolderLevel folderLevel, JPanel panel, JFrame frame, JPanel newJpanel) {
@@ -70,7 +73,7 @@ public class TreeViewWindow {
                 if (folderLevel.getjCheckBox().isSelected()){
                     for (FolderLevel fl:newFolders) {
                         for (FolderLevel folderLevel:folders) {
-                            if (folderLevel.getUrl().equals(fl.getUrl())){
+                            if (folderLevel.getUrl().toString().equals(fl.getUrl().toString())){
                                 folderLevel.getjCheckBox().setSelected(true);
                                 folderLevel.getjCheckBox().setVisible(true);
                             }else {
@@ -79,6 +82,7 @@ public class TreeViewWindow {
                                 fl.getjCheckBox().setVisible(true);
                                 JPanel newPanel = new JPanel();
                                 newPanel.setLayout(new BoxLayout(newPanel, BoxLayout.Y_AXIS));
+                                newPanel.setBorder(BorderFactory.createEmptyBorder(0,10,0,0));
                                 newJpanel.add(newPanel);
                                 fl.getjCheckBox().addActionListener(makeListenerForEachCheckBox(fl, panel, frame, newPanel));
                                 panel.revalidate();
@@ -116,12 +120,6 @@ public class TreeViewWindow {
     private List<FolderLevel> makeLevels(File filePath, File[] directories) {
         List<FolderLevel> newFolderLevels = new ArrayList<>();
         for (File dir : directories) {
-            File[] files = getDirectories(dir);
-//            if (files != null && files.length>0){
-//                for (File file:files) {
-//                    makeLevelsRecursively(filePath, folders, files);
-//                }
-//            }
             int folderLevel = 0;
             if (dir.toString().contains("/")) {
                 String[] oldPaths = filePath.toString().split("/");

@@ -37,6 +37,7 @@ public class MainFormWindowItems {
     private JCheckBox checkBoxForInnerClasses = new JCheckBox("Inner Classes");
     private JButton okButton = new JButton("ok");
     private JButton cancelButton = new JButton("cancel");
+    private TreeViewWindow treeViewWindow;
 
     private ActionListener defaultUMLTargetDestinationListener = new ActionListener() {
         public void actionPerformed(ActionEvent actionEvent) {
@@ -70,7 +71,7 @@ public class MainFormWindowItems {
     private ActionListener ownPackagesListener = new ActionListener() {
         public void actionPerformed(ActionEvent actionEvent) {
             if (ownPackages.isSelected()){
-                TreeViewWindow treeViewWindow = new TreeViewWindow(FormWindow.getFilePath());
+                treeViewWindow = new TreeViewWindow(FormWindow.getFilePath());
             }
         }
     };
@@ -188,6 +189,10 @@ public class MainFormWindowItems {
 
     public JCheckBox getDefaultForInterfaceCheckBox() {
         return defaultForInterfaceCheckBox;
+    }
+
+    public TreeViewWindow getTreeViewWindow() {
+        return treeViewWindow;
     }
 
     public JCheckBox getCheckBoxForAttributes() {
