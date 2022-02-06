@@ -1,0 +1,15 @@
+/Header Record For PersistentHashMapValueStorageannotationsjunit.platform.commonsjunit.jupiter.apiapiguardian.api	3rd.party	ideaICapiguardian.apiannotations
+opentest4j
+opentest4jjunit.platform.commonsjunit.jupiter.enginejunit.platform.enginegradle.corejunit.jupiter.apijunit.jupiter.enginejunit.platform.enginegradle.core.apigradle.kotlin.dsl# gradle.kotlin.dsl.tooling.modelsant	ant.antlrant.apache.bcelant.apache.bsfant.apache.log4jant.apache.oroant.apache.regexpant.apache.resolverant.apache.xalan2ant.commons.loggingant.commons.net
+ant.jaiant.javamailant.jdepend
+ant.jmfant.jsch	ant.junit
+ant.junit4ant.junitlauncherant.launcherant.netrexx	ant.swingant.testutil	ant.xzasmasm.analysisasm.commonsasm.treeasm.utilasync.profiler	bootstrapbyte.buddy.agentcoverage.common	dbus.java
+dexlib2dom.impldom.openapiduplicates.analysiserror.prone.annotationsexternal.system.rtfind.action.modelgrazie.spellcheckerforms.rtorg.codehaus.groovyorg.codehaus.groovy.jsonorg.codehaus.groovy.jsr223 org.codehaus.groovy.templatesorg.codehaus.groovy.xmlgrpc.netty.shadedidea
+idea.rtintellij.coverage.agent intellij.test.discovery.agentjava.string.similarityisorelax
+java.utilsjdkAnnotationsjffijffijingcom.sun.jnacom.sun.jna.platform
+jnr.a64asmjnr.constants	jnr.enxio
+jnr.ffi	jnr.posixjnr.unixsocket
+jnr.x86asm	jps.modeljshell.frontendjsp.base.openapi	junit4kotlin.gradle.plugin.modelkotlin.reflectkotlin.stdlib.jdk8kotlin.testkotlinx.coroutines.debugkotlinx.coroutines.jdk8!kotlinx.serialization.core.jvm!kotlinx.serialization.json.jvmplatform.apiplatform.impl(%platform.objectSerializer.annotationsplatform.statistics.devkitcom.google.protobufpty4j
+rd.corerd.frameworkrd.swingrngom.20051226.patchedslf4jsqlite.jdbcstatsstructuralsearchtestFrameworktestFramework.javatestFramework.coretests.bootstraptips.intellij.idea.community
+trang.core
+uast.testsio.netty.codec.sockswinpxmlbeans

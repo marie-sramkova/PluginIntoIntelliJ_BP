@@ -6,8 +6,14 @@
     <e n="EditorPaste">
       <i c="7" l="1637049098567" />
     </e>
+    <e n="OpenFile">
+      <i c="1" l="1644144579829" />
+    </e>
     <e n="WelcomeScreen.OpenProject">
       <i c="1" l="1636920303486" />
+    </e>
+    <e n="com.intellij.ide.ReopenProjectAction">
+      <i c="1" l="1644151893604" />
     </e>
     <e n="com.intellij.openapi.ui.DialogWrapper$4">
       <i c="1" l="1641235263017" />

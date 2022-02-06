@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.io.File;
+import java.nio.file.Path;
 
 public class MainFormWindowItems {
 
@@ -69,6 +70,8 @@ public class MainFormWindowItems {
     private ActionListener ownPackagesListener = new ActionListener() {
         public void actionPerformed(ActionEvent actionEvent) {
             //TODO: Find all subpackages in the chosen package and show them as checkboxes.
+
+            TreeViewWindow treeViewWindow = new TreeViewWindow(FormWindow.getFilePath());
         }
     };
 
