@@ -69,9 +69,9 @@ public class MainFormWindowItems {
 
     private ActionListener ownPackagesListener = new ActionListener() {
         public void actionPerformed(ActionEvent actionEvent) {
-            //TODO: Find all subpackages in the chosen package and show them as checkboxes.
-
-            TreeViewWindow treeViewWindow = new TreeViewWindow(FormWindow.getFilePath());
+            if (ownPackages.isSelected()){
+                TreeViewWindow treeViewWindow = new TreeViewWindow(FormWindow.getFilePath());
+            }
         }
     };
 
