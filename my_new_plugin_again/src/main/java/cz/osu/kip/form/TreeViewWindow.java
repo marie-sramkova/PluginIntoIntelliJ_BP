@@ -14,24 +14,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TreeViewWindow {
-    private static java.util.List<FolderLevel> folders = new ArrayList<>();
+    private java.util.List<FolderLevel> folders = new ArrayList<>();
+    JFrame frame;
 
-    public TreeViewWindow(File filePath) {
-
-        if (filePath.exists()) {
-            File[] directories = getDirectories(filePath);
-            List<FolderLevel> firstFolders = makeLevels(filePath, directories);
-            folders.addAll(firstFolders);
-            for (FolderLevel folder : folders) {
-                System.out.println(folder);
+    public void show(File filePath) {
+        if (frame == null){
+            if (filePath.exists()) {
+                File[] directories = getDirectories(filePath);
+                List<FolderLevel> firstFolders = makeLevels(filePath, directories);
+                folders.addAll(firstFolders);
+                for (FolderLevel folder : folders) {
+                    System.out.println(folder);
+                }
             }
+            makeFrame();
+        }else{
+            frame.show();
         }
+    }
 
-        makeFrame();
+    public List<FolderLevel> getFolders() {
+        return folders;
     }
 
     private void makeFrame() {
-        JFrame frame = new JFrame();
+        frame = new JFrame();
         JPanel panel = makeContentPanel(frame);
 
         JBScrollPane scrollPane = new JBScrollPane(panel);

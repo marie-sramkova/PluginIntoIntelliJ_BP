@@ -1,12 +1,9 @@
 package cz.osu.kip.form;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
 import java.io.File;
-import java.nio.file.Path;
 
 public class MainFormWindowItems {
 
@@ -32,8 +29,8 @@ public class MainFormWindowItems {
     private JCheckBox defaultForClassCheckBox = new JCheckBox("Default");
     private JCheckBox publicForInterfaceCheckBox = new JCheckBox("Public");
     private JCheckBox defaultForInterfaceCheckBox = new JCheckBox("Default");
-    private JCheckBox checkBoxForAttributes = new JCheckBox("Atributes");
-    private JCheckBox checkBoxForMethods = new JCheckBox("Methods");
+    private JCheckBox checkBoxForClassAttributes = new JCheckBox("Atributes");
+    private JCheckBox checkBoxForClassMethods = new JCheckBox("Methods");
     private JCheckBox checkBoxForInnerClasses = new JCheckBox("Inner Classes");
     private JButton okButton = new JButton("ok");
     private JButton cancelButton = new JButton("cancel");
@@ -71,7 +68,12 @@ public class MainFormWindowItems {
     private ActionListener ownPackagesListener = new ActionListener() {
         public void actionPerformed(ActionEvent actionEvent) {
             if (ownPackages.isSelected()){
-                treeViewWindow = new TreeViewWindow(FormWindow.getFilePath());
+                if (treeViewWindow == null){
+                    treeViewWindow = new TreeViewWindow();
+                    treeViewWindow.show(FormWindow.getFilePath());
+                }else{
+                    treeViewWindow.show(FormWindow.getFilePath());
+                }
             }
         }
     };
@@ -82,9 +84,15 @@ public class MainFormWindowItems {
             {
                 defaultForClassCheckBox.setVisible(false);
                 publicForClassCheckBox.setVisible(false);
+                checkBoxForClassAttributes.setVisible(false);
+                checkBoxForClassMethods.setVisible(false);
+                checkBoxForInnerClasses.setVisible(false);
             } else{
                 defaultForClassCheckBox.setVisible(true);
                 publicForClassCheckBox.setVisible(true);
+                checkBoxForClassAttributes.setVisible(true);
+                checkBoxForClassMethods.setVisible(true);
+                checkBoxForInnerClasses.setVisible(true);
             }
         }
     };
@@ -121,6 +129,9 @@ public class MainFormWindowItems {
         defaultForInterfaceCheckBox.setVisible(false);
         publicForClassCheckBox.setVisible(false);
         publicForInterfaceCheckBox.setVisible(false);
+        checkBoxForClassAttributes.setVisible(false);
+        checkBoxForClassMethods.setVisible(false);
+        checkBoxForInnerClasses.setVisible(false);
     }
 
     private ButtonGroup setButtonGroup(JRadioButton... buttons) {
@@ -195,12 +206,12 @@ public class MainFormWindowItems {
         return treeViewWindow;
     }
 
-    public JCheckBox getCheckBoxForAttributes() {
-        return checkBoxForAttributes;
+    public JCheckBox getCheckBoxForClassAttributes() {
+        return checkBoxForClassAttributes;
     }
 
-    public JCheckBox getCheckBoxForMethods() {
-        return checkBoxForMethods;
+    public JCheckBox getCheckBoxForClassMethods() {
+        return checkBoxForClassMethods;
     }
 
     public JCheckBox getCheckBoxForInnerClasses() {
