@@ -1,9 +1,9 @@
 {
   "appInfo" : {
     "build" : "212.5457.46",
-    "buildDate" : "2021-10-12T13:22:15.306Z[UTC]",
+    "buildDate" : "2021-10-12T13:22:01.549Z[UTC]",
     "productCode" : "IC",
-    "generated" : "2022-02-06T19:37:32.2745351Z",
+    "generated" : "2022-02-07T01:21:19.5365647Z",
     "os" : "Windows 10 10.0",
     "runtime" : "JetBrains s.r.o. 11.0.12 11.0.12+7-b1504.40"
   },
@@ -18,14 +18,14 @@
     "projectName" : "appStore",
     "times" : {
       "indexingReason" : "On project open",
-      "totalUpdatingTime" : 7040513600,
+      "totalUpdatingTime" : 5674355600,
       "indexingTime" : 0,
       "contentLoadingTime" : 0,
-      "scanFilesTime" : 6916201700,
-      "pushPropertiesTime" : 14959800,
+      "scanFilesTime" : 3883842700,
+      "pushPropertiesTime" : 9972000,
       "indexExtensionsTime" : 0,
-      "updatingStart" : "2022-02-06T19:37:25.2241737Z",
-      "updatingEnd" : "2022-02-06T19:37:32.2665556Z",
+      "updatingStart" : "2022-02-07T01:21:13.8048116Z",
+      "updatingEnd" : "2022-02-07T01:21:19.4837054Z",
       "totalSuspendedTime" : 0,
       "wasInterrupted" : false
     },
@@ -45,19 +45,19 @@
       "numberOfSkippedFiles" : 0,
       "numberOfFilesForIndexing" : 0,
       "numberOfFilesFullyIndexedByInfrastructureExtensions" : 0,
-      "scanningTime" : 2952198000,
+      "scanningTime" : 2436521400,
       "timeProcessingUpToDateFiles" : 0,
-      "timeUpdatingContentLessIndexes" : 175674800,
+      "timeUpdatingContentLessIndexes" : 76662700,
       "timeIndexingWithoutContent" : 0
     }, {
-      "providerName" : "Indexable set contributor 'com.intellij.javaee.ExternalResourcesRootsProvider@52e5dc61' (non-project)",
+      "providerName" : "Indexable set contributor 'com.intellij.javaee.ExternalResourcesRootsProvider@5e9fb9fd' (non-project)",
       "numberOfScannedFiles" : 222,
       "numberOfSkippedFiles" : 4,
       "numberOfFilesForIndexing" : 0,
       "numberOfFilesFullyIndexedByInfrastructureExtensions" : 0,
-      "scanningTime" : 446263500,
+      "scanningTime" : 418888200,
       "timeProcessingUpToDateFiles" : 0,
-      "timeUpdatingContentLessIndexes" : 7317100,
+      "timeUpdatingContentLessIndexes" : 1559600,
       "timeIndexingWithoutContent" : 0
     }, {
       "providerName" : "Module 'appStore'",
@@ -65,9 +65,9 @@
       "numberOfSkippedFiles" : 0,
       "numberOfFilesForIndexing" : 0,
       "numberOfFilesFullyIndexedByInfrastructureExtensions" : 0,
-      "scanningTime" : 134392500,
+      "scanningTime" : 366879000,
       "timeProcessingUpToDateFiles" : 0,
-      "timeUpdatingContentLessIndexes" : 268500,
+      "timeUpdatingContentLessIndexes" : 198109900,
       "timeIndexingWithoutContent" : 0
     }, {
       "providerName" : "Indexable set contributor 'Scratches & Consoles' (non-project)",
@@ -75,9 +75,9 @@
       "numberOfSkippedFiles" : 0,
       "numberOfFilesForIndexing" : 0,
       "numberOfFilesFullyIndexedByInfrastructureExtensions" : 0,
-      "scanningTime" : 100474000,
+      "scanningTime" : 251207300,
       "timeProcessingUpToDateFiles" : 0,
-      "timeUpdatingContentLessIndexes" : 22000,
+      "timeUpdatingContentLessIndexes" : 18700,
       "timeIndexingWithoutContent" : 0
     }, {
       "providerName" : "Indexable set contributor 'Scratches & Consoles' (project)",
@@ -90,7 +90,7 @@
       "timeUpdatingContentLessIndexes" : 0,
       "timeIndexingWithoutContent" : 0
     }, {
-      "providerName" : "Indexable set contributor 'com.intellij.javaee.ExternalResourcesRootsProvider@52e5dc61' (project)",
+      "providerName" : "Indexable set contributor 'com.intellij.javaee.ExternalResourcesRootsProvider@5e9fb9fd' (project)",
       "numberOfScannedFiles" : 0,
       "numberOfSkippedFiles" : 0,
       "numberOfFilesForIndexing" : 0,

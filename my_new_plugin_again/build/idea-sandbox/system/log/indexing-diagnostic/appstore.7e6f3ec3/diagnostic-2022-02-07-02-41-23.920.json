@@ -1,9 +1,9 @@
 {
   "appInfo" : {
     "build" : "212.5457.46",
-    "buildDate" : "2021-10-12T13:22:43.609Z[UTC]",
+    "buildDate" : "2021-10-12T13:22:06.277Z[UTC]",
     "productCode" : "IC",
-    "generated" : "2022-02-06T20:22:01.9833667Z",
+    "generated" : "2022-02-07T01:41:24.0437102Z",
     "os" : "Windows 10 10.0",
     "runtime" : "JetBrains s.r.o. 11.0.12 11.0.12+7-b1504.40"
   },
@@ -18,14 +18,14 @@
     "projectName" : "appStore",
     "times" : {
       "indexingReason" : "On project open",
-      "totalUpdatingTime" : 5630760800,
+      "totalUpdatingTime" : 5551229800,
       "indexingTime" : 0,
       "contentLoadingTime" : 0,
-      "scanFilesTime" : 4486471400,
+      "scanFilesTime" : 5344974800,
       "pushPropertiesTime" : 10969900,
       "indexExtensionsTime" : 0,
-      "updatingStart" : "2022-02-06T20:21:56.3379766Z",
-      "updatingEnd" : "2022-02-06T20:22:01.9704017Z",
+      "updatingStart" : "2022-02-07T01:41:18.3493824Z",
+      "updatingEnd" : "2022-02-07T01:41:23.9208167Z",
       "totalSuspendedTime" : 0,
       "wasInterrupted" : false
     },
@@ -45,9 +45,19 @@
       "numberOfSkippedFiles" : 0,
       "numberOfFilesForIndexing" : 0,
       "numberOfFilesFullyIndexedByInfrastructureExtensions" : 0,
-      "scanningTime" : 2930728100,
+      "scanningTime" : 2695701100,
       "timeProcessingUpToDateFiles" : 0,
-      "timeUpdatingContentLessIndexes" : 152094300,
+      "timeUpdatingContentLessIndexes" : 163049500,
+      "timeIndexingWithoutContent" : 0
+    }, {
+      "providerName" : "Indexable set contributor 'com.intellij.javaee.ExternalResourcesRootsProvider@1431d502' (non-project)",
+      "numberOfScannedFiles" : 222,
+      "numberOfSkippedFiles" : 4,
+      "numberOfFilesForIndexing" : 0,
+      "numberOfFilesFullyIndexedByInfrastructureExtensions" : 0,
+      "scanningTime" : 511371700,
+      "timeProcessingUpToDateFiles" : 0,
+      "timeUpdatingContentLessIndexes" : 10582900,
       "timeIndexingWithoutContent" : 0
     }, {
       "providerName" : "Indexable set contributor 'Scratches & Consoles' (non-project)",
@@ -55,19 +65,9 @@
       "numberOfSkippedFiles" : 0,
       "numberOfFilesForIndexing" : 0,
       "numberOfFilesFullyIndexedByInfrastructureExtensions" : 0,
-      "scanningTime" : 718567700,
+      "scanningTime" : 128848900,
       "timeProcessingUpToDateFiles" : 0,
-      "timeUpdatingContentLessIndexes" : 8800,
-      "timeIndexingWithoutContent" : 0
-    }, {
-      "providerName" : "Indexable set contributor 'com.intellij.javaee.ExternalResourcesRootsProvider@c14eb2f' (non-project)",
-      "numberOfScannedFiles" : 222,
-      "numberOfSkippedFiles" : 4,
-      "numberOfFilesForIndexing" : 0,
-      "numberOfFilesFullyIndexedByInfrastructureExtensions" : 0,
-      "scanningTime" : 636428300,
-      "timeProcessingUpToDateFiles" : 0,
-      "timeUpdatingContentLessIndexes" : 3643800,
+      "timeUpdatingContentLessIndexes" : 34000,
       "timeIndexingWithoutContent" : 0
     }, {
       "providerName" : "Module 'appStore'",
@@ -75,12 +75,12 @@
       "numberOfSkippedFiles" : 0,
       "numberOfFilesForIndexing" : 0,
       "numberOfFilesFullyIndexedByInfrastructureExtensions" : 0,
-      "scanningTime" : 575027800,
+      "scanningTime" : 90361800,
       "timeProcessingUpToDateFiles" : 0,
-      "timeUpdatingContentLessIndexes" : 88700,
+      "timeUpdatingContentLessIndexes" : 1119500,
       "timeIndexingWithoutContent" : 0
     }, {
-      "providerName" : "Indexable set contributor 'Kotlin Script dependencies' (project)",
+      "providerName" : "Indexable set contributor 'com.intellij.javaee.ExternalResourcesRootsProvider@1431d502' (project)",
       "numberOfScannedFiles" : 0,
       "numberOfSkippedFiles" : 0,
       "numberOfFilesForIndexing" : 0,
@@ -90,7 +90,7 @@
       "timeUpdatingContentLessIndexes" : 0,
       "timeIndexingWithoutContent" : 0
     }, {
-      "providerName" : "Indexable set contributor 'com.intellij.javaee.ExternalResourcesRootsProvider@c14eb2f' (project)",
+      "providerName" : "Indexable set contributor 'Kotlin Script dependencies' (project)",
       "numberOfScannedFiles" : 0,
       "numberOfSkippedFiles" : 0,
       "numberOfFilesForIndexing" : 0,

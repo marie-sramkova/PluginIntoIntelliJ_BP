@@ -32,6 +32,16 @@ public class MainFormWindowItems {
     private JCheckBox checkBoxForClassAttributes = new JCheckBox("Atributes");
     private JCheckBox checkBoxForClassMethods = new JCheckBox("Methods");
     private JCheckBox checkBoxForInnerClasses = new JCheckBox("Inner Classes");
+    private JCheckBox checkBoxForPrivateClassAttributes = new JCheckBox("Private");
+    private JCheckBox checkBoxForPublicClassAttributes = new JCheckBox("Public");
+    private JCheckBox checkBoxForProtectedClassAttributes = new JCheckBox("Protected");
+    private JCheckBox checkBoxForInternalClassAttributes = new JCheckBox("Internal");
+    private JCheckBox checkBoxForPrivateClassMethods = new JCheckBox("Private");
+    private JCheckBox checkBoxForPublicClassMethods = new JCheckBox("Public");
+    private JCheckBox checkBoxForProtectedClassMethods = new JCheckBox("Protected");
+    private JCheckBox checkBoxForInternalClassMethods = new JCheckBox("Internal");
+    private JCheckBox checkBoxForInterfaceAttributes = new JCheckBox("Atributes");
+    private JCheckBox checkBoxForInterfaceMethods = new JCheckBox("Methods");
     private JButton okButton = new JButton("ok");
     private JButton cancelButton = new JButton("cancel");
     private TreeViewWindow treeViewWindow;
@@ -67,11 +77,11 @@ public class MainFormWindowItems {
 
     private ActionListener ownPackagesListener = new ActionListener() {
         public void actionPerformed(ActionEvent actionEvent) {
-            if (ownPackages.isSelected()){
-                if (treeViewWindow == null){
+            if (ownPackages.isSelected()) {
+                if (treeViewWindow == null) {
                     treeViewWindow = new TreeViewWindow();
                     treeViewWindow.show(FormWindow.getFilePath());
-                }else{
+                } else {
                     treeViewWindow.show(FormWindow.getFilePath());
                 }
             }
@@ -80,14 +90,13 @@ public class MainFormWindowItems {
 
     private ActionListener classesListener = new ActionListener() {
         public void actionPerformed(ActionEvent actionEvent) {
-            if (!classesCheckBox.isSelected())
-            {
+            if (!classesCheckBox.isSelected()) {
                 defaultForClassCheckBox.setVisible(false);
                 publicForClassCheckBox.setVisible(false);
                 checkBoxForClassAttributes.setVisible(false);
                 checkBoxForClassMethods.setVisible(false);
                 checkBoxForInnerClasses.setVisible(false);
-            } else{
+            } else {
                 defaultForClassCheckBox.setVisible(true);
                 publicForClassCheckBox.setVisible(true);
                 checkBoxForClassAttributes.setVisible(true);
@@ -97,16 +106,50 @@ public class MainFormWindowItems {
         }
     };
 
+    private ActionListener classesAttributesListener = new ActionListener() {
+        public void actionPerformed(ActionEvent actionEvent) {
+            if (!checkBoxForClassAttributes.isSelected()) {
+                checkBoxForPrivateClassAttributes.setVisible(false);
+                checkBoxForPublicClassAttributes.setVisible(false);
+                checkBoxForProtectedClassAttributes.setVisible(false);
+                checkBoxForInternalClassAttributes.setVisible(false);
+            } else {
+                checkBoxForPrivateClassAttributes.setVisible(true);
+                checkBoxForPublicClassAttributes.setVisible(true);
+                checkBoxForProtectedClassAttributes.setVisible(true);
+                checkBoxForInternalClassAttributes.setVisible(true);
+            }
+        }
+    };
+
+    private ActionListener classesMethodesListener = new ActionListener() {
+        public void actionPerformed(ActionEvent actionEvent) {
+            if (!checkBoxForClassAttributes.isSelected()) {
+                checkBoxForPrivateClassMethods.setVisible(false);
+                checkBoxForPublicClassMethods.setVisible(false);
+                checkBoxForProtectedClassMethods.setVisible(false);
+                checkBoxForInternalClassMethods.setVisible(false);
+            } else {
+                checkBoxForPrivateClassMethods.setVisible(true);
+                checkBoxForPublicClassMethods.setVisible(true);
+                checkBoxForProtectedClassMethods.setVisible(true);
+                checkBoxForInternalClassMethods.setVisible(true);
+            }
+        }
+    };
 
     private ActionListener interfacesListener = new ActionListener() {
         public void actionPerformed(ActionEvent actionEvent) {
-            if (!interfacesCheckBox.isSelected())
-            {
+            if (!interfacesCheckBox.isSelected()) {
                 defaultForInterfaceCheckBox.setVisible(false);
                 publicForInterfaceCheckBox.setVisible(false);
-            }else{
+                checkBoxForInterfaceAttributes.setVisible(false);
+                checkBoxForInterfaceMethods.setVisible(false);
+            } else {
                 defaultForInterfaceCheckBox.setVisible(true);
                 publicForInterfaceCheckBox.setVisible(true);
+                checkBoxForInterfaceAttributes.setVisible(true);
+                checkBoxForInterfaceMethods.setVisible(true);
             }
         }
     };
@@ -132,6 +175,18 @@ public class MainFormWindowItems {
         checkBoxForClassAttributes.setVisible(false);
         checkBoxForClassMethods.setVisible(false);
         checkBoxForInnerClasses.setVisible(false);
+        checkBoxForClassAttributes.addActionListener(classesAttributesListener);
+        checkBoxForClassMethods.addActionListener(classesMethodesListener);
+        checkBoxForPrivateClassAttributes.setVisible(false);
+        checkBoxForPublicClassAttributes.setVisible(false);
+        checkBoxForProtectedClassAttributes.setVisible(false);
+        checkBoxForInternalClassAttributes.setVisible(false);
+        checkBoxForPrivateClassMethods.setVisible(false);
+        checkBoxForPublicClassMethods.setVisible(false);
+        checkBoxForProtectedClassMethods.setVisible(false);
+        checkBoxForInternalClassMethods.setVisible(false);
+        checkBoxForInterfaceAttributes.setVisible(false);
+        checkBoxForInterfaceMethods.setVisible(false);
     }
 
     private ButtonGroup setButtonGroup(JRadioButton... buttons) {
@@ -158,9 +213,13 @@ public class MainFormWindowItems {
         return interfacesCheckBox;
     }
 
-    public JFileChooser getDefaultUMLTargetFile() { return defaultUMLTargetFile; }
+    public JFileChooser getDefaultUMLTargetFile() {
+        return defaultUMLTargetFile;
+    }
 
-    public JFileChooser getDefaultConfigTargetFile() { return defaultConfigTargetFile; }
+    public JFileChooser getDefaultConfigTargetFile() {
+        return defaultConfigTargetFile;
+    }
 
     public JRadioButton getDefaultUMLTargetDestination() {
         return defaultUMLTargetDestination;
@@ -216,6 +275,46 @@ public class MainFormWindowItems {
 
     public JCheckBox getCheckBoxForInnerClasses() {
         return checkBoxForInnerClasses;
+    }
+
+    public JCheckBox getCheckBoxForPrivateClassAttributes() {
+        return checkBoxForPrivateClassAttributes;
+    }
+
+    public JCheckBox getCheckBoxForPublicClassAttributes() {
+        return checkBoxForPublicClassAttributes;
+    }
+
+    public JCheckBox getCheckBoxForProtectedClassAttributes() {
+        return checkBoxForProtectedClassAttributes;
+    }
+
+    public JCheckBox getCheckBoxForInternalClassAttributes() {
+        return checkBoxForInternalClassAttributes;
+    }
+
+    public JCheckBox getCheckBoxForPrivateClassMethods() {
+        return checkBoxForPrivateClassMethods;
+    }
+
+    public JCheckBox getCheckBoxForPublicClassMethods() {
+        return checkBoxForPublicClassMethods;
+    }
+
+    public JCheckBox getCheckBoxForProtectedClassMethods() {
+        return checkBoxForProtectedClassMethods;
+    }
+
+    public JCheckBox getCheckBoxForInternalClassMethods() {
+        return checkBoxForInternalClassMethods;
+    }
+
+    public JCheckBox getCheckBoxForInterfaceAttributes() {
+        return checkBoxForInterfaceAttributes;
+    }
+
+    public JCheckBox getCheckBoxForInterfaceMethods() {
+        return checkBoxForInterfaceMethods;
     }
 
     public JButton getOkButton() {
