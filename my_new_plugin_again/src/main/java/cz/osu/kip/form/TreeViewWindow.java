@@ -23,9 +23,6 @@ public class TreeViewWindow {
                 File[] directories = getDirectories(filePath);
                 List<FolderLevel> firstFolders = makeLevels(filePath, directories);
                 folders.addAll(firstFolders);
-                for (FolderLevel folder : folders) {
-                    System.out.println(folder);
-                }
             }
             makeFrame();
         }else{
@@ -101,7 +98,6 @@ public class TreeViewWindow {
                 }else{
                     for (FolderLevel folderLevel:folders) {
                         for (FolderLevel newFolderLevel:newFolders) {
-                            System.out.println();
                             if (folderLevel.getUrl().toString().equals(newFolderLevel.getUrl().toString())){
                                 folderLevel.getjCheckBox().setSelected(false);
                                 folderLevel.getjCheckBox().setVisible(false);

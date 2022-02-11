@@ -6,6 +6,7 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import cz.osu.kip.form.FormWindow;
+import cz.osu.kip.form.MainFormWindowItems;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -18,7 +19,13 @@ public class ProjectMenuAction extends AnAction {
         VirtualFile file = e.getData(CommonDataKeys.VIRTUAL_FILE);
         File filePath = new File(file.getPath());
         FormWindow formWindow = new FormWindow(rootProject, filePath);
-        formWindow.showFormWindow();
+        formWindow.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                formWindow.getValues();
+                System.out.println("konec");
+            }
+        });
 
 
 //        Project currentProject = e.getProject();
@@ -31,8 +38,4 @@ public class ProjectMenuAction extends AnAction {
 //        }
 //        Messages.showMessageDialog(currentProject, dlgMsg.toString(), dlgTitle, Messages.getInformationIcon());
     }
-
-
-
-
 }
