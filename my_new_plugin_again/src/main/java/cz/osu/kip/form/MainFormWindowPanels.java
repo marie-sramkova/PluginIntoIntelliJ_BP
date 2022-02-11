@@ -5,6 +5,7 @@ import com.intellij.ui.components.JBScrollPane;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.io.File;
 
@@ -32,7 +33,6 @@ public class MainFormWindowPanels {
         setConfigTargetDestinationPanel();
         setPackagesPanel();
         setClassesInterfacesPlusModifiersPanel();
-        //setAttributesMethodsInnerClassesPanel();
         scrollablePanel = makeScrollablePanel();
     }
 
@@ -68,16 +68,29 @@ public class MainFormWindowPanels {
 
 //        JPanel targetUMLDestinationPanel = getUMLTargetDestinationPanel();
 //        JPanel targetConfigDestinationPanel = getConfigTargetDestinationPanel();
-        setLayout(groupLayout);
+        setMainContextPanelLayout(groupLayout);
         return myPanel;
     }
 
-    private void setLayout(GroupLayout groupLayout) {
-        setVerticalGroupLayout(groupLayout);
-        setHorizontalGroupLayout(groupLayout);
-    }
+    private void setMainContextPanelLayout(GroupLayout groupLayout) {
+        groupLayout.setVerticalGroup(
+                groupLayout.createSequentialGroup()
+                        .addGroup(groupLayout.createParallelGroup(BASELINE)
+                                .addComponent(targetUMLDestinationPanel))
+                        .addGap(10)
+                        .addGroup(groupLayout.createParallelGroup(BASELINE)
+                                .addComponent(targetConfigDestinationPanel))
+                        .addGap(10)
+                        .addGroup(groupLayout.createParallelGroup(BASELINE)
+                                .addComponent(packagesPanel))
+                        .addGap(10)
+                        .addGroup(groupLayout.createParallelGroup(BASELINE)
+                                .addComponent(classesInterfacesPlusModifiersPanel))
+                        .addGap(10)
+                        .addGroup(groupLayout.createParallelGroup(BASELINE)
+                                .addComponent(attributesMethodsInnerClassesPanel))
+        );
 
-    private void setHorizontalGroupLayout(GroupLayout groupLayout) {
         groupLayout.setHorizontalGroup(
                 groupLayout.createSequentialGroup()
                         .addGroup(groupLayout.createParallelGroup(LEADING)
@@ -89,41 +102,22 @@ public class MainFormWindowPanels {
         );
     }
 
-    private void setVerticalGroupLayout(GroupLayout groupLayout) {
-        groupLayout.setVerticalGroup(
-                groupLayout.createSequentialGroup()
-                        .addGroup(groupLayout.createParallelGroup(BASELINE)
-                                .addComponent(targetUMLDestinationPanel))
-                        .addGroup(groupLayout.createParallelGroup(BASELINE)
-                                .addComponent(targetConfigDestinationPanel))
-                        .addGroup(groupLayout.createParallelGroup(BASELINE)
-                                .addComponent(packagesPanel))
-                        .addGroup(groupLayout.createParallelGroup(BASELINE)
-                                .addComponent(classesInterfacesPlusModifiersPanel))
-                        .addGroup(groupLayout.createParallelGroup(BASELINE)
-                                .addComponent(attributesMethodsInnerClassesPanel))
-        );
-    }
-
     public void setUMLTargetDestinationPanel() {
-        GroupLayout groupLayoutFirstPanel = new GroupLayout(targetUMLDestinationPanel);
-        groupLayoutFirstPanel.setAutoCreateGaps(true);
-        groupLayoutFirstPanel.setAutoCreateContainerGaps(true);
-        targetUMLDestinationPanel.setLayout(groupLayoutFirstPanel);
+        GroupLayout groupLayout = setSubpanelsLayout(targetUMLDestinationPanel);
 
-        groupLayoutFirstPanel.setHorizontalGroup(
-                groupLayoutFirstPanel.createSequentialGroup()
-                        .addGroup(groupLayoutFirstPanel.createParallelGroup()
-                                .addGroup(groupLayoutFirstPanel.createSequentialGroup()
+        groupLayout.setHorizontalGroup(
+                groupLayout.createSequentialGroup()
+                        .addGroup(groupLayout.createParallelGroup()
+                                .addGroup(groupLayout.createSequentialGroup()
                                         .addComponent(mainFormWindowItems.getDefaultUMLTargetDestination())
                                         .addGap(80)
                                         .addComponent(mainFormWindowItems.getOwnUMLTargetDestination()))
                                 .addComponent(mainFormWindowItems.getDefaultUMLTargetDestinationDesc())
                                 .addComponent(mainFormWindowItems.getDefaultUMLTargetFile()))
         );
-        groupLayoutFirstPanel.setVerticalGroup(
-                groupLayoutFirstPanel.createSequentialGroup()
-                        .addGroup(groupLayoutFirstPanel.createParallelGroup(BASELINE)
+        groupLayout.setVerticalGroup(
+                groupLayout.createSequentialGroup()
+                        .addGroup(groupLayout.createParallelGroup(BASELINE)
                                 .addComponent(mainFormWindowItems.getDefaultUMLTargetDestination())
                                 .addComponent(mainFormWindowItems.getOwnUMLTargetDestination()))
                         .addComponent(mainFormWindowItems.getDefaultUMLTargetDestinationDesc())
@@ -131,24 +125,21 @@ public class MainFormWindowPanels {
     }
 
     public void setConfigTargetDestinationPanel() {
-        GroupLayout groupLayoutFirstPanel = new GroupLayout(targetConfigDestinationPanel);
-        groupLayoutFirstPanel.setAutoCreateGaps(true);
-        groupLayoutFirstPanel.setAutoCreateContainerGaps(true);
-        targetConfigDestinationPanel.setLayout(groupLayoutFirstPanel);
+        GroupLayout groupLayout = setSubpanelsLayout(targetConfigDestinationPanel);
 
-        groupLayoutFirstPanel.setHorizontalGroup(
-                groupLayoutFirstPanel.createSequentialGroup()
-                        .addGroup(groupLayoutFirstPanel.createParallelGroup()
-                                .addGroup(groupLayoutFirstPanel.createSequentialGroup()
+        groupLayout.setHorizontalGroup(
+                groupLayout.createSequentialGroup()
+                        .addGroup(groupLayout.createParallelGroup()
+                                .addGroup(groupLayout.createSequentialGroup()
                                         .addComponent(mainFormWindowItems.getDefaultConfigTargetDestination())
                                         .addGap(80)
                                         .addComponent(mainFormWindowItems.getOwnConfigTargetDestination()))
                                 .addComponent(mainFormWindowItems.getDefaultConfigTargetDestinationDesc())
                                 .addComponent(mainFormWindowItems.getDefaultConfigTargetFile()))
         );
-        groupLayoutFirstPanel.setVerticalGroup(
-                groupLayoutFirstPanel.createSequentialGroup()
-                        .addGroup(groupLayoutFirstPanel.createParallelGroup(BASELINE)
+        groupLayout.setVerticalGroup(
+                groupLayout.createSequentialGroup()
+                        .addGroup(groupLayout.createParallelGroup(BASELINE)
                                 .addComponent(mainFormWindowItems.getDefaultConfigTargetDestination())
                                 .addComponent(mainFormWindowItems.getOwnConfigTargetDestination()))
                         .addComponent(mainFormWindowItems.getDefaultConfigTargetDestinationDesc())
@@ -156,122 +147,100 @@ public class MainFormWindowPanels {
     }
 
     public void setPackagesPanel() {
-        GroupLayout groupLayoutFirstPanel = new GroupLayout(packagesPanel);
-        groupLayoutFirstPanel.setAutoCreateGaps(true);
-        groupLayoutFirstPanel.setAutoCreateContainerGaps(true);
-        packagesPanel.setLayout(groupLayoutFirstPanel);
+        GroupLayout groupLayout = setSubpanelsLayout(packagesPanel);
 
-        groupLayoutFirstPanel.setHorizontalGroup(
-                groupLayoutFirstPanel.createSequentialGroup()
+        groupLayout.setHorizontalGroup(
+                groupLayout.createSequentialGroup()
                         .addComponent(mainFormWindowItems.getAllPackages())
                         .addGap(80)
                         .addComponent(mainFormWindowItems.getOwnPackages())
         );
-        groupLayoutFirstPanel.setVerticalGroup(
-                groupLayoutFirstPanel.createSequentialGroup()
-                        .addGroup(groupLayoutFirstPanel.createParallelGroup(BASELINE)
+        groupLayout.setVerticalGroup(
+                groupLayout.createSequentialGroup()
+                        .addGroup(groupLayout.createParallelGroup(BASELINE)
                                 .addComponent(mainFormWindowItems.getAllPackages())
                                 .addComponent(mainFormWindowItems.getOwnPackages())));
     }
 
     public void setClassesInterfacesPlusModifiersPanel() {
-        GroupLayout groupLayoutFirstPanel = new GroupLayout(classesInterfacesPlusModifiersPanel);
-        groupLayoutFirstPanel.setAutoCreateGaps(true);
-        groupLayoutFirstPanel.setAutoCreateContainerGaps(true);
-        classesInterfacesPlusModifiersPanel.setLayout(groupLayoutFirstPanel);
+        GroupLayout groupLayout = setSubpanelsLayout(classesInterfacesPlusModifiersPanel);
+        Component c = new Component() {
+            @Override
+            public void paint(Graphics g) {
+                super.paint(g);
+                g.drawLine(0,0, 770, 0);
+            }
+        };
 
-        groupLayoutFirstPanel.setHorizontalGroup(
-                groupLayoutFirstPanel.createSequentialGroup()
-                        .addGroup(groupLayoutFirstPanel.createParallelGroup()
+        groupLayout.setHorizontalGroup(
+                groupLayout.createSequentialGroup()
+                        .addGroup(groupLayout.createParallelGroup()
                                 .addComponent(mainFormWindowItems.getClassesCheckBox())
-                                .addGroup(groupLayoutFirstPanel.createSequentialGroup()
+                                .addGroup(groupLayout.createSequentialGroup()
                                         .addComponent(mainFormWindowItems.getPublicForClassCheckBox())
                                         .addGap(80)
                                         .addComponent(mainFormWindowItems.getDefaultForClassCheckBox()))
                                 .addComponent(mainFormWindowItems.getCheckBoxForClassAttributes())
-                                .addGroup(groupLayoutFirstPanel.createSequentialGroup()
+                                .addGroup(groupLayout.createSequentialGroup()
                                         .addComponent(mainFormWindowItems.getCheckBoxForPrivateClassAttributes())
                                         .addComponent(mainFormWindowItems.getCheckBoxForPublicClassAttributes())
                                         .addComponent(mainFormWindowItems.getCheckBoxForProtectedClassAttributes())
                                         .addComponent(mainFormWindowItems.getCheckBoxForInternalClassAttributes()))
                                 .addComponent(mainFormWindowItems.getCheckBoxForClassMethods())
-                                .addGroup(groupLayoutFirstPanel.createSequentialGroup()
+                                .addGroup(groupLayout.createSequentialGroup()
                                         .addComponent(mainFormWindowItems.getCheckBoxForPrivateClassMethods())
                                         .addComponent(mainFormWindowItems.getCheckBoxForPublicClassMethods())
                                         .addComponent(mainFormWindowItems.getCheckBoxForProtectedClassMethods())
                                         .addComponent(mainFormWindowItems.getCheckBoxForInternalClassMethods()))
                                 .addComponent(mainFormWindowItems.getCheckBoxForInnerClasses())
-                                .addGap(80)
+                                //.addComponent(c)
                                 .addComponent(mainFormWindowItems.getInterfacesCheckBox())
-                                .addGroup(groupLayoutFirstPanel.createSequentialGroup()
+                                .addGroup(groupLayout.createSequentialGroup()
                                         .addComponent(mainFormWindowItems.getPublicForInterfaceCheckBox())
                                         .addGap(80)
                                         .addComponent(mainFormWindowItems.getDefaultForInterfaceCheckBox()))
-                                .addGroup(groupLayoutFirstPanel.createSequentialGroup()
+                                .addGroup(groupLayout.createSequentialGroup()
                                         .addComponent(mainFormWindowItems.getCheckBoxForInterfaceAttributes())
+                                        .addGap(80)
                                         .addComponent(mainFormWindowItems.getCheckBoxForInterfaceMethods()))
                         ));
-        groupLayoutFirstPanel.setVerticalGroup(
-                groupLayoutFirstPanel.createSequentialGroup()
+        groupLayout.setVerticalGroup(
+                groupLayout.createSequentialGroup()
                         .addComponent(mainFormWindowItems.getClassesCheckBox())
-                        .addGroup(groupLayoutFirstPanel.createParallelGroup(BASELINE)
+                        .addGroup(groupLayout.createParallelGroup(BASELINE)
                                 .addComponent(mainFormWindowItems.getPublicForClassCheckBox())
                                 .addComponent(mainFormWindowItems.getDefaultForClassCheckBox()))
                         .addComponent(mainFormWindowItems.getCheckBoxForClassAttributes())
-                        .addGroup(groupLayoutFirstPanel.createParallelGroup(BASELINE)
+                        .addGroup(groupLayout.createParallelGroup(BASELINE)
                                 .addComponent(mainFormWindowItems.getCheckBoxForPrivateClassAttributes())
                                 .addComponent(mainFormWindowItems.getCheckBoxForPublicClassAttributes())
                                 .addComponent(mainFormWindowItems.getCheckBoxForProtectedClassAttributes())
                                 .addComponent(mainFormWindowItems.getCheckBoxForInternalClassAttributes()))
                         .addComponent(mainFormWindowItems.getCheckBoxForClassMethods())
-                        .addGroup(groupLayoutFirstPanel.createParallelGroup(BASELINE)
+                        .addGroup(groupLayout.createParallelGroup(BASELINE)
                                 .addComponent(mainFormWindowItems.getCheckBoxForPrivateClassMethods())
                                 .addComponent(mainFormWindowItems.getCheckBoxForPublicClassMethods())
                                 .addComponent(mainFormWindowItems.getCheckBoxForProtectedClassMethods())
                                 .addComponent(mainFormWindowItems.getCheckBoxForInternalClassMethods()))
                         .addComponent(mainFormWindowItems.getCheckBoxForInnerClasses())
-                        .addGap(80)
+                        //.addComponent(c)
                         .addComponent(mainFormWindowItems.getInterfacesCheckBox())
-                        .addGroup(groupLayoutFirstPanel.createParallelGroup(BASELINE)
+                        .addGroup(groupLayout.createParallelGroup(BASELINE)
                                 .addComponent(mainFormWindowItems.getPublicForInterfaceCheckBox())
                                 .addComponent(mainFormWindowItems.getDefaultForInterfaceCheckBox()))
-                        .addGroup(groupLayoutFirstPanel.createParallelGroup(BASELINE)
+                        .addGroup(groupLayout.createParallelGroup(BASELINE)
                                 .addComponent(mainFormWindowItems.getCheckBoxForInterfaceAttributes())
                                 .addComponent(mainFormWindowItems.getCheckBoxForInterfaceMethods()))
                         );}
 
-    public void setAttributesMethodsInnerClassesPanel() {
-        GroupLayout groupLayoutFirstPanel = new GroupLayout(attributesMethodsInnerClassesPanel);
-        groupLayoutFirstPanel.setAutoCreateGaps(true);
-        groupLayoutFirstPanel.setAutoCreateContainerGaps(true);
-        attributesMethodsInnerClassesPanel.setLayout(groupLayoutFirstPanel);
-
-        groupLayoutFirstPanel.setHorizontalGroup(
-                groupLayoutFirstPanel.createSequentialGroup()
-                        .addGroup(groupLayoutFirstPanel.createParallelGroup()
-                                .addGroup(groupLayoutFirstPanel.createSequentialGroup()
-                                        .addComponent(mainFormWindowItems.getClassesCheckBox())
-                                        .addGap(80)
-                                        .addComponent(mainFormWindowItems.getInterfacesCheckBox()))
-                                .addGroup(groupLayoutFirstPanel.createSequentialGroup()
-                                        .addComponent(mainFormWindowItems.getPublicForClassCheckBox())
-                                        .addGap(80)
-                                        .addComponent(mainFormWindowItems.getPublicForInterfaceCheckBox()))
-                                .addGroup(groupLayoutFirstPanel.createSequentialGroup()
-                                        .addComponent(mainFormWindowItems.getDefaultForClassCheckBox())
-                                        .addGap(80)
-                                        .addComponent(mainFormWindowItems.getDefaultForInterfaceCheckBox())))
-        );
-        groupLayoutFirstPanel.setVerticalGroup(
-                groupLayoutFirstPanel.createSequentialGroup()
-                        .addGroup(groupLayoutFirstPanel.createParallelGroup(BASELINE)
-                                .addComponent(mainFormWindowItems.getClassesCheckBox())
-                                .addComponent(mainFormWindowItems.getInterfacesCheckBox()))
-                        .addGroup(groupLayoutFirstPanel.createParallelGroup(BASELINE)
-                                .addComponent(mainFormWindowItems.getPublicForClassCheckBox())
-                                .addComponent(mainFormWindowItems.getPublicForInterfaceCheckBox()))
-                        .addGroup(groupLayoutFirstPanel.createParallelGroup(BASELINE)
-                                .addComponent(mainFormWindowItems.getDefaultForClassCheckBox())
-                                .addComponent(mainFormWindowItems.getDefaultForInterfaceCheckBox())));
+    private GroupLayout setSubpanelsLayout(JPanel jPanel){
+        Border blackline = BorderFactory.createLineBorder(Color.black);
+        jPanel.setBorder(blackline);
+        jPanel.setMinimumSize(new Dimension(780, 0));
+        GroupLayout groupLayout = new GroupLayout(jPanel);
+        groupLayout.setAutoCreateGaps(true);
+        groupLayout.setAutoCreateContainerGaps(true);
+        jPanel.setLayout(groupLayout);
+        return groupLayout;
     }
 }
