@@ -10,12 +10,14 @@ public class FormWindow extends JFrame {
     private static File filePath;
     private MainFormWindowItems mainFormWindowItems;
     private MainFormWindowPanels mainFormWindowPanels;
+    //private JFrame frame = new JFrame();
 
     public FormWindow(Project currentProject, File filePath){
         this.currentProject = currentProject;
         this.filePath = filePath;
         mainFormWindowItems = new MainFormWindowItems();
         mainFormWindowPanels = new MainFormWindowPanels(currentProject, filePath, mainFormWindowItems);
+        showFormWindow();
     }
 
     public static Project getCurrentProject() {
@@ -35,7 +37,6 @@ public class FormWindow extends JFrame {
     }
 
     public void showFormWindow() {
-        JFrame frame = new JFrame();
         JPanel contentPane = mainFormWindowPanels.getScrollablePanel();
 
 //        int result = JOptionPane.showConfirmDialog(null, panel,
@@ -59,12 +60,12 @@ public class FormWindow extends JFrame {
 //            System.out.println("canceled");
 //        }
 
-        frame.setContentPane(contentPane);
-        frame.pack();
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.setVisible(true);
+        setContentPane(contentPane);
+        pack();
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setVisible(true);
 
-        frame.addWindowListener(new java.awt.event.WindowAdapter() {
+        addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
                 getValues();
@@ -72,7 +73,9 @@ public class FormWindow extends JFrame {
         });
     }
 
-    private void getValues() {
+
+
+    public void getValues() {
         boolean checked = mainFormWindowItems.getOwnPackages().isSelected();
         if(mainFormWindowItems.getOwnPackages().isSelected()) {
             System.out.println("selected");
