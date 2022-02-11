@@ -91,6 +91,18 @@ public class MainFormWindowItems {
     private ActionListener classesListener = new ActionListener() {
         public void actionPerformed(ActionEvent actionEvent) {
             if (!classesCheckBox.isSelected()) {
+                if (defaultForClassCheckBox.isSelected())
+                    defaultForClassCheckBox.doClick();
+                if (defaultForClassCheckBox.isSelected())
+                    defaultForClassCheckBox.doClick();
+                if (publicForClassCheckBox.isSelected())
+                    publicForClassCheckBox.doClick();
+                if (checkBoxForClassAttributes.isSelected())
+                    checkBoxForClassAttributes.doClick();
+                if (checkBoxForClassMethods.isSelected())
+                    checkBoxForClassMethods.doClick();
+                if (checkBoxForInnerClasses.isSelected())
+                    checkBoxForInnerClasses.doClick();
                 defaultForClassCheckBox.setVisible(false);
                 publicForClassCheckBox.setVisible(false);
                 checkBoxForClassAttributes.setVisible(false);
@@ -109,6 +121,14 @@ public class MainFormWindowItems {
     private ActionListener classesAttributesListener = new ActionListener() {
         public void actionPerformed(ActionEvent actionEvent) {
             if (!checkBoxForClassAttributes.isSelected()) {
+                if (checkBoxForPrivateClassAttributes.isSelected())
+                    checkBoxForPrivateClassAttributes.doClick();
+                if (checkBoxForPublicClassAttributes.isSelected())
+                    checkBoxForPublicClassAttributes.doClick();
+                if (checkBoxForProtectedClassAttributes.isSelected())
+                    checkBoxForProtectedClassAttributes.doClick();
+                if (checkBoxForInternalClassAttributes.isSelected())
+                    checkBoxForInternalClassAttributes.doClick();
                 checkBoxForPrivateClassAttributes.setVisible(false);
                 checkBoxForPublicClassAttributes.setVisible(false);
                 checkBoxForProtectedClassAttributes.setVisible(false);
@@ -124,7 +144,15 @@ public class MainFormWindowItems {
 
     private ActionListener classesMethodesListener = new ActionListener() {
         public void actionPerformed(ActionEvent actionEvent) {
-            if (!checkBoxForClassAttributes.isSelected()) {
+            if (!checkBoxForClassMethods.isSelected()) {
+                if (checkBoxForPrivateClassMethods.isSelected())
+                    checkBoxForPrivateClassMethods.doClick();
+                if (checkBoxForPublicClassMethods.isSelected())
+                    checkBoxForPublicClassMethods.doClick();
+                if (checkBoxForProtectedClassMethods.isSelected())
+                    checkBoxForProtectedClassMethods.doClick();
+                if (checkBoxForInternalClassMethods.isSelected())
+                    checkBoxForInternalClassMethods.doClick();
                 checkBoxForPrivateClassMethods.setVisible(false);
                 checkBoxForPublicClassMethods.setVisible(false);
                 checkBoxForProtectedClassMethods.setVisible(false);
@@ -141,6 +169,14 @@ public class MainFormWindowItems {
     private ActionListener interfacesListener = new ActionListener() {
         public void actionPerformed(ActionEvent actionEvent) {
             if (!interfacesCheckBox.isSelected()) {
+                if (defaultForInterfaceCheckBox.isSelected())
+                    defaultForInterfaceCheckBox.doClick();
+                if (publicForInterfaceCheckBox.isSelected())
+                    publicForInterfaceCheckBox.doClick();
+                if (checkBoxForInterfaceAttributes.isSelected())
+                    checkBoxForInterfaceAttributes.doClick();
+                if (checkBoxForInterfaceMethods.isSelected())
+                    checkBoxForInterfaceMethods.doClick();
                 defaultForInterfaceCheckBox.setVisible(false);
                 publicForInterfaceCheckBox.setVisible(false);
                 checkBoxForInterfaceAttributes.setVisible(false);
