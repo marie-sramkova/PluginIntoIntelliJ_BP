@@ -207,9 +207,9 @@ public class MainFormWindowPanels {
                                         .addComponent(mainFormWindowItems.getPublicForInterfaceCheckBox())
                                         .addGap(80)
                                         .addComponent(mainFormWindowItems.getDefaultForInterfaceCheckBox()))
-                                //.addGroup(groupLayoutFirstPanel.createParallelGroup(BASELINE)
-                                //        .addComponent(mainFormWindowItems.getCheckBoxForInterfaceAttributes())
-                                //        .addComponent(mainFormWindowItems.getCheckBoxForInterfaceMethods())))
+                                .addGroup(groupLayoutFirstPanel.createSequentialGroup()
+                                        .addComponent(mainFormWindowItems.getCheckBoxForInterfaceAttributes())
+                                        .addComponent(mainFormWindowItems.getCheckBoxForInterfaceMethods()))
                         ));
         groupLayoutFirstPanel.setVerticalGroup(
                 groupLayoutFirstPanel.createSequentialGroup()
@@ -235,9 +235,9 @@ public class MainFormWindowPanels {
                         .addGroup(groupLayoutFirstPanel.createParallelGroup(BASELINE)
                                 .addComponent(mainFormWindowItems.getPublicForInterfaceCheckBox())
                                 .addComponent(mainFormWindowItems.getDefaultForInterfaceCheckBox()))
-                        //.addGroup(groupLayoutFirstPanel.createParallelGroup(BASELINE)
-                        //        .addComponent(mainFormWindowItems.getCheckBoxForInterfaceAttributes())
-                        //        .addComponent(mainFormWindowItems.getCheckBoxForInterfaceMethods())));
+                        .addGroup(groupLayoutFirstPanel.createParallelGroup(BASELINE)
+                                .addComponent(mainFormWindowItems.getCheckBoxForInterfaceAttributes())
+                                .addComponent(mainFormWindowItems.getCheckBoxForInterfaceMethods()))
                         );}
 
     public void setAttributesMethodsInnerClassesPanel() {
