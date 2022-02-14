@@ -21,10 +21,14 @@ public class ProjectMenuAction extends AnAction {
         FormWindow formWindow = new FormWindow(rootProject, filePath);
         formWindow.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
-            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-                formWindow.getValues();
-                System.out.println("konec");
+            public void windowClosed(java.awt.event.WindowEvent windowEvent) {
+                System.out.println(formWindow.isSubmitted());
+                if(formWindow.isSubmitted()){
+                    ConfigInfo configInfo = new ConfigInfo(formWindow.getMainFormWindowItems());
+                }
             }
+
+
         });
 
 
