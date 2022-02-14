@@ -3,20 +3,29 @@ package cz.osu.kip.form;
 import com.intellij.openapi.project.Project;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 
 public class FormWindow extends JFrame {
     private static Project currentProject;
     private static File filePath;
-    private MainFormWindowItems mainFormWindowItems;
+    private  MainFormWindowItems mainFormWindowItems;
     private MainFormWindowPanels mainFormWindowPanels;
-    //private JFrame frame = new JFrame();
+    private boolean isSubmitted = false;
 
     public FormWindow(Project currentProject, File filePath){
         this.currentProject = currentProject;
         this.filePath = filePath;
         mainFormWindowItems = new MainFormWindowItems();
         mainFormWindowPanels = new MainFormWindowPanels(currentProject, filePath, mainFormWindowItems);
+//        okButton.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                FormWindow.super.dispose();
+//            }
+//        });
         showFormWindow();
     }
 
@@ -36,52 +45,48 @@ public class FormWindow extends JFrame {
         return mainFormWindowPanels;
     }
 
+    public boolean isSubmitted() {
+        return isSubmitted;
+    }
+
     public void showFormWindow() {
         JPanel contentPane = mainFormWindowPanels.getScrollablePanel();
 
-//        int result = JOptionPane.showConfirmDialog(null, panel,
-//                "Fill", JOptionPane.OK_CANCEL_OPTION);
-//        if (result == JOptionPane.OK_OPTION) {
-//            if (!source.getText().isEmpty() && !target.getText().isEmpty()) {
-////                BackupProvider backupProvider = new BackupProvider();
-////                backupProvider.doBackup(source.getText(), target.getText());
-//                System.out.println(source.getText());
-//                System.out.println(target.getText());
-//                System.out.println(privateCheckBox);
-//                System.out.println(publicCheckBoxMenuItem.getState());
-//                System.out.println(colorChooser.getColor());
-//                System.out.println(comboBox.getSelectedItem());
-////                System.out.println(defaultSourceFile);
-//                System.out.println(defaultTargetFile.getSelectedFile());
-//            } else {
-//                System.out.println("failed");
-//            }
-//        } else {
-//            System.out.println("canceled");
-//        }
-
         setContentPane(contentPane);
+        getContentPane().add(createButtonPanel(), BorderLayout.CENTER);
         pack();
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setVisible(true);
-
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            @Override
-            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-                getValues();
-            }
-        });
     }
 
+    private JPanel createButtonPanel() {
+        JPanel panel = new JPanel();
+        LayoutManager layout = new FlowLayout();
+        panel.setLayout(layout);
 
+        JButton okButton = new JButton("Ok");
+        JButton cancelButton = new JButton("Cancel");
+        JButton submitButton = new JButton("Submit");
+        submitButton.setEnabled(false);
 
-    public void getValues() {
-        boolean checked = mainFormWindowItems.getOwnPackages().isSelected();
-        if(mainFormWindowItems.getOwnPackages().isSelected()) {
-            System.out.println("selected");
-        } else if (!mainFormWindowItems.getOwnPackages().isSelected()) {
-            System.out.println("notSelected");
-        }
+        okButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                isSubmitted = true;
+                dispose();
+            }
+        });
+
+        cancelButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                isSubmitted = false;
+                dispose();
+            }
+        });
+
+        panel.add(okButton);
+        panel.add(submitButton);
+        panel.add(cancelButton);
+        return panel;
     }
 
 
