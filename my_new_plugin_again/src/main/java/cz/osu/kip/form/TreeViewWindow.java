@@ -64,12 +64,12 @@ public class TreeViewWindow {
             newPanel.setBorder(BorderFactory.createEmptyBorder(0,10,0,0));
             panel.add(newPanel);
             fl.getjCheckBox().setVisible(true);
-            fl.getjCheckBox().addActionListener(makeListenerForEachCheckBox(fl, panel, frame, newPanel));
+            fl.getjCheckBox().addActionListener(makeListenerForEachCheckBox(fl, panel, frame, newPanel, fl.getjCheckBox()));
         }
         return panel;
     }
 
-    private ActionListener makeListenerForEachCheckBox(FolderLevel folderLevel, JPanel panel, JFrame frame, JPanel newJpanel) {
+    private ActionListener makeListenerForEachCheckBox(FolderLevel folderLevel, JPanel panel, JFrame frame, JPanel newJpanel, JCheckBox checkBox) {
         ActionListener listener = new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 File[] directories = getDirectories(folderLevel.getUrl());
@@ -88,7 +88,7 @@ public class TreeViewWindow {
                                 newPanel.setLayout(new BoxLayout(newPanel, BoxLayout.Y_AXIS));
                                 newPanel.setBorder(BorderFactory.createEmptyBorder(0,10,0,0));
                                 newJpanel.add(newPanel);
-                                fl.getjCheckBox().addActionListener(makeListenerForEachCheckBox(fl, panel, frame, newPanel));
+                                fl.getjCheckBox().addActionListener(makeListenerForEachCheckBox(fl, panel, frame, newPanel, fl.getjCheckBox()));
                                 panel.revalidate();
                                 panel.repaint();
                                 frame.pack();

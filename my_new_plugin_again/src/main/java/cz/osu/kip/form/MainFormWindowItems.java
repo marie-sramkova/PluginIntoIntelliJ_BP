@@ -42,8 +42,6 @@ public class MainFormWindowItems {
     private JCheckBox checkBoxForInternalClassMethods = new JCheckBox("Internal");
     private JCheckBox checkBoxForInterfaceAttributes = new JCheckBox("Atributes");
     private JCheckBox checkBoxForInterfaceMethods = new JCheckBox("Methods");
-    private JButton okButton = new JButton("ok");
-    private JButton cancelButton = new JButton("cancel");
     private TreeViewWindow treeViewWindow;
 
     private ActionListener defaultUMLTargetDestinationListener = new ActionListener() {
@@ -351,13 +349,5 @@ public class MainFormWindowItems {
 
     public JCheckBox getCheckBoxForInterfaceMethods() {
         return checkBoxForInterfaceMethods;
-    }
-
-    public JButton getOkButton() {
-        return okButton;
-    }
-
-    public JButton getCancelButton() {
-        return cancelButton;
     }
 }

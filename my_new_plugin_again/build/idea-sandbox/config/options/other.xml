@@ -24,7 +24,7 @@
     <property name="eclipse.projects.detected" value="" />
     <property name="file.chooser.recent.files" value="D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again&#10;D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore" />
     <property name="file.gist.reindex.count" value="12" />
-    <property name="fileTypeChangedCounter" value="4" />
+    <property name="fileTypeChangedCounter" value="5" />
     <property name="fileTypeDetectors" value="com.android.tools.idea.fileTypes.profiler.MemoryCaptureFileType$Detector:com.android.tools.idea.sqlite.fileType.SqliteFileTypeDetector:com.intellij.ide.scratch.ScratchFileServiceImpl$Detector:org.jetbrains.plugins.textmate.TextMateFileType$TextMateFileDetector" />
     <property name="got.it.tooltip.cwm.invitation.notification" value="1" />
     <property name="ide.memory.adjusted" value="true" />
