@@ -9,11 +9,14 @@
     <e n="OpenFile">
       <i c="1" l="1644144579829" />
     </e>
+    <e n="WelcomeScreen.CreateNewProject">
+      <i c="1" l="1647024474051" />
+    </e>
     <e n="WelcomeScreen.OpenProject">
       <i c="1" l="1636920303486" />
     </e>
     <e n="com.intellij.ide.ReopenProjectAction">
-      <i c="1" l="1644151893604" />
+      <i c="2" l="1647024469697" />
     </e>
     <e n="com.intellij.openapi.ui.DialogWrapper$4">
       <i c="1" l="1641235263017" />
