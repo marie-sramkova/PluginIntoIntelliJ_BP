@@ -11,7 +11,7 @@ import java.io.IOException;
 public class GenerateAction extends DumbAwareAction {
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
-
+        System.out.println("old generating");
 //        FormWindow.showFormWindow();
     }
 }

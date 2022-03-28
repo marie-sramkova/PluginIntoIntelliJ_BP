@@ -1,19 +1,19 @@
 JAVA
+JSON
+PLAIN_TEXT
+DTD
 XML
 GitIgnore file
 HTML
 IDEA_MODULE
-DTD
 textmate
-PLAIN_TEXT
 RNG Compact
 XHTML
 PATCH
-JSON
 Shell Script
 CLASS
-Properties
 UNKNOWN
+Properties
 SPI
 Image
 CSS
@@ -21,17 +21,3 @@ JavaScript
 gdsl
 Kotlin
 script-definition-marker
-Shrinker Config File
-Manifest
-ARCHIVE
-Markdown
-Groovy
-kotlin_module
-GUI_DESIGNER_FORM
-Dictionary
-DGM
-kotlin_builtins
-SVG
-Perl
-Font
-AUTO_DETECTED
