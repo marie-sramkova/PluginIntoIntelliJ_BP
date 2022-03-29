@@ -83,18 +83,19 @@ public class MainFormWindowItems {
             if (ownPackages.isSelected()) {
                 if (treeViewWindow == null) {
                     treeViewWindow = new TreeViewWindow(FormWindow.getFilePath());
-                    treeViewWindow.addWindowListener(new java.awt.event.WindowAdapter() {
-                        @Override
-                        public void windowClosed(java.awt.event.WindowEvent windowEvent) {
-                            System.out.println(treeViewWindow.isSubmitted());
-                            if (treeViewWindow.isSubmitted()) {
-                                System.out.println("submitted in MainFormWindowItems");
-                            }
-                        }
-                    });
+//                    treeViewWindow.addWindowListener(new java.awt.event.WindowAdapter() {
+//                        @Override
+//                        public void windowClosed(java.awt.event.WindowEvent windowEvent) {
+//                            if (treeViewWindow.isSubmitted()){
+//                                allPackages.doClick();
+//                            }
+//                        }
+//                    });
                 } else {
-                    treeViewWindow = new TreeViewWindow(FormWindow.getFilePath());
+                    treeViewWindow.show();
                 }
+            }else{
+                treeViewWindow = null;
             }
         }
     };

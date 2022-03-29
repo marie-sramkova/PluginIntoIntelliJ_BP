@@ -15,9 +15,20 @@ import java.util.List;
 
 public class TreeViewWindow extends JFrame {
     private java.util.List<FolderLevel> folders = new ArrayList<>();
-    private boolean isSubmitted = false;
+//    private java.util.List<FolderLevel> oldFolders = new ArrayList<>();
+//    private boolean wasCanceled = false;
 
-    public TreeViewWindow(File filePath){
+//    @Override
+//    public void show() {
+//        if (wasCanceled){
+//            folders = oldFolders;
+//            makeFrame();
+//            wasCanceled = false;
+//        }
+//        super.show();
+//    }
+
+    public TreeViewWindow(File filePath) {
         if (filePath.exists()) {
             File[] directories = getDirectories(filePath);
             List<FolderLevel> firstFolders = makeLevels(filePath, directories);
@@ -29,10 +40,6 @@ public class TreeViewWindow extends JFrame {
 
     public List<FolderLevel> getFolders() {
         return folders;
-    }
-
-    public boolean isSubmitted() {
-        return isSubmitted;
     }
 
     private void makeFrame() {
@@ -51,15 +58,17 @@ public class TreeViewWindow extends JFrame {
         pack();
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(300, 500);
-        setVisible(true);
-        show();
     }
 
     @NotNull
     private JPanel makeContentPanel(JFrame frame) {
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+
         for (FolderLevel fl : folders) {
+            if (!fl.getjCheckBox().isSelected()){
+
+            }
             panel.add(fl.getjCheckBox());
             JPanel newPanel = new JPanel();
             newPanel.setLayout(new BoxLayout(newPanel, BoxLayout.Y_AXIS));
@@ -161,14 +170,15 @@ public class TreeViewWindow extends JFrame {
 
         okButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                isSubmitted = true;
+//                wasCanceled = false;
+//                oldFolders = new ArrayList<>(folders);
                 dispose();
             }
         });
 
         cancelButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                isSubmitted = false;
+//                wasCanceled = true;
                 dispose();
             }
         });
