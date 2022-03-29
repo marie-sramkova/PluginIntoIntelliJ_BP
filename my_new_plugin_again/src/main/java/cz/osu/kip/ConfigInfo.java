@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ConfigInfo {
-    private File umlTargetDestination;
-    private File configTargetDestination;
+    private String umlTargetDestination;
+    private String configTargetDestination;
     private List<File> packages = new ArrayList<>();
     private boolean classes;
     private boolean publicClasses;
@@ -34,14 +34,14 @@ public class ConfigInfo {
 
     public ConfigInfo(MainFormWindowItems mainFormWindowItems) {
         if (mainFormWindowItems.getDefaultUMLTargetDestination().isSelected()){
-            umlTargetDestination = FormWindow.getFilePath().toPath().resolve("PlantUmlFiles").toFile();
+            umlTargetDestination = FormWindow.getFilePath().toPath().resolve("PlantUmlFiles").toFile().toString();
         }else {
-            umlTargetDestination = mainFormWindowItems.getDefaultUMLTargetFile().getSelectedFile();
+            umlTargetDestination = mainFormWindowItems.getDefaultUMLTargetFile().getSelectedFile().toString();
         }
         if (mainFormWindowItems.getDefaultConfigTargetDestination().isSelected()){
-            configTargetDestination = FormWindow.getFilePath().toPath().resolve("PlantUmlFiles").toFile();
+            configTargetDestination = FormWindow.getFilePath().toPath().resolve("PlantUmlFiles").toFile().toString();
         }else {
-            configTargetDestination = mainFormWindowItems.getDefaultConfigTargetFile().getSelectedFile();
+            configTargetDestination = mainFormWindowItems.getDefaultConfigTargetFile().getSelectedFile().toString();
         }
         if(mainFormWindowItems.getTreeViewWindow() != null && mainFormWindowItems.getTreeViewWindow().getFolders() != null) {
             for (FolderLevel fl : mainFormWindowItems.getTreeViewWindow().getFolders()) {
@@ -70,11 +70,11 @@ public class ConfigInfo {
         methodsForInterfaces = mainFormWindowItems.getCheckBoxForInterfaceMethods().isSelected();
     }
 
-    public File getUmlTargetDestination() {
+    public String getUmlTargetDestination() {
         return umlTargetDestination;
     }
 
-    public File getConfigTargetDestination() {
+    public String getConfigTargetDestination() {
         return configTargetDestination;
     }
 
