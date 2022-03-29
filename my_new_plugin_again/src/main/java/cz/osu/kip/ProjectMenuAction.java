@@ -6,6 +6,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import cz.osu.kip.ConfigInfo;
 import cz.osu.kip.form.FolderLevel;
 import cz.osu.kip.form.FormWindow;
 import cz.osu.kip.form.MainFormWindowItems;
@@ -23,6 +24,8 @@ public class ProjectMenuAction extends AnAction {
         Project rootProject = e.getProject();
         VirtualFile file = e.getData(CommonDataKeys.VIRTUAL_FILE);
         File filePath = new File(file.getPath());
+        System.out.println(rootProject);
+        System.out.println(filePath);
         FormWindow formWindow = new FormWindow(rootProject, filePath);
         formWindow.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
