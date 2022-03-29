@@ -11,7 +11,7 @@ import java.util.List;
 public class ConfigInfo {
     private String umlTargetDestination;
     private String configTargetDestination;
-    private List<File> packages = new ArrayList<>();
+    private List<String> packages = new ArrayList<>();
     private boolean classes;
     private boolean publicClasses;
     private boolean defaultClasses;
@@ -46,7 +46,7 @@ public class ConfigInfo {
         if(mainFormWindowItems.getTreeViewWindow() != null && mainFormWindowItems.getTreeViewWindow().getFolders() != null) {
             for (FolderLevel fl : mainFormWindowItems.getTreeViewWindow().getFolders()) {
                 if (fl.getjCheckBox().isSelected())
-                    packages.add(fl.getUrl());
+                    packages.add(fl.getUrl().toString());
             }
         }
         classes = mainFormWindowItems.getClassesCheckBox().isSelected();
@@ -78,7 +78,7 @@ public class ConfigInfo {
         return configTargetDestination;
     }
 
-    public List<File> getPackages() {
+    public List<String> getPackages() {
         return packages;
     }
 

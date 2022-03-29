@@ -1,9 +1,14 @@
 package cz.osu.kip.form;
 
+import cz.osu.kip.ConfigInfo;
+import org.json.JSONObject;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class MainFormWindowItems {
 
@@ -77,10 +82,18 @@ public class MainFormWindowItems {
         public void actionPerformed(ActionEvent actionEvent) {
             if (ownPackages.isSelected()) {
                 if (treeViewWindow == null) {
-                    treeViewWindow = new TreeViewWindow();
-                    treeViewWindow.show(FormWindow.getFilePath());
+                    treeViewWindow = new TreeViewWindow(FormWindow.getFilePath());
+                    treeViewWindow.addWindowListener(new java.awt.event.WindowAdapter() {
+                        @Override
+                        public void windowClosed(java.awt.event.WindowEvent windowEvent) {
+                            System.out.println(treeViewWindow.isSubmitted());
+                            if (treeViewWindow.isSubmitted()) {
+                                System.out.println("submitted in MainFormWindowItems");
+                            }
+                        }
+                    });
                 } else {
-                    treeViewWindow.show(FormWindow.getFilePath());
+                    treeViewWindow = new TreeViewWindow(FormWindow.getFilePath());
                 }
             }
         }
