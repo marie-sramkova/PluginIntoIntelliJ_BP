@@ -29,6 +29,14 @@ public class FormWindow extends JFrame {
         showFormWindow();
     }
 
+    public FormWindow(Project currentProject, File filePath, MainFormWindowItems mainFormWindowItems){
+        this.currentProject = currentProject;
+        this.filePath = filePath;
+        this.mainFormWindowItems = mainFormWindowItems;
+        mainFormWindowPanels = new MainFormWindowPanels(currentProject, filePath, mainFormWindowItems);
+        showFormWindow();
+    }
+
     public static Project getCurrentProject() {
         return currentProject;
     }

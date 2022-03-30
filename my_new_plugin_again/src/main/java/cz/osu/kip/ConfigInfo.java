@@ -161,8 +161,8 @@ public class ConfigInfo {
     @Override
     public String toString() {
         return "ConfigInfo{" +
-                "umlTargetDestination=" + umlTargetDestination +
-                ", configTargetDestination=" + configTargetDestination +
+                "umlTargetDestination='" + umlTargetDestination + '\'' +
+                ", configTargetDestination='" + configTargetDestination + '\'' +
                 ", packages=" + packages +
                 ", classes=" + classes +
                 ", publicClasses=" + publicClasses +
