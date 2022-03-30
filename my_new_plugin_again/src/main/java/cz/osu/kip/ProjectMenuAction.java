@@ -13,6 +13,7 @@ import cz.osu.kip.form.MainFormWindowItems;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 
+import javax.swing.*;
 import java.io.*;
 
 public class ProjectMenuAction extends AnAction {
@@ -59,10 +60,11 @@ public class ProjectMenuAction extends AnAction {
             JsonObject object = (JsonObject) parser.parse(text);
             ConfigInfo configInfo = gson.fromJson(object, ConfigInfo.class);
             System.out.println(configInfo.toString());
-            MainFormWindowItems mainFormWindowItems = ConfigInfoToMainFormWindowItemsConvertor.convert(configInfo);
+            MainFormWindowItems mainFormWindowItems = ConfigInfoToMainFormWindowItemsConvertor.convert(configInfo, rootProject, filePath);
             showNewForm(rootProject, filePath, mainFormWindowItems);
         } catch (Exception ex) {
-            ex.printStackTrace();
+            int input = JOptionPane.showConfirmDialog(null,
+                    "Incorrect file or impossible to load the content of the file.", "Chyba", JOptionPane.DEFAULT_OPTION);
         }
     }
 
@@ -85,7 +87,7 @@ public class ProjectMenuAction extends AnAction {
                     System.out.println(configInfo2);
 
                     try {
-                        FileWriter writer = new FileWriter(FormWindow.getFilePath().toPath().resolve("PlantUmlFiles").toFile().toString());
+                        FileWriter writer = new FileWriter(FormWindow.getFilePath().toPath().resolve("PlantUmlFiles.myuml").toFile().toString());
                         writer.write(configInfo2.toString());
                         writer.close();
                     } catch (IOException ex) {
