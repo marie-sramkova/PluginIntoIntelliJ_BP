@@ -1,10 +1,16 @@
 <application>
   <component name="ActionsLocalSummary">
+    <e n="$Delete">
+      <i c="2" l="1648598752877" />
+    </e>
     <e n="EditorBackSpace">
       <i c="11" l="1640949539702" />
     </e>
     <e n="EditorPaste">
       <i c="7" l="1637049098567" />
+    </e>
+    <e n="NewDir">
+      <i c="1" l="1648596605289" />
     </e>
     <e n="OpenFile">
       <i c="1" l="1644144579829" />
@@ -19,7 +25,7 @@
       <i c="2" l="1647024469697" />
     </e>
     <e n="com.intellij.openapi.ui.DialogWrapper$4">
-      <i c="1" l="1641235263017" />
+      <i c="2" l="1648598754142" />
     </e>
   </component>
 </application>

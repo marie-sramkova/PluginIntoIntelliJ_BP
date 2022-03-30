@@ -364,4 +364,133 @@ public class MainFormWindowItems {
     public JCheckBox getCheckBoxForInterfaceMethods() {
         return checkBoxForInterfaceMethods;
     }
+
+    public void setDefaultUMLTargetDestination() {
+        this.defaultUMLTargetDestination.setSelected(true);
+        defaultUMLTargetDestinationDesc.setVisible(true);
+    }
+
+    public void setOwnUMLTargetDestination(String umlTargetDestination) {
+        this.ownUMLTargetDestination.setSelected(true);
+        defaultUMLTargetFile.setVisible(true);
+        defaultUMLTargetFile.setSelectedFile(new File(umlTargetDestination));
+    }
+
+    public void setDefaultConfigTargetDestination() {
+        this.defaultConfigTargetDestination.setSelected(true);
+        this.defaultConfigTargetDestinationDesc.setVisible(true);
+    }
+
+    public void setOwnConfigTargetDestination(String configTargetDestination) {
+        this.ownConfigTargetDestination.setSelected(true);
+        defaultConfigTargetFile.setVisible(true);
+        defaultConfigTargetFile.setSelectedFile(new File(configTargetDestination));
+    }
+
+    public void setOwnPackages() {
+        this.ownPackages.setSelected(true);
+        //TODO: zobrazení !!!!!
+    }
+
+    public void setClassesCheckBox(boolean selected) {
+        this.classesCheckBox.setSelected(selected);
+        if (selected == true){
+            this.publicForClassCheckBox.setVisible(true);
+            this.defaultForClassCheckBox.setVisible(true);
+            this.checkBoxForClassAttributes.setVisible(true);
+            this.checkBoxForClassMethods.setVisible(true);
+            this.checkBoxForInnerClasses.setVisible(true);
+        }
+    }
+
+    public void setInterfacesCheckBox(boolean selected) {
+        this.interfacesCheckBox.setSelected(selected);
+        if (selected == true){
+            this.publicForInterfaceCheckBox.setVisible(true);
+            this.defaultForInterfaceCheckBox.setVisible(true);
+            this.checkBoxForInterfaceAttributes.setVisible(true);
+            this.checkBoxForInterfaceMethods.setVisible(true);
+        }
+    }
+
+    public void setPublicForClassCheckBox(boolean selected) {
+        this.publicForClassCheckBox.setSelected(selected);
+    }
+
+    public void setDefaultForClassCheckBox(boolean selected) {
+        this.defaultForClassCheckBox.setSelected(selected);
+    }
+
+    public void setPublicForInterfaceCheckBox(boolean selected) {
+        this.publicForInterfaceCheckBox.setSelected(selected);
+    }
+
+    public void setDefaultForInterfaceCheckBox(boolean selected) {
+        this.defaultForInterfaceCheckBox.setSelected(selected);
+    }
+
+    public void setCheckBoxForClassAttributes(boolean selected) {
+        this.checkBoxForClassAttributes.setSelected(selected);
+        if (selected == true){
+            this.checkBoxForPrivateClassAttributes.setVisible(true);
+            this.checkBoxForPublicClassAttributes.setVisible(true);
+            this.checkBoxForProtectedClassAttributes.setVisible(true);
+            this.checkBoxForInternalClassAttributes.setVisible(true);
+        }
+    }
+
+    public void setCheckBoxForClassMethods(boolean selected) {
+        this.checkBoxForClassMethods.setSelected(selected);
+        if (selected == true){
+            this.checkBoxForPrivateClassMethods.setVisible(true);
+            this.checkBoxForPublicClassMethods.setVisible(true);
+            this.checkBoxForProtectedClassMethods.setVisible(true);
+            this.checkBoxForInternalClassMethods.setVisible(true);
+        }
+    }
+
+    public void setCheckBoxForInnerClasses(boolean selected) {
+        this.checkBoxForInnerClasses.setSelected(selected);
+    }
+
+    public void setCheckBoxForPrivateClassAttributes(boolean selected) {
+        this.checkBoxForPrivateClassAttributes.setSelected(selected);
+    }
+
+    public void setCheckBoxForPublicClassAttributes(boolean selected) {
+        this.checkBoxForPublicClassAttributes.setSelected(selected);
+    }
+
+    public void setCheckBoxForProtectedClassAttributes(boolean selected) {
+        this.checkBoxForProtectedClassAttributes.setSelected(selected);
+    }
+
+    public void setCheckBoxForInternalClassAttributes(boolean selected) {
+        this.checkBoxForInternalClassAttributes.setSelected(selected);
+    }
+
+    public void setCheckBoxForPrivateClassMethods(boolean selected) {
+        this.checkBoxForPrivateClassMethods.setSelected(selected);
+    }
+
+    public void setCheckBoxForPublicClassMethods(boolean selected) {
+        this.checkBoxForPublicClassMethods.setSelected(selected);
+    }
+
+    public void setCheckBoxForProtectedClassMethods(boolean selected) {
+        this.checkBoxForProtectedClassMethods.setSelected(selected);
+    }
+
+    public void setCheckBoxForInternalClassMethods(boolean selected) {
+        this.checkBoxForInternalClassMethods.setSelected(selected);
+    }
+
+    public void setCheckBoxForInterfaceAttributes(boolean selected) {
+        this.checkBoxForInterfaceAttributes.setSelected(selected);
+    }
+
+    public void setCheckBoxForInterfaceMethods(boolean selected) {
+        this.checkBoxForInterfaceMethods.setSelected(selected);
+    }
+
 }
