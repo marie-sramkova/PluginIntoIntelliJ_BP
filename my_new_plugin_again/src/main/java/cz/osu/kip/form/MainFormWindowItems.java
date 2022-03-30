@@ -15,12 +15,12 @@ public class MainFormWindowItems {
     private JRadioButton defaultUMLTargetDestination = new JRadioButton("Default target destination for uml file");
     private JRadioButton ownUMLTargetDestination = new JRadioButton("Own target destination for uml file");
     private ButtonGroup buttonGroupUMLTargetDestination = setButtonGroup(defaultUMLTargetDestination, ownUMLTargetDestination);
-    private JLabel defaultUMLTargetDestinationDesc = new JLabel(new File(FormWindow.getFilePath().toPath().resolve("PlantUmlFiles").toFile().toString()).toString());
+    private JLabel defaultUMLTargetDestinationDesc;// = new JLabel(new File(FormWindow.getFilePath().toPath().resolve("PlantUmlFiles").toFile().toString()).toString());
 
     private JRadioButton defaultConfigTargetDestination = new JRadioButton("Default target destination for config file");
     private JRadioButton ownConfigTargetDestination = new JRadioButton("Own target destination for config file");
     private ButtonGroup buttonGroupConfigTargetDestination = setButtonGroup(defaultConfigTargetDestination, ownConfigTargetDestination);
-    private JLabel defaultConfigTargetDestinationDesc = new JLabel(new File(FormWindow.getFilePath().toPath().resolve("PlantUmlFiles").toFile().toString()).toString());
+    private JLabel defaultConfigTargetDestinationDesc;// = new JLabel(new File(FormWindow.getFilePath().toPath().resolve("PlantUmlFiles").toFile().toString()).toString());
 
     private JRadioButton allPackages = new JRadioButton("All packages");
     private JRadioButton ownPackages = new JRadioButton("Choose packages");
@@ -202,11 +202,13 @@ public class MainFormWindowItems {
         }
     };
 
-    public MainFormWindowItems() {
+    public MainFormWindowItems(File filePath) {
         defaultUMLTargetDestination.setSelected(true);
         defaultConfigTargetDestination.setSelected(true);
         defaultUMLTargetFile.setVisible(false);
+        defaultUMLTargetDestinationDesc = new JLabel(new File(filePath.toPath().resolve("PlantUmlFiles").toFile().toString()).toString());
         defaultConfigTargetFile.setVisible(false);
+        defaultConfigTargetDestinationDesc = new JLabel(new File(filePath.toPath().resolve("PlantUmlFiles").toFile().toString()).toString());
         defaultUMLTargetDestination.addActionListener(defaultUMLTargetDestinationListener);
         ownUMLTargetDestination.addActionListener(ownUMLTargetDestinationListener);
         defaultConfigTargetDestination.addActionListener(defaultConfigTargetDestinationListener);
@@ -493,4 +495,11 @@ public class MainFormWindowItems {
         this.checkBoxForInterfaceMethods.setSelected(selected);
     }
 
+    public void setDefaultUMLTargetDestinationDesc(JLabel defaultUMLTargetDestinationDesc) {
+        this.defaultUMLTargetDestinationDesc = defaultUMLTargetDestinationDesc;
+    }
+
+    public void setDefaultConfigTargetDestinationDesc(JLabel defaultConfigTargetDestinationDesc) {
+        this.defaultConfigTargetDestinationDesc = defaultConfigTargetDestinationDesc;
+    }
 }

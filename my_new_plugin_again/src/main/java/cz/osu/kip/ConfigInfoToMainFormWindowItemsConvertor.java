@@ -1,14 +1,17 @@
 package cz.osu.kip;
 
+import com.intellij.openapi.project.Project;
 import cz.osu.kip.form.FormWindow;
 import cz.osu.kip.form.MainFormWindowItems;
 
+import java.io.File;
+
 public class ConfigInfoToMainFormWindowItemsConvertor {
 
-    public static MainFormWindowItems convert(ConfigInfo configInfo) {
-        MainFormWindowItems mainFormWindowItems = new MainFormWindowItems();
-        convertUMLTargetDestination(configInfo, mainFormWindowItems);
-        convertConfigTargetDestination(configInfo, mainFormWindowItems);
+    public static MainFormWindowItems convert(ConfigInfo configInfo, Project rootProject, File filePath) {
+        MainFormWindowItems mainFormWindowItems = new MainFormWindowItems(filePath);
+        convertUMLTargetDestination(configInfo, mainFormWindowItems, filePath);
+        convertConfigTargetDestination(configInfo, mainFormWindowItems, filePath);
         mainFormWindowItems.setOwnPackages(); //TODO: výpis
 
         mainFormWindowItems.setClassesCheckBox(configInfo.isClasses());
@@ -33,8 +36,8 @@ public class ConfigInfoToMainFormWindowItemsConvertor {
         return mainFormWindowItems;
     }
 
-    private static void convertConfigTargetDestination(ConfigInfo configInfo, MainFormWindowItems mainFormWindowItems) {
-        if (FormWindow.getFilePath().toPath().resolve("PlantUmlFiles").toFile().toString()
+    private static void convertConfigTargetDestination(ConfigInfo configInfo, MainFormWindowItems mainFormWindowItems, File filePath) {
+        if (filePath.toPath().resolve("PlantUmlFiles").toFile().toString()
                 .equals(configInfo.getConfigTargetDestination())) {
             mainFormWindowItems.setDefaultConfigTargetDestination();
         } else {
@@ -42,8 +45,8 @@ public class ConfigInfoToMainFormWindowItemsConvertor {
         }
     }
 
-    private static void convertUMLTargetDestination(ConfigInfo configInfo, MainFormWindowItems mainFormWindowItems) {
-        if (FormWindow.getFilePath().toPath().resolve("PlantUmlFiles").toFile().toString()
+    private static void convertUMLTargetDestination(ConfigInfo configInfo, MainFormWindowItems mainFormWindowItems, File filePath) {
+        if (filePath.toPath().resolve("PlantUmlFiles").toFile().toString()
                 .equals(configInfo.getUmlTargetDestination())) {
             mainFormWindowItems.setDefaultUMLTargetDestination();
         } else {
