@@ -13,7 +13,7 @@ public class FormWindow extends JFrame {
     private static File filePath;
     private  MainFormWindowItems mainFormWindowItems;
     private MainFormWindowPanels mainFormWindowPanels;
-    private boolean isSubmitted = false;
+    private SubmitStateForFormWindow submitState = SubmitStateForFormWindow.CANCEL;
 
     public FormWindow(Project currentProject, File filePath){
         this.currentProject = currentProject;
@@ -53,8 +53,8 @@ public class FormWindow extends JFrame {
         return mainFormWindowPanels;
     }
 
-    public boolean isSubmitted() {
-        return isSubmitted;
+    public SubmitStateForFormWindow getSubmitState() {
+        return submitState;
     }
 
     public void showFormWindow() {
@@ -72,27 +72,42 @@ public class FormWindow extends JFrame {
         LayoutManager layout = new FlowLayout();
         panel.setLayout(layout);
 
-        JButton okButton = new JButton("Ok");
+        JButton okButton = new JButton("Generate all");
         JButton cancelButton = new JButton("Cancel");
-        JButton submitButton = new JButton("Submit");
-        submitButton.setEnabled(false);
+        JButton umlGenerationButton = new JButton("Generate only uml diagram");
+        JButton configGenerationButton = new JButton("Generate only config file");
 
         okButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                isSubmitted = true;
+                submitState = SubmitStateForFormWindow.ALL;
+                dispose();
+            }
+        });
+
+        umlGenerationButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                submitState = SubmitStateForFormWindow.ONLY_UML;
+                dispose();
+            }
+        });
+
+        configGenerationButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                submitState = SubmitStateForFormWindow.ONLY_CONFIG;
                 dispose();
             }
         });
 
         cancelButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                isSubmitted = false;
+                submitState = SubmitStateForFormWindow.CANCEL;
                 dispose();
             }
         });
 
         panel.add(okButton);
-        panel.add(submitButton);
+        panel.add(umlGenerationButton);
+        panel.add(configGenerationButton);
         panel.add(cancelButton);
         return panel;
     }
