@@ -10,6 +10,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import cz.osu.kip.form.FormWindow;
 import cz.osu.kip.form.MainFormWindowItems;
+import cz.osu.kip.form.SubmitStateForFormWindow;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 
@@ -28,7 +29,7 @@ public class ProjectMenuAction extends AnAction {
         if (filePath.isDirectory()){
             showNewForm(rootProject, filePath, null);
         }else{
-            showDataInFormFromFile(rootProject, filePath);
+            getDataFromFile(rootProject, filePath);
         }
 
 
@@ -43,7 +44,7 @@ public class ProjectMenuAction extends AnAction {
 //        Messages.showMessageDialog(currentProject, dlgMsg.toString(), dlgTitle, Messages.getInformationIcon());
     }
 
-    private void showDataInFormFromFile(Project rootProject, File filePath) {
+    private void getDataFromFile(Project rootProject, File filePath) {
         String text = null;
         try {
             BufferedReader reader = new BufferedReader(new FileReader(filePath.getPath()));
@@ -78,23 +79,47 @@ public class ProjectMenuAction extends AnAction {
         formWindow.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosed(java.awt.event.WindowEvent windowEvent) {
-                System.out.println(formWindow.isSubmitted());
-                if(formWindow.isSubmitted()){
-                    ConfigInfo configInfo = new ConfigInfo(formWindow.getMainFormWindowItems());
+                System.out.println(formWindow.getSubmitState());
+                switch (formWindow.getSubmitState()){
+                    case ALL:
+                        ConfigInfo configInfo = new ConfigInfo(formWindow.getMainFormWindowItems());
 
-                    var configInfo2 = new JSONObject(configInfo);
+                        var configInfo2 = new JSONObject(configInfo);
 
-                    System.out.println(configInfo2);
+                        System.out.println(configInfo2);
 
-                    try {
-                        FileWriter writer = new FileWriter(FormWindow.getFilePath().toPath().resolve("PlantUmlFiles.myuml").toFile().toString());
-                        writer.write(configInfo2.toString());
-                        writer.close();
-                    } catch (IOException ex) {
-                        System.out.println("chyba json");
-                        ex.printStackTrace();
-                    }
+                        try {
+                            FileWriter writer = new FileWriter(FormWindow.getFilePath().toPath().resolve("PlantUmlFiles.myuml").toFile().toString());
+                            writer.write(configInfo2.toString());
+                            writer.close();
+                        } catch (IOException ex) {
+                            System.out.println("chyba json");
+                            ex.printStackTrace();
+                        }
+                        break;
+                    case ONLY_UML:
+                        break;
+                    case ONLY_CONFIG:
+                        break;
+                    case CANCEL:
+                        break;
                 }
+//                if(!formWindow.getSubmitState().equals(SubmitStateForFormWindow.CANCEL)){
+//                    ConfigInfo configInfo = new ConfigInfo(formWindow.getMainFormWindowItems());
+//
+//                    var configInfo2 = new JSONObject(configInfo);
+//
+//                    System.out.println(configInfo2);
+//
+//                    try {
+//                        FileWriter writer = new FileWriter(FormWindow.getFilePath().toPath().resolve("PlantUmlFiles.myuml").toFile().toString());
+//                        writer.write(configInfo2.toString());
+//                        writer.close();
+//                    } catch (IOException ex) {
+//                        System.out.println("chyba json");
+//                        ex.printStackTrace();
+//                    }
+//                }
             }
         });
     }
