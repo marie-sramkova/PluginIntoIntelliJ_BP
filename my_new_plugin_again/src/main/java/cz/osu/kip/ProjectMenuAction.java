@@ -11,11 +11,15 @@ import com.intellij.openapi.vfs.VirtualFile;
 import cz.osu.kip.form.FormWindow;
 import cz.osu.kip.form.MainFormWindowItems;
 import cz.osu.kip.form.SubmitStateForFormWindow;
+import cz.osu.kip.umlGeneration.DividingToClassUtil;
+import cz.osu.kip.umlGeneration.FileController;
+import cz.osu.kip.umlGeneration.PackageX;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 
 import javax.swing.*;
 import java.io.*;
+import java.util.List;
 
 public class ProjectMenuAction extends AnAction {
     @Override
@@ -82,24 +86,13 @@ public class ProjectMenuAction extends AnAction {
                 System.out.println(formWindow.getSubmitState());
                 switch (formWindow.getSubmitState()){
                     case ALL:
-                        ConfigInfo configInfo = new ConfigInfo(formWindow.getMainFormWindowItems());
-
-                        var configInfo2 = new JSONObject(configInfo);
-
-                        System.out.println(configInfo2);
-
-                        try {
-                            FileWriter writer = new FileWriter(FormWindow.getFilePath().toPath().resolve("PlantUmlFiles.myuml").toFile().toString());
-                            writer.write(configInfo2.toString());
-                            writer.close();
-                        } catch (IOException ex) {
-                            System.out.println("chyba json");
-                            ex.printStackTrace();
-                        }
+                        createConfigFile(formWindow);
+                        createUmlFile();
                         break;
                     case ONLY_UML:
                         break;
                     case ONLY_CONFIG:
+                        createConfigFile(formWindow);
                         break;
                     case CANCEL:
                         break;
@@ -122,5 +115,29 @@ public class ProjectMenuAction extends AnAction {
 //                }
             }
         });
+    }
+
+    private void createUmlFile() {
+//        List<String> lines = FileController.loadFileToLines(fileNameInput);
+//        PackageX packageX = DividingToClassUtil.divideFromLines(lines);
+//        String text = packageX.convertToUmlFormat();
+//        FileController.saveToFile(fileNameOutput, text);
+    }
+
+    private void createConfigFile(FormWindow formWindow) {
+        ConfigInfo configInfo = new ConfigInfo(formWindow.getMainFormWindowItems());
+
+        var configInfo2 = new JSONObject(configInfo);
+
+        System.out.println(configInfo2);
+
+        try {
+            FileWriter writer = new FileWriter(FormWindow.getFilePath().toPath().resolve("PlantUmlFiles.myuml").toFile().toString());
+            writer.write(configInfo2.toString());
+            writer.close();
+        } catch (IOException ex) {
+            System.out.println("chyba json");
+            ex.printStackTrace();
+        }
     }
 }
