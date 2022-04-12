@@ -1,5 +1,8 @@
 package cz.osu.kip.umlGeneration;
 
+import cz.osu.kip.form.FormWindow;
+
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -19,9 +22,12 @@ public class FileController {
     }
 
     public static void saveToFile(String fileName, String text) {
-        System.out.println(fileName);
+        System.out.println("saveToFile method in FileController:" + fileName);
         try {
-            Files.writeString(Path.of(fileName), text);
+//            Files.writeString(Path.of(fileName), text);
+            FileWriter writer = new FileWriter(fileName, true);
+            writer.append(text);
+            writer.close();
         } catch (IOException e) {
             System.out.println("Nepodařilo se načíst soubor " + fileName);
         }
