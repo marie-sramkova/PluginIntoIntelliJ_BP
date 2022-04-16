@@ -195,7 +195,7 @@
     {
       "name": "Ansible Navigator Configuration",
       "description": "Ansible Navigator Configuration",
-      "url": "https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-navigator.json",
+      "url": "https://raw.githubusercontent.com/ansible/ansible-navigator/main/src/ansible_navigator/data/ansible-navigator.json",
       "fileMatch": [
         ".ansible-navigator.json",
         ".ansible-navigator.yaml",
@@ -873,6 +873,14 @@
       "url": "https://json.schemastore.org/workflows.json"
     },
     {
+      "name": "AWS CDK cdk.json",
+      "description": "Schema for AWS CDK context files",
+      "url": "https://json.schemastore.org/cdk.json",
+      "fileMatch": [
+        "cdk.json"
+      ]
+    },
+    {
       "name": "AWS CloudFormation",
       "description": "AWS CloudFormation provides a common language for you to describe and provision all the infrastructure resources in your cloud environment.",
       "fileMatch": [
@@ -1039,6 +1047,15 @@
         "debugsettings.json"
       ],
       "url": "https://json.schemastore.org/debugsettings.json"
+    },
+    {
+      "name": "Deno",
+      "description": "A JSON representation of a Deno configuration file.",
+      "fileMatch": [
+        "deno.json",
+        "deno.jsonc"
+      ],
+      "url": "https://raw.githubusercontent.com/denoland/deno/main/cli/schemas/config-file.v1.json"
     },
     {
       "name": "dependabot.json",
@@ -1895,6 +1912,14 @@
         "*.k3d.yml"
       ],
       "url": "https://raw.githubusercontent.com/rancher/k3d/main/pkg/config/config.versions.schema.json"
+    },
+    {
+      "name": "service.datadog.yaml",
+      "description": "Datadog service catalog definition file",
+      "fileMatch": [
+        "service.datadog.yaml"
+      ],
+      "url": "https://raw.githubusercontent.com/DataDog/schema/main/service-catalog/version.schema.json"
     },
     {
       "name": "Ory Keto configuration",
@@ -3655,7 +3680,7 @@
         "*zuul.d/*.yaml",
         "*/.zuul.yaml"
       ],
-      "url": "https://raw.githubusercontent.com/pycontribs/zuul-lint/master/zuul_lint/zuul-schema.json"
+      "url": "https://json.schemastore.org/zuul.json"
     },
     {
       "name": "Briefcase",
@@ -4072,8 +4097,8 @@
       }
     },
     {
-      "name": "markdownlint.json",
-      "description": "Markdownlint configuration file",
+      "name": "Markdownlint",
+      "description": "Markdownlint config file schema",
       "fileMatch": [
         ".markdownlintrc",
         ".markdownlint.json",
@@ -4081,7 +4106,7 @@
         ".markdownlint.yaml",
         ".markdownlint.yml"
       ],
-      "url": "https://json.schemastore.org/markdownlint.json"
+      "url": "https://raw.githubusercontent.com/DavidAnson/markdownlint/main/schema/markdownlint-config-schema.json"
     },
     {
       "name": "SauceCTL Configuration",
@@ -4222,6 +4247,12 @@
         "conf.yaml"
       ],
       "url": "https://json.schemastore.org/cheatsheets.json"
+    },
+    {
+      "name": "Xstate Machine Schema",
+      "description": "Schema for making statecharts",
+      "fileMatch": [],
+      "url": "https://raw.githubusercontent.com/statelyai/xstate/main/packages/core/src/machine.schema.json"
     }
   ]
 }

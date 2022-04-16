@@ -27,18 +27,18 @@ public class PackageX {
 
     public String convertToUmlFormat() {
         StringBuilder sb = new StringBuilder();
-        sb.append("@startuml\n\n")
-                .append("package ").append(getName()).append("{\n\n");
+        sb.append("package ").append(getName()).append("{\n\n");
         for (ClassX classX : getClassXES()) {
-            sb.append(classX.convertToUmlFormatClasses());
+            if (classX != null)
+                sb.append(classX.convertToUmlFormatClasses());
         }
 
         for (ClassX classX : getClassXES()) {
-            sb.append(classX.convertToUmlFormatAssociations());
+            if (classX != null)
+                sb.append(classX.convertToUmlFormatAssociations());
         }
 
-        sb.append("\n}\n\n")
-                .append("@enduml");
+        sb.append("\n}\n\n");
         return sb.toString();
     }
 }

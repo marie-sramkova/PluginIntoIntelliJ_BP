@@ -27,13 +27,25 @@
         </entry>
         <entry key="$USER_HOME$/IdeaProjects/untitled">
           <value>
-            <RecentProjectMetaInfo frameTitle="untitled – PlantUmlFiles" opened="true" projectWorkspaceId="26FfwaaM0NCIY4cswSa5E8ujeak">
+            <RecentProjectMetaInfo frameTitle="untitled – Main.java" projectWorkspaceId="26FfwaaM0NCIY4cswSa5E8ujeak">
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
               <option name="build" value="IC-212.5457.46" />
               <option name="buildTimestamp" value="1634044952563" />
               <frame x="-9" y="-9" width="1938" height="1038" extendedState="6" />
               <option name="productionCode" value="IC" />
               <option name="projectOpenTimestamp" value="1647024498806" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Documents/sramkova_r19233_ukol5_uml_generator/sramkova_r19233_ukol5/generatingUML_sramkova_r19233ToTry/generatingUML">
+          <value>
+            <RecentProjectMetaInfo frameTitle="generatingUML – PlantUmlFiles" opened="true" projectWorkspaceId="1pysytnDzJ4F6LGk2pjH3QHuhxx">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-212.5457.46" />
+              <option name="buildTimestamp" value="1634044947198" />
+              <frame x="-9" y="-9" width="1938" height="1038" extendedState="6" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1649833855681" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
