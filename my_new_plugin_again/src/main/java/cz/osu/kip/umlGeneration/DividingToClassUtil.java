@@ -10,12 +10,12 @@ public class DividingToClassUtil {
         top_iteration:
         for (int i = 1; i < lines.size(); i++) {
             List<String> linesOfOneClass = new ArrayList<>();
-            if (lines.get(i).startsWith("interface") || lines.get(i).startsWith("class")) {
+            if (lines.get(i).startsWith("interface") || lines.get(i).startsWith("public interface") || lines.get(i).startsWith("class") || lines.get(i).startsWith("public class")) {
                 linesOfOneClass.add(lines.get(i));
                 bottom_iteration:
                 for (int j = i + 1; j < lines.size(); j++) {
                     linesOfOneClass.add(lines.get(j));
-                    if (lines.get(j).startsWith("}")) {
+                    if (lines.get(j).trim().startsWith("}")) {
                         ClassX classX = addClassX(linesOfOneClass);
                         classXES.add(classX);
                         break bottom_iteration;
@@ -131,9 +131,9 @@ public class DividingToClassUtil {
     }
 
     private static String getClassType(String line) {
-        if (line.startsWith("interface"))
+        if (line.startsWith("interface") || line.startsWith("public interface"))
             return "interface";
-        else if (line.startsWith("class"))
+        else if (line.startsWith("class") || line.startsWith("public class"))
             return "class";
         else return null;
     }

@@ -11,7 +11,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import cz.osu.kip.form.FolderLevel;
 import cz.osu.kip.form.FormWindow;
 import cz.osu.kip.form.MainFormWindowItems;
-import cz.osu.kip.form.SubmitStateForFormWindow;
+import cz.osu.kip.umlGeneration.ClassX;
 import cz.osu.kip.umlGeneration.DividingToClassUtil;
 import cz.osu.kip.umlGeneration.FileController;
 import cz.osu.kip.umlGeneration.PackageX;
@@ -97,9 +97,14 @@ public class ProjectMenuAction extends AnAction {
                                     newFolderLevels.add(fl);
                             }
                             List<File> files = FileExplorer.getJavaFiles(formWindow.getMainFormWindowItems().getTreeViewWindow().getFolders());
-                            for (File file:files) {
-                                createUmlFile(file);
+                            StringBuilder sb = new StringBuilder();
+                            sb.append("@startuml\n\n");
+                            List<PackageX> packageXES = getPackageXES(files);
+                            for (PackageX packageX:packageXES) {
+                                sb.append(packageX.convertToUmlFormat());
                             }
+                            sb.append("@enduml");
+                            FileController.saveToFile(configInfo.getUmlTargetDestination(), sb.toString());
                         }
                         break;
                     case ONLY_UML:
@@ -109,32 +114,40 @@ public class ProjectMenuAction extends AnAction {
                         break;
                     case CANCEL:
                         break;
-                }
-//                if(!formWindow.getSubmitState().equals(SubmitStateForFormWindow.CANCEL)){
-//                    ConfigInfo configInfo = new ConfigInfo(formWindow.getMainFormWindowItems());
-//
-//                    var configInfo2 = new JSONObject(configInfo);
-//
-//                    System.out.println(configInfo2);
-//
-//                    try {
-//                        FileWriter writer = new FileWriter(FormWindow.getFilePath().toPath().resolve("PlantUmlFiles.myuml").toFile().toString());
-//                        writer.write(configInfo2.toString());
-//                        writer.close();
-//                    } catch (IOException ex) {
-//                        System.out.println("chyba json");
-//                        ex.printStackTrace();
-//                    }
-//                }
+                }git
             }
         });
     }
 
-    private void createUmlFile(File fileInput) {
+    @NotNull
+    private List<PackageX> getPackageXES(List<File> files) {
+        List<PackageX> packageXES = new ArrayList<>();
+        for (File file: files) {
+            PackageX packageX = getPackageXFromFile(file);
+            if (packageXES.size() == 0){
+                packageXES.add(packageX);
+                continue;
+            }
+            boolean alreadyExist = false;
+            for (PackageX packageXInList:packageXES) {
+                if (packageX.getName().equals(packageXInList.getName())){
+                    for (ClassX classX:packageX.getClassXES()) {
+                        packageXInList.addClassX(classX);
+                        alreadyExist = true;
+                    }
+                }
+            }
+            if (alreadyExist == false){
+                packageXES.add(packageX);
+            }
+        }
+        return packageXES;
+    }
+
+    private PackageX getPackageXFromFile(File fileInput) {
         List<String> lines = FileController.loadFileToLines(fileInput.getPath());
         PackageX packageX = DividingToClassUtil.divideFromLines(lines);
-        String text = packageX.convertToUmlFormat();
-        FileController.saveToFile(configInfo.getUmlTargetDestination(), text);
+        return packageX;
     }
 
     private void createConfigFile(FormWindow formWindow) {

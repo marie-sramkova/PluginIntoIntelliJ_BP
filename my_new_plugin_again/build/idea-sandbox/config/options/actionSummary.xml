@@ -1,7 +1,7 @@
 <application>
   <component name="ActionsLocalSummary">
     <e n="$Delete">
-      <i c="2" l="1648598752877" />
+      <i c="5" l="1649835596653" />
     </e>
     <e n="EditorBackSpace">
       <i c="11" l="1640949539702" />
@@ -13,7 +13,7 @@
       <i c="1" l="1648596605289" />
     </e>
     <e n="OpenFile">
-      <i c="1" l="1644144579829" />
+      <i c="2" l="1649833846731" />
     </e>
     <e n="WelcomeScreen.CreateNewProject">
       <i c="1" l="1647024474051" />
@@ -23,6 +23,9 @@
     </e>
     <e n="com.intellij.ide.ReopenProjectAction">
       <i c="2" l="1647024469697" />
+    </e>
+    <e n="com.intellij.openapi.fileEditor.impl.tabActions.CloseTab">
+      <i c="1" l="1649835535776" />
     </e>
     <e n="com.intellij.openapi.ui.DialogWrapper$4">
       <i c="2" l="1648598754142" />
