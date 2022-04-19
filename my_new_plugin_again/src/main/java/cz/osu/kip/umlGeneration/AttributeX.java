@@ -28,20 +28,4 @@ class AttributeX {
     public boolean isStatic() {
         return staticStatus;
     }
-
-    public String convertToUmlFormat() {
-        StringBuilder sb = new StringBuilder();
-        if (this.getStatus().equals("private")) {
-            sb.append("- ");
-        } else if (this.getStatus().equals("public")) {
-            sb.append("+ ");
-        } else if (this.getStatus().equals("protected")) {
-            sb.append("# ");
-        }
-        if (isStatic()) {
-            sb.append("<<static>> ");
-        }
-        sb.append(getName()).append(" : ").append(getType()).append("\n");
-        return sb.toString();
-    }
 }

@@ -36,7 +36,6 @@ public class ConfigInfo {
         if (mainFormWindowItems.getDefaultUMLTargetDestination().isSelected()){
             umlTargetDestination = FormWindow.getFilePath().toPath().resolve("PlantUmlFiles").toFile().toString();
         }else {
-//            String s = mainFormWindowItems.getDefaultUMLTargetFile().getSelectedFile().getAbsolutePath();
             umlTargetDestination = mainFormWindowItems.getDefaultUMLTargetFile().getSelectedFile().getAbsolutePath();
         }
         if (mainFormWindowItems.getDefaultConfigTargetDestination().isSelected()){

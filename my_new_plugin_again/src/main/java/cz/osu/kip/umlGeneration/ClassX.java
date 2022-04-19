@@ -61,26 +61,6 @@ public class ClassX {
         return methodXES;
     }
 
-    public String convertToUmlFormatClasses() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getType()).append(" ").append(getName()).append("{\n");
-        if (getAttributes().size() != 0) {
-            for (AttributeX attributeX : getAttributes()) {
-                sb.append(attributeX.convertToUmlFormat());
-            }
-        }
-        if (getAttributes().size() != 0 && getMethods().size() != 0) {
-            sb.append("\n");
-        }
-        if (getMethods().size() != 0) {
-            for (MethodX methodX : getMethods()) {
-                sb.append(methodX.convertToUmlFormat());
-            }
-        }
-        sb.append("}\n\n");
-        return sb.toString();
-    }
-
     public String convertToUmlFormatAssociations() {
         StringBuilder sb = new StringBuilder();
         if (isExtendStatus()) {

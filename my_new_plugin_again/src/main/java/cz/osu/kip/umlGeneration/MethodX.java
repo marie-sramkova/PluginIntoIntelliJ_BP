@@ -36,33 +36,4 @@ public class MethodX {
     public boolean isStaticStatus() {
         return staticStatus;
     }
-
-    public String convertToUmlFormat() {
-        StringBuilder sb = new StringBuilder();
-        if (getStatus().equals("private")) {
-            sb.append("- ");
-        } else if (getStatus().equals("public")) {
-            sb.append("+ ");
-        } else if (getStatus().equals("protected")) {
-            sb.append("# ");
-        }
-        if (isStaticStatus()) {
-            sb.append("<<static>> ");
-        }
-        sb.append(getName()).append("(");
-        if (getInputParameters() != null) {
-            for (int i = 0; i < getInputParameters().size(); i++) {
-                sb.append(inputParameterXES.get(i).convertToUmlFormat());
-                if (i < getInputParameters().size() - 1) {
-                    sb.append(", ");
-                }
-            }
-        }
-        if (!getReturningType().isEmpty()){
-            sb.append(") : ").append(getReturningType()).append("\n");
-        }else{
-            sb.append(")").append("\n");
-        }
-        return sb.toString();
-    }
 }
