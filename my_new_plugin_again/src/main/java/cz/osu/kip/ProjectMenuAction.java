@@ -1,8 +1,6 @@
 package cz.osu.kip;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import com.google.gson.*;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -87,7 +85,6 @@ public class ProjectMenuAction extends AnAction {
             public void windowClosed(java.awt.event.WindowEvent windowEvent) {
                 switch (formWindow.getSubmitState()){
                     case ALL:
-//                        checkIfUmlFileExistsOrCreate(formWindow);
                         createConfigFile(formWindow);
                         if(formWindow.getMainFormWindowItems().getTreeViewWindow() != null && formWindow.getMainFormWindowItems().getTreeViewWindow().getFolders() != null) {
                             List<FolderLevel> newFolderLevels = new ArrayList<>();
@@ -117,19 +114,6 @@ public class ProjectMenuAction extends AnAction {
                 }
             }
         });
-    }
-
-    private void checkIfUmlFileExistsOrCreate(FormWindow formWindow) {
-        if (!formWindow.getMainFormWindowItems().getDefaultUMLTargetDestination().isSelected()){
-            if (!new File(formWindow.getMainFormWindowItems().getDefaultUMLTargetFile().getSelectedFile().getAbsolutePath()).exists()){
-                try {
-                    FileWriter writer = new FileWriter(formWindow.getMainFormWindowItems().getDefaultUMLTargetFile().getSelectedFile().getAbsolutePath());
-                    writer.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
     }
 
     @NotNull
@@ -166,13 +150,14 @@ public class ProjectMenuAction extends AnAction {
     private void createConfigFile(FormWindow formWindow) {
         configInfo = new ConfigInfo(formWindow.getMainFormWindowItems());
 
-        var configInfo2 = new JSONObject(configInfo);
+        JSONObject jsonObject = new JSONObject(configInfo);
+        String configInfo2 = jsonObject.toString(4);
 
         System.out.println(configInfo2);
 
         try {
             FileWriter writer = new FileWriter(FormWindow.getFilePath().toPath().resolve("PlantUmlFiles.myuml").toFile().toString());
-            writer.write(configInfo2.toString());
+            writer.write(configInfo2);
             writer.close();
         } catch (IOException ex) {
             System.out.println("chyba json");
