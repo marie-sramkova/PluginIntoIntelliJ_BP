@@ -45,7 +45,7 @@ public class ConfigInfo {
         if (mainFormWindowItems.getDefaultConfigTargetDestination().isSelected()){
             configTargetDestination = FormWindow.getFilePath().toPath().resolve("PlantUmlFiles").toFile().toString();
         }else {
-            configTargetDestination = mainFormWindowItems.getDefaultConfigTargetFile().getSelectedFile().toString();
+            configTargetDestination = mainFormWindowItems.getDefaultConfigTargetFile().getSelectedFile().getAbsolutePath();
         }
         if(mainFormWindowItems.getAllPackages().isSelected()){
             packages.add(FormWindow.getFilePath().toString());
