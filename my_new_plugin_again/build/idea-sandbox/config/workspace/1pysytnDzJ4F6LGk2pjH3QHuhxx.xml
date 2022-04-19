@@ -1,16 +1,27 @@
 <project version="4">
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="-1">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/x/v">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/x/b.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/PlantUmlFiles">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/src/x/b.form">
+          <provider selected="true" editor-type-id="ui-designer" />
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+      <option value="$PROJECT_DIR$/src/x/b.form" />
+    </changedPaths>
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -22,6 +33,7 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -40,11 +52,23 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="kip" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="generatingUML" type="b2602c69:ProjectViewProjectNode" />
+              <item name="generatingUML" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="x" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="generatingUML" type="b2602c69:ProjectViewProjectNode" />
+              <item name="generatingUML" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="x" type="462c0819:PsiDirectoryNode" />
+              <item name="b" type="e9f4de52:FormNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -69,7 +93,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Services" order="9" show_stripe_button="false" />
       <window_info anchor="right" id="Space Automation" order="0" />
-      <window_info anchor="right" id="Layout Validation" order="7" />
+      <window_info anchor="right" id="Layout Validation" order="1" />
     </layout>
     <recentWindows>
       <value>Project</value>
@@ -77,12 +101,15 @@
   </component>
   <component name="Trusted.Project.Settings" hasCheckedIfOldProject="true" />
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/PlantUmlFiles">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/PlantUmlFiles" />
+    <entry file="file://$PROJECT_DIR$/src/x/v">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/x/b.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/x/b.form">
+      <provider selected="true" editor-type-id="ui-designer" />
     </entry>
   </component>
 </project>

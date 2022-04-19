@@ -1,7 +1,16 @@
 <application>
   <component name="ActionsLocalSummary">
+    <e n="$Copy">
+      <i c="2" l="1650395988387" />
+    </e>
     <e n="$Delete">
-      <i c="5" l="1649835596653" />
+      <i c="10" l="1650396035124" />
+    </e>
+    <e n="$Paste">
+      <i c="3" l="1650395989680" />
+    </e>
+    <e n="$Undo">
+      <i c="6" l="1650396275749" />
     </e>
     <e n="EditorBackSpace">
       <i c="11" l="1640949539702" />
@@ -12,8 +21,14 @@
     <e n="NewDir">
       <i c="1" l="1648596605289" />
     </e>
+    <e n="NewForm">
+      <i c="1" l="1650395911010" />
+    </e>
     <e n="OpenFile">
       <i c="2" l="1649833846731" />
+    </e>
+    <e n="SaveAll">
+      <i c="1" l="1650396283210" />
     </e>
     <e n="WelcomeScreen.CreateNewProject">
       <i c="1" l="1647024474051" />
@@ -25,10 +40,10 @@
       <i c="2" l="1647024469697" />
     </e>
     <e n="com.intellij.openapi.fileEditor.impl.tabActions.CloseTab">
-      <i c="1" l="1649835535776" />
+      <i c="2" l="1650383409682" />
     </e>
     <e n="com.intellij.openapi.ui.DialogWrapper$4">
-      <i c="2" l="1648598754142" />
+      <i c="3" l="1650383379418" />
     </e>
   </component>
 </application>
