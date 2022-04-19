@@ -4,9 +4,13 @@ import cz.osu.kip.form.FolderLevel;
 import cz.osu.kip.form.FormWindow;
 import cz.osu.kip.form.MainFormWindowItems;
 
+import javax.swing.*;
 import java.io.File;
+import java.io.FileFilter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class ConfigInfo {
     private String umlTargetDestination;
@@ -43,7 +47,13 @@ public class ConfigInfo {
         }else {
             configTargetDestination = mainFormWindowItems.getDefaultConfigTargetFile().getSelectedFile().toString();
         }
-        if(mainFormWindowItems.getTreeViewWindow() != null && mainFormWindowItems.getTreeViewWindow().getFolders() != null) {
+        if(mainFormWindowItems.getAllPackages().isSelected()){
+            packages.add(FormWindow.getFilePath().toString());
+            List<File> subdirs = getSubdirs(FormWindow.getFilePath());
+            for (File file:subdirs) {
+                packages.add(file.getAbsolutePath());
+            }
+        }else if (mainFormWindowItems.getTreeViewWindow() != null && mainFormWindowItems.getTreeViewWindow().getFolders() != null) {
             for (FolderLevel fl : mainFormWindowItems.getTreeViewWindow().getFolders()) {
                 if (fl.getjCheckBox().isSelected())
                     packages.add(fl.getUrl().toString());
@@ -68,6 +78,22 @@ public class ConfigInfo {
         defaultInterfaces = mainFormWindowItems.getDefaultForInterfaceCheckBox().isSelected();
         attributesForInterfaces = mainFormWindowItems.getCheckBoxForInterfaceAttributes().isSelected();
         methodsForInterfaces = mainFormWindowItems.getCheckBoxForInterfaceMethods().isSelected();
+    }
+
+    private List<File> getSubdirs(File file) {
+        List<File> subdirs = Arrays.asList(Objects.requireNonNull(file.listFiles(new FileFilter() {
+            public boolean accept(File f) {
+                return f.isDirectory();
+            }
+        })));
+        subdirs = new ArrayList<File>(subdirs);
+
+        List<File> deepSubdirs = new ArrayList<File>();
+        for(File subdir : subdirs) {
+            deepSubdirs.addAll(getSubdirs(subdir));
+        }
+        subdirs.addAll(deepSubdirs);
+        return subdirs;
     }
 
     public String getUmlTargetDestination() {
