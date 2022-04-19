@@ -30,9 +30,9 @@ public class ProjectMenuAction extends AnAction {
         File filePath = new File(file.getPath());
         System.out.println(rootProject);
         System.out.println(filePath);
-        if (filePath.isDirectory()){
+        if (filePath.isDirectory()) {
             showNewForm(rootProject, filePath, null);
-        }else{
+        } else {
             getDataFromFile(rootProject, filePath);
         }
 
@@ -75,36 +75,22 @@ public class ProjectMenuAction extends AnAction {
 
     private void showNewForm(Project rootProject, File filePath, MainFormWindowItems mainFormWindowItems) {
         FormWindow formWindow;
-        if (mainFormWindowItems == null){
+        if (mainFormWindowItems == null) {
             formWindow = new FormWindow(rootProject, filePath);
-        }else{
+        } else {
             formWindow = new FormWindow(rootProject, filePath, mainFormWindowItems);
         }
         formWindow.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosed(java.awt.event.WindowEvent windowEvent) {
-                switch (formWindow.getSubmitState()){
+                configInfo = new ConfigInfo(formWindow.getMainFormWindowItems());
+                switch (formWindow.getSubmitState()) {
                     case ALL:
                         createConfigFile(formWindow);
-                        if(formWindow.getMainFormWindowItems().getTreeViewWindow() != null && formWindow.getMainFormWindowItems().getTreeViewWindow().getFolders() != null) {
-                            List<FolderLevel> newFolderLevels = new ArrayList<>();
-                            for (FolderLevel fl : formWindow.getMainFormWindowItems().getTreeViewWindow().getFolders()) {
-                                if (fl.getjCheckBox().isSelected())
-                                    newFolderLevels.add(fl);
-                            }
-                            List<File> files = FileExplorer.getJavaFiles(/*formWindow.getMainFormWindowItems().getTreeViewWindow().getFolders()*/ newFolderLevels);
-                            StringBuilder sb = new StringBuilder();
-                            sb.append("@startuml\n\n");
-                            List<PackageX> packageXES = getPackageXES(files);
-                            for (PackageX packageX:packageXES) {
-                                String text = UmlFilter.getTextByConfigInfo(configInfo, packageX);
-                                sb.append(text);
-                            }
-                            sb.append("@enduml");
-                            FileController.saveToFile(configInfo.getUmlTargetDestination(), sb.toString());
-                        }
+                        createUmlFile(formWindow);
                         break;
                     case ONLY_UML:
+                        createUmlFile(formWindow);
                         break;
                     case ONLY_CONFIG:
                         createConfigFile(formWindow);
@@ -116,25 +102,50 @@ public class ProjectMenuAction extends AnAction {
         });
     }
 
+    private void createUmlFile(FormWindow formWindow) {
+        List<File> newFolders = new ArrayList<>();
+        if (formWindow.getMainFormWindowItems().getTreeViewWindow() != null && formWindow.getMainFormWindowItems().getTreeViewWindow().getFolders() != null) {
+
+            for (FolderLevel fl : formWindow.getMainFormWindowItems().getTreeViewWindow().getFolders()) {
+                if (fl.getjCheckBox().isSelected())
+                    newFolders.add(fl.getUrl());
+            }
+        }else{
+            for (String pakage:configInfo.getPackages()) {
+                newFolders.add(new File(pakage));
+            }
+        }
+        List<File> files = FileExplorer.getJavaFiles(newFolders);
+        StringBuilder sb = new StringBuilder();
+        sb.append("@startuml\n\n");
+        List<PackageX> packageXES = getPackageXES(files);
+        for (PackageX packageX : packageXES) {
+            String text = UmlFilter.getTextByConfigInfo(configInfo, packageX);
+            sb.append(text);
+        }
+        sb.append("@enduml");
+        FileController.saveToFile(configInfo.getUmlTargetDestination(), sb.toString());
+    }
+
     @NotNull
     private List<PackageX> getPackageXES(List<File> files) {
         List<PackageX> packageXES = new ArrayList<>();
-        for (File file: files) {
+        for (File file : files) {
             PackageX packageX = getPackageXFromFile(file);
-            if (packageXES.size() == 0){
+            if (packageXES.size() == 0) {
                 packageXES.add(packageX);
                 continue;
             }
             boolean alreadyExist = false;
-            for (PackageX packageXInList:packageXES) {
-                if (packageX.getName().equals(packageXInList.getName())){
-                    for (ClassX classX:packageX.getClassXES()) {
+            for (PackageX packageXInList : packageXES) {
+                if (packageX.getName().equals(packageXInList.getName())) {
+                    for (ClassX classX : packageX.getClassXES()) {
                         packageXInList.addClassX(classX);
                         alreadyExist = true;
                     }
                 }
             }
-            if (alreadyExist == false){
+            if (alreadyExist == false) {
                 packageXES.add(packageX);
             }
         }
@@ -148,8 +159,6 @@ public class ProjectMenuAction extends AnAction {
     }
 
     private void createConfigFile(FormWindow formWindow) {
-        configInfo = new ConfigInfo(formWindow.getMainFormWindowItems());
-
         JSONObject jsonObject = new JSONObject(configInfo);
         String configInfo2 = jsonObject.toString(4);
 
