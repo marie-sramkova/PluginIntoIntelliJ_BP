@@ -11,15 +11,13 @@ import com.intellij.openapi.vfs.VirtualFile;
 import cz.osu.kip.form.FolderLevel;
 import cz.osu.kip.form.FormWindow;
 import cz.osu.kip.form.MainFormWindowItems;
-import cz.osu.kip.umlGeneration.ClassX;
-import cz.osu.kip.umlGeneration.DividingToClassUtil;
-import cz.osu.kip.umlGeneration.FileController;
-import cz.osu.kip.umlGeneration.PackageX;
+import cz.osu.kip.umlGeneration.*;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 
 import javax.swing.*;
 import java.io.*;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -89,6 +87,7 @@ public class ProjectMenuAction extends AnAction {
             public void windowClosed(java.awt.event.WindowEvent windowEvent) {
                 switch (formWindow.getSubmitState()){
                     case ALL:
+//                        checkIfUmlFileExistsOrCreate(formWindow);
                         createConfigFile(formWindow);
                         if(formWindow.getMainFormWindowItems().getTreeViewWindow() != null && formWindow.getMainFormWindowItems().getTreeViewWindow().getFolders() != null) {
                             List<FolderLevel> newFolderLevels = new ArrayList<>();
@@ -96,12 +95,13 @@ public class ProjectMenuAction extends AnAction {
                                 if (fl.getjCheckBox().isSelected())
                                     newFolderLevels.add(fl);
                             }
-                            List<File> files = FileExplorer.getJavaFiles(formWindow.getMainFormWindowItems().getTreeViewWindow().getFolders());
+                            List<File> files = FileExplorer.getJavaFiles(/*formWindow.getMainFormWindowItems().getTreeViewWindow().getFolders()*/ newFolderLevels);
                             StringBuilder sb = new StringBuilder();
                             sb.append("@startuml\n\n");
                             List<PackageX> packageXES = getPackageXES(files);
                             for (PackageX packageX:packageXES) {
-                                sb.append(packageX.convertToUmlFormat());
+                                String text = UmlFilter.getTextByConfigInfo(configInfo, packageX);
+                                sb.append(text);
                             }
                             sb.append("@enduml");
                             FileController.saveToFile(configInfo.getUmlTargetDestination(), sb.toString());
@@ -114,9 +114,22 @@ public class ProjectMenuAction extends AnAction {
                         break;
                     case CANCEL:
                         break;
-                }git
+                }
             }
         });
+    }
+
+    private void checkIfUmlFileExistsOrCreate(FormWindow formWindow) {
+        if (!formWindow.getMainFormWindowItems().getDefaultUMLTargetDestination().isSelected()){
+            if (!new File(formWindow.getMainFormWindowItems().getDefaultUMLTargetFile().getSelectedFile().getAbsolutePath()).exists()){
+                try {
+                    FileWriter writer = new FileWriter(formWindow.getMainFormWindowItems().getDefaultUMLTargetFile().getSelectedFile().getAbsolutePath());
+                    writer.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     @NotNull

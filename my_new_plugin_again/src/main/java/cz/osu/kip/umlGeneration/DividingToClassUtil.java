@@ -30,6 +30,7 @@ public class DividingToClassUtil {
 
     private static ClassX addClassX(List<String> lines) {
         String type = getClassType(lines.get(0));
+        boolean isPublic = getIfClassIsPublic(lines.get(0));
         if (type != null) {
             String name = getNameOfClass(lines.get(0));
             String tmp = lines.get(0).substring((type.length() + name.length()) + 2);
@@ -90,9 +91,17 @@ public class DividingToClassUtil {
                 }
             }
 
-            ClassX classX = new ClassX(name, type, extendsStatus, extendedClass, implementsStatus, implementedInterfaces, attributeXES, methodXES);
+            ClassX classX = new ClassX(name, type, isPublic, extendsStatus, extendedClass, implementsStatus, implementedInterfaces, attributeXES, methodXES);
             return classX;
         } else return null;
+    }
+
+    private static boolean getIfClassIsPublic(String line) {
+        if (line.startsWith("interface") || line.startsWith("class"))
+            return false;
+        else if (line.startsWith("public interface") || line.startsWith("public class"))
+            return true;
+        else return false;
     }
 
     private static AttributeX getAttributeFromLine(String line) {
@@ -268,8 +277,8 @@ public class DividingToClassUtil {
     private static String getStatus(String line) {
         int lastIndex = (line.indexOf(" "));
         String status = line.substring(0, lastIndex);
-        if (!(status.equals("private") || status.equals("protected"))) {
-            status = "public";
+        if (!(status.equals("private") || status.equals("protected") || status.equals("public"))) {
+            status = "internal";
         }
         return status;
     }
