@@ -6,16 +6,15 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import cz.osu.kip.form.FolderLevel;
-import cz.osu.kip.form.FormWindow;
-import cz.osu.kip.form.MainFormWindowItems;
+import cz.osu.kip.mainForm.FolderLevel;
+import cz.osu.kip.mainForm.FormWindow;
+import cz.osu.kip.mainForm.MainFormWindowItems;
 import cz.osu.kip.umlGeneration.*;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 
 import javax.swing.*;
 import java.io.*;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 

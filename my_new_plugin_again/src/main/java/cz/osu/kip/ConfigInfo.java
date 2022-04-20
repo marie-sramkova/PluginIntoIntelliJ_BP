@@ -1,10 +1,9 @@
 package cz.osu.kip;
 
-import cz.osu.kip.form.FolderLevel;
-import cz.osu.kip.form.FormWindow;
-import cz.osu.kip.form.MainFormWindowItems;
+import cz.osu.kip.mainForm.FolderLevel;
+import cz.osu.kip.mainForm.FormWindow;
+import cz.osu.kip.mainForm.MainFormWindowItems;
 
-import javax.swing.*;
 import java.io.File;
 import java.io.FileFilter;
 import java.util.ArrayList;
