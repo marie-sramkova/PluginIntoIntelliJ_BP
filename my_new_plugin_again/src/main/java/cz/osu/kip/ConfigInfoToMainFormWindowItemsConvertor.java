@@ -1,8 +1,7 @@
 package cz.osu.kip;
 
 import com.intellij.openapi.project.Project;
-import cz.osu.kip.form.FormWindow;
-import cz.osu.kip.form.MainFormWindowItems;
+import cz.osu.kip.mainForm.MainFormWindowItems;
 
 import java.io.File;
 

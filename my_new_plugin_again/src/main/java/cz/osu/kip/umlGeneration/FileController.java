@@ -1,7 +1,5 @@
 package cz.osu.kip.umlGeneration;
 
-import cz.osu.kip.form.FormWindow;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
