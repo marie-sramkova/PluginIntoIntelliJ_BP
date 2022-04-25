@@ -1,6 +1,7 @@
 package cz.osu.kip;
 
 import com.intellij.openapi.project.Project;
+import cz.osu.kip.mainForm.FormWindow;
 import cz.osu.kip.mainForm.MainFormWindowItems;
 
 import java.io.File;
@@ -8,7 +9,7 @@ import java.io.File;
 public class ConfigInfoToMainFormWindowItemsConvertor {
 
     public static MainFormWindowItems convert(ConfigInfo configInfo, Project rootProject, File filePath) {
-        MainFormWindowItems mainFormWindowItems = new MainFormWindowItems(filePath);
+        MainFormWindowItems mainFormWindowItems = new MainFormWindowItems(filePath, new FormWindow(rootProject, filePath));
         convertUMLTargetDestination(configInfo, mainFormWindowItems, filePath);
         convertConfigTargetDestination(configInfo, mainFormWindowItems, filePath);
         mainFormWindowItems.setOwnPackages(); //TODO: výpis

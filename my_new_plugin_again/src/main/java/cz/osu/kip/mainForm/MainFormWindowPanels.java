@@ -36,6 +36,10 @@ public class MainFormWindowPanels {
         scrollablePanel = makeScrollablePanel();
     }
 
+    public JPanel getContentPanel() {
+        return contentPanel;
+    }
+
     public JPanel getScrollablePanel() {
         return scrollablePanel;
     }
@@ -45,8 +49,9 @@ public class MainFormWindowPanels {
         contentPanel = makeContentPanel();
 
         JBScrollPane scrollPane = new JBScrollPane(contentPanel);
-        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPane.setPreferredSize(new Dimension(790,700));
         //scrollPane.setBounds(0, 10, 800, 790);
         JPanel contentPane = new JPanel();
         contentPane.setPreferredSize(new Dimension(800, 800));
@@ -237,7 +242,7 @@ public class MainFormWindowPanels {
     private GroupLayout setSubpanelsLayout(JPanel jPanel){
         Border blackline = BorderFactory.createLineBorder(Color.black);
         jPanel.setBorder(blackline);
-        jPanel.setMinimumSize(new Dimension(780, 0));
+        jPanel.setMinimumSize(new Dimension(775, 0));
         GroupLayout groupLayout = new GroupLayout(jPanel);
         groupLayout.setAutoCreateGaps(true);
         groupLayout.setAutoCreateContainerGaps(true);

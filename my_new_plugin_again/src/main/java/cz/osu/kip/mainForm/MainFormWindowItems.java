@@ -1,5 +1,7 @@
 package cz.osu.kip.mainForm;
 
+import org.jetbrains.annotations.NotNull;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,6 +9,7 @@ import java.io.File;
 
 public class MainFormWindowItems {
 
+    private FormWindow formWindow;
     private JRadioButton defaultUMLTargetDestination = new JRadioButton("Default target destination for uml file");
     private JRadioButton ownUMLTargetDestination = new JRadioButton("Own target destination for uml file");
     private ButtonGroup buttonGroupUMLTargetDestination = setButtonGroup(defaultUMLTargetDestination, ownUMLTargetDestination);
@@ -56,6 +59,7 @@ public class MainFormWindowItems {
             defaultUMLTargetFile.setCurrentDirectory(new File(FormWindow.getFilePath().toPath().toFile().toString()));
             defaultUMLTargetDestinationDesc.setVisible(false);
             defaultUMLTargetFile.setVisible(true);
+            formWindow.refresh();
         }
     };
 
@@ -70,6 +74,7 @@ public class MainFormWindowItems {
             defaultConfigTargetFile.setCurrentDirectory(new File(FormWindow.getFilePath().toPath().toFile().toString()));
             defaultConfigTargetDestinationDesc.setVisible(false);
             defaultConfigTargetFile.setVisible(true);
+            formWindow.refresh();
         }
     };
 
@@ -122,6 +127,7 @@ public class MainFormWindowItems {
                 checkBoxForClassMethods.setVisible(true);
                 checkBoxForInnerClasses.setVisible(true);
             }
+            formWindow.refresh();
         }
     };
 
@@ -146,6 +152,7 @@ public class MainFormWindowItems {
                 checkBoxForProtectedClassAttributes.setVisible(true);
                 checkBoxForInternalClassAttributes.setVisible(true);
             }
+            formWindow.refresh();
         }
     };
 
@@ -170,6 +177,7 @@ public class MainFormWindowItems {
                 checkBoxForProtectedClassMethods.setVisible(true);
                 checkBoxForInternalClassMethods.setVisible(true);
             }
+            formWindow.refresh();
         }
     };
 
@@ -194,16 +202,20 @@ public class MainFormWindowItems {
                 checkBoxForInterfaceAttributes.setVisible(true);
                 checkBoxForInterfaceMethods.setVisible(true);
             }
+            formWindow.refresh();
         }
     };
 
-    public MainFormWindowItems(File filePath) {
+    public MainFormWindowItems(File filePath, FormWindow formWindow) {
+        this.formWindow = formWindow;
         defaultUMLTargetDestination.setSelected(true);
         defaultConfigTargetDestination.setSelected(true);
         defaultUMLTargetFile.setVisible(false);
-        defaultUMLTargetDestinationDesc = new JLabel(new File(filePath.toPath().resolve("PlantUmlFiles").toFile().toString()).toString());
+        String defaultUmlTargetDestinationText = setDefaultTargetDestinationText(new File(filePath.toPath().resolve("PlantUmlFiles").toFile().toString()));
+        defaultUMLTargetDestinationDesc = new JLabel(defaultUmlTargetDestinationText);
         defaultConfigTargetFile.setVisible(false);
-        defaultConfigTargetDestinationDesc = new JLabel(new File(filePath.toPath().resolve("PlantUmlFiles").toFile().toString()).toString());
+        String defaultConfigTargetDestinationText = setDefaultTargetDestinationText(new File(filePath.toPath().resolve("PlantUmlFiles.myuml").toFile().toString()));
+        defaultConfigTargetDestinationDesc = new JLabel(defaultConfigTargetDestinationText);
         defaultUMLTargetDestination.addActionListener(defaultUMLTargetDestinationListener);
         ownUMLTargetDestination.addActionListener(ownUMLTargetDestinationListener);
         defaultConfigTargetDestination.addActionListener(defaultConfigTargetDestinationListener);
@@ -232,6 +244,32 @@ public class MainFormWindowItems {
         checkBoxForInternalClassMethods.setVisible(false);
         checkBoxForInterfaceAttributes.setVisible(false);
         checkBoxForInterfaceMethods.setVisible(false);
+    }
+
+    @NotNull
+    private String setDefaultTargetDestinationText(File filePath) {
+        String defaultUmlTargetDestinationText = filePath.toString();
+        int rowLength = 120;
+        if (defaultUmlTargetDestinationText.length() > rowLength){
+            StringBuilder sb = new StringBuilder();
+            sb.append("<html>");
+            while(defaultUmlTargetDestinationText.length() > rowLength) {
+                String row = defaultUmlTargetDestinationText.substring(0,rowLength);
+                int lastIndexOfSlash = row.length()-1;
+                if (row.contains("/")) {
+                    lastIndexOfSlash = row.lastIndexOf("/");
+                }
+                else if (row.contains("\\")) {
+                    lastIndexOfSlash = row.lastIndexOf("\\");
+                }
+                sb.append(row.substring(0, lastIndexOfSlash)).append("<br>");
+                defaultUmlTargetDestinationText = defaultUmlTargetDestinationText.substring(lastIndexOfSlash);
+            }
+            sb.append(defaultUmlTargetDestinationText);
+            sb.append("</html>");
+            defaultUmlTargetDestinationText = sb.toString();
+        }
+        return defaultUmlTargetDestinationText;
     }
 
     private ButtonGroup setButtonGroup(JRadioButton... buttons) {

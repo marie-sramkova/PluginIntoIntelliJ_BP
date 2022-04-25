@@ -9,6 +9,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import cz.osu.kip.mainForm.FolderLevel;
 import cz.osu.kip.mainForm.FormWindow;
 import cz.osu.kip.mainForm.MainFormWindowItems;
+import cz.osu.kip.mainForm.SubmitStateForFormWindow;
 import cz.osu.kip.umlGeneration.*;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
@@ -82,7 +83,9 @@ public class ProjectMenuAction extends AnAction {
         formWindow.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosed(java.awt.event.WindowEvent windowEvent) {
-                configInfo = new ConfigInfo(formWindow.getMainFormWindowItems());
+                if (formWindow.getSubmitState() != SubmitStateForFormWindow.CANCEL) {
+                    configInfo = new ConfigInfo(formWindow.getMainFormWindowItems());
+                }
                 switch (formWindow.getSubmitState()) {
                     case ALL:
                         createConfigFile(formWindow);

@@ -18,7 +18,7 @@ public class FormWindow extends JFrame {
     public FormWindow(Project currentProject, File filePath){
         this.currentProject = currentProject;
         this.filePath = filePath;
-        mainFormWindowItems = new MainFormWindowItems(filePath);
+        mainFormWindowItems = new MainFormWindowItems(filePath, this);
         mainFormWindowPanels = new MainFormWindowPanels(currentProject, filePath, mainFormWindowItems);
 //        okButton.addActionListener(new ActionListener() {
 //            @Override
@@ -130,4 +130,9 @@ public class FormWindow extends JFrame {
 //        }
 //    }
 
+    public void refresh(){
+        mainFormWindowPanels.getContentPanel().revalidate();
+        mainFormWindowPanels.getContentPanel().repaint();
+        pack();
+    }
 }
