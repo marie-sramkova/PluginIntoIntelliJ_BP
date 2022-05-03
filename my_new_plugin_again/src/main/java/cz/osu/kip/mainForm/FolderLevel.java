@@ -68,14 +68,6 @@ public class FolderLevel/* implements Comparable<FolderLevel>*/{
                 ", level=" + level +
                 '}';
     }
-
-//    @Override
-//    public int compareTo(@NotNull FolderLevel o) {
-//        int i = Integer.compare(this.level, o.level);
-//        if (i != 0) return i;
-//
-//        return url.compareTo(o.url);
-//    }
 }
 
 
