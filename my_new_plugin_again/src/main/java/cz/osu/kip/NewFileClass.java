@@ -12,8 +12,6 @@ public class NewFileClass {
         controlePath(target);
 
         createFile(target);
-
-        System.out.println("New file was created.");
     }
 
     private static void controlePath(File target) {
@@ -28,7 +26,6 @@ public class NewFileClass {
     private static void createFile(File target) {
         try {
             Files.createFile(target.toPath().resolve("newFile.txt"));
-            System.out.println(String.format("File \t\t'%s' is made.\n", target.toPath().getFileName()));
         }catch (FileAlreadyExistsException e){
             throw new RuntimeException("File " + target + " already exists.", e);
         }catch (IOException e) {

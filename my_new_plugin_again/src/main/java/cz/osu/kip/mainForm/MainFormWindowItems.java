@@ -90,7 +90,6 @@ public class MainFormWindowItems {
                 newTreeViewWindow.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosed(java.awt.event.WindowEvent windowEvent) {
-                        System.out.println("is canceled = " + newTreeViewWindow.isWasCanceled());
                         if (!newTreeViewWindow.isWasCanceled()){
                             treeViewWindow = newTreeViewWindow;
                         }
