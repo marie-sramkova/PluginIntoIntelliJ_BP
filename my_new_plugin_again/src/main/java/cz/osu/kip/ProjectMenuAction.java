@@ -49,11 +49,14 @@ public class ProjectMenuAction extends AnAction {
     }
 
     private void getDataFromFile(Project rootProject, File filePath) {
-        String text = null;
+        StringBuilder text = new StringBuilder();
         try {
             BufferedReader reader = new BufferedReader(new FileReader(filePath.getPath()));
-            text = reader.readLine();
-            System.out.println(text);
+            String line;
+            while((line = reader.readLine()) != null){
+                text.append(line);
+            }
+            System.out.println(text.toString());
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         } catch (IOException ex) {
@@ -62,9 +65,8 @@ public class ProjectMenuAction extends AnAction {
         try {
             Gson gson = new Gson();
             JsonParser parser = new JsonParser();
-            JsonObject object = (JsonObject) parser.parse(text);
+            JsonObject object = (JsonObject) parser.parse(text.toString());
             ConfigInfo configInfo = gson.fromJson(object, ConfigInfo.class);
-            System.out.println(configInfo.toString());
             MainFormWindowItems mainFormWindowItems = ConfigInfoToMainFormWindowItemsConvertor.convert(configInfo, rootProject, filePath);
             showNewForm(rootProject, filePath, mainFormWindowItems);
         } catch (Exception ex) {
@@ -164,13 +166,12 @@ public class ProjectMenuAction extends AnAction {
         JSONObject jsonObject = new JSONObject(configInfo);
         String configInfo2 = jsonObject.toString(4);
 
-        System.out.println(configInfo2);
-
         try {
             FileWriter writer = new FileWriter(FormWindow.getFilePath().toPath().resolve("PlantUmlFiles.myuml").toFile().toString());
             writer.write(configInfo2);
             writer.close();
         } catch (IOException ex) {
+            //todo:
             System.out.println("chyba json");
             ex.printStackTrace();
         }

@@ -68,7 +68,7 @@ public class TreeViewWindow extends JFrame {
         for (FolderLevel fl : folders) {
             JPanel mainCheckBoxPanel = new JPanel();
             mainCheckBoxPanel.setLayout(new BoxLayout(mainCheckBoxPanel, BoxLayout.Y_AXIS));
-            int leftBorderSize = fl.getLevel() * 10;
+            int leftBorderSize = (fl.getLevel() * 10) - 10;
             mainCheckBoxPanel.setBorder(BorderFactory.createEmptyBorder(0, leftBorderSize, 0, 0));
             mainCheckBoxPanel.add(fl.getjCheckBox());
             JPanel newPanel = new JPanel();
