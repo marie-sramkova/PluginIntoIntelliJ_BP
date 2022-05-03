@@ -51,10 +51,10 @@ public class MainFormWindowPanels {
         JBScrollPane scrollPane = new JBScrollPane(contentPanel);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        scrollPane.setPreferredSize(new Dimension(790,700));
+        scrollPane.setPreferredSize(new Dimension(790,450));
         //scrollPane.setBounds(0, 10, 800, 790);
         JPanel contentPane = new JPanel();
-        contentPane.setPreferredSize(new Dimension(800, 800));
+        contentPane.setPreferredSize(new Dimension(800, 500));
         contentPane.add(scrollPane);
         return contentPane;
     }

@@ -20,7 +20,7 @@
       <action id="MyPlugin.Generate" class="cz.osu.kip.TopMenuAction" text="Generate the file" description="generate the file" />
     </group>
     <group id="MySecondPlugin.ProjectMenuAction" text="PlantUML / config parser - new parsing" description="Generate menu">
-      <action id="MySecondPlugin.ProjectMenu" class="cz.osu.kip.ProjectMenuAction" text="Generate the file" description="generate the file">
+      <action id="MySecondPlugin.ProjectMenu" class="cz.osu.kip.ProjectMenuAction" text="PlantUML/config generation" description="generate diagram or config file">
         <add-to-group group-id="ProjectViewPopupMenu" anchor="last" />
       </action>
     </group>
