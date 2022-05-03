@@ -1,10 +1,14 @@
 package cz.osu.kip;
 
 import com.intellij.openapi.project.Project;
+import cz.osu.kip.mainForm.FolderLevel;
 import cz.osu.kip.mainForm.FormWindow;
 import cz.osu.kip.mainForm.MainFormWindowItems;
+import cz.osu.kip.mainForm.TreeViewWindow;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ConfigInfoToMainFormWindowItemsConvertor {
 
@@ -12,7 +16,8 @@ public class ConfigInfoToMainFormWindowItemsConvertor {
         MainFormWindowItems mainFormWindowItems = new MainFormWindowItems(filePath, new FormWindow(rootProject, filePath));
         convertUMLTargetDestination(configInfo, mainFormWindowItems, filePath);
         convertConfigTargetDestination(configInfo, mainFormWindowItems, filePath);
-        mainFormWindowItems.setOwnPackages(); //TODO: výpis
+        String initialURL = configInfo.getInitialUrl();
+        convertPackagesToTreeViewWindow(configInfo, mainFormWindowItems, initialURL);
 
         mainFormWindowItems.setClassesCheckBox(configInfo.isClasses());
         mainFormWindowItems.setInterfacesCheckBox(configInfo.isInterfaces());
@@ -34,6 +39,32 @@ public class ConfigInfoToMainFormWindowItemsConvertor {
         mainFormWindowItems.setCheckBoxForInterfaceAttributes(configInfo.isAttributesForInterfaces());
         mainFormWindowItems.setCheckBoxForInterfaceMethods(configInfo.isMethodsForInterfaces());
         return mainFormWindowItems;
+    }
+
+    private static void convertPackagesToTreeViewWindow(ConfigInfo configInfo, MainFormWindowItems mainFormWindowItems, String initialURL) {
+        List<FolderLevel> folders = new ArrayList<>();
+        for (String url: configInfo.getPackages()) {
+            File file = new File(url);
+            String folderName = "";
+            int folderLevel = 0;
+            if (file.toString().contains("/")) {
+                String[] oldPaths = initialURL.toString().split("/");
+                String[] paths = file.toString().split("/");
+                folderLevel = paths.length - oldPaths.length;
+                folderName = file.toString().substring(file.toString().lastIndexOf("/") + 1);
+            } else if (file.toString().contains("\\")) {
+                String[] oldPaths = initialURL.toString().split("\\\\");
+                String[] paths = file.toString().split("\\\\");
+                folderLevel = paths.length - oldPaths.length;
+                folderName = file.toString().substring(file.toString().lastIndexOf("\\") + 1);
+            }
+            FolderLevel fl = new FolderLevel(folderName, file, folderLevel, initialURL);
+            fl.getjCheckBox().setSelected(true);
+            folders.add(fl);
+        }
+        TreeViewWindow treeViewWindow = new TreeViewWindow(folders, initialURL);
+        treeViewWindow.dispose();
+        mainFormWindowItems.setOwnPackages(treeViewWindow, initialURL);
     }
 
     private static void convertConfigTargetDestination(ConfigInfo configInfo, MainFormWindowItems mainFormWindowItems, File filePath) {

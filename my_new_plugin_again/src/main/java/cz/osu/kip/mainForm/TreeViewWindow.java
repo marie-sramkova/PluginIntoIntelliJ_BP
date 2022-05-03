@@ -17,11 +17,25 @@ import java.util.List;
 public class TreeViewWindow extends JFrame {
     private java.util.List<FolderLevel> folders = new ArrayList<>();
     private boolean wasCanceled = false;
+    private String initialUrl;
 
 
-    public TreeViewWindow(TreeViewWindow newTreeViewWindow) {
+    public TreeViewWindow(TreeViewWindow newTreeViewWindow, String initialUrl) {
+        this.initialUrl = initialUrl;
         for (FolderLevel fl:newTreeViewWindow.getFolders()) {
-            this.folders.add(new FolderLevel(fl));
+            FolderLevel folderLevel = new FolderLevel(fl, initialUrl);
+            this.folders.add(folderLevel);
+        }
+        Collections.sort(folders, new FolderLevelComparator());
+        makeFrame();
+        show();
+    }
+
+    public TreeViewWindow(List<FolderLevel> newFolders, String initialUrl) {
+        this.initialUrl = initialUrl;
+        for (FolderLevel fl:newFolders) {
+            FolderLevel folderLevel = new FolderLevel(fl, initialUrl);
+            this.folders.add(folderLevel);
         }
         Collections.sort(folders, new FolderLevelComparator());
         makeFrame();
@@ -86,7 +100,12 @@ public class TreeViewWindow extends JFrame {
         ActionListener listener = new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 File[] directories = getDirectories(folderLevel.getUrl());
-                List<FolderLevel> newFolders = makeLevels(FormWindow.getFilePath(), directories);
+                List<FolderLevel> newFolders;
+                if (initialUrl != null){
+                     newFolders = makeLevels(new File(initialUrl), directories);
+                }else {
+                    newFolders = makeLevels(FormWindow.getFilePath(), directories);
+                }
                 if (folderLevel.getjCheckBox().isSelected()) {
                     for (FolderLevel fl : newFolders) {
                         for (FolderLevel folderLvl : folders) {
@@ -142,7 +161,11 @@ public class TreeViewWindow extends JFrame {
                 String[] paths = dir.toString().split("\\\\");
                 folderLevel = paths.length - oldPaths.length;
             }
-            newFolderLevels.add(new FolderLevel(dir.getName(), dir, folderLevel));
+            if (initialUrl != null){
+                newFolderLevels.add(new FolderLevel(dir.getName(), dir, folderLevel, initialUrl));
+            }else {
+                newFolderLevels.add(new FolderLevel(dir.getName(), dir, folderLevel, FormWindow.getFilePath().toString()));
+            }
         }
         return newFolderLevels;
     }

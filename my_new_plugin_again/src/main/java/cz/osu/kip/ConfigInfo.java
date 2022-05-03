@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class ConfigInfo {
+    private String initialUrl = FormWindow.getFilePath().toString();
     private String umlTargetDestination;
     private String configTargetDestination;
     private List<String> packages = new ArrayList<>();
@@ -93,6 +94,10 @@ public class ConfigInfo {
         }
         subdirs.addAll(deepSubdirs);
         return subdirs;
+    }
+
+    public String getInitialUrl() {
+        return initialUrl;
     }
 
     public String getUmlTargetDestination() {
@@ -186,7 +191,8 @@ public class ConfigInfo {
     @Override
     public String toString() {
         return "ConfigInfo{" +
-                "umlTargetDestination='" + umlTargetDestination + '\'' +
+                "initialUrl='" + initialUrl + '\'' +
+                ", umlTargetDestination='" + umlTargetDestination + '\'' +
                 ", configTargetDestination='" + configTargetDestination + '\'' +
                 ", packages=" + packages +
                 ", classes=" + classes +
