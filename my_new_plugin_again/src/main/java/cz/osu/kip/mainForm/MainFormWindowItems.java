@@ -81,19 +81,22 @@ public class MainFormWindowItems {
     private ActionListener ownPackagesListener = new ActionListener() {
         public void actionPerformed(ActionEvent actionEvent) {
             if (ownPackages.isSelected()) {
+                TreeViewWindow newTreeViewWindow;
                 if (treeViewWindow == null) {
-                    treeViewWindow = new TreeViewWindow(FormWindow.getFilePath());
-//                    treeViewWindow.addWindowListener(new java.awt.event.WindowAdapter() {
-//                        @Override
-//                        public void windowClosed(java.awt.event.WindowEvent windowEvent) {
-//                            if (treeViewWindow.isSubmitted()){
-//                                allPackages.doClick();
-//                            }
-//                        }
-//                    });
+                    newTreeViewWindow = new TreeViewWindow(FormWindow.getFilePath());
                 } else {
-                    treeViewWindow.show();
+                    newTreeViewWindow = new TreeViewWindow(treeViewWindow);
+//                    newTreeViewWindow.show();
                 }
+                newTreeViewWindow.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosed(java.awt.event.WindowEvent windowEvent) {
+                        System.out.println("is canceled = " + newTreeViewWindow.isWasCanceled());
+                        if (!newTreeViewWindow.isWasCanceled()){
+                            treeViewWindow = newTreeViewWindow;
+                        }
+                    }
+                });
             }else{
                 treeViewWindow = null;
             }

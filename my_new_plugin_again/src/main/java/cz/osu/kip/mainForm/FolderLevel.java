@@ -3,6 +3,7 @@ package cz.osu.kip.mainForm;
 import com.intellij.ui.components.JBCheckBox;
 
 import java.io.File;
+import java.util.Comparator;
 
 public class FolderLevel/* implements Comparable<FolderLevel>*/{
     private String name;
@@ -65,4 +66,13 @@ public class FolderLevel/* implements Comparable<FolderLevel>*/{
 //
 //        return url.compareTo(o.url);
 //    }
+}
+
+
+class FolderLevelComparator implements Comparator<FolderLevel>
+{
+    @Override
+    public int compare(FolderLevel fl1, FolderLevel fl2) {
+        return fl1.getUrl().compareTo(fl2.getUrl());
+    }
 }
