@@ -11,6 +11,16 @@ public class FolderLevel/* implements Comparable<FolderLevel>*/{
     private int level;
     private JBCheckBox jCheckBox;
 
+    public FolderLevel(FolderLevel newFolderLevel) {
+        this.name = newFolderLevel.getName();
+        this.url = newFolderLevel.getUrl();
+        this.level = newFolderLevel.getLevel();
+        jCheckBox = new JBCheckBox(url.toString().substring(FormWindow.getFilePath().toString().length()));
+        if (newFolderLevel.getjCheckBox().isSelected()){
+            this.jCheckBox.setSelected(true);
+        }
+    }
+
     public FolderLevel(String name, File url, int level) {
         this.name = name;
         this.url = url;

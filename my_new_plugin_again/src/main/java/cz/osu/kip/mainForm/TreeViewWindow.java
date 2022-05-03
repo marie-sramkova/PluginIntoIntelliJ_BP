@@ -31,7 +31,9 @@ public class TreeViewWindow extends JFrame {
 //    }
 
     public TreeViewWindow(TreeViewWindow newTreeViewWindow) {
-        folders = newTreeViewWindow.getFolders();
+        for (FolderLevel fl:newTreeViewWindow.getFolders()) {
+            this.folders.add(new FolderLevel(fl));
+        }
         Collections.sort(folders, new FolderLevelComparator());
         makeFrame();
         show();

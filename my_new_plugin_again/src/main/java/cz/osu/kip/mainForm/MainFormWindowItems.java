@@ -86,7 +86,6 @@ public class MainFormWindowItems {
                     newTreeViewWindow = new TreeViewWindow(FormWindow.getFilePath());
                 } else {
                     newTreeViewWindow = new TreeViewWindow(treeViewWindow);
-//                    newTreeViewWindow.show();
                 }
                 newTreeViewWindow.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
