@@ -11,12 +11,14 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileFilter;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class TreeViewWindow extends JFrame {
     private java.util.List<FolderLevel> folders = new ArrayList<>();
-//    private java.util.List<FolderLevel> oldFolders = new ArrayList<>();
-//    private boolean wasCanceled = false;
+    //    private java.util.List<FolderLevel> oldFolders = new ArrayList<>();
+    private boolean wasCanceled = false;
 
 //    @Override
 //    public void show() {
@@ -27,6 +29,13 @@ public class TreeViewWindow extends JFrame {
 //        }
 //        super.show();
 //    }
+
+    public TreeViewWindow(TreeViewWindow newTreeViewWindow) {
+        folders = newTreeViewWindow.getFolders();
+        Collections.sort(folders, new FolderLevelComparator());
+        makeFrame();
+        show();
+    }
 
     public TreeViewWindow(File filePath) {
         if (filePath.exists()) {
@@ -66,9 +75,6 @@ public class TreeViewWindow extends JFrame {
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
         for (FolderLevel fl : folders) {
-            if (!fl.getjCheckBox().isSelected()){
-
-            }
             panel.add(fl.getjCheckBox());
             JPanel newPanel = new JPanel();
             newPanel.setLayout(new BoxLayout(newPanel, BoxLayout.Y_AXIS));
@@ -107,22 +113,14 @@ public class TreeViewWindow extends JFrame {
                         }
                     }
                 } else {
-                    for (FolderLevel folderLevel : folders) {
-                        for (FolderLevel newFolderLevel : newFolders) {
-                            if (folderLevel.getUrl().toString().equals(newFolderLevel.getUrl().toString())) {
-                                folderLevel.getjCheckBox().setSelected(false);
-                                folderLevel.getjCheckBox().setVisible(false);
-                            } else if (folderLevel.getUrl().toString().contains(newFolderLevel.getUrl().toString())) {
-                                folderLevel.getjCheckBox().setSelected(false);
-                                folderLevel.getjCheckBox().setVisible(false);
+                    for (FolderLevel newFolderLevel : newFolders) {
+                        for (FolderLevel fl:folders) {
+                            if (fl.getUrl().toString().contains(newFolderLevel.getUrl().toString())){
+                                fl.getjCheckBox().setSelected(false);
+                                fl.getjCheckBox().setVisible(false);
                             }
                         }
-                    }
-                    if (!newFolders.isEmpty()) {
-                        for (FolderLevel fl : newFolders) {
-                            fl.getjCheckBox().setSelected(false);
-                            fl.getjCheckBox().setVisible(false);
-                        }
+                        folders.removeIf(fl -> (fl.getUrl().toString().contains(newFolderLevel.getUrl().toString())));
                     }
                 }
             }
@@ -160,6 +158,10 @@ public class TreeViewWindow extends JFrame {
         return directories;
     }
 
+    public boolean isWasCanceled() {
+        return wasCanceled;
+    }
+
     private JPanel createButtonPanel() {
         JPanel panel = new JPanel();
         LayoutManager layout = new FlowLayout();
@@ -170,7 +172,8 @@ public class TreeViewWindow extends JFrame {
 
         okButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//                wasCanceled = false;
+                wasCanceled = false;
+                //folders.removeIf(fl -> !fl.getjCheckBox().isSelected() && fl.getLevel() != 1);
 //                oldFolders = new ArrayList<>(folders);
                 dispose();
             }
@@ -178,7 +181,7 @@ public class TreeViewWindow extends JFrame {
 
         cancelButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//                wasCanceled = true;
+                wasCanceled = true;
                 dispose();
             }
         });
