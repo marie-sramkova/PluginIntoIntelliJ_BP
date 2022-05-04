@@ -4,7 +4,7 @@ import com.intellij.openapi.project.Project;
 import cz.osu.kip.mainForm.FolderLevel;
 import cz.osu.kip.mainForm.FormWindow;
 import cz.osu.kip.mainForm.MainFormWindowItems;
-import cz.osu.kip.mainForm.TreeViewWindow;
+import cz.osu.kip.mainForm.PackagesTreeViewWindow;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -62,9 +62,9 @@ public class ConfigInfoToMainFormWindowItemsConvertor {
             fl.getjCheckBox().setSelected(true);
             folders.add(fl);
         }
-        TreeViewWindow treeViewWindow = new TreeViewWindow(folders, initialURL);
-        treeViewWindow.dispose();
-        mainFormWindowItems.setOwnPackages(treeViewWindow, initialURL);
+        PackagesTreeViewWindow packagesTreeViewWindow = new PackagesTreeViewWindow(folders, initialURL);
+        packagesTreeViewWindow.dispose();
+        mainFormWindowItems.setOwnPackages(packagesTreeViewWindow, initialURL);
     }
 
     private static void convertConfigTargetDestination(ConfigInfo configInfo, MainFormWindowItems mainFormWindowItems, File filePath) {

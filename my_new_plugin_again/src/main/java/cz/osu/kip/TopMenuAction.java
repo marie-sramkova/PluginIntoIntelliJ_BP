@@ -17,10 +17,11 @@ public class TopMenuAction extends DumbAwareAction {
     public void actionPerformed(@NotNull AnActionEvent e) {
 
         Project rootProject = e.getProject();
+        System.out.println(rootProject.getBasePath());
         List<File> dirs = getSubdirs(new File(rootProject.getBasePath()));
         List<File> configFiles = FileExplorer.getConfigFiles(dirs);
 
-        ConfigFormWindow configFormWindow = new ConfigFormWindow();
+        ConfigFormWindow configFormWindow = new ConfigFormWindow(configFiles, new File(rootProject.getBasePath()));
         configFormWindow.show();
 
 
