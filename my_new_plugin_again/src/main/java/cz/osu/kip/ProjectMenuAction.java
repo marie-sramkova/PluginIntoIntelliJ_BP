@@ -56,7 +56,6 @@ public class ProjectMenuAction extends AnAction {
             while((line = reader.readLine()) != null){
                 text.append(line);
             }
-            System.out.println(text.toString());
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         } catch (IOException ex) {

@@ -45,7 +45,7 @@ public class MainFormWindowItems {
     private JCheckBox checkBoxForInternalClassMethods = new JCheckBox("Internal");
     private JCheckBox checkBoxForInterfaceAttributes = new JCheckBox("Atributes");
     private JCheckBox checkBoxForInterfaceMethods = new JCheckBox("Methods");
-    private TreeViewWindow treeViewWindow;
+    private PackagesTreeViewWindow packagesTreeViewWindow;
     private String initialUrl;
 
     private ActionListener defaultUMLTargetDestinationListener = new ActionListener() {
@@ -82,26 +82,26 @@ public class MainFormWindowItems {
     private ActionListener ownPackagesListener = new ActionListener() {
         public void actionPerformed(ActionEvent actionEvent) {
             if (ownPackages.isSelected()) {
-                TreeViewWindow newTreeViewWindow;
-                if (treeViewWindow == null) {
-                    newTreeViewWindow = new TreeViewWindow(FormWindow.getFilePath());
+                PackagesTreeViewWindow newPackagesTreeViewWindow;
+                if (packagesTreeViewWindow == null) {
+                    newPackagesTreeViewWindow = new PackagesTreeViewWindow(FormWindow.getFilePath());
                 } else {
                     if (initialUrl != null) {
-                        newTreeViewWindow = new TreeViewWindow(treeViewWindow, initialUrl);
+                        newPackagesTreeViewWindow = new PackagesTreeViewWindow(packagesTreeViewWindow, initialUrl);
                     }else{
-                        newTreeViewWindow = new TreeViewWindow(treeViewWindow, FormWindow.getFilePath().toString());
+                        newPackagesTreeViewWindow = new PackagesTreeViewWindow(packagesTreeViewWindow, FormWindow.getFilePath().toString());
                     }
                 }
-                newTreeViewWindow.addWindowListener(new java.awt.event.WindowAdapter() {
+                newPackagesTreeViewWindow.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosed(java.awt.event.WindowEvent windowEvent) {
-                        if (!newTreeViewWindow.isWasCanceled()){
-                            treeViewWindow = newTreeViewWindow;
+                        if (!newPackagesTreeViewWindow.isWasCanceled()){
+                            packagesTreeViewWindow = newPackagesTreeViewWindow;
                         }
                     }
                 });
             }else{
-                treeViewWindow = null;
+                packagesTreeViewWindow = null;
             }
         }
     };
@@ -350,8 +350,8 @@ public class MainFormWindowItems {
         return defaultForInterfaceCheckBox;
     }
 
-    public TreeViewWindow getTreeViewWindow() {
-        return treeViewWindow;
+    public PackagesTreeViewWindow getTreeViewWindow() {
+        return packagesTreeViewWindow;
     }
 
     public JCheckBox getCheckBoxForClassAttributes() {
@@ -428,9 +428,9 @@ public class MainFormWindowItems {
         defaultConfigTargetFile.setSelectedFile(new File(configTargetDestination));
     }
 
-    public void setOwnPackages(TreeViewWindow treeViewWindow, String initialUrl) {
+    public void setOwnPackages(PackagesTreeViewWindow packagesTreeViewWindow, String initialUrl) {
         this.ownPackages.setSelected(true);
-        this.treeViewWindow = treeViewWindow;
+        this.packagesTreeViewWindow = packagesTreeViewWindow;
         this.initialUrl = initialUrl;
     }
 
