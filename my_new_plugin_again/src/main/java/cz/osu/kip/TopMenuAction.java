@@ -4,6 +4,9 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.DumbAwareAction;
 import com.intellij.openapi.project.Project;
 import cz.osu.kip.configForm.ConfigFormWindow;
+import cz.osu.kip.configForm.SubmitStateForConfigFormWindow;
+import cz.osu.kip.mainForm.MainFormWindowItems;
+import cz.osu.kip.mainForm.SubmitStateForFormWindow;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
@@ -13,6 +16,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class TopMenuAction extends DumbAwareAction {
+    private ConfigInfo configInfo;
+
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
 
@@ -23,6 +28,34 @@ public class TopMenuAction extends DumbAwareAction {
 
         ConfigFormWindow configFormWindow = new ConfigFormWindow(configFiles, new File(rootProject.getBasePath()));
         configFormWindow.show();
+
+        configFormWindow.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosed(java.awt.event.WindowEvent windowEvent) {
+                List<File> files = new ArrayList<>();;
+                if (configFormWindow.getSubmitState() != SubmitStateForConfigFormWindow.CANCEL) {
+                    //todo: naplnit files
+                }
+                switch (configFormWindow.getSubmitState()) {
+                    case GENERATE_UML_DIAGRAM:
+                        //todo:
+                        for (File filePath:files) {
+                            MainFormWindowItems mainFormWindowItems = Generator.getDataFromFile(rootProject, filePath);
+                            configInfo = new ConfigInfo(mainFormWindowItems);
+                            Generator.createUmlFile(mainFormWindowItems, configInfo);
+                        }
+                        break;
+                    case DELETE:
+                        files = new ArrayList<>(); //todo:
+                        for (File filePath:files) {
+                            //todo: delete
+                        }
+                        break;
+                    case CANCEL:
+                        break;
+                }
+            }
+        });
 
 
 

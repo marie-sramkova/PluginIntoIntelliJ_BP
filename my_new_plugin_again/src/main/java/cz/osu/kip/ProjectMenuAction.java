@@ -33,7 +33,8 @@ public class ProjectMenuAction extends AnAction {
         if (filePath.isDirectory()) {
             showNewForm(rootProject, filePath, null);
         } else {
-            getDataFromFile(rootProject, filePath);
+            MainFormWindowItems mainFormWindowItems = Generator.getDataFromFile(rootProject, filePath);
+            showNewForm(rootProject, filePath, mainFormWindowItems);
         }
 
 
@@ -46,32 +47,6 @@ public class ProjectMenuAction extends AnAction {
 //            dlgMsg.append(String.format("\nSelected Element: %s", nav.toString()));
 //        }
 //        Messages.showMessageDialog(currentProject, dlgMsg.toString(), dlgTitle, Messages.getInformationIcon());
-    }
-
-    private void getDataFromFile(Project rootProject, File filePath) {
-        StringBuilder text = new StringBuilder();
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(filePath.getPath()));
-            String line;
-            while((line = reader.readLine()) != null){
-                text.append(line);
-            }
-        } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        try {
-            Gson gson = new Gson();
-            JsonParser parser = new JsonParser();
-            JsonObject object = (JsonObject) parser.parse(text.toString());
-            ConfigInfo configInfo = gson.fromJson(object, ConfigInfo.class);
-            MainFormWindowItems mainFormWindowItems = ConfigInfoToMainFormWindowItemsConvertor.convert(configInfo, rootProject, filePath);
-            showNewForm(rootProject, filePath, mainFormWindowItems);
-        } catch (Exception ex) {
-            int input = JOptionPane.showConfirmDialog(null,
-                    "Incorrect file or impossible to load the content of the file.", "Chyba", JOptionPane.DEFAULT_OPTION);
-        }
     }
 
     private void showNewForm(Project rootProject, File filePath, MainFormWindowItems mainFormWindowItems) {
@@ -89,90 +64,19 @@ public class ProjectMenuAction extends AnAction {
                 }
                 switch (formWindow.getSubmitState()) {
                     case ALL:
-                        createConfigFile(formWindow);
-                        createUmlFile(formWindow);
+                        Generator.createConfigFile(configInfo);
+                        Generator.createUmlFile(formWindow.getMainFormWindowItems(), configInfo);
                         break;
                     case ONLY_UML:
-                        createUmlFile(formWindow);
+                        Generator.createUmlFile(formWindow.getMainFormWindowItems(), configInfo);
                         break;
                     case ONLY_CONFIG:
-                        createConfigFile(formWindow);
+                        Generator.createConfigFile(configInfo);
                         break;
                     case CANCEL:
                         break;
                 }
             }
         });
-    }
-
-    private void createUmlFile(FormWindow formWindow) {
-        List<File> newFolders = new ArrayList<>();
-        if (formWindow.getMainFormWindowItems().getTreeViewWindow() != null && formWindow.getMainFormWindowItems().getTreeViewWindow().getFolders() != null) {
-
-            for (FolderLevel fl : formWindow.getMainFormWindowItems().getTreeViewWindow().getFolders()) {
-                if (fl.getjCheckBox().isSelected())
-                    newFolders.add(fl.getUrl());
-            }
-        }else{
-            for (String pakage:configInfo.getPackages()) {
-                newFolders.add(new File(pakage));
-            }
-        }
-        List<File> files = FileExplorer.getJavaFiles(newFolders);
-        StringBuilder sb = new StringBuilder();
-        sb.append("@startuml\n\n");
-        List<PackageX> packageXES = getPackageXES(files);
-        for (PackageX packageX : packageXES) {
-            String text = UmlFilter.getTextByConfigInfo(configInfo, packageX);
-            sb.append(text);
-        }
-        sb.append("@enduml");
-        FileController.saveToFile(configInfo.getUmlTargetDestination(), sb.toString());
-    }
-
-    @NotNull
-    private List<PackageX> getPackageXES(List<File> files) {
-        List<PackageX> packageXES = new ArrayList<>();
-        for (File file : files) {
-            PackageX packageX = getPackageXFromFile(file);
-            if (packageXES.size() == 0) {
-                packageXES.add(packageX);
-                continue;
-            }
-            boolean alreadyExist = false;
-            for (PackageX packageXInList : packageXES) {
-                if (packageX.getName().equals(packageXInList.getName())) {
-                    for (ClassX classX : packageX.getClassXES()) {
-                        packageXInList.addClassX(classX);
-                        alreadyExist = true;
-                    }
-                }
-            }
-            if (alreadyExist == false) {
-                packageXES.add(packageX);
-            }
-        }
-        return packageXES;
-    }
-
-    private PackageX getPackageXFromFile(File fileInput) {
-        List<String> lines = FileController.loadFileToLines(fileInput.getPath());
-        PackageX packageX = DividingToClassUtil.divideFromLines(lines);
-        return packageX;
-    }
-
-    private void createConfigFile(FormWindow formWindow) {
-        JSONObject jsonObject = new JSONObject(configInfo);
-        String configInfo2 = jsonObject.toString(4);
-
-        try {
-            FileWriter writer = new FileWriter(FormWindow.getFilePath().toPath().resolve("PlantUmlFiles.myuml").toFile().toString());
-            writer.write(configInfo2);
-            writer.close();
-        } catch (IOException ex) {
-            //todo:
-            System.out.println("chyba json");
-            ex.printStackTrace();
-        }
     }
 }
