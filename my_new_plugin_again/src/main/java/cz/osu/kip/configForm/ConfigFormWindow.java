@@ -27,6 +27,10 @@ public class ConfigFormWindow extends JFrame {
 //        showFormWindow();
     }
 
+    public List<FolderLevel> getConfigFiles() {
+        return configFiles;
+    }
+
     public SubmitStateForConfigFormWindow getSubmitState() {
         return submitState;
     }

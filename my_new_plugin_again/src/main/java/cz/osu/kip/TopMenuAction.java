@@ -3,20 +3,22 @@ package cz.osu.kip;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.DumbAwareAction;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.Messages;
 import cz.osu.kip.configForm.ConfigFormWindow;
 import cz.osu.kip.configForm.SubmitStateForConfigFormWindow;
+import cz.osu.kip.mainForm.FolderLevel;
 import cz.osu.kip.mainForm.MainFormWindowItems;
 import cz.osu.kip.mainForm.SubmitStateForFormWindow;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
 public class TopMenuAction extends DumbAwareAction {
-    private ConfigInfo configInfo;
 
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
@@ -32,23 +34,32 @@ public class TopMenuAction extends DumbAwareAction {
         configFormWindow.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosed(java.awt.event.WindowEvent windowEvent) {
-                List<File> files = new ArrayList<>();;
+                List<File> files = new ArrayList<>();
                 if (configFormWindow.getSubmitState() != SubmitStateForConfigFormWindow.CANCEL) {
-                    //todo: naplnit files
+                    for (FolderLevel fl : configFormWindow.getConfigFiles()) {
+                        if (fl.getjCheckBox().isSelected()) {
+                            files.add(fl.getUrl());
+                        }
+                    }
                 }
                 switch (configFormWindow.getSubmitState()) {
                     case GENERATE_UML_DIAGRAM:
-                        //todo:
-                        for (File filePath:files) {
+                        for (File filePath : files) {
                             MainFormWindowItems mainFormWindowItems = Generator.getDataFromFile(rootProject, filePath);
-                            configInfo = new ConfigInfo(mainFormWindowItems);
+                            ConfigInfo configInfo = new ConfigInfo(mainFormWindowItems);
                             Generator.createUmlFile(mainFormWindowItems, configInfo);
                         }
                         break;
                     case DELETE:
-                        files = new ArrayList<>(); //todo:
-                        for (File filePath:files) {
-                            //todo: delete
+                        for (File filePath : files) {
+                            if (filePath.exists() && filePath.isFile()) {
+                                try {
+                                    Files.deleteIfExists(filePath.toPath());
+                                    //todo: are you sure?
+                                } catch (IOException ex) {
+                                    Messages.showMessageDialog(null ,"Chyba pri odstranovani souboru " + filePath.toString(), Messages.getInformationIcon());
+                                }
+                            }
                         }
                         break;
                     case CANCEL:
@@ -56,7 +67,6 @@ public class TopMenuAction extends DumbAwareAction {
                 }
             }
         });
-
 
 
 //        String path = FormWindow.getFilePath().toPath().resolve("PlantUmlFiles").toFile().toString();
@@ -103,7 +113,7 @@ public class TopMenuAction extends DumbAwareAction {
         subdirs = new ArrayList<File>(subdirs);
 
         List<File> deepSubdirs = new ArrayList<File>();
-        for(File subdir : subdirs) {
+        for (File subdir : subdirs) {
             deepSubdirs.addAll(getSubdirs(subdir));
         }
         subdirs.addAll(deepSubdirs);
