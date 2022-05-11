@@ -12,6 +12,7 @@ public class ClassX {
     private List<String> implementedInterface;
     private List<AttributeX> attributeXES;
     private List<MethodX> methodXES;
+    private List<ClassX> innerClassesX;
 
     public ClassX(String name, String type, boolean isPublic, boolean extendStatus, String extendedClass, boolean implementStatus, List<String> implementedInterface, List<AttributeX> attributeXES, List<MethodX> methodXES) {
         this.name = name;
@@ -23,6 +24,14 @@ public class ClassX {
         this.implementedInterface = implementedInterface;
         this.attributeXES = attributeXES;
         this.methodXES = methodXES;
+    }
+
+    public void addInnerClassesX(List<ClassX> innerClassesX){
+        this.innerClassesX = innerClassesX;
+    }
+
+    public List<ClassX> getInnerClassesX() {
+        return innerClassesX;
     }
 
     public boolean isPublic() {

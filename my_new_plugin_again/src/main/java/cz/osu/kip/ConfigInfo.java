@@ -42,16 +42,20 @@ public class ConfigInfo {
             umlTargetDestination = FormWindow.getFilePath().toPath().resolve("PlantUmlFile.puml").toFile().toString();
         }else {
             stringBuilder = new StringBuilder();
-            stringBuilder.append(mainFormWindowItems.getDefaultUMLTargetFile().getSelectedFile().getAbsolutePath())
-                    .append(".puml");
+            stringBuilder.append(mainFormWindowItems.getDefaultUMLTargetFile().getSelectedFile().getAbsolutePath());
+            if (!stringBuilder.toString().endsWith(".puml")){
+                stringBuilder.append(".puml");
+            }
             umlTargetDestination = stringBuilder.toString();
         }
         if (mainFormWindowItems.getDefaultConfigTargetDestination().isSelected()){
             configTargetDestination = FormWindow.getFilePath().toPath().resolve("PlantUmlConfigFile.myuml").toFile().toString();
         }else {
             stringBuilder = new StringBuilder();
-            stringBuilder.append(mainFormWindowItems.getDefaultConfigTargetFile().getSelectedFile().getAbsolutePath())
-                    .append(".myuml");
+            stringBuilder.append(mainFormWindowItems.getDefaultConfigTargetFile().getSelectedFile().getAbsolutePath());
+            if (!stringBuilder.toString().endsWith(".myuml")){
+                stringBuilder.append(".myuml");
+            }
             configTargetDestination = stringBuilder.toString();
         }
         if(mainFormWindowItems.getAllPackages().isSelected()){
