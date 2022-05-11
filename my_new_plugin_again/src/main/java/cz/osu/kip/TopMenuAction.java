@@ -3,14 +3,15 @@ package cz.osu.kip;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.DumbAwareAction;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.Messages;
 import cz.osu.kip.configForm.ConfigFormWindow;
 import cz.osu.kip.configForm.SubmitStateForConfigFormWindow;
 import cz.osu.kip.mainForm.FolderLevel;
 import cz.osu.kip.mainForm.MainFormWindowItems;
-import cz.osu.kip.mainForm.SubmitStateForFormWindow;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.*;
 import java.nio.file.Files;
 import java.util.ArrayList;
@@ -54,10 +55,15 @@ public class TopMenuAction extends DumbAwareAction {
                         for (File filePath : files) {
                             if (filePath.exists() && filePath.isFile()) {
                                 try {
-                                    Files.deleteIfExists(filePath.toPath());
-                                    //todo: are you sure?
+                                    int dialogResult = JOptionPane.showConfirmDialog (null, "Would yout like to delete file / files?","Warning",JOptionPane.YES_NO_CANCEL_OPTION);
+                                    if(dialogResult == JOptionPane.YES_OPTION){
+                                        Files.deleteIfExists(filePath.toPath());
+                                        optionDialog("File was / files were successfully deleted.");
+                                    }else {
+                                        configFormWindow.show();
+                                    }
                                 } catch (IOException ex) {
-                                    Messages.showMessageDialog(null ,"Chyba pri odstranovani souboru " + filePath.toString(), Messages.getInformationIcon());
+                                    JOptionPane.showMessageDialog(null ,"Cannot delete the file " + filePath.toString());
                                 }
                             }
                         }
@@ -67,41 +73,22 @@ public class TopMenuAction extends DumbAwareAction {
                 }
             }
         });
+    }
 
-
-//        String path = FormWindow.getFilePath().toPath().resolve("PlantUmlFiles").toFile().toString();
-//        System.out.println(path);
-//        String text = null;
-//        try {
-//            BufferedReader reader = new BufferedReader(new FileReader(path));
-//            text = reader.readLine();
-//            System.out.println(text);
-//        } catch (FileNotFoundException ex) {
-//            ex.printStackTrace();
-//        } catch (IOException ex) {
-//            ex.printStackTrace();
-//        }
-//
-//        try {
-//            Gson gson = new Gson();
-//            JsonParser parser = new JsonParser();
-//            JsonObject object = (JsonObject) parser.parse(text);
-//            ConfigInfo configInfo = gson.fromJson(object, ConfigInfo.class);
-//            System.out.println(configInfo.toString());
-//        } catch (Exception ex) {
-//            ex.printStackTrace();
-//        }
-
-//        JSONParser parser = new JSONParser();
-//        try {
-//            JSONObject json = (JSONObject) parser.parse(text);
-//
-//        } catch (ParseException ex) {
-//            ex.printStackTrace();
-//        }
-
-//        Read more: https://www.java67.com/2016/10/3-ways-to-convert-string-to-json-object-in-java.html#ixzz7Ou64fw8z
-//        FormWindow.showFormWindow();
+    private static void optionDialog(String text){
+        JLabel messageLabel = new JLabel("<html><body><p style='width: 300px;'>"+text.toString()+"</p></body></html>");
+        Timer timer = new Timer(2000,
+                new ActionListener()
+                {
+                    @Override
+                    public void actionPerformed(ActionEvent event)
+                    {
+                        SwingUtilities.getWindowAncestor(messageLabel).dispose();
+                    }
+                });
+        timer.setRepeats(false);
+        timer.start();
+        JOptionPane.showOptionDialog(null, messageLabel, "Notification", JOptionPane.DEFAULT_OPTION,JOptionPane.INFORMATION_MESSAGE, null, new Object[]{}, null);
     }
 
     private List<File> getSubdirs(File file) {

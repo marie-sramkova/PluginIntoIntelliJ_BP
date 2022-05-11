@@ -6,6 +6,7 @@ import cz.osu.kip.mainForm.MainFormWindowItems;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -37,15 +38,22 @@ public class ConfigInfo {
     private boolean methodsForInterfaces;
 
     public ConfigInfo(MainFormWindowItems mainFormWindowItems) {
+        StringBuilder stringBuilder = new StringBuilder();
         if (mainFormWindowItems.getDefaultUMLTargetDestination().isSelected()){
-            umlTargetDestination = FormWindow.getFilePath().toPath().resolve("PlantUmlFiles").toFile().toString();
+            umlTargetDestination = FormWindow.getFilePath().toPath().resolve("PlantUmlFile.puml").toFile().toString();
         }else {
-            umlTargetDestination = mainFormWindowItems.getDefaultUMLTargetFile().getSelectedFile().getAbsolutePath();
+            stringBuilder = new StringBuilder();
+            stringBuilder.append(mainFormWindowItems.getDefaultUMLTargetFile().getSelectedFile().getAbsolutePath())
+                    .append(".puml");
+            umlTargetDestination = stringBuilder.toString();
         }
         if (mainFormWindowItems.getDefaultConfigTargetDestination().isSelected()){
-            configTargetDestination = FormWindow.getFilePath().toPath().resolve("PlantUmlFiles").toFile().toString();
+            configTargetDestination = FormWindow.getFilePath().toPath().resolve("PlantUmlConfigFile.myuml").toFile().toString();
         }else {
-            configTargetDestination = mainFormWindowItems.getDefaultConfigTargetFile().getSelectedFile().getAbsolutePath();
+            stringBuilder = new StringBuilder();
+            stringBuilder.append(mainFormWindowItems.getDefaultConfigTargetFile().getSelectedFile().getAbsolutePath())
+                    .append(".myuml");
+            configTargetDestination = stringBuilder.toString();
         }
         if(mainFormWindowItems.getAllPackages().isSelected()){
             packages.add(FormWindow.getFilePath().toString());

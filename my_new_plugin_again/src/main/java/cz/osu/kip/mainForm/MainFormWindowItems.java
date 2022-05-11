@@ -217,10 +217,10 @@ public class MainFormWindowItems {
         defaultUMLTargetDestination.setSelected(true);
         defaultConfigTargetDestination.setSelected(true);
         defaultUMLTargetFile.setVisible(false);
-        String defaultUmlTargetDestinationText = setDefaultTargetDestinationText(new File(filePath.toPath().resolve("PlantUmlFiles").toFile().toString()));
+        String defaultUmlTargetDestinationText = setDefaultTargetDestinationText(new File(filePath.toPath().resolve("PlantUmlFile.puml").toFile().toString()));
         defaultUMLTargetDestinationDesc = new JLabel(defaultUmlTargetDestinationText);
         defaultConfigTargetFile.setVisible(false);
-        String defaultConfigTargetDestinationText = setDefaultTargetDestinationText(new File(filePath.toPath().resolve("PlantUmlFiles.myuml").toFile().toString()));
+        String defaultConfigTargetDestinationText = setDefaultTargetDestinationText(new File(filePath.toPath().resolve("PlantUmlConfigFile.myuml").toFile().toString()));
         defaultConfigTargetDestinationDesc = new JLabel(defaultConfigTargetDestinationText);
         defaultUMLTargetDestination.addActionListener(defaultUMLTargetDestinationListener);
         ownUMLTargetDestination.addActionListener(ownUMLTargetDestinationListener);
