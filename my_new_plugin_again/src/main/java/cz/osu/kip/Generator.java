@@ -5,7 +5,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.intellij.openapi.project.Project;
 import cz.osu.kip.mainForm.FolderLevel;
-import cz.osu.kip.mainForm.FormWindow;
 import cz.osu.kip.mainForm.MainFormWindowItems;
 import cz.osu.kip.umlGeneration.*;
 import org.jetbrains.annotations.NotNull;

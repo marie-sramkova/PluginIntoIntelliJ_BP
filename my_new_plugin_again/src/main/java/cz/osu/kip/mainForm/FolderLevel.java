@@ -5,7 +5,7 @@ import com.intellij.ui.components.JBCheckBox;
 import java.io.File;
 import java.util.Comparator;
 
-public class FolderLevel/* implements Comparable<FolderLevel>*/{
+public class FolderLevel{
     private String name;
     private File url;
     private int level;

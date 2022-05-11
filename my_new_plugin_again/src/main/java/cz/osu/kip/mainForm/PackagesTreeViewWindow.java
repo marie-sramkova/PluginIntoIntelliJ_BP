@@ -84,7 +84,6 @@ public class PackagesTreeViewWindow extends JFrame {
         JPanel contentPane = new JPanel(null);
         contentPane.setPreferredSize(new Dimension(300, 410));
         contentPane.add(scrollPane);
-        //setContentPane(contentPane);
         getContentPane().add(contentPane, BorderLayout.PAGE_START);
         getContentPane().add(createButtonPanel(), BorderLayout.PAGE_END);
         pack();

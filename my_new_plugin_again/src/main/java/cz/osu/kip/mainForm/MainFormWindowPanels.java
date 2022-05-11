@@ -52,7 +52,6 @@ public class MainFormWindowPanels {
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane.setPreferredSize(new Dimension(790,450));
-        //scrollPane.setBounds(0, 10, 800, 790);
         JPanel contentPane = new JPanel();
         contentPane.setPreferredSize(new Dimension(800, 500));
         contentPane.add(scrollPane);
@@ -66,14 +65,6 @@ public class MainFormWindowPanels {
         groupLayout.setAutoCreateGaps(true);
         groupLayout.setAutoCreateContainerGaps(true);
         myPanel.setLayout(groupLayout);
-
-//        JCheckBoxMenuItem publicCheckBoxMenuItem = new JCheckBoxMenuItem("ahoj");
-//        JColorChooser colorChooser = new JColorChooser();
-//        List<String> text = new ArrayList<>(Arrays.asList("private", "public", "protected"));
-//        JComboBox<String> comboBox = new ComboBox(text.toArray());
-
-//        JPanel targetUMLDestinationPanel = getUMLTargetDestinationPanel();
-//        JPanel targetConfigDestinationPanel = getConfigTargetDestinationPanel();
         setMainContextPanelLayout(groupLayout);
         return myPanel;
     }
@@ -199,7 +190,6 @@ public class MainFormWindowPanels {
                                         .addComponent(mainFormWindowItems.getCheckBoxForProtectedClassMethods())
                                         .addComponent(mainFormWindowItems.getCheckBoxForInternalClassMethods()))
                                 .addComponent(mainFormWindowItems.getCheckBoxForInnerClasses())
-                                //.addComponent(c)
                                 .addComponent(mainFormWindowItems.getInterfacesCheckBox())
                                 .addGroup(groupLayout.createSequentialGroup()
                                         .addComponent(mainFormWindowItems.getPublicForInterfaceCheckBox())
@@ -229,7 +219,6 @@ public class MainFormWindowPanels {
                                 .addComponent(mainFormWindowItems.getCheckBoxForProtectedClassMethods())
                                 .addComponent(mainFormWindowItems.getCheckBoxForInternalClassMethods()))
                         .addComponent(mainFormWindowItems.getCheckBoxForInnerClasses())
-                        //.addComponent(c)
                         .addComponent(mainFormWindowItems.getInterfacesCheckBox())
                         .addGroup(groupLayout.createParallelGroup(BASELINE)
                                 .addComponent(mainFormWindowItems.getPublicForInterfaceCheckBox())

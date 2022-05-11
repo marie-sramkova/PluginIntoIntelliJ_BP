@@ -13,12 +13,12 @@ public class MainFormWindowItems {
     private JRadioButton defaultUMLTargetDestination = new JRadioButton("Default target destination for uml file");
     private JRadioButton ownUMLTargetDestination = new JRadioButton("Own target destination for uml file");
     private ButtonGroup buttonGroupUMLTargetDestination = setButtonGroup(defaultUMLTargetDestination, ownUMLTargetDestination);
-    private JLabel defaultUMLTargetDestinationDesc;// = new JLabel(new File(FormWindow.getFilePath().toPath().resolve("PlantUmlFiles").toFile().toString()).toString());
+    private JLabel defaultUMLTargetDestinationDesc;
 
     private JRadioButton defaultConfigTargetDestination = new JRadioButton("Default target destination for config file");
     private JRadioButton ownConfigTargetDestination = new JRadioButton("Own target destination for config file");
     private ButtonGroup buttonGroupConfigTargetDestination = setButtonGroup(defaultConfigTargetDestination, ownConfigTargetDestination);
-    private JLabel defaultConfigTargetDestinationDesc;// = new JLabel(new File(FormWindow.getFilePath().toPath().resolve("PlantUmlFiles").toFile().toString()).toString());
+    private JLabel defaultConfigTargetDestinationDesc;
 
     private JRadioButton allPackages = new JRadioButton("All packages");
     private JRadioButton ownPackages = new JRadioButton("Choose packages");
@@ -50,7 +50,6 @@ public class MainFormWindowItems {
 
     private ActionListener defaultUMLTargetDestinationListener = new ActionListener() {
         public void actionPerformed(ActionEvent actionEvent) {
-//            AbstractButton aButton = (AbstractButton) actionEvent.getSource();
             defaultUMLTargetDestinationDesc.setVisible(true);
             defaultUMLTargetFile.setVisible(false);
         }

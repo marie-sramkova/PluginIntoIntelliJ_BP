@@ -20,12 +20,6 @@ public class FormWindow extends JFrame {
         this.filePath = filePath;
         mainFormWindowItems = new MainFormWindowItems(filePath, this);
         mainFormWindowPanels = new MainFormWindowPanels(currentProject, filePath, mainFormWindowItems);
-//        okButton.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                FormWindow.super.dispose();
-//            }
-//        });
         showFormWindow();
     }
 
@@ -37,20 +31,12 @@ public class FormWindow extends JFrame {
         showFormWindow();
     }
 
-    public static Project getCurrentProject() {
-        return currentProject;
-    }
-
     public static File getFilePath() {
         return filePath;
     }
 
     public MainFormWindowItems getMainFormWindowItems() {
         return mainFormWindowItems;
-    }
-
-    public MainFormWindowPanels getMainFormWindowPanels() {
-        return mainFormWindowPanels;
     }
 
     public SubmitStateForFormWindow getSubmitState() {
@@ -111,24 +97,6 @@ public class FormWindow extends JFrame {
         panel.add(cancelButton);
         return panel;
     }
-
-
-
-//        String target = JOptionPane.showInputDialog("Type here the absolute target path:");
-//        File file = new File(target.getText());
-//
-//        ClassLoader current = Thread.currentThread().getContextClassLoader();
-//        try {
-//            Thread.currentThread().setContextClassLoader(this.getClass().getClassLoader());
-//            try {
-//                NewFileClass.makeNewFile(target.getText());
-//            }catch (Exception ex) {
-//                throw new RuntimeException(String.format("Cannot make a new file to: '%s'", target.getText()));
-//            }
-//        } finally {
-//            Thread.currentThread().setContextClassLoader(current);
-//        }
-//    }
 
     public void refresh(){
         mainFormWindowPanels.getContentPanel().revalidate();
