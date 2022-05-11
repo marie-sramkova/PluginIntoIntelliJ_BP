@@ -22,7 +22,6 @@ public class FileController {
     public static void saveToFile(String fileName, String text) {
         if (!new File(fileName).isDirectory()) {
             try {
-//            Files.writeString(Path.of(fileName), text);
                 FileWriter writer;
                 if (new File(fileName).exists()) {
                     writer = new FileWriter(fileName, false);

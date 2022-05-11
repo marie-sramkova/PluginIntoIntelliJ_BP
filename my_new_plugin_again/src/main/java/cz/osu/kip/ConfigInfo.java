@@ -6,7 +6,6 @@ import cz.osu.kip.mainForm.MainFormWindowItems;
 
 import java.io.File;
 import java.io.FileFilter;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -38,7 +37,7 @@ public class ConfigInfo {
     private boolean methodsForInterfaces;
 
     public ConfigInfo(MainFormWindowItems mainFormWindowItems) {
-        StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder stringBuilder;
         if (mainFormWindowItems.getDefaultUMLTargetDestination().isSelected()){
             umlTargetDestination = FormWindow.getFilePath().toPath().resolve("PlantUmlFile.puml").toFile().toString();
         }else {

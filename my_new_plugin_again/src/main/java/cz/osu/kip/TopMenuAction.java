@@ -76,7 +76,7 @@ public class TopMenuAction extends DumbAwareAction {
     }
 
     private static void optionDialog(String text){
-        JLabel messageLabel = new JLabel("<html><body><p style='width: 300px;'>"+text.toString()+"</p></body></html>");
+        JLabel messageLabel = new JLabel("<html><body><p style='width: 300px;'>"+text+"</p></body></html>");
         Timer timer = new Timer(2000,
                 new ActionListener()
                 {
@@ -97,7 +97,7 @@ public class TopMenuAction extends DumbAwareAction {
                 return f.isDirectory();
             }
         })));
-        subdirs = new ArrayList<File>(subdirs);
+        subdirs = new ArrayList<>(subdirs);
 
         List<File> deepSubdirs = new ArrayList<File>();
         for (File subdir : subdirs) {

@@ -13,7 +13,6 @@ import java.util.List;
 
 public class ConfigFormWindow extends JFrame {
 
-    private JPanel scrollablePanel;
     private JPanel contentPanel;
     List<FolderLevel> configFiles;
     File rootProject;
@@ -24,7 +23,6 @@ public class ConfigFormWindow extends JFrame {
         this.configFiles = convertConfigFilesToFolderLevels(configFiles);
         makeFrame();
         show();
-//        showFormWindow();
     }
 
     public List<FolderLevel> getConfigFiles() {
@@ -45,23 +43,6 @@ public class ConfigFormWindow extends JFrame {
         return files;
     }
 
-    private void showFormWindow() {
-        JPanel contentPane = getScrollablePanel();
-
-        setContentPane(contentPane);
-        pack();
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setVisible(true);
-    }
-
-    public JPanel getScrollablePanel() {
-        return scrollablePanel;
-    }
-
-    public JPanel getContentPanel() {
-        return contentPanel;
-    }
-
     private void makeFrame() {
         contentPanel = makeContentPanel();
 
@@ -73,7 +54,6 @@ public class ConfigFormWindow extends JFrame {
         JPanel contentPane = new JPanel(null);
         contentPane.setPreferredSize(new Dimension(500, 220));
         contentPane.add(scrollPane);
-        //setContentPane(contentPane);
         getContentPane().add(contentPane, BorderLayout.PAGE_START);
         getContentPane().add(createButtonPanel(), BorderLayout.PAGE_END);
         pack();
