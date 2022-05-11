@@ -21,7 +21,6 @@ public class Generator {
     public static void createUmlFile(MainFormWindowItems mainFormWindowItems, ConfigInfo configInfo) {
         List<File> newFolders = new ArrayList<>();
         if (mainFormWindowItems.getTreeViewWindow() != null && mainFormWindowItems.getTreeViewWindow().getFolders() != null) {
-
             for (FolderLevel fl : mainFormWindowItems.getTreeViewWindow().getFolders()) {
                 if (fl.getjCheckBox().isSelected())
                     newFolders.add(fl.getUrl());
@@ -47,15 +46,7 @@ public class Generator {
         JSONObject jsonObject = new JSONObject(configInfo);
         String configInfo2 = jsonObject.toString(4);
 
-        try {
-            FileWriter writer = new FileWriter(FormWindow.getFilePath().toPath().resolve("PlantUmlFiles.myuml").toFile().toString());
-            writer.write(configInfo2);
-            writer.close();
-        } catch (IOException ex) {
-            //todo:
-            System.out.println("chyba json");
-            ex.printStackTrace();
-        }
+        FileController.saveToFile(configInfo.getConfigTargetDestination(), configInfo2);
     }
 
     @NotNull
