@@ -1,5 +1,7 @@
 package cz.osu.kip.umlGeneration;
 
+import org.apache.commons.lang.StringUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,17 +11,11 @@ public class DividingToClassUtil {
         List<ClassX> classXES = new ArrayList<>();
         top_iteration:
         for (int i = 1; i < lines.size(); i++) {
-            List<String> linesOfOneClass = new ArrayList<>();
             if (lines.get(i).startsWith("interface") || lines.get(i).startsWith("public interface") || lines.get(i).startsWith("class") || lines.get(i).startsWith("public class")) {
-                linesOfOneClass.add(lines.get(i));
-                bottom_iteration:
-                for (int j = i + 1; j < lines.size(); j++) {
-                    linesOfOneClass.add(lines.get(j));
-                    if (lines.get(j).trim().startsWith("}")) {
-                        ClassX classX = addClassX(linesOfOneClass);
-                        classXES.add(classX);
-                        break bottom_iteration;
-                    }
+                ClassX newClass = getOneClass(lines, i);
+                classXES.add(newClass);
+                if (newClass.getInnerClassesX() != null && !newClass.getInnerClassesX().isEmpty()) {
+                    classXES.addAll(newClass.getInnerClassesX());
                 }
             }
         }
@@ -28,17 +24,89 @@ public class DividingToClassUtil {
         return packageX;
     }
 
+    private static ClassX getOneClass(List<String> lines, int i) {
+        List<String> linesOfOneClass = new ArrayList<>();
+        ClassX classX = null;
+        linesOfOneClass.add(lines.get(i));
+        int countOfNestingOfParenthesis = 1;
+        int countOfNestingOfInnerClasses = 0;
+        List<ClassX> innerClassesX = new ArrayList<>();
+        bottom_iteration:
+        for (int j = i + 1; j < lines.size(); j++) {
+            if (lines.get(j).trim().startsWith("interface ") || lines.get(j).trim().startsWith("public interface ") || lines.get(j).trim().startsWith("class ") || lines.get(j).trim().startsWith("public class ")) {
+                countOfNestingOfInnerClasses = countOfNestingOfInnerClasses + 1;
+                innerClassesX.add(getOneClass(lines, j));
+            }
+            if (countOfNestingOfInnerClasses > 0){
+                if (lines.get(j).contains("}")) {
+                    int countOfNewClosingParenthesis = (int) (lines.get(j).chars().filter(ch -> ch == '}').count());
+                    countOfNestingOfInnerClasses = countOfNestingOfInnerClasses - countOfNewClosingParenthesis;
+                }
+                continue bottom_iteration;
+            }
+            if (lines.get(j).contains("{")) {
+                int countOfNewOpeningParenthesis = getCountOfFoundStringInStringNotInQuotation(lines.get(j), "{");
+                countOfNestingOfParenthesis = countOfNestingOfParenthesis + countOfNewOpeningParenthesis;
+            }
+            if (lines.get(j).contains("}")) {
+                int countOfNewClosingParenthesis = (int) (lines.get(j).chars().filter(ch -> ch == '}').count());
+                countOfNestingOfParenthesis = countOfNestingOfParenthesis - countOfNewClosingParenthesis;
+            }
+            if (countOfNestingOfParenthesis <= 0) {
+                classX = addClassX(linesOfOneClass);
+                break bottom_iteration;
+            }
+            linesOfOneClass.add(lines.get(j));
+        }
+        if (!innerClassesX.isEmpty()) {
+            classX.addInnerClassesX(innerClassesX);
+        }
+        return classX;
+    }
+
+    private static boolean stringIsNotInComment(String line, String foundString) {
+        if (line.contains("//")){
+            line = line.substring(line.indexOf("//"));
+            if (line.contains(foundString)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static int getCountOfFoundStringInStringNotInQuotation(String line, String foundString) {
+        int countNotInQuotation = 0;
+        if(line.contains(foundString)){
+            int countOfFoundString = StringUtils.countMatches(line, foundString);
+            if (line.contains("\"") || line.contains("\'")) {
+                String tmp;
+                int endIndex = line.indexOf(foundString);
+                for (int i = 0; i < countOfFoundString; i++) {
+                    tmp = line.substring(0, endIndex);
+                    int countOfDoubleQuotationMarks = StringUtils.countMatches(tmp, "\"");
+                    int countOfSimpleQuotationMarks = StringUtils.countMatches(tmp, "\'");
+                    if (countOfDoubleQuotationMarks % 2 == 0 && countOfSimpleQuotationMarks % 2 == 0){
+                        countNotInQuotation = countNotInQuotation + 1;
+                    }
+                    endIndex = line.substring(endIndex+1).indexOf(foundString);
+                }
+            }else {
+                return countOfFoundString;
+            }
+        }
+        return countNotInQuotation;
+    }
+
     private static ClassX addClassX(List<String> lines) {
         String type = getClassType(lines.get(0));
         boolean isPublic = getIfClassIsPublic(lines.get(0));
         if (type != null) {
             String name = getNameOfClass(lines.get(0));
-            String tmp = lines.get(0).substring((type.length() + name.length()) + 2);
+            String tmp = lines.get(0).trim().substring((type.length() + name.length()) + 1).trim();
             boolean extendsStatus = false, implementsStatus = false;
             String extendedClass = null;
             List<String> implementedInterfaces = null;
-            if (tmp.startsWith("{")) {
-            } else {
+            if (!tmp.startsWith("{")) {
                 if (tmp.contains("extends")) {
                     extendsStatus = true;
                     extendedClass = getExtendedClass(tmp);
@@ -52,7 +120,6 @@ public class DividingToClassUtil {
             }
             List<String> others = lines;
             others.remove(0);
-            others.remove(lines.size() - 1);
 
             List<AttributeX> attributeXES = new ArrayList<>();
             List<MethodX> methodXES = new ArrayList<>();
@@ -69,37 +136,45 @@ public class DividingToClassUtil {
             } else if (type.equals("class")) {
                 int skip = 0;
                 for (int i = 0; i < others.size(); i++) {
-                    if (skip > 0){
-                        if (others.get(i).contains("{"))
-                            skip = skip + 1;
-                        if (others.get(i).contains("}"))
-                            skip = skip - 1;
+                    if (skip > 0) {
+                        if (others.get(i).contains("{")){
+                            int countOfNewOpeningParenthesis = getCountOfFoundStringInStringNotInQuotation(others.get(i), "{");
+                            skip = skip + countOfNewOpeningParenthesis;
+                        }
+                        if (others.get(i).contains("}")) {
+                            int countOfNewClosingParenthesis = getCountOfFoundStringInStringNotInQuotation(others.get(i), "}");
+                            skip = skip - countOfNewClosingParenthesis;
+                        }
                         continue;
                     }
                     if (others.get(i).isBlank()) {
                         continue;
                     }
-                    String startingIndex = others.get(i).trim();
-                    if (startingIndex.startsWith("}") || startingIndex.startsWith("@")) {
+                    String trimmedLine = others.get(i).trim();
+                    if (trimmedLine.startsWith("}") || trimmedLine.startsWith("@") || trimmedLine.startsWith("//") || trimmedLine.startsWith("/*")) {
                         continue;
                     } else if (others.get(i).contains("{")) {
                         methodXES.add(getMethodsFromList(others.get(i)));
                         skip = skip + 1;
                     } else {
-                        attributeXES.add(getAttributeFromLine(others.get(i)));
+                        try{
+                            AttributeX attributeX = getAttributeFromLine(others.get(i));
+                            attributeXES.add(attributeX);
+                        }catch (Exception ex){
+                            //not an attribute
+                        }
                     }
                 }
             }
-
             ClassX classX = new ClassX(name, type, isPublic, extendsStatus, extendedClass, implementsStatus, implementedInterfaces, attributeXES, methodXES);
             return classX;
         } else return null;
     }
 
     private static boolean getIfClassIsPublic(String line) {
-        if (line.startsWith("interface") || line.startsWith("class"))
+        if (line.trim().startsWith("interface") || line.trim().startsWith("class"))
             return false;
-        else if (line.startsWith("public interface") || line.startsWith("public class"))
+        else if (line.trim().startsWith("public interface") || line.trim().startsWith("public class"))
             return true;
         else return false;
     }
@@ -134,15 +209,16 @@ public class DividingToClassUtil {
     }
 
     private static String getAttributeType(String line) {
+        line = line.trim();
         int lastIndex = (line.indexOf(" "));
         String type = line.substring(0, lastIndex);
         return type;
     }
 
     private static String getClassType(String line) {
-        if (line.startsWith("interface") || line.startsWith("public interface"))
+        if (line.trim().startsWith("interface") || line.trim().startsWith("public interface"))
             return "interface";
-        else if (line.startsWith("class") || line.startsWith("public class"))
+        else if (line.trim().startsWith("class") || line.trim().startsWith("public class"))
             return "class";
         else return null;
     }
@@ -179,6 +255,7 @@ public class DividingToClassUtil {
     }
 
     private static String getNameOfClass(String line) {
+        line = line.trim();
         String name;
         if (line.startsWith("interface")) {
             int startIndex = line.lastIndexOf("interface");
@@ -187,7 +264,10 @@ public class DividingToClassUtil {
             int startIndex = line.lastIndexOf("class");
             name = line.substring(startIndex + 6);
         }
-        int lastIndex = name.indexOf(" ");
+        int lastIndex = (!name.contains(" ")) ? name.indexOf("{") : name.indexOf(" ");
+        if (lastIndex == -1){
+            return "";
+        }
         name = name.substring(0, lastIndex);
 
         return name;
@@ -207,7 +287,7 @@ public class DividingToClassUtil {
         String returningType = getReturningType(tmp);
         tmp = tmp.substring(returningType.length()).trim();
         String name = "";
-        if (!tmp.startsWith("(")){
+        if (!tmp.startsWith("(")) {
             name = getNameOfMethod(tmp);
             tmp = tmp.substring(name.length());
         }
@@ -216,7 +296,7 @@ public class DividingToClassUtil {
         if (!tmp.startsWith(")")) {
             inputParameterXES = getInputParameters(tmp);
         }
-        if (name.equals("") && !returningType.isEmpty()){
+        if (name.equals("") && !returningType.isEmpty()) {
             MethodX methodX = new MethodX(status, name, returningType, inputParameterXES, isStatic);
             return methodX;
         }
@@ -267,7 +347,7 @@ public class DividingToClassUtil {
     private static String getReturningType(String line) {
         int lastIndex;
         lastIndex = (line.indexOf(" "));
-        if (line.substring(0, lastIndex).contains("(")){
+        if (line.substring(0, lastIndex).contains("(")) {
             lastIndex = line.indexOf("(");
         }
         String returningType = line.substring(0, lastIndex);
