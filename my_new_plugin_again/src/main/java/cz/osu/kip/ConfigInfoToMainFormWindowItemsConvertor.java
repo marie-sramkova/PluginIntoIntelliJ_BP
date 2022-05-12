@@ -42,18 +42,27 @@ public class ConfigInfoToMainFormWindowItemsConvertor {
     }
 
     private static void convertPackagesToTreeViewWindow(ConfigInfo configInfo, MainFormWindowItems mainFormWindowItems, String initialURL) {
+        if (initialURL.contains("/")) {
+            if (initialURL.substring(initialURL.lastIndexOf("/")).contains(".")) {
+                initialURL = initialURL.toString().substring(0, initialURL.toString().lastIndexOf("/"));
+            }
+        } else if (initialURL.contains("\\")) {
+            if (initialURL.substring(initialURL.lastIndexOf("\\")).contains(".")) {
+                initialURL = initialURL.substring(0, initialURL.lastIndexOf("\\"));
+            }
+        }
         List<FolderLevel> folders = new ArrayList<>();
         for (String url: configInfo.getPackages()) {
             File file = new File(url);
             String folderName = "";
             int folderLevel = 0;
             if (file.toString().contains("/")) {
-                String[] oldPaths = initialURL.toString().split("/");
+                String[] oldPaths = initialURL.split("/");
                 String[] paths = file.toString().split("/");
                 folderLevel = paths.length - oldPaths.length;
                 folderName = file.toString().substring(file.toString().lastIndexOf("/") + 1);
             } else if (file.toString().contains("\\")) {
-                String[] oldPaths = initialURL.toString().split("\\\\");
+                String[] oldPaths = initialURL.split("\\\\");
                 String[] paths = file.toString().split("\\\\");
                 folderLevel = paths.length - oldPaths.length;
                 folderName = file.toString().substring(file.toString().lastIndexOf("\\") + 1);

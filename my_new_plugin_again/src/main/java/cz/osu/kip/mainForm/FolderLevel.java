@@ -5,7 +5,7 @@ import com.intellij.ui.components.JBCheckBox;
 import java.io.File;
 import java.util.Comparator;
 
-public class FolderLevel{
+public class FolderLevel {
     private String name;
     private File url;
     private int level;
@@ -15,8 +15,20 @@ public class FolderLevel{
         this.name = newFolderLevel.getName();
         this.url = newFolderLevel.getUrl();
         this.level = newFolderLevel.getLevel();
-        jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.length()));
-        if (newFolderLevel.getjCheckBox().isSelected()){
+        if (initialUrl.contains("/")) {
+            if (initialUrl.substring(initialUrl.lastIndexOf("/")).contains(".")) {
+                jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.substring(0, initialUrl.lastIndexOf("/")).length() + 1));
+            }else{
+                jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.length()+1));
+            }
+        } else if (initialUrl.contains("\\")) {
+            if (initialUrl.substring(initialUrl.lastIndexOf("\\")).contains(".")) {
+                jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.substring(0, initialUrl.lastIndexOf("\\")).length() + 1));
+            }else{
+                jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.length()+1));
+            }
+        }
+        if (newFolderLevel.getjCheckBox().isSelected()) {
             this.jCheckBox.setSelected(true);
         }
     }
@@ -25,7 +37,19 @@ public class FolderLevel{
         this.name = name;
         this.url = url;
         this.level = level;
-        jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.length()+1));
+        if (initialUrl.contains("/")) {
+            if (initialUrl.substring(initialUrl.lastIndexOf("/")).contains(".")) {
+                jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.substring(0, initialUrl.lastIndexOf("/")).length() + 1));
+            } else {
+                jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.length()+1));
+            }
+        } else if (initialUrl.contains("\\")) {
+            if (initialUrl.substring(initialUrl.lastIndexOf("\\")).contains(".")) {
+                jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.substring(0, initialUrl.lastIndexOf("\\")).length() + 1));
+            } else {
+                jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.length()+1));
+            }
+        }
     }
 
     public JBCheckBox getjCheckBox() {
@@ -71,8 +95,7 @@ public class FolderLevel{
 }
 
 
-class FolderLevelComparator implements Comparator<FolderLevel>
-{
+class FolderLevelComparator implements Comparator<FolderLevel> {
     @Override
     public int compare(FolderLevel fl1, FolderLevel fl2) {
         return fl1.getUrl().compareTo(fl2.getUrl());

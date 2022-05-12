@@ -80,8 +80,18 @@ public class ClassX {
         if (isImplementStatus()) {
             if (getImplementedInterface().size() != 0) {
                 for (String implementedInterface : getImplementedInterface()) {
-                    sb.append(getName()).append(" ..|> ").append(implementedInterface).append("\n");
+                    sb.append(getName()).append(" ..|>").append(implementedInterface).append("\n");
                 }
+            }
+        }
+        return sb.toString();
+    }
+
+    public String convertToUmlFormatNestedClassesXAssociations() {
+        StringBuilder sb = new StringBuilder();
+        if (getInnerClassesX() != null && getInnerClassesX().size() > 0) {
+            for (ClassX classX:getInnerClassesX()) {
+                sb.append(getName()).append(" -->  \"many\" ").append(classX.getName()).append(" : +nested\n\n");
             }
         }
         return sb.toString();

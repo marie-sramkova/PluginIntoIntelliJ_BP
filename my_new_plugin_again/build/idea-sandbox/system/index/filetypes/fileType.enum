@@ -1,16 +1,17 @@
-JAVA
 JSON
-PLAIN_TEXT
-DTD
+JAVA
 XML
+PLAIN_TEXT
+XHTML
+DTD
+RNG Compact
+PATCH
+textmate
 GitIgnore file
 HTML
 IDEA_MODULE
-textmate
-RNG Compact
-XHTML
-PATCH
 Shell Script
+gdsl
 CLASS
 UNKNOWN
 Properties
@@ -18,8 +19,5 @@ SPI
 Image
 CSS
 JavaScript
-gdsl
 Kotlin
 script-definition-marker
-Shrinker Config File
-GUI_DESIGNER_FORM

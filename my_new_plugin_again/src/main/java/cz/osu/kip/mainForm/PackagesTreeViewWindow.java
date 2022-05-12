@@ -1,5 +1,6 @@
 package cz.osu.kip.mainForm;
 
+import com.intellij.ui.components.JBCheckBox;
 import com.intellij.ui.components.JBScrollPane;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -47,11 +48,11 @@ public class PackagesTreeViewWindow extends JFrame {
         for (FolderLevel firstFolder : firstFolders) {
             boolean foldersIncludeFirstFolder = false;
             for (FolderLevel fl : folders) {
-                if (fl.getUrl().equals(firstFolder.getUrl())){
+                if (fl.getUrl().equals(firstFolder.getUrl())) {
                     foldersIncludeFirstFolder = true;
                 }
             }
-            if (!foldersIncludeFirstFolder){
+            if (!foldersIncludeFirstFolder) {
                 this.folders.add(firstFolder);
             }
         }
@@ -166,6 +167,7 @@ public class PackagesTreeViewWindow extends JFrame {
     }
 
     private List<FolderLevel> makeLevels(File filePath, File[] directories) {
+        filePath = getDirectoryPathWithoutFile(filePath);
         List<FolderLevel> newFolderLevels = new ArrayList<>();
         for (File dir : directories) {
             int folderLevel = 0;
@@ -187,8 +189,23 @@ public class PackagesTreeViewWindow extends JFrame {
         return newFolderLevels;
     }
 
+    @NotNull
+    public File getDirectoryPathWithoutFile(File filePath) {
+        if (filePath.toString().contains("/")) {
+            if (filePath.toString().substring(filePath.toString().lastIndexOf("/")).contains(".")) {
+                filePath = new File(filePath.toString().substring(0, filePath.toString().lastIndexOf("/")));
+            }
+        } else if (filePath.toString().contains("\\")) {
+            if (filePath.toString().substring(filePath.toString().lastIndexOf("\\")).contains(".")) {
+                filePath = new File(filePath.toString().substring(0, filePath.toString().lastIndexOf("\\")));
+            }
+        }
+        return filePath;
+    }
+
     @Nullable
     private File[] getDirectories(File filePath) {
+        filePath = getDirectoryPathWithoutFile(filePath);
         File[] directories = filePath.listFiles(new FileFilter() {
             @Override
             public boolean accept(File current) {

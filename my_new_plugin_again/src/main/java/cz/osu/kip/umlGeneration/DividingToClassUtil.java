@@ -14,9 +14,9 @@ public class DividingToClassUtil {
             if (lines.get(i).startsWith("interface") || lines.get(i).startsWith("public interface") || lines.get(i).startsWith("class") || lines.get(i).startsWith("public class")) {
                 ClassX newClass = getOneClass(lines, i);
                 classXES.add(newClass);
-                if (newClass.getInnerClassesX() != null && !newClass.getInnerClassesX().isEmpty()) {
-                    classXES.addAll(newClass.getInnerClassesX());
-                }
+//                if (newClass.getInnerClassesX() != null && !newClass.getInnerClassesX().isEmpty()) {
+//                    classXES.addAll(newClass.getInnerClassesX());
+//                }
             }
         }
         String nameOfPackage = lines.get(0).substring(8, lines.get(0).length() - 1);
