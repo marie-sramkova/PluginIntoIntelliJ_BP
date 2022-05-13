@@ -151,12 +151,15 @@ public class MainFormWindowPanels {
                         .addComponent(mainFormWindowItems.getAllPackages())
                         .addGap(80)
                         .addComponent(mainFormWindowItems.getOwnPackages())
+                        .addGap(20)
+                        .addComponent(mainFormWindowItems.getButtonToShowSelectedPackages())
         );
         groupLayout.setVerticalGroup(
                 groupLayout.createSequentialGroup()
                         .addGroup(groupLayout.createParallelGroup(BASELINE)
                                 .addComponent(mainFormWindowItems.getAllPackages())
-                                .addComponent(mainFormWindowItems.getOwnPackages())));
+                                .addComponent(mainFormWindowItems.getOwnPackages())
+                                .addComponent(mainFormWindowItems.getButtonToShowSelectedPackages())));
     }
 
     public void setClassesInterfacesPlusModifiersPanel() {

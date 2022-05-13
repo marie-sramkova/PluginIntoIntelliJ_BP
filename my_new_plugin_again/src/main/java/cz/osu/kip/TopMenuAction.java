@@ -10,8 +10,6 @@ import cz.osu.kip.mainForm.MainFormWindowItems;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.*;
 import java.nio.file.Files;
 import java.util.ArrayList;
@@ -58,12 +56,12 @@ public class TopMenuAction extends DumbAwareAction {
                                     int dialogResult = JOptionPane.showConfirmDialog (null, "Would yout like to delete file / files?","Warning",JOptionPane.YES_NO_CANCEL_OPTION);
                                     if(dialogResult == JOptionPane.YES_OPTION){
                                         Files.deleteIfExists(filePath.toPath());
-                                        optionDialog("File was / files were successfully deleted.");
+                                        ClassToShowOptionDialogsWithTimer.showOptionDialogWithTimer("File was / files were successfully deleted.", 2);
                                     }else {
                                         configFormWindow.show();
                                     }
                                 } catch (IOException ex) {
-                                    JOptionPane.showMessageDialog(null ,"Cannot delete the file " + filePath.toString());
+                                    ClassToShowOptionDialogsWithTimer.showOptionDialogWithTimer("Cannot delete the file " + filePath.toString(), 2);
                                 }
                             }
                         }
@@ -73,22 +71,6 @@ public class TopMenuAction extends DumbAwareAction {
                 }
             }
         });
-    }
-
-    private static void optionDialog(String text){
-        JLabel messageLabel = new JLabel("<html><body><p style='width: 300px;'>"+text+"</p></body></html>");
-        Timer timer = new Timer(2000,
-                new ActionListener()
-                {
-                    @Override
-                    public void actionPerformed(ActionEvent event)
-                    {
-                        SwingUtilities.getWindowAncestor(messageLabel).dispose();
-                    }
-                });
-        timer.setRepeats(false);
-        timer.start();
-        JOptionPane.showOptionDialog(null, messageLabel, "Notification", JOptionPane.DEFAULT_OPTION,JOptionPane.INFORMATION_MESSAGE, null, new Object[]{}, null);
     }
 
     private List<File> getSubdirs(File file) {
