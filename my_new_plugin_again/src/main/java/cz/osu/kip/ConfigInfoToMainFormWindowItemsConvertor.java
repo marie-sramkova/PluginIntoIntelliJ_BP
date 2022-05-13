@@ -18,6 +18,7 @@ public class ConfigInfoToMainFormWindowItemsConvertor {
         convertConfigTargetDestination(configInfo, mainFormWindowItems, filePath);
         String initialURL = configInfo.getInitialUrl();
         convertPackagesToTreeViewWindow(configInfo, mainFormWindowItems, initialURL);
+        mainFormWindowItems.getButtonToShowSelectedPackages().setVisible(true);
 
         mainFormWindowItems.setClassesCheckBox(configInfo.isClasses());
         mainFormWindowItems.setInterfacesCheckBox(configInfo.isInterfaces());

@@ -22,6 +22,7 @@ public class MainFormWindowItems {
 
     private JRadioButton allPackages = new JRadioButton("All packages");
     private JRadioButton ownPackages = new JRadioButton("Choose packages");
+    private JButton buttonToShowSelectedPackages = new JButton("Show selected packages");
     private ButtonGroup buttonGroupPackages = setButtonGroup(allPackages, ownPackages);
 
     private JFileChooser defaultUMLTargetFile = new JFileChooser();
@@ -81,6 +82,7 @@ public class MainFormWindowItems {
     private ActionListener ownPackagesListener = new ActionListener() {
         public void actionPerformed(ActionEvent actionEvent) {
             if (ownPackages.isSelected()) {
+                buttonToShowSelectedPackages.setVisible(true);
                 PackagesTreeViewWindow newPackagesTreeViewWindow;
                 if (packagesTreeViewWindow == null) {
                     newPackagesTreeViewWindow = new PackagesTreeViewWindow(FormWindow.getFilePath());
@@ -100,6 +102,7 @@ public class MainFormWindowItems {
                     }
                 });
             }else{
+                buttonToShowSelectedPackages.setVisible(false);
                 packagesTreeViewWindow = null;
             }
         }
@@ -228,6 +231,8 @@ public class MainFormWindowItems {
         allPackages.setSelected(true);
         allPackages.addActionListener(ownPackagesListener);
         ownPackages.addActionListener(ownPackagesListener);
+        buttonToShowSelectedPackages.setVisible(false);
+        buttonToShowSelectedPackages.addActionListener(ownPackagesListener);
         classesCheckBox.addActionListener(classesListener);
         interfacesCheckBox.addActionListener(interfacesListener);
         defaultForClassCheckBox.setVisible(false);
@@ -283,6 +288,10 @@ public class MainFormWindowItems {
             btnGroup.add(button);
         }
         return btnGroup;
+    }
+
+    public JButton getButtonToShowSelectedPackages() {
+        return buttonToShowSelectedPackages;
     }
 
     public JRadioButton getAllPackages() {
