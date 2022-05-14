@@ -4,6 +4,8 @@ import org.apache.commons.lang.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class DividingToClassUtil {
 
@@ -14,9 +16,6 @@ public class DividingToClassUtil {
             if (lines.get(i).startsWith("interface") || lines.get(i).startsWith("public interface") || lines.get(i).startsWith("class") || lines.get(i).startsWith("public class")) {
                 ClassX newClass = getOneClass(lines, i);
                 classXES.add(newClass);
-//                if (newClass.getInnerClassesX() != null && !newClass.getInnerClassesX().isEmpty()) {
-//                    classXES.addAll(newClass.getInnerClassesX());
-//                }
             }
         }
         String nameOfPackage = lines.get(0).substring(8, lines.get(0).length() - 1);
@@ -31,32 +30,80 @@ public class DividingToClassUtil {
         int countOfNestingOfParenthesis = 1;
         int countOfNestingOfInnerClasses = 0;
         List<ClassX> innerClassesX = new ArrayList<>();
+        boolean stillComment = false;
+        int x = 0;
+
         bottom_iteration:
         for (int j = i + 1; j < lines.size(); j++) {
-            if (lines.get(j).trim().startsWith("interface ") || lines.get(j).trim().startsWith("public interface ") || lines.get(j).trim().startsWith("class ") || lines.get(j).trim().startsWith("public class ")) {
-                countOfNestingOfInnerClasses = countOfNestingOfInnerClasses + 1;
-                innerClassesX.add(getOneClass(lines, j));
-            }
-            if (countOfNestingOfInnerClasses > 0){
-                if (lines.get(j).contains("}")) {
-                    int countOfNewClosingParenthesis = (int) (lines.get(j).chars().filter(ch -> ch == '}').count());
-                    countOfNestingOfInnerClasses = countOfNestingOfInnerClasses - countOfNewClosingParenthesis;
-                }
+            String line = lines.get(j);
+            if (line.trim().startsWith("//")) {
                 continue bottom_iteration;
             }
-            if (lines.get(j).contains("{")) {
-                int countOfNewOpeningParenthesis = getCountOfFoundStringInStringNotInQuotation(lines.get(j), "{");
+            if (stillComment == true) {
+                if (line.contains("*/")
+                        && (getCountOfFoundStringInStringNotInQuotation(line.substring(0,line.indexOf("*/")), "\"") % 2) == 0
+                && (getCountOfFoundStringInStringNotInQuotation(line.substring(0,line.indexOf("*/")), "\'") % 2) == 0) {
+                    stillComment = false;
+                    int endIndex = line.indexOf("*/");
+                    line = line.substring(endIndex + 2);
+                    if (line.isBlank()) {
+                        continue bottom_iteration;
+                    }
+                } else {
+                    continue bottom_iteration;
+                }
+            }
+            while (line.contains("/*")
+                    && (getCountOfFoundStringInStringNotInQuotation(line.substring(0,line.indexOf("/*")), "\"") % 2) == 0
+                    && (getCountOfFoundStringInStringNotInQuotation(line.substring(0,line.indexOf("/*")), "\'") % 2) == 0) {
+                int startIndex = line.indexOf("/*");
+                if (line.contains("*/")
+                        && (getCountOfFoundStringInStringNotInQuotation(line.substring(0,line.indexOf("*/")), "\"") % 2) == 0
+                        && (getCountOfFoundStringInStringNotInQuotation(line.substring(0,line.indexOf("*/")), "\'") % 2) == 0) {
+                    StringBuilder sb = new StringBuilder();
+                    int endIndex = line.indexOf("*/") + 2;
+                    line = sb.append(line.substring(0, startIndex)).append(line.substring(endIndex)).toString();
+                } else {
+                    line = line.substring(0, startIndex);
+                    stillComment = true;
+                }
+                if (line.isBlank()) {
+                    continue bottom_iteration;
+                }
+            }
+            if (line.trim().startsWith("interface ") || line.trim().startsWith("public interface ") || line.trim().startsWith("class ") || lines.get(j).trim().startsWith("public class ")) {
+                countOfNestingOfInnerClasses = countOfNestingOfInnerClasses + 1;
+                innerClassesX.add(getOneClass(lines, j));
+
+            }
+            if (countOfNestingOfInnerClasses > 0) {
+                if (line.contains("{")) {
+                    int countOfNewOpeningParenthesis = getCountOfFoundStringInStringNotInQuotation(line, "{");
+                    countOfNestingOfInnerClasses = countOfNestingOfInnerClasses + countOfNewOpeningParenthesis;
+                }
+                if (line.contains("}")) {
+                    int countOfNewClosingParenthesis = getCountOfFoundStringInStringNotInQuotation(line, "}");
+                    countOfNestingOfInnerClasses = countOfNestingOfInnerClasses - countOfNewClosingParenthesis;
+                }
+                if (countOfNestingOfInnerClasses > innerClassesX.size()){
+                    continue bottom_iteration;
+                }else{
+                    countOfNestingOfInnerClasses = 0;
+                }
+            }
+            if (line.contains("{")) {
+                int countOfNewOpeningParenthesis = getCountOfFoundStringInStringNotInQuotation(line, "{");
                 countOfNestingOfParenthesis = countOfNestingOfParenthesis + countOfNewOpeningParenthesis;
             }
-            if (lines.get(j).contains("}")) {
-                int countOfNewClosingParenthesis = (int) (lines.get(j).chars().filter(ch -> ch == '}').count());
+            if (line.contains("}")) {
+                int countOfNewClosingParenthesis = getCountOfFoundStringInStringNotInQuotation(line, "}");
                 countOfNestingOfParenthesis = countOfNestingOfParenthesis - countOfNewClosingParenthesis;
             }
             if (countOfNestingOfParenthesis <= 0) {
                 classX = addClassX(linesOfOneClass);
                 break bottom_iteration;
             }
-            linesOfOneClass.add(lines.get(j));
+            linesOfOneClass.add(line);
         }
         if (!innerClassesX.isEmpty()) {
             classX.addInnerClassesX(innerClassesX);
@@ -65,9 +112,9 @@ public class DividingToClassUtil {
     }
 
     private static boolean stringIsNotInComment(String line, String foundString) {
-        if (line.contains("//")){
+        if (line.contains("//")) {
             line = line.substring(line.indexOf("//"));
-            if (line.contains(foundString)){
+            if (line.contains(foundString)) {
                 return true;
             }
         }
@@ -76,7 +123,7 @@ public class DividingToClassUtil {
 
     private static int getCountOfFoundStringInStringNotInQuotation(String line, String foundString) {
         int countNotInQuotation = 0;
-        if(line.contains(foundString)){
+        if (line.contains(foundString)) {
             int countOfFoundString = StringUtils.countMatches(line, foundString);
             if (line.contains("\"") || line.contains("\'")) {
                 String tmp;
@@ -85,12 +132,12 @@ public class DividingToClassUtil {
                     tmp = line.substring(0, endIndex);
                     int countOfDoubleQuotationMarks = StringUtils.countMatches(tmp, "\"");
                     int countOfSimpleQuotationMarks = StringUtils.countMatches(tmp, "\'");
-                    if (countOfDoubleQuotationMarks % 2 == 0 && countOfSimpleQuotationMarks % 2 == 0){
+                    if (countOfDoubleQuotationMarks % 2 == 0 && countOfSimpleQuotationMarks % 2 == 0) {
                         countNotInQuotation = countNotInQuotation + 1;
                     }
-                    endIndex = line.substring(endIndex+1).indexOf(foundString);
+                    endIndex = line.substring(endIndex + 1).indexOf(foundString);
                 }
-            }else {
+            } else {
                 return countOfFoundString;
             }
         }
@@ -137,7 +184,7 @@ public class DividingToClassUtil {
                 int skip = 0;
                 for (int i = 0; i < others.size(); i++) {
                     if (skip > 0) {
-                        if (others.get(i).contains("{")){
+                        if (others.get(i).contains("{")) {
                             int countOfNewOpeningParenthesis = getCountOfFoundStringInStringNotInQuotation(others.get(i), "{");
                             skip = skip + countOfNewOpeningParenthesis;
                         }
@@ -151,16 +198,16 @@ public class DividingToClassUtil {
                         continue;
                     }
                     String trimmedLine = others.get(i).trim();
-                    if (trimmedLine.startsWith("}") || trimmedLine.startsWith("@") || trimmedLine.startsWith("//") || trimmedLine.startsWith("/*")) {
+                    if (trimmedLine.startsWith("}") || trimmedLine.startsWith("@")) {
                         continue;
                     } else if (others.get(i).contains("{")) {
                         methodXES.add(getMethodsFromList(others.get(i)));
                         skip = skip + 1;
                     } else {
-                        try{
+                        try {
                             AttributeX attributeX = getAttributeFromLine(others.get(i));
                             attributeXES.add(attributeX);
-                        }catch (Exception ex){
+                        } catch (Exception ex) {
                             //not an attribute
                         }
                     }
@@ -183,7 +230,9 @@ public class DividingToClassUtil {
         String tmp = line;
         tmp = tmp.trim();
         String status = getStatus(tmp);
-        tmp = tmp.substring(status.length());
+        if (tmp.startsWith(status)){
+            tmp = tmp.substring(status.length());
+        }
         boolean isStatic = false;
         if (line.contains(" static ")) {
             isStatic = true;
@@ -198,11 +247,15 @@ public class DividingToClassUtil {
     }
 
     private static String getAttributeName(String line) {
-        int lastIndex;
-        if (line.contains(" ")) {
-            lastIndex = line.indexOf(" ");
-        } else {
-            lastIndex = line.indexOf(";");
+        int lastIndex = line.length();
+        if (line.matches(".*[^A-Za-z0-9].*")) {
+
+            String patternStr = "[^A-Za-z0-9]";
+            Pattern pattern = Pattern.compile(patternStr);
+            Matcher matcher = pattern.matcher(line);
+            if(matcher.find()){
+                lastIndex = matcher.start();
+            }
         }
         String name = line.substring(0, lastIndex);
         return name;
@@ -265,7 +318,7 @@ public class DividingToClassUtil {
             name = line.substring(startIndex + 6);
         }
         int lastIndex = (!name.contains(" ")) ? name.indexOf("{") : name.indexOf(" ");
-        if (lastIndex == -1){
+        if (lastIndex == -1) {
             return "";
         }
         name = name.substring(0, lastIndex);
