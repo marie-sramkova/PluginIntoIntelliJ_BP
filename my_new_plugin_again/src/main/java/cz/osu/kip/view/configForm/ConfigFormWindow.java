@@ -1,7 +1,7 @@
-package cz.osu.kip.configForm;
+package cz.osu.kip.view.configForm;
 
 import com.intellij.ui.components.JBScrollPane;
-import cz.osu.kip.mainForm.FolderLevel;
+import cz.osu.kip.view.mainForm.FolderLevel;
 
 import javax.swing.*;
 import java.awt.*;

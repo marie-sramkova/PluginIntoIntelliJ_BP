@@ -1,4 +1,4 @@
-package cz.osu.kip;
+package cz.osu.kip.view;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

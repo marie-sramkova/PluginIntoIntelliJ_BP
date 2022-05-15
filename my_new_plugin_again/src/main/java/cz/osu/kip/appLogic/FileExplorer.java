@@ -1,4 +1,4 @@
-package cz.osu.kip;
+package cz.osu.kip.appLogic;
 
 import java.io.File;
 import java.util.ArrayList;

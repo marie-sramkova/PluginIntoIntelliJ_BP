@@ -1,4 +1,4 @@
-package cz.osu.kip.mainForm;
+package cz.osu.kip.view.mainForm;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -9,7 +9,7 @@ import java.io.File;
 
 public class MainFormWindowItems {
 
-    private FormWindow formWindow;
+    private UmlFormWindow umlFormWindow;
     private JRadioButton defaultUMLTargetDestination = new JRadioButton("Default target destination for uml file");
     private JRadioButton ownUMLTargetDestination = new JRadioButton("Own target destination for uml file");
     private ButtonGroup buttonGroupUMLTargetDestination = setButtonGroup(defaultUMLTargetDestination, ownUMLTargetDestination);
@@ -57,10 +57,10 @@ public class MainFormWindowItems {
     };
     private ActionListener ownUMLTargetDestinationListener = new ActionListener() {
         public void actionPerformed(ActionEvent actionEvent) {
-            defaultUMLTargetFile.setCurrentDirectory(new File(FormWindow.getFilePath().toPath().toFile().toString()));
+            defaultUMLTargetFile.setCurrentDirectory(new File(UmlFormWindow.getFilePath().toPath().toFile().toString()));
             defaultUMLTargetDestinationDesc.setVisible(false);
             defaultUMLTargetFile.setVisible(true);
-            formWindow.refresh();
+            umlFormWindow.refresh();
         }
     };
 
@@ -72,10 +72,10 @@ public class MainFormWindowItems {
     };
     private ActionListener ownConfigTargetDestinationListener = new ActionListener() {
         public void actionPerformed(ActionEvent actionEvent) {
-            defaultConfigTargetFile.setCurrentDirectory(new File(FormWindow.getFilePath().toPath().toFile().toString()));
+            defaultConfigTargetFile.setCurrentDirectory(new File(UmlFormWindow.getFilePath().toPath().toFile().toString()));
             defaultConfigTargetDestinationDesc.setVisible(false);
             defaultConfigTargetFile.setVisible(true);
-            formWindow.refresh();
+            umlFormWindow.refresh();
         }
     };
 
@@ -85,12 +85,12 @@ public class MainFormWindowItems {
                 buttonToShowSelectedPackages.setVisible(true);
                 PackagesTreeViewWindow newPackagesTreeViewWindow;
                 if (packagesTreeViewWindow == null) {
-                    newPackagesTreeViewWindow = new PackagesTreeViewWindow(FormWindow.getFilePath());
+                    newPackagesTreeViewWindow = new PackagesTreeViewWindow(UmlFormWindow.getFilePath());
                 } else {
                     if (initialUrl != null) {
                         newPackagesTreeViewWindow = new PackagesTreeViewWindow(packagesTreeViewWindow, initialUrl);
                     }else{
-                        newPackagesTreeViewWindow = new PackagesTreeViewWindow(packagesTreeViewWindow, FormWindow.getFilePath().toString());
+                        newPackagesTreeViewWindow = new PackagesTreeViewWindow(packagesTreeViewWindow, UmlFormWindow.getFilePath().toString());
                     }
                 }
                 newPackagesTreeViewWindow.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -135,7 +135,7 @@ public class MainFormWindowItems {
                 checkBoxForClassMethods.setVisible(true);
                 checkBoxForInnerClasses.setVisible(true);
             }
-            formWindow.refresh();
+            umlFormWindow.refresh();
         }
     };
 
@@ -160,7 +160,7 @@ public class MainFormWindowItems {
                 checkBoxForProtectedClassAttributes.setVisible(true);
                 checkBoxForInternalClassAttributes.setVisible(true);
             }
-            formWindow.refresh();
+            umlFormWindow.refresh();
         }
     };
 
@@ -185,7 +185,7 @@ public class MainFormWindowItems {
                 checkBoxForProtectedClassMethods.setVisible(true);
                 checkBoxForInternalClassMethods.setVisible(true);
             }
-            formWindow.refresh();
+            umlFormWindow.refresh();
         }
     };
 
@@ -210,12 +210,12 @@ public class MainFormWindowItems {
                 checkBoxForInterfaceAttributes.setVisible(true);
                 checkBoxForInterfaceMethods.setVisible(true);
             }
-            formWindow.refresh();
+            umlFormWindow.refresh();
         }
     };
 
-    public MainFormWindowItems(File filePath, FormWindow formWindow) {
-        this.formWindow = formWindow;
+    public MainFormWindowItems(File filePath, UmlFormWindow umlFormWindow) {
+        this.umlFormWindow = umlFormWindow;
         defaultUMLTargetDestination.setSelected(true);
         defaultConfigTargetDestination.setSelected(true);
         defaultUMLTargetFile.setVisible(false);

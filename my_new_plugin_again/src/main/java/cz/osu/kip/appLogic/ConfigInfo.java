@@ -1,8 +1,8 @@
-package cz.osu.kip;
+package cz.osu.kip.appLogic;
 
-import cz.osu.kip.mainForm.FolderLevel;
-import cz.osu.kip.mainForm.FormWindow;
-import cz.osu.kip.mainForm.MainFormWindowItems;
+import cz.osu.kip.view.mainForm.FolderLevel;
+import cz.osu.kip.view.mainForm.UmlFormWindow;
+import cz.osu.kip.view.mainForm.MainFormWindowItems;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class ConfigInfo {
-    private String initialUrl = FormWindow.getFilePath().toString();
+    private String initialUrl = UmlFormWindow.getFilePath().toString();
     private String umlTargetDestination;
     private String configTargetDestination;
     private List<String> packages = new ArrayList<>();
@@ -39,7 +39,7 @@ public class ConfigInfo {
     public ConfigInfo(MainFormWindowItems mainFormWindowItems) {
         StringBuilder stringBuilder;
         if (mainFormWindowItems.getDefaultUMLTargetDestination().isSelected()){
-            umlTargetDestination = FormWindow.getFilePath().toPath().resolve("PlantUmlFile.puml").toFile().toString();
+            umlTargetDestination = UmlFormWindow.getFilePath().toPath().resolve("PlantUmlFile.puml").toFile().toString();
         }else {
             stringBuilder = new StringBuilder();
             stringBuilder.append(mainFormWindowItems.getDefaultUMLTargetFile().getSelectedFile().getAbsolutePath());
@@ -49,7 +49,7 @@ public class ConfigInfo {
             umlTargetDestination = stringBuilder.toString();
         }
         if (mainFormWindowItems.getDefaultConfigTargetDestination().isSelected()){
-            configTargetDestination = FormWindow.getFilePath().toPath().resolve("PlantUmlConfigFile.myuml").toFile().toString();
+            configTargetDestination = UmlFormWindow.getFilePath().toPath().resolve("PlantUmlConfigFile.myuml").toFile().toString();
         }else {
             stringBuilder = new StringBuilder();
             stringBuilder.append(mainFormWindowItems.getDefaultConfigTargetFile().getSelectedFile().getAbsolutePath());
@@ -59,8 +59,8 @@ public class ConfigInfo {
             configTargetDestination = stringBuilder.toString();
         }
         if(mainFormWindowItems.getAllPackages().isSelected()){
-            packages.add(FormWindow.getFilePath().toString());
-            List<File> subdirs = getSubdirs(FormWindow.getFilePath());
+            packages.add(UmlFormWindow.getFilePath().toString());
+            List<File> subdirs = getSubdirs(UmlFormWindow.getFilePath());
             for (File file:subdirs) {
                 packages.add(file.getAbsolutePath());
             }

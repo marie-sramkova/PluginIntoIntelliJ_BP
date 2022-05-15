@@ -1,12 +1,16 @@
-package cz.osu.kip;
+package cz.osu.kip.action;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.DumbAwareAction;
 import com.intellij.openapi.project.Project;
-import cz.osu.kip.configForm.ConfigFormWindow;
-import cz.osu.kip.configForm.SubmitStateForConfigFormWindow;
-import cz.osu.kip.mainForm.FolderLevel;
-import cz.osu.kip.mainForm.MainFormWindowItems;
+import cz.osu.kip.view.ClassToShowOptionDialogsWithTimer;
+import cz.osu.kip.appLogic.ConfigInfo;
+import cz.osu.kip.appLogic.FileExplorer;
+import cz.osu.kip.appLogic.Generator;
+import cz.osu.kip.view.configForm.ConfigFormWindow;
+import cz.osu.kip.view.configForm.SubmitStateForConfigFormWindow;
+import cz.osu.kip.view.mainForm.FolderLevel;
+import cz.osu.kip.view.mainForm.MainFormWindowItems;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;

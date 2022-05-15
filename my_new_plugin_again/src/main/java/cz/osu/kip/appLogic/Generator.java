@@ -1,12 +1,12 @@
-package cz.osu.kip;
+package cz.osu.kip.appLogic;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.intellij.openapi.project.Project;
-import cz.osu.kip.mainForm.FolderLevel;
-import cz.osu.kip.mainForm.MainFormWindowItems;
-import cz.osu.kip.umlGeneration.*;
+import cz.osu.kip.view.mainForm.FolderLevel;
+import cz.osu.kip.view.mainForm.MainFormWindowItems;
+import cz.osu.kip.appLogic.umlGeneration.*;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 

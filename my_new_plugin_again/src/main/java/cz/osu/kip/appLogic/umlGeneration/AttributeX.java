@@ -1,4 +1,4 @@
-package cz.osu.kip.umlGeneration;
+package cz.osu.kip.appLogic.umlGeneration;
 
 class AttributeX {
     private String status;

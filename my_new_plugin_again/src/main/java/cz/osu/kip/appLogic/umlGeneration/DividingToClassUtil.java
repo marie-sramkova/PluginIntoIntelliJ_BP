@@ -1,6 +1,7 @@
-package cz.osu.kip.umlGeneration;
+package cz.osu.kip.appLogic.umlGeneration;
 
 import org.apache.commons.lang.StringUtils;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,17 +33,27 @@ public class DividingToClassUtil {
         List<ClassX> innerClassesX = new ArrayList<>();
         boolean stillComment = false;
         int x = 0;
+        classX = getClassXFromLines(lines, i, linesOfOneClass, classX, countOfNestingOfParenthesis, countOfNestingOfInnerClasses, innerClassesX, stillComment);
 
+        if (!innerClassesX.isEmpty()) {
+            classX.addInnerClassesX(innerClassesX);
+        }
+        return classX;
+    }
+
+    @Nullable
+    private static ClassX getClassXFromLines(List<String> lines, int i, List<String> linesOfOneClass, ClassX classX, int countOfNestingOfParenthesis, int countOfNestingOfInnerClasses, List<ClassX> innerClassesX, boolean stillComment) {
         bottom_iteration:
         for (int j = i + 1; j < lines.size(); j++) {
             String line = lines.get(j);
+            //region comments
             if (line.trim().startsWith("//")) {
                 continue bottom_iteration;
             }
             if (stillComment == true) {
                 if (line.contains("*/")
                         && (getCountOfFoundStringInStringNotInQuotation(line.substring(0,line.indexOf("*/")), "\"") % 2) == 0
-                && (getCountOfFoundStringInStringNotInQuotation(line.substring(0,line.indexOf("*/")), "\'") % 2) == 0) {
+                        && (getCountOfFoundStringInStringNotInQuotation(line.substring(0,line.indexOf("*/")), "\'") % 2) == 0) {
                     stillComment = false;
                     int endIndex = line.indexOf("*/");
                     line = line.substring(endIndex + 2);
@@ -71,6 +82,7 @@ public class DividingToClassUtil {
                     continue bottom_iteration;
                 }
             }
+            //endregion
             if (line.trim().startsWith("interface ") || line.trim().startsWith("public interface ") || line.trim().startsWith("class ") || lines.get(j).trim().startsWith("public class ")) {
                 countOfNestingOfInnerClasses = countOfNestingOfInnerClasses + 1;
                 innerClassesX.add(getOneClass(lines, j));
@@ -105,20 +117,7 @@ public class DividingToClassUtil {
             }
             linesOfOneClass.add(line);
         }
-        if (!innerClassesX.isEmpty()) {
-            classX.addInnerClassesX(innerClassesX);
-        }
         return classX;
-    }
-
-    private static boolean stringIsNotInComment(String line, String foundString) {
-        if (line.contains("//")) {
-            line = line.substring(line.indexOf("//"));
-            if (line.contains(foundString)) {
-                return true;
-            }
-        }
-        return false;
     }
 
     private static int getCountOfFoundStringInStringNotInQuotation(String line, String foundString) {
