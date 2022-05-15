@@ -1,10 +1,10 @@
-package cz.osu.kip;
+package cz.osu.kip.appLogic;
 
 import com.intellij.openapi.project.Project;
-import cz.osu.kip.mainForm.FolderLevel;
-import cz.osu.kip.mainForm.FormWindow;
-import cz.osu.kip.mainForm.MainFormWindowItems;
-import cz.osu.kip.mainForm.PackagesTreeViewWindow;
+import cz.osu.kip.view.mainForm.FolderLevel;
+import cz.osu.kip.view.mainForm.UmlFormWindow;
+import cz.osu.kip.view.mainForm.MainFormWindowItems;
+import cz.osu.kip.view.mainForm.PackagesTreeViewWindow;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ import java.util.List;
 public class ConfigInfoToMainFormWindowItemsConvertor {
 
     public static MainFormWindowItems convert(ConfigInfo configInfo, Project rootProject, File filePath) {
-        MainFormWindowItems mainFormWindowItems = new MainFormWindowItems(filePath, new FormWindow(rootProject, filePath));
+        MainFormWindowItems mainFormWindowItems = new MainFormWindowItems(filePath, new UmlFormWindow(rootProject, filePath));
         convertUMLTargetDestination(configInfo, mainFormWindowItems, filePath);
         convertConfigTargetDestination(configInfo, mainFormWindowItems, filePath);
         String initialURL = configInfo.getInitialUrl();

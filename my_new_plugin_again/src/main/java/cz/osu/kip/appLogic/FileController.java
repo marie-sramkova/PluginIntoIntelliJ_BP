@@ -1,6 +1,6 @@
-package cz.osu.kip.umlGeneration;
+package cz.osu.kip.appLogic;
 
-import cz.osu.kip.ClassToShowOptionDialogsWithTimer;
+import cz.osu.kip.view.ClassToShowOptionDialogsWithTimer;
 
 import javax.swing.*;
 import java.io.File;

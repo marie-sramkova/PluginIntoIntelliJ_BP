@@ -1,4 +1,4 @@
-package cz.osu.kip.mainForm;
+package cz.osu.kip.view.mainForm;
 
 import com.intellij.openapi.project.Project;
 
@@ -8,14 +8,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 
-public class FormWindow extends JFrame {
+public class UmlFormWindow extends JFrame {
     private static Project currentProject;
     private static File filePath;
     private  MainFormWindowItems mainFormWindowItems;
     private MainFormWindowPanels mainFormWindowPanels;
     private SubmitStateForFormWindow submitState = SubmitStateForFormWindow.CANCEL;
 
-    public FormWindow(Project currentProject, File filePath){
+    public UmlFormWindow(Project currentProject, File filePath){
         this.currentProject = currentProject;
         this.filePath = filePath;
         mainFormWindowItems = new MainFormWindowItems(filePath, this);
@@ -23,7 +23,7 @@ public class FormWindow extends JFrame {
         showFormWindow();
     }
 
-    public FormWindow(Project currentProject, File filePath, MainFormWindowItems mainFormWindowItems){
+    public UmlFormWindow(Project currentProject, File filePath, MainFormWindowItems mainFormWindowItems){
         this.currentProject = currentProject;
         this.filePath = filePath;
         this.mainFormWindowItems = mainFormWindowItems;

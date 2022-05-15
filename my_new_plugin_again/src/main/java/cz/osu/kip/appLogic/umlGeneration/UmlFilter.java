@@ -1,6 +1,6 @@
-package cz.osu.kip.umlGeneration;
+package cz.osu.kip.appLogic.umlGeneration;
 
-import cz.osu.kip.ConfigInfo;
+import cz.osu.kip.appLogic.ConfigInfo;
 
 public class UmlFilter {
     private static ConfigInfo configInfo;

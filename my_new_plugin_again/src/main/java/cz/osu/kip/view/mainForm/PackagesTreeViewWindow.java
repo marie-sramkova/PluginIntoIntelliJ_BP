@@ -1,6 +1,5 @@
-package cz.osu.kip.mainForm;
+package cz.osu.kip.view.mainForm;
 
-import com.intellij.ui.components.JBCheckBox;
 import com.intellij.ui.components.JBScrollPane;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -122,7 +121,7 @@ public class PackagesTreeViewWindow extends JFrame {
                 if (initialUrl != null) {
                     newFolders = makeLevels(new File(initialUrl), directories);
                 } else {
-                    newFolders = makeLevels(FormWindow.getFilePath(), directories);
+                    newFolders = makeLevels(UmlFormWindow.getFilePath(), directories);
                 }
                 if (folderLevel.getjCheckBox().isSelected()) {
                     for (FolderLevel fl : newFolders) {
@@ -183,7 +182,7 @@ public class PackagesTreeViewWindow extends JFrame {
             if (initialUrl != null) {
                 newFolderLevels.add(new FolderLevel(dir.getName(), dir, folderLevel, initialUrl));
             } else {
-                newFolderLevels.add(new FolderLevel(dir.getName(), dir, folderLevel, FormWindow.getFilePath().toString()));
+                newFolderLevels.add(new FolderLevel(dir.getName(), dir, folderLevel, UmlFormWindow.getFilePath().toString()));
             }
         }
         return newFolderLevels;

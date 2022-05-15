@@ -1,4 +1,4 @@
-package cz.osu.kip.mainForm;
+package cz.osu.kip.view.mainForm;
 
 import com.intellij.ui.components.JBCheckBox;
 

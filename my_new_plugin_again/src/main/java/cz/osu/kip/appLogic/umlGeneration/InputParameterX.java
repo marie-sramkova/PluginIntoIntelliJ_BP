@@ -1,4 +1,4 @@
-package cz.osu.kip.umlGeneration;
+package cz.osu.kip.appLogic.umlGeneration;
 
 public class InputParameterX {
     private String type;
