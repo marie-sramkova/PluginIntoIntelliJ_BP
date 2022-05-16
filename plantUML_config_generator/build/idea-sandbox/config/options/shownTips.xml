@@ -1,0 +1,34 @@
+<application>
+  <component name="ShownTips">
+    <option name="shownTips">
+      <map>
+        <entry key="BreakpointSpeedmenu.html" value="1637048963857" />
+        <entry key="CamelHumpsInCodeCompletion.html" value="1652472086670" />
+        <entry key="CodeCompletionInSearch.html" value="1649833813932" />
+        <entry key="CommentCode.html" value="1644093893156" />
+        <entry key="CompletionImportStatic.html" value="1648494483524" />
+        <entry key="DiffChevron.html" value="1639466517670" />
+        <entry key="EditorConfig.html" value="1641049034449" />
+        <entry key="ExternalJavaDoc.html" value="1652290288544" />
+        <entry key="FinishBySmartEnter.html" value="1650383346948" />
+        <entry key="HighlightImplements.html" value="1644299980736" />
+        <entry key="HighlightMethodExitPoint.html" value="1644582848817" />
+        <entry key="HorizontalScrolling.html" value="1651646816126" />
+        <entry key="IntroduceVariableIncompleteCode.html" value="1640947907441" />
+        <entry key="LayoutCode.html" value="1644862272751" />
+        <entry key="QuickJavaDoc.html" value="1643061724539" />
+        <entry key="ReaderMode.html" value="1641215114472" />
+        <entry key="RecentChanges.html" value="1652037617146" />
+        <entry key="RefactorThis.html" value="1644183514289" />
+        <entry key="SearchForGit.html" value="1647024512654" />
+        <entry key="SecondSmartCompletionToar.html" value="1652124604387" />
+        <entry key="SelectIn.html" value="1639253265569" />
+        <entry key="SmartTypeAfterNew.html" value="1637620318622" />
+        <entry key="SplitEditor.html" value="1648596407316" />
+        <entry key="VcsQuickList.html" value="1636920334426" />
+        <entry key="local_history.html" value="1641465861601" />
+        <entry key="pull_requests.html" value="1642930551935" />
+      </map>
+    </option>
+  </component>
+</application>

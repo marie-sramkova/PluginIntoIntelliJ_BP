@@ -1,0 +1,15 @@
+<conversion>
+  <applied-converters>
+    <converter id="kotlin-non-jvm-source-roots" />
+  </applied-converters>
+  <project-files>
+    <f p="./.idea\project-template.xml" t="1649784890" />
+    <f p="./.idea\runConfigurations.xml" t="1649804700" />
+    <f p="./.idea\misc.xml" t="1649784890" />
+    <f p="./.idea\modules.xml" t="1649784890" />
+    <f p="./.idea\uiDesigner.xml" t="1649784890" />
+    <f p="./.idea\workspace.xml" t="1650396283" />
+    <f p="./.idea\encodings.xml" t="1649784890" />
+    <f p="./generatingUML.iml" t="1649784890" />
+  </project-files>
+</conversion>
