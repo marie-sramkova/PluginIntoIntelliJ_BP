@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.intellij.openapi.project.Project;
+import cz.osu.kip.view.ClassToShowOptionDialogsWithTimer;
 import cz.osu.kip.view.mainForm.FolderLevel;
 import cz.osu.kip.view.mainForm.MainFormWindowItems;
 import cz.osu.kip.appLogic.umlGeneration.*;
@@ -92,9 +93,9 @@ public class Generator {
                 text.append(line);
             }
         } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
+            ClassToShowOptionDialogsWithTimer.showOptionDialogWithTimer("An error occurred while reading a file " + filePath.getAbsolutePath() + ".", 2);
         } catch (IOException ex) {
-            ex.printStackTrace();
+            ClassToShowOptionDialogsWithTimer.showOptionDialogWithTimer("An error occurred while reading a file " + filePath.getAbsolutePath() + ".", 2);
         }
         try {
             Gson gson = new Gson();

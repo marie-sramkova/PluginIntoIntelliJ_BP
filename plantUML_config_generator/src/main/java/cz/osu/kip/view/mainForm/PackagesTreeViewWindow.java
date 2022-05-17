@@ -1,6 +1,7 @@
 package cz.osu.kip.view.mainForm;
 
 import com.intellij.ui.components.JBScrollPane;
+import cz.osu.kip.view.ClassToShowOptionDialogsWithTimer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -20,6 +21,10 @@ public class PackagesTreeViewWindow extends JFrame {
     private boolean wasCanceled = false;
     private String initialUrl;
 
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+    }
 
     public PackagesTreeViewWindow(PackagesTreeViewWindow newPackagesTreeViewWindow, String initialUrl) {
         this.initialUrl = initialUrl;
@@ -42,8 +47,15 @@ public class PackagesTreeViewWindow extends JFrame {
                 FolderLevel folderLevel = new FolderLevel(fl, initialUrl);
                 this.folders.add(folderLevel);
 
-                File[] subdirsForSelectedFolders = getDirectories(fl.getUrl());
-                dirs.addAll(Arrays.asList(subdirsForSelectedFolders));
+                File[] subdirsForSelectedFolders = new File[0];
+
+                subdirsForSelectedFolders = getDirectories(fl.getUrl());
+                try {
+                    dirs.addAll(Arrays.asList(subdirsForSelectedFolders));
+                } catch (Exception e) {
+                    ClassToShowOptionDialogsWithTimer.showOptionDialogWithTimer("An error occurred while processing package " + fl.getUrl() + ".", 2);
+                    return;
+                }
             }
             dirs.addAll(Arrays.asList(getDirectories(new File(initialUrl))));
             List<FolderLevel> firstFolders = makeLevels(new File(initialUrl), dirs.toArray(new File[dirs.size()]));
@@ -66,10 +78,7 @@ public class PackagesTreeViewWindow extends JFrame {
 
     public PackagesTreeViewWindow(File filePath) {
         if (filePath.exists()) {
-//            File[] directories = getDirectories(filePath);
-//            List<FolderLevel> firstFolders = makeLevels(filePath, directories);
             folders.add(new FolderLevel(filePath.getName(), filePath, 1, filePath.getAbsolutePath()));
-//            folders.addAll(firstFolders);
         }
         makeFrame();
         show();
@@ -91,9 +100,9 @@ public class PackagesTreeViewWindow extends JFrame {
         contentPane.add(scrollPane);
         getContentPane().add(contentPane, BorderLayout.PAGE_START);
         getContentPane().add(createButtonPanel(), BorderLayout.PAGE_END);
-        pack();
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(300, 500);
+        pack();
     }
 
     @NotNull

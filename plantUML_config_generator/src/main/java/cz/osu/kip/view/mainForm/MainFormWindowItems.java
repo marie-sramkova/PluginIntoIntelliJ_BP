@@ -21,7 +21,7 @@ public class MainFormWindowItems {
     private JLabel defaultConfigTargetDestinationDesc;
 
     private JRadioButton allPackages = new JRadioButton("All packages");
-    private JRadioButton ownPackages = new JRadioButton("Choose subpackages");
+    private JRadioButton ownPackages = new JRadioButton("Choose packages");
     private JButton buttonToShowSelectedPackages = new JButton("Show selected packages");
     private ButtonGroup buttonGroupPackages = setButtonGroup(allPackages, ownPackages);
 

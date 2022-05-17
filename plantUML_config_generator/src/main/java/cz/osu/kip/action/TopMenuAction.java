@@ -65,7 +65,7 @@ public class TopMenuAction extends DumbAwareAction {
                                         configFormWindow.show();
                                     }
                                 } catch (IOException ex) {
-                                    ClassToShowOptionDialogsWithTimer.showOptionDialogWithTimer("Cannot delete the file " + filePath.toString(), 2);
+                                    ClassToShowOptionDialogsWithTimer.showOptionDialogWithTimer("Cannot delete the file " + filePath.toString() + ".", 2);
                                 }
                             }
                         }
