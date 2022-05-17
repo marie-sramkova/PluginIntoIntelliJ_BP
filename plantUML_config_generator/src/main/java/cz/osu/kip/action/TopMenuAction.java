@@ -3,6 +3,7 @@ package cz.osu.kip.action;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.DumbAwareAction;
 import com.intellij.openapi.project.Project;
+import cz.osu.kip.appLogic.PackageFormException;
 import cz.osu.kip.view.ClassToShowOptionDialogsWithTimer;
 import cz.osu.kip.appLogic.ConfigInfo;
 import cz.osu.kip.appLogic.FileExplorer;
@@ -48,7 +49,12 @@ public class TopMenuAction extends DumbAwareAction {
                 switch (configFormWindow.getSubmitState()) {
                     case GENERATE_UML_DIAGRAM:
                         for (File filePath : files) {
-                            MainFormWindowItems mainFormWindowItems = Generator.getDataFromFile(rootProject, filePath);
+                            MainFormWindowItems mainFormWindowItems = null;
+                            try {
+                                mainFormWindowItems = Generator.getDataFromFile(rootProject, filePath);
+                            } catch (PackageFormException ex) {
+                                ex.printStackTrace();
+                            }
                             ConfigInfo configInfo = new ConfigInfo(mainFormWindowItems);
                             Generator.createUmlFile(mainFormWindowItems, configInfo);
                         }

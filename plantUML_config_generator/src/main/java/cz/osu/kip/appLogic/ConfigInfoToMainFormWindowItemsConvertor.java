@@ -12,7 +12,7 @@ import java.util.List;
 
 public class ConfigInfoToMainFormWindowItemsConvertor {
 
-    public static MainFormWindowItems convert(ConfigInfo configInfo, Project rootProject, File filePath) {
+    public static MainFormWindowItems convert(ConfigInfo configInfo, Project rootProject, File filePath) throws PackageFormException {
         UmlFormWindow umlFormWindow =  new UmlFormWindow(rootProject, filePath);
         MainFormWindowItems mainFormWindowItems = new MainFormWindowItems(filePath, umlFormWindow);
         umlFormWindow.dispose();
@@ -44,7 +44,7 @@ public class ConfigInfoToMainFormWindowItemsConvertor {
         return mainFormWindowItems;
     }
 
-    private static void convertPackagesToTreeViewWindow(ConfigInfo configInfo, MainFormWindowItems mainFormWindowItems, String initialURL) {
+    private static void convertPackagesToTreeViewWindow(ConfigInfo configInfo, MainFormWindowItems mainFormWindowItems, String initialURL) throws PackageFormException {
         if (initialURL.contains("/")) {
             if (initialURL.substring(initialURL.lastIndexOf("/")).contains(".")) {
                 initialURL = initialURL.toString().substring(0, initialURL.toString().lastIndexOf("/"));
