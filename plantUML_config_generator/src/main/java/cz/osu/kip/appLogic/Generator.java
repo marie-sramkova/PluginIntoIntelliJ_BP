@@ -84,7 +84,7 @@ public class Generator {
         return packageX;
     }
 
-    public static MainFormWindowItems getDataFromFile(Project rootProject, File filePath) {
+    public static MainFormWindowItems getDataFromFile(Project rootProject, File filePath) throws PackageFormException {
         StringBuilder text = new StringBuilder();
         try {
             BufferedReader reader = new BufferedReader(new FileReader(filePath.getPath()));
@@ -104,6 +104,9 @@ public class Generator {
             ConfigInfo configInfo = gson.fromJson(object, ConfigInfo.class);
             MainFormWindowItems mainFormWindowItems = ConfigInfoToMainFormWindowItemsConvertor.convert(configInfo, rootProject, filePath);
             return mainFormWindowItems;
+        } catch (PackageFormException ex){
+            throw new PackageFormException();
+//            ClassToShowOptionDialogsWithTimer.showOptionDialogWithTimer("An error occurred while processing packages.", 2);
         } catch (Exception ex) {
             int input = JOptionPane.showConfirmDialog(null,
                     "Incorrect file or impossible to load the content of the file.", "Error", JOptionPane.DEFAULT_OPTION);

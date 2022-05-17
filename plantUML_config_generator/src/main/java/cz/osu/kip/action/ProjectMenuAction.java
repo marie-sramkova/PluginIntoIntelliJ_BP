@@ -7,6 +7,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import cz.osu.kip.appLogic.ConfigInfo;
 import cz.osu.kip.appLogic.Generator;
+import cz.osu.kip.appLogic.PackageFormException;
+import cz.osu.kip.view.ClassToShowOptionDialogsWithTimer;
 import cz.osu.kip.view.mainForm.UmlFormWindow;
 import cz.osu.kip.view.mainForm.MainFormWindowItems;
 import cz.osu.kip.view.mainForm.SubmitStateForFormWindow;
@@ -28,8 +30,13 @@ public class ProjectMenuAction extends AnAction {
         if (filePath.isDirectory()) {
             showNewForm(rootProject, filePath, null);
         } else {
-            MainFormWindowItems mainFormWindowItems = Generator.getDataFromFile(rootProject, filePath);
-            showNewForm(rootProject, filePath, mainFormWindowItems);
+            try{
+                MainFormWindowItems mainFormWindowItems = Generator.getDataFromFile(rootProject, filePath);
+                showNewForm(rootProject, filePath, mainFormWindowItems);
+            }
+            catch (PackageFormException ex){
+                ClassToShowOptionDialogsWithTimer.showOptionDialogWithTimer("An error occurred while processing packages.", 2);
+            }
         }
     }
 

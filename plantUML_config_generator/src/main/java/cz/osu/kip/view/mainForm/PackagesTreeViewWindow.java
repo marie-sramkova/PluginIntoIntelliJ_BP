@@ -1,6 +1,7 @@
 package cz.osu.kip.view.mainForm;
 
 import com.intellij.ui.components.JBScrollPane;
+import cz.osu.kip.appLogic.PackageFormException;
 import cz.osu.kip.view.ClassToShowOptionDialogsWithTimer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -37,7 +38,7 @@ public class PackagesTreeViewWindow extends JFrame {
         show();
     }
 
-    public PackagesTreeViewWindow(List<FolderLevel> newFolders, String initialUrl) {
+    public PackagesTreeViewWindow(List<FolderLevel> newFolders, String initialUrl) throws PackageFormException {
         List<File> dirs = new ArrayList<>();
         this.initialUrl = initialUrl;
         if (newFolders == null || newFolders.size() == 0){
@@ -53,8 +54,7 @@ public class PackagesTreeViewWindow extends JFrame {
                 try {
                     dirs.addAll(Arrays.asList(subdirsForSelectedFolders));
                 } catch (Exception e) {
-                    ClassToShowOptionDialogsWithTimer.showOptionDialogWithTimer("An error occurred while processing package " + fl.getUrl() + ".", 2);
-                    return;
+                    throw new PackageFormException();
                 }
             }
             dirs.addAll(Arrays.asList(getDirectories(new File(initialUrl))));
