@@ -14,6 +14,7 @@ public class UmlFormWindow extends JFrame {
     private  MainFormWindowItems mainFormWindowItems;
     private MainFormWindowPanels mainFormWindowPanels;
     private SubmitStateForFormWindow submitState = SubmitStateForFormWindow.CANCEL;
+    private String title = "PlantUML/config generation";
 
     public UmlFormWindow(Project currentProject, File filePath){
         this.currentProject = currentProject;
@@ -48,6 +49,7 @@ public class UmlFormWindow extends JFrame {
 
         setContentPane(contentPane);
         getContentPane().add(createButtonPanel(), BorderLayout.CENTER);
+        setTitle(title);
         pack();
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setVisible(true);

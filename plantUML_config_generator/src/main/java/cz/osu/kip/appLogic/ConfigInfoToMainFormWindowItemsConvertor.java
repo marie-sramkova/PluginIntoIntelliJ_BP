@@ -60,12 +60,12 @@ public class ConfigInfoToMainFormWindowItemsConvertor {
             if (file.toString().contains("/")) {
                 String[] oldPaths = initialURL.split("/");
                 String[] paths = file.toString().split("/");
-                folderLevel = paths.length - oldPaths.length;
+                folderLevel = paths.length - oldPaths.length + 1;
                 folderName = file.toString().substring(file.toString().lastIndexOf("/") + 1);
             } else if (file.toString().contains("\\")) {
                 String[] oldPaths = initialURL.split("\\\\");
                 String[] paths = file.toString().split("\\\\");
-                folderLevel = paths.length - oldPaths.length;
+                folderLevel = paths.length - oldPaths.length + 1;
                 folderName = file.toString().substring(file.toString().lastIndexOf("\\") + 1);
             }
             FolderLevel fl = new FolderLevel(folderName, file, folderLevel, initialURL);

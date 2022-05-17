@@ -1,9 +1,11 @@
 package cz.osu.kip.appLogic;
 
+import cz.osu.kip.view.ClassToShowOptionDialogsWithTimer;
 import cz.osu.kip.view.mainForm.FolderLevel;
 import cz.osu.kip.view.mainForm.UmlFormWindow;
 import cz.osu.kip.view.mainForm.MainFormWindowItems;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.FileFilter;
 import java.util.ArrayList;
@@ -38,33 +40,45 @@ public class ConfigInfo {
 
     public ConfigInfo(MainFormWindowItems mainFormWindowItems) {
         StringBuilder stringBuilder;
-        if (mainFormWindowItems.getDefaultUMLTargetDestination().isSelected()){
+        if (mainFormWindowItems.getDefaultUMLTargetDestination().isSelected()) {
             umlTargetDestination = UmlFormWindow.getFilePath().toPath().resolve("PlantUmlFile.puml").toFile().toString();
-        }else {
+        } else {
             stringBuilder = new StringBuilder();
-            stringBuilder.append(mainFormWindowItems.getDefaultUMLTargetFile().getSelectedFile().getAbsolutePath());
-            if (!stringBuilder.toString().endsWith(".puml")){
-                stringBuilder.append(".puml");
+            try {
+                stringBuilder.append(mainFormWindowItems.getDefaultUMLTargetFile().getSelectedFile().getAbsolutePath());
+                if (!stringBuilder.toString().endsWith(".puml")) {
+                    stringBuilder.append(".puml");
+                }
+            } catch (Exception e) {
+                int input = JOptionPane.showConfirmDialog(null,
+                        "You selected incorrect file or you didn't confirm selection. The default location: " + mainFormWindowItems.getDefaultUMLTargetDestinationDesc().getText() + " was set.", "Error", JOptionPane.DEFAULT_OPTION);
+                stringBuilder.append(UmlFormWindow.getFilePath().toPath().resolve("PlantUmlFile.puml").toFile().toString());
             }
             umlTargetDestination = stringBuilder.toString();
         }
-        if (mainFormWindowItems.getDefaultConfigTargetDestination().isSelected()){
+        if (mainFormWindowItems.getDefaultConfigTargetDestination().isSelected()) {
             configTargetDestination = UmlFormWindow.getFilePath().toPath().resolve("PlantUmlConfigFile.myuml").toFile().toString();
-        }else {
+        } else {
             stringBuilder = new StringBuilder();
-            stringBuilder.append(mainFormWindowItems.getDefaultConfigTargetFile().getSelectedFile().getAbsolutePath());
-            if (!stringBuilder.toString().endsWith(".myuml")){
-                stringBuilder.append(".myuml");
+            try {
+                stringBuilder.append(mainFormWindowItems.getDefaultConfigTargetFile().getSelectedFile().getAbsolutePath());
+                if (!stringBuilder.toString().endsWith(".myuml")) {
+                    stringBuilder.append(".myuml");
+                }
+            } catch (Exception e) {
+                int input = JOptionPane.showConfirmDialog(null,
+                        "You selected incorrect file or you didn't confirm selection. The default location: " + mainFormWindowItems.getDefaultUMLTargetDestinationDesc().getText() + " was set.", "Error", JOptionPane.DEFAULT_OPTION);
+                stringBuilder.append(UmlFormWindow.getFilePath().toPath().resolve("PlantUmlConfigFile.myuml").toFile().toString());
             }
             configTargetDestination = stringBuilder.toString();
         }
-        if(mainFormWindowItems.getAllPackages().isSelected()){
+        if (mainFormWindowItems.getAllPackages().isSelected()) {
             packages.add(UmlFormWindow.getFilePath().toString());
             List<File> subdirs = getSubdirs(UmlFormWindow.getFilePath());
-            for (File file:subdirs) {
+            for (File file : subdirs) {
                 packages.add(file.getAbsolutePath());
             }
-        }else if (mainFormWindowItems.getTreeViewWindow() != null && mainFormWindowItems.getTreeViewWindow().getFolders() != null) {
+        } else if (mainFormWindowItems.getTreeViewWindow() != null && mainFormWindowItems.getTreeViewWindow().getFolders() != null) {
             for (FolderLevel fl : mainFormWindowItems.getTreeViewWindow().getFolders()) {
                 if (fl.getjCheckBox().isSelected())
                     packages.add(fl.getUrl().toString());
@@ -100,7 +114,7 @@ public class ConfigInfo {
         subdirs = new ArrayList<File>(subdirs);
 
         List<File> deepSubdirs = new ArrayList<File>();
-        for(File subdir : subdirs) {
+        for (File subdir : subdirs) {
             deepSubdirs.addAll(getSubdirs(subdir));
         }
         subdirs.addAll(deepSubdirs);

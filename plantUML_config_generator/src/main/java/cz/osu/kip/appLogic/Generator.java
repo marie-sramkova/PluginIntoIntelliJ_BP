@@ -33,9 +33,11 @@ public class Generator {
         StringBuilder sb = new StringBuilder();
         sb.append("@startuml\n\n");
         List<PackageX> packageXES = getPackageXES(files);
-        for (PackageX packageX : packageXES) {
-            String text = UmlFilter.getTextByConfigInfo(configInfo, packageX);
-            sb.append(text);
+        if (packageXES != null){
+            for (PackageX packageX : packageXES) {
+                String text = UmlFilter.getTextByConfigInfo(configInfo, packageX);
+                sb.append(text);
+            }
         }
         sb.append("@enduml");
         FileController.saveToFile(configInfo.getUmlTargetDestination(), sb.toString());
@@ -48,9 +50,11 @@ public class Generator {
         FileController.saveToFile(configInfo.getConfigTargetDestination(), configInfo2);
     }
 
-    @NotNull
     public static List<PackageX> getPackageXES(List<File> files) {
         List<PackageX> packageXES = new ArrayList<>();
+        if (files == null){
+            return null;
+        }
         for (File file : files) {
             PackageX packageX = getPackageXFromFile(file);
             if (packageXES.size() == 0) {
@@ -101,7 +105,7 @@ public class Generator {
             return mainFormWindowItems;
         } catch (Exception ex) {
             int input = JOptionPane.showConfirmDialog(null,
-                    "Incorrect file or impossible to load the content of the file.", "Chyba", JOptionPane.DEFAULT_OPTION);
+                    "Incorrect file or impossible to load the content of the file.", "Error", JOptionPane.DEFAULT_OPTION);
             return null;
         }
     }

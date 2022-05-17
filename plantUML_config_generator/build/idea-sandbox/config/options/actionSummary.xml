@@ -4,7 +4,7 @@
       <i c="2" l="1650395988387" />
     </e>
     <e n="$Delete">
-      <i c="15" l="1652344220503" />
+      <i c="17" l="1652808417213" />
     </e>
     <e n="$Paste">
       <i c="3" l="1650395989680" />
@@ -67,7 +67,7 @@
       <i c="3" l="1652790971450" />
     </e>
     <e n="NewDir">
-      <i c="1" l="1648596605289" />
+      <i c="2" l="1652813579311" />
     </e>
     <e n="NewElementSamePlace">
       <i c="1" l="1652791310095" />
@@ -82,13 +82,13 @@
       <i c="3" l="1652790434719" />
     </e>
     <e n="SaveAll">
-      <i c="9" l="1652791566844" />
+      <i c="10" l="1652813588261" />
     </e>
     <e n="ShowIntentionActions">
       <i c="2" l="1652791342781" />
     </e>
     <e n="ShowSettings">
-      <i c="1" l="1652790410456" />
+      <i c="2" l="1652806539278" />
     </e>
     <e n="Tree-selectNextExtendSelection">
       <i c="2" l="1652791330274" />
@@ -103,7 +103,7 @@
       <i c="2" l="1647024469697" />
     </e>
     <e n="com.intellij.openapi.fileEditor.impl.tabActions.CloseTab">
-      <i c="2" l="1650383409682" />
+      <i c="3" l="1652807188743" />
     </e>
     <e n="com.intellij.openapi.project.DumbAwareAction$SimpleDumbAwareAction">
       <i c="1" l="1652293405588" />
