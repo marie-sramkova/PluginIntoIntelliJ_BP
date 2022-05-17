@@ -18,13 +18,17 @@ public class FolderLevel {
         if (initialUrl.contains("/")) {
             if (initialUrl.substring(initialUrl.lastIndexOf("/")).contains(".")) {
                 jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.substring(0, initialUrl.lastIndexOf("/")).length() + 1));
-            }else{
+            } else if(initialUrl.equals(url.toString())){
+                jCheckBox = new JBCheckBox(url.getName());
+            } else{
                 jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.length()+1));
             }
         } else if (initialUrl.contains("\\")) {
             if (initialUrl.substring(initialUrl.lastIndexOf("\\")).contains(".")) {
                 jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.substring(0, initialUrl.lastIndexOf("\\")).length() + 1));
-            }else{
+            } else if(initialUrl.equals(url.toString())){
+                jCheckBox = new JBCheckBox(url.getName());
+            } else{
                 jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.length()+1));
             }
         }
@@ -40,12 +44,16 @@ public class FolderLevel {
         if (initialUrl.contains("/")) {
             if (initialUrl.substring(initialUrl.lastIndexOf("/")).contains(".")) {
                 jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.substring(0, initialUrl.lastIndexOf("/")).length() + 1));
+            } else if(initialUrl.equals(url.toString())){
+                jCheckBox = new JBCheckBox(url.getName());
             } else {
                 jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.length()+1));
             }
         } else if (initialUrl.contains("\\")) {
             if (initialUrl.substring(initialUrl.lastIndexOf("\\")).contains(".")) {
                 jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.substring(0, initialUrl.lastIndexOf("\\")).length() + 1));
+            } else if(initialUrl.equals(url.toString())){
+                jCheckBox = new JBCheckBox(url.getName());
             } else {
                 jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.length()+1));
             }

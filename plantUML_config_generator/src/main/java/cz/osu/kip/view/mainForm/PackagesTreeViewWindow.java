@@ -35,36 +35,41 @@ public class PackagesTreeViewWindow extends JFrame {
     public PackagesTreeViewWindow(List<FolderLevel> newFolders, String initialUrl) {
         List<File> dirs = new ArrayList<>();
         this.initialUrl = initialUrl;
-        for (FolderLevel fl : newFolders) {
-            FolderLevel folderLevel = new FolderLevel(fl, initialUrl);
-            this.folders.add(folderLevel);
+        if (newFolders == null || newFolders.size() == 0){
+            folders.add(new FolderLevel(new File(initialUrl).getName(), new File(initialUrl), 1, initialUrl));
+        }else {
+            for (FolderLevel fl : newFolders) {
+                FolderLevel folderLevel = new FolderLevel(fl, initialUrl);
+                this.folders.add(folderLevel);
 
-            File[] subdirsForSelectedFolders = getDirectories(fl.getUrl());
-            dirs.addAll(Arrays.asList(subdirsForSelectedFolders));
-        }
-        dirs.addAll(Arrays.asList(getDirectories(new File(initialUrl))));
-        List<FolderLevel> firstFolders = makeLevels(new File(initialUrl), dirs.toArray(new File[dirs.size()]));
-        for (FolderLevel firstFolder : firstFolders) {
-            boolean foldersIncludeFirstFolder = false;
-            for (FolderLevel fl : folders) {
-                if (fl.getUrl().equals(firstFolder.getUrl())) {
-                    foldersIncludeFirstFolder = true;
+                File[] subdirsForSelectedFolders = getDirectories(fl.getUrl());
+                dirs.addAll(Arrays.asList(subdirsForSelectedFolders));
+            }
+            dirs.addAll(Arrays.asList(getDirectories(new File(initialUrl))));
+            List<FolderLevel> firstFolders = makeLevels(new File(initialUrl), dirs.toArray(new File[dirs.size()]));
+            for (FolderLevel firstFolder : firstFolders) {
+                boolean foldersIncludeFirstFolder = false;
+                for (FolderLevel fl : folders) {
+                    if (fl.getUrl().equals(firstFolder.getUrl())) {
+                        foldersIncludeFirstFolder = true;
+                    }
+                }
+                if (!foldersIncludeFirstFolder) {
+                    this.folders.add(firstFolder);
                 }
             }
-            if (!foldersIncludeFirstFolder) {
-                this.folders.add(firstFolder);
-            }
+            Collections.sort(folders, new FolderLevelComparator());
         }
-        Collections.sort(folders, new FolderLevelComparator());
         makeFrame();
         show();
     }
 
     public PackagesTreeViewWindow(File filePath) {
         if (filePath.exists()) {
-            File[] directories = getDirectories(filePath);
-            List<FolderLevel> firstFolders = makeLevels(filePath, directories);
-            folders.addAll(firstFolders);
+//            File[] directories = getDirectories(filePath);
+//            List<FolderLevel> firstFolders = makeLevels(filePath, directories);
+            folders.add(new FolderLevel(filePath.getName(), filePath, 1, filePath.getAbsolutePath()));
+//            folders.addAll(firstFolders);
         }
         makeFrame();
         show();
@@ -124,15 +129,20 @@ public class PackagesTreeViewWindow extends JFrame {
                     newFolders = makeLevels(UmlFormWindow.getFilePath(), directories);
                 }
                 if (folderLevel.getjCheckBox().isSelected()) {
+                    top_iteration:
                     for (FolderLevel fl : newFolders) {
+                        boolean foldersContainsNewFolderLvl = false;
+                        bottom_iteration:
                         for (FolderLevel folderLvl : folders) {
                             if (folderLvl.getUrl().toString().equals(fl.getUrl().toString())) {
+                                foldersContainsNewFolderLvl = true;
                                 folderLvl.getjCheckBox().setSelected(true);
                                 folderLvl.getjCheckBox().setVisible(true);
-                            } else {
-                                folders.add(fl);
-                                addToPanel(fl, newJpanel, panel, frame);
                             }
+                        }
+                        if (foldersContainsNewFolderLvl == false){
+                            folders.add(fl);
+                            addToPanel(fl, newJpanel, panel, frame);
                         }
                     }
                 } else {
@@ -173,11 +183,11 @@ public class PackagesTreeViewWindow extends JFrame {
             if (dir.toString().contains("/")) {
                 String[] oldPaths = filePath.toString().split("/");
                 String[] paths = dir.toString().split("/");
-                folderLevel = paths.length - oldPaths.length;
+                folderLevel = paths.length - oldPaths.length + 1;
             } else if (dir.toString().contains("\\")) {
                 String[] oldPaths = filePath.toString().split("\\\\");
                 String[] paths = dir.toString().split("\\\\");
-                folderLevel = paths.length - oldPaths.length;
+                folderLevel = paths.length - oldPaths.length + 1;
             }
             if (initialUrl != null) {
                 newFolderLevels.add(new FolderLevel(dir.getName(), dir, folderLevel, initialUrl));

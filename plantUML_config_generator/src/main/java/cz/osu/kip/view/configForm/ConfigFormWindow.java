@@ -17,6 +17,7 @@ public class ConfigFormWindow extends JFrame {
     List<FolderLevel> configFiles;
     File rootProject;
     private SubmitStateForConfigFormWindow submitState = SubmitStateForConfigFormWindow.CANCEL;
+    private String title = "PlantUML/config generation";
 
     public ConfigFormWindow(List<File> configFiles, File rootProject){
         this.rootProject = rootProject;
@@ -56,6 +57,7 @@ public class ConfigFormWindow extends JFrame {
         contentPane.add(scrollPane);
         getContentPane().add(contentPane, BorderLayout.PAGE_START);
         getContentPane().add(createButtonPanel(), BorderLayout.PAGE_END);
+        setTitle(title);
         pack();
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(500, 300);
