@@ -13,7 +13,9 @@ import java.util.List;
 public class ConfigInfoToMainFormWindowItemsConvertor {
 
     public static MainFormWindowItems convert(ConfigInfo configInfo, Project rootProject, File filePath) {
-        MainFormWindowItems mainFormWindowItems = new MainFormWindowItems(filePath, new UmlFormWindow(rootProject, filePath));
+        UmlFormWindow umlFormWindow =  new UmlFormWindow(rootProject, filePath);
+        MainFormWindowItems mainFormWindowItems = new MainFormWindowItems(filePath, umlFormWindow);
+        umlFormWindow.dispose();
         convertUMLTargetDestination(configInfo, mainFormWindowItems, filePath);
         convertConfigTargetDestination(configInfo, mainFormWindowItems, filePath);
         String initialURL = configInfo.getInitialUrl();
@@ -73,8 +75,8 @@ public class ConfigInfoToMainFormWindowItemsConvertor {
             folders.add(fl);
         }
         PackagesTreeViewWindow packagesTreeViewWindow = new PackagesTreeViewWindow(folders, initialURL);
-        packagesTreeViewWindow.dispose();
         mainFormWindowItems.setOwnPackages(packagesTreeViewWindow, initialURL);
+        packagesTreeViewWindow.dispose();
     }
 
     private static void convertConfigTargetDestination(ConfigInfo configInfo, MainFormWindowItems mainFormWindowItems, File filePath) {
