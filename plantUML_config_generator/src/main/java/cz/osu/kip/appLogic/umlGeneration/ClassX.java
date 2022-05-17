@@ -91,7 +91,7 @@ public class ClassX {
         StringBuilder sb = new StringBuilder();
         if (getInnerClassesX() != null && getInnerClassesX().size() > 0) {
             for (ClassX classX:getInnerClassesX()) {
-                sb.append(getName()).append(" -->  \"many\" ").append(classX.getName()).append(" : +nested\n\n");
+                sb.append(getName()).append(" --> \"many\" ").append(classX.getName()).append(" : +nested\n\n");
             }
         }
         return sb.toString();

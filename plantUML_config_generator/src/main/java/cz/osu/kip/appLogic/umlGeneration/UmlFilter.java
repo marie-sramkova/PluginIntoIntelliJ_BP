@@ -20,7 +20,6 @@ public class UmlFilter {
                     if ((getConfigInfo().isDefaultClasses() && !classX.isPublic()) || (getConfigInfo().isPublicClasses() && classX.isPublic())) {
                         String classXText = convertClassToUml(classX);
                         sb.append(classXText);
-                        sb.append(classX.convertToUmlFormatAssociations());
                         if (getConfigInfo().isInnerClasses()){
                             if (classX.getInnerClassesX() != null && classX.getInnerClassesX().size()>0){
                                 for (ClassX innerClassX:classX.getInnerClassesX()) {

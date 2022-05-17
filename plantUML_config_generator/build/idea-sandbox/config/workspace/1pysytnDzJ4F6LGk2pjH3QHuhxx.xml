@@ -4,8 +4,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cz/osu/kip/AttributeX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+            <state relative-caret-position="600">
+              <caret line="70" column="24" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -138,6 +138,14 @@
   </component>
   <component name="Trusted.Project.Settings" hasCheckedIfOldProject="true" />
   <component name="WindowStateProjectService">
+    <state x="330" y="163" key="FileChooserDialogImpl" timestamp="1652790442873">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="330" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1652790442873" />
+    <state x="277" y="48" key="SettingsEditor" timestamp="1652790416626">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="277" y="48" key="SettingsEditor/0.0.1536.816@0.0.1536.816" timestamp="1652790416626" />
     <state x="555" y="18" width="600" height="798" key="find.popup" timestamp="1652293405604">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
@@ -152,8 +160,8 @@
     <entry file="file://$PROJECT_DIR$/src/PlantUmlFiles.myuml" />
     <entry file="file://$PROJECT_DIR$/src/cz/osu/kip/AttributeX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+        <state relative-caret-position="600">
+          <caret line="70" column="24" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
         </state>
       </provider>
     </entry>

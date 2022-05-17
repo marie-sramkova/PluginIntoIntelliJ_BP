@@ -191,11 +191,13 @@ public class PackagesTreeViewWindow extends JFrame {
     @NotNull
     public File getDirectoryPathWithoutFile(File filePath) {
         if (filePath.toString().contains("/")) {
-            if (filePath.toString().substring(filePath.toString().lastIndexOf("/")).contains(".")) {
+            if (filePath.toString().substring(filePath.toString().lastIndexOf("/")).contains(".")
+            && !filePath.toString().substring(filePath.toString().lastIndexOf("/")+1).startsWith(".")) {
                 filePath = new File(filePath.toString().substring(0, filePath.toString().lastIndexOf("/")));
             }
         } else if (filePath.toString().contains("\\")) {
-            if (filePath.toString().substring(filePath.toString().lastIndexOf("\\")).contains(".")) {
+            if (filePath.toString().substring(filePath.toString().lastIndexOf("\\")).contains(".")
+            && !filePath.toString().substring(filePath.toString().lastIndexOf("\\")+1).startsWith(".")) {
                 filePath = new File(filePath.toString().substring(0, filePath.toString().lastIndexOf("\\")));
             }
         }

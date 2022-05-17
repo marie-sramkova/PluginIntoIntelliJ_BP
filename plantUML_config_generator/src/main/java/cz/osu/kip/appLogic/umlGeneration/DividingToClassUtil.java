@@ -10,12 +10,13 @@ import java.util.regex.Pattern;
 
 public class DividingToClassUtil {
 
-    public static PackageX divideFromLines(List<String> lines) {
+    public static PackageX getPackageXWithClassesFromLines(List<String> lines) {
         List<ClassX> classXES = new ArrayList<>();
         top_iteration:
         for (int i = 1; i < lines.size(); i++) {
-            if (lines.get(i).startsWith("interface") || lines.get(i).startsWith("public interface") || lines.get(i).startsWith("class") || lines.get(i).startsWith("public class")) {
-                ClassX newClass = getOneClass(lines, i);
+            if (lines.get(i).startsWith("interface") || lines.get(i).startsWith("public interface")
+                    || lines.get(i).startsWith("class") || lines.get(i).startsWith("public class")) {
+                ClassX newClass = getClassX(lines, i);
                 classXES.add(newClass);
             }
         }
@@ -24,7 +25,7 @@ public class DividingToClassUtil {
         return packageX;
     }
 
-    private static ClassX getOneClass(List<String> lines, int i) {
+    private static ClassX getClassX(List<String> lines, int i) {
         List<String> linesOfOneClass = new ArrayList<>();
         ClassX classX = null;
         linesOfOneClass.add(lines.get(i));
@@ -85,7 +86,7 @@ public class DividingToClassUtil {
             //endregion
             if (line.trim().startsWith("interface ") || line.trim().startsWith("public interface ") || line.trim().startsWith("class ") || lines.get(j).trim().startsWith("public class ")) {
                 countOfNestingOfInnerClasses = countOfNestingOfInnerClasses + 1;
-                innerClassesX.add(getOneClass(lines, j));
+                innerClassesX.add(getClassX(lines, j));
 
             }
             if (countOfNestingOfInnerClasses > 0) {
