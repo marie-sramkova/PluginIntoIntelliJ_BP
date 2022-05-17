@@ -10,40 +10,88 @@
       <i c="3" l="1650395989680" />
     </e>
     <e n="$Undo">
-      <i c="6" l="1650396275749" />
+      <i c="17" l="1652804419599" />
     </e>
     <e n="ConvertJavaToKotlin">
       <i c="1" l="1651650587300" />
     </e>
     <e n="EditorBackSpace">
-      <i c="16" l="1652476795311" />
+      <i c="46" l="1652804416616" />
+    </e>
+    <e n="EditorChooseLookupItemReplace">
+      <i c="7" l="1652791362623" />
     </e>
     <e n="EditorCopy">
-      <i c="5" l="1652476787468" />
+      <i c="11" l="1652804250240" />
+    </e>
+    <e n="EditorCut">
+      <i c="1" l="1652791379591" />
+    </e>
+    <e n="EditorDown">
+      <i c="3" l="1652791319955" />
     </e>
     <e n="EditorEnter">
-      <i c="4" l="1652476789342" />
+      <i c="35" l="1652791387918" />
+    </e>
+    <e n="EditorLeft">
+      <i c="2" l="1652791342394" />
     </e>
     <e n="EditorPaste">
-      <i c="10" l="1652476789687" />
+      <i c="11" l="1652791388268" />
     </e>
     <e n="EditorRight">
-      <i c="1" l="1652476626972" />
+      <i c="5" l="1652790977959" />
+    </e>
+    <e n="EditorTab">
+      <i c="3" l="1652804413180" />
+    </e>
+    <e n="EditorToggleInsertState">
+      <i c="2" l="1652791325409" />
+    </e>
+    <e n="EditorUp">
+      <i c="3" l="1652791305962" />
     </e>
     <e n="FindInPath">
       <i c="2" l="1652293400207" />
     </e>
+    <e n="Generate">
+      <i c="3" l="1652791369007" />
+    </e>
+    <e n="GenerateConstructor">
+      <i c="1" l="1652791315508" />
+    </e>
+    <e n="GenerateGetterAndSetter">
+      <i c="2" l="1652791372723" />
+    </e>
+    <e n="NewClass">
+      <i c="3" l="1652790971450" />
+    </e>
     <e n="NewDir">
       <i c="1" l="1648596605289" />
+    </e>
+    <e n="NewElementSamePlace">
+      <i c="1" l="1652791310095" />
     </e>
     <e n="NewForm">
       <i c="1" l="1650395911010" />
     </e>
+    <e n="NewProject">
+      <i c="1" l="1652802742044" />
+    </e>
     <e n="OpenFile">
-      <i c="2" l="1649833846731" />
+      <i c="3" l="1652790434719" />
     </e>
     <e n="SaveAll">
-      <i c="5" l="1652476807306" />
+      <i c="9" l="1652791566844" />
+    </e>
+    <e n="ShowIntentionActions">
+      <i c="2" l="1652791342781" />
+    </e>
+    <e n="ShowSettings">
+      <i c="1" l="1652790410456" />
+    </e>
+    <e n="Tree-selectNextExtendSelection">
+      <i c="2" l="1652791330274" />
     </e>
     <e n="WelcomeScreen.CreateNewProject">
       <i c="1" l="1647024474051" />

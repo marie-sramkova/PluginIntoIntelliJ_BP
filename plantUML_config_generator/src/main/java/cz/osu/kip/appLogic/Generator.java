@@ -75,7 +75,7 @@ public class Generator {
 
     public static PackageX getPackageXFromFile(File fileInput) {
         List<String> lines = FileController.loadFileToLines(fileInput.getPath());
-        PackageX packageX = DividingToClassUtil.divideFromLines(lines);
+        PackageX packageX = DividingToClassUtil.getPackageXWithClassesFromLines(lines);
         return packageX;
     }
 
