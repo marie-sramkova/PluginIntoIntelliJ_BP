@@ -51,10 +51,11 @@
         </entry>
         <entry key="$USER_HOME$/Documents/toTry/projectToTry">
           <value>
-            <RecentProjectMetaInfo opened="true" projectWorkspaceId="29FsCPYnWrSZmQLAtc9uIaw5lau">
+            <RecentProjectMetaInfo frameTitle="projectToTry – Main.java" opened="true" projectWorkspaceId="29FsCPYnWrSZmQLAtc9uIaw5lau">
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
               <option name="build" value="IC-212.5457.46" />
               <option name="buildTimestamp" value="1634044933642" />
+              <frame x="-9" y="-9" width="1938" height="1038" extendedState="6" />
               <option name="productionCode" value="IC" />
               <option name="projectOpenTimestamp" value="1652790451559" />
             </RecentProjectMetaInfo>
