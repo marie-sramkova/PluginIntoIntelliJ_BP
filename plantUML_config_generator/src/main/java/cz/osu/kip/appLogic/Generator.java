@@ -4,14 +4,17 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.intellij.openapi.project.Project;
+import cz.osu.kip.appLogic.umlGeneration.ClassX;
+import cz.osu.kip.appLogic.umlGeneration.PackageX;
+import cz.osu.kip.appLogic.umlGeneration.PackageXByFileConvertor;
+import cz.osu.kip.appLogic.umlGeneration.UmlFilter;
 import cz.osu.kip.view.mainForm.FolderLevel;
 import cz.osu.kip.view.mainForm.MainFormWindowItems;
-import cz.osu.kip.appLogic.umlGeneration.*;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 
 import javax.swing.*;
-import java.io.*;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,7 +78,7 @@ public class Generator {
 
     public static MainFormWindowItems getDataFromFile(Project rootProject, File filePath) throws PackageFormException {
         StringBuilder text = new StringBuilder();
-        List<String> lines = FileController.loadFileToLines(filePath.getAbsolutePath().toString());
+        List<String> lines = FileController.loadFileToLines(filePath.getAbsolutePath());
         for (String line : lines) {
             text.append(line);
         }

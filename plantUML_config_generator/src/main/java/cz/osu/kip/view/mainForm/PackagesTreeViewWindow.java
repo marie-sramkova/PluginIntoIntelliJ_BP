@@ -2,7 +2,6 @@ package cz.osu.kip.view.mainForm;
 
 import com.intellij.ui.components.JBScrollPane;
 import cz.osu.kip.appLogic.PackageFormException;
-import cz.osu.kip.view.ClassToShowOptionDialogsWithTimer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -22,11 +21,6 @@ public class PackagesTreeViewWindow extends JFrame {
     private boolean wasCanceled = false;
     private String initialUrl;
 
-    @Override
-    public void paint(Graphics g) {
-        super.paint(g);
-    }
-
     public PackagesTreeViewWindow(PackagesTreeViewWindow newPackagesTreeViewWindow, String initialUrl) {
         this.initialUrl = initialUrl;
         for (FolderLevel fl : newPackagesTreeViewWindow.getFolders()) {
@@ -41,9 +35,9 @@ public class PackagesTreeViewWindow extends JFrame {
     public PackagesTreeViewWindow(List<FolderLevel> newFolders, String initialUrl) throws PackageFormException {
         List<File> dirs = new ArrayList<>();
         this.initialUrl = initialUrl;
-        if (newFolders == null || newFolders.size() == 0){
+        if (newFolders == null || newFolders.size() == 0) {
             folders.add(new FolderLevel(new File(initialUrl).getName(), new File(initialUrl), 1, initialUrl));
-        }else {
+        } else {
             for (FolderLevel fl : newFolders) {
                 FolderLevel folderLevel = new FolderLevel(fl, initialUrl);
                 this.folders.add(folderLevel);
@@ -149,7 +143,7 @@ public class PackagesTreeViewWindow extends JFrame {
                                 folderLvl.getjCheckBox().setVisible(true);
                             }
                         }
-                        if (foldersContainsNewFolderLvl == false){
+                        if (foldersContainsNewFolderLvl == false) {
                             folders.add(fl);
                             addToPanel(fl, newJpanel, panel, frame);
                         }
@@ -211,12 +205,12 @@ public class PackagesTreeViewWindow extends JFrame {
     public File getDirectoryPathWithoutFile(File filePath) {
         if (filePath.toString().contains("/")) {
             if (filePath.toString().substring(filePath.toString().lastIndexOf("/")).contains(".")
-            && !filePath.toString().substring(filePath.toString().lastIndexOf("/")+1).startsWith(".")) {
+                    && !filePath.toString().substring(filePath.toString().lastIndexOf("/") + 1).startsWith(".")) {
                 filePath = new File(filePath.toString().substring(0, filePath.toString().lastIndexOf("/")));
             }
         } else if (filePath.toString().contains("\\")) {
             if (filePath.toString().substring(filePath.toString().lastIndexOf("\\")).contains(".")
-            && !filePath.toString().substring(filePath.toString().lastIndexOf("\\")+1).startsWith(".")) {
+                    && !filePath.toString().substring(filePath.toString().lastIndexOf("\\") + 1).startsWith(".")) {
                 filePath = new File(filePath.toString().substring(0, filePath.toString().lastIndexOf("\\")));
             }
         }

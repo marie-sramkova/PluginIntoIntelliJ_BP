@@ -9,12 +9,12 @@ import cz.osu.kip.appLogic.ConfigInfo;
 import cz.osu.kip.appLogic.Generator;
 import cz.osu.kip.appLogic.PackageFormException;
 import cz.osu.kip.view.ClassToShowOptionDialogsWithTimer;
-import cz.osu.kip.view.mainForm.UmlFormWindow;
 import cz.osu.kip.view.mainForm.MainFormWindowItems;
 import cz.osu.kip.view.mainForm.SubmitStateForFormWindow;
+import cz.osu.kip.view.mainForm.UmlFormWindow;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.*;
+import java.io.File;
 
 public class ProjectMenuAction extends AnAction {
     private ConfigInfo configInfo;

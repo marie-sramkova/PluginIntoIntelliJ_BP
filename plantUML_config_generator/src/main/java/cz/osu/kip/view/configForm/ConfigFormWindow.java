@@ -13,13 +13,13 @@ import java.util.List;
 
 public class ConfigFormWindow extends JFrame {
 
-    private JPanel contentPanel;
     List<FolderLevel> configFiles;
     File rootProject;
+    private JPanel contentPanel;
     private SubmitStateForConfigFormWindow submitState = SubmitStateForConfigFormWindow.CANCEL;
     private String title = "PlantUML/config generation";
 
-    public ConfigFormWindow(List<File> configFiles, File rootProject){
+    public ConfigFormWindow(List<File> configFiles, File rootProject) {
         this.rootProject = rootProject;
         this.configFiles = convertConfigFilesToFolderLevels(configFiles);
         makeFrame();
@@ -36,7 +36,7 @@ public class ConfigFormWindow extends JFrame {
 
     private List<FolderLevel> convertConfigFilesToFolderLevels(List<File> configFiles) {
         List<FolderLevel> files = new ArrayList<>();
-        for (File file:configFiles) {
+        for (File file : configFiles) {
             String name = file.toString().substring(rootProject.toString().length());
             FolderLevel fl = new FolderLevel(name, file, 0, rootProject.toString());
             files.add(fl);
@@ -66,7 +66,7 @@ public class ConfigFormWindow extends JFrame {
     private JPanel makeContentPanel() {
         JPanel myPanel = new JPanel();
         myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.Y_AXIS));
-        for (FolderLevel fl:configFiles) {
+        for (FolderLevel fl : configFiles) {
             JPanel panel = new JPanel();
             panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
             panel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));

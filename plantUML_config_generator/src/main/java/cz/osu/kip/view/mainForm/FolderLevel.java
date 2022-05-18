@@ -18,18 +18,18 @@ public class FolderLevel {
         if (initialUrl.contains("/")) {
             if (initialUrl.substring(initialUrl.lastIndexOf("/")).contains(".")) {
                 jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.substring(0, initialUrl.lastIndexOf("/")).length() + 1));
-            } else if(initialUrl.equals(url.toString())){
+            } else if (initialUrl.equals(url.toString())) {
                 jCheckBox = new JBCheckBox(url.getName());
-            } else{
-                jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.length()+1));
+            } else {
+                jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.length() + 1));
             }
         } else if (initialUrl.contains("\\")) {
             if (initialUrl.substring(initialUrl.lastIndexOf("\\")).contains(".")) {
                 jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.substring(0, initialUrl.lastIndexOf("\\")).length() + 1));
-            } else if(initialUrl.equals(url.toString())){
+            } else if (initialUrl.equals(url.toString())) {
                 jCheckBox = new JBCheckBox(url.getName());
-            } else{
-                jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.length()+1));
+            } else {
+                jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.length() + 1));
             }
         }
         if (newFolderLevel.getjCheckBox().isSelected()) {
@@ -44,18 +44,18 @@ public class FolderLevel {
         if (initialUrl.contains("/")) {
             if (initialUrl.substring(initialUrl.lastIndexOf("/")).contains(".")) {
                 jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.substring(0, initialUrl.lastIndexOf("/")).length() + 1));
-            } else if(initialUrl.equals(url.toString())){
+            } else if (initialUrl.equals(url.toString())) {
                 jCheckBox = new JBCheckBox(url.getName());
             } else {
-                jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.length()+1));
+                jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.length() + 1));
             }
         } else if (initialUrl.contains("\\")) {
             if (initialUrl.substring(initialUrl.lastIndexOf("\\")).contains(".")) {
                 jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.substring(0, initialUrl.lastIndexOf("\\")).length() + 1));
-            } else if(initialUrl.equals(url.toString())){
+            } else if (initialUrl.equals(url.toString())) {
                 jCheckBox = new JBCheckBox(url.getName());
             } else {
-                jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.length()+1));
+                jCheckBox = new JBCheckBox(url.toString().substring(initialUrl.length() + 1));
             }
         }
     }

@@ -1,10 +1,11 @@
 package cz.osu.kip.appLogic;
 
 import cz.osu.kip.view.ClassToShowOptionDialogsWithTimer;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
-import java.io.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
