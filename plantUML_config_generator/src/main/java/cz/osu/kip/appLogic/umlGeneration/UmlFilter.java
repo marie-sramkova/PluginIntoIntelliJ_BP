@@ -159,17 +159,20 @@ public class UmlFilter {
     public static String convertToUmlFormatAssociations(ClassX classX) {
         StringBuilder sb = new StringBuilder();
         if (classX.isExtendStatus()) {
-            if (classX.getExtendedClass() != null) {
-                sb.append(classX.getName()).append(" --|> ").append(classX.getExtendedClass()).append("\n");
-            }
-        }
-        if (classX.isImplementStatus()) {
-            if (classX.getImplementedInterface().size() != 0) {
-                for (String implementedInterface : classX.getImplementedInterface()) {
-                    sb.append(classX.getName()).append(" ..|>").append(implementedInterface).append("\n");
+            if (classX.getExtendedClassesX() != null && classX.getExtendedClassesX().size() != 0) {
+                for (String extendedClassX : classX.getExtendedClassesX()) {
+                    sb.append(extendedClassX).append(" <|.. ").append(classX.getName()).append("\n");
                 }
             }
         }
+        if (classX.isImplementStatus()) {
+            if (classX.getImplementedInterface() != null && classX.getImplementedInterface().size() != 0) {
+                for (String implementedInterface : classX.getImplementedInterface()) {
+                    sb.append(implementedInterface).append(" <|.. ").append(classX.getName()).append("\n");
+                }
+            }
+        }
+        sb.append("\n");
         return sb.toString();
     }
 
