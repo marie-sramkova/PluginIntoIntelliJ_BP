@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.intellij.openapi.project.Project;
-import cz.osu.kip.view.ClassToShowOptionDialogsWithTimer;
 import cz.osu.kip.view.mainForm.FolderLevel;
 import cz.osu.kip.view.mainForm.MainFormWindowItems;
 import cz.osu.kip.appLogic.umlGeneration.*;
@@ -70,7 +69,7 @@ public class Generator {
 
     public static PackageX getPackageXFromFile(File fileInput) {
         List<String> lines = FileController.loadFileToLines(fileInput.getPath());
-        PackageX packageX = DividingToClassUtil.getPackageXWithClassesFromLines(lines);
+        PackageX packageX = PackageXByFileConvertor.getPackageXWithClassesFromLines(lines);
         return packageX;
     }
 

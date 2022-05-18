@@ -7,19 +7,19 @@ public class ClassX {
     private String type;
     private boolean isPublic;
     private boolean extendStatus;
-    private String extendedClass;
+    private List<String> extendedClassesX;
     private boolean implementStatus;
     private List<String> implementedInterface;
     private List<AttributeX> attributeXES;
     private List<MethodX> methodXES;
     private List<ClassX> innerClassesX;
 
-    public ClassX(String name, String type, boolean isPublic, boolean extendStatus, String extendedClass, boolean implementStatus, List<String> implementedInterface, List<AttributeX> attributeXES, List<MethodX> methodXES) {
+    public ClassX(String name, String type, boolean isPublic, boolean extendStatus, List<String> extendedClassesX, boolean implementStatus, List<String> implementedInterface, List<AttributeX> attributeXES, List<MethodX> methodXES) {
         this.name = name;
         this.type = type;
         this.isPublic = isPublic;
         this.extendStatus = extendStatus;
-        this.extendedClass = extendedClass;
+        this.extendedClassesX = extendedClassesX;
         this.implementStatus = implementStatus;
         this.implementedInterface = implementedInterface;
         this.attributeXES = attributeXES;
@@ -50,8 +50,8 @@ public class ClassX {
         return extendStatus;
     }
 
-    public String getExtendedClass() {
-        return extendedClass;
+    public List<String> getExtendedClassesX() {
+        return extendedClassesX;
     }
 
     public boolean isImplementStatus() {

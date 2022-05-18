@@ -42,7 +42,7 @@
     <property name="defaultJdkConfigured" value="true" />
     <property name="eclipse.projects.detected" value="" />
     <property name="file.chooser.recent.files" value="$USER_HOME$/Documents/toTry/projectToTry&#10;C:/Users/Student/Documents/sramkova_r19233_ukol5_uml_generator/sramkova_r19233_ukol5/generatingUML_sramkova_r19233ToTry/generatingUML&#10;D:/sramk/Documents/vysoka_skola/bakalarka/gitKraken_bp/PluginIntoIntelliJ_BP/PluginIntoIntelliJ_BP/my_new_plugin_again&#10;D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore" />
-    <property name="file.gist.reindex.count" value="38" />
+    <property name="file.gist.reindex.count" value="39" />
     <property name="fileTypeChangedCounter" value="5" />
     <property name="fileTypeDetectors" value="com.android.tools.idea.fileTypes.profiler.MemoryCaptureFileType$Detector:com.android.tools.idea.sqlite.fileType.SqliteFileTypeDetector:com.intellij.ide.scratch.ScratchFileServiceImpl$Detector:org.jetbrains.plugins.textmate.TextMateFileType$TextMateFileDetector" />
     <property name="got.it.tooltip.cwm.invitation.notification" value="1" />
