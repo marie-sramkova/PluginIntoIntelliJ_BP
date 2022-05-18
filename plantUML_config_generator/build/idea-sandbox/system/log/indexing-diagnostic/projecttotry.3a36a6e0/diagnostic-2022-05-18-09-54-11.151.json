@@ -1,9 +1,9 @@
 {
   "appInfo" : {
     "build" : "212.5457.46",
-    "buildDate" : "2021-10-12T13:22:09.849Z[UTC]",
+    "buildDate" : "2021-10-12T13:22:31.632Z[UTC]",
     "productCode" : "IC",
-    "generated" : "2022-05-17T22:56:38.0735381Z",
+    "generated" : "2022-05-18T07:54:11.2059711Z",
     "os" : "Windows 10 10.0",
     "runtime" : "JetBrains s.r.o. 11.0.12 11.0.12+7-b1504.40"
   },
@@ -18,20 +18,20 @@
     "projectName" : "projectToTry",
     "times" : {
       "indexingReason" : "On project open",
-      "totalUpdatingTime" : 10242549500,
+      "totalUpdatingTime" : 13184998000,
       "indexingTime" : 0,
       "contentLoadingTime" : 0,
-      "scanFilesTime" : 10075371400,
-      "pushPropertiesTime" : 0,
+      "scanFilesTime" : 9911012300,
+      "pushPropertiesTime" : 9076700,
       "indexExtensionsTime" : 0,
-      "updatingStart" : "2022-05-17T22:56:27.7968606Z",
-      "updatingEnd" : "2022-05-17T22:56:38.0374561Z",
+      "updatingStart" : "2022-05-18T07:53:57.9181581Z",
+      "updatingEnd" : "2022-05-18T07:54:11.1140672Z",
       "totalSuspendedTime" : 0,
       "wasInterrupted" : false
     },
     "fileCount" : {
       "numberOfFileProviders" : 8,
-      "numberOfScannedFiles" : 41321,
+      "numberOfScannedFiles" : 41323,
       "numberOfFilesIndexedByInfrastructureExtensionsDuringScan" : 0,
       "numberOfFilesScheduledForIndexingAfterScan" : 0,
       "numberOfFilesIndexedByInfrastructureExtensionsDuringIndexingStage" : 0,
@@ -45,29 +45,19 @@
       "numberOfSkippedFiles" : 0,
       "numberOfFilesForIndexing" : 0,
       "numberOfFilesFullyIndexedByInfrastructureExtensions" : 0,
-      "scanningTime" : 4433460400,
+      "scanningTime" : 5785112300,
       "timeProcessingUpToDateFiles" : 0,
-      "timeUpdatingContentLessIndexes" : 201119300,
+      "timeUpdatingContentLessIndexes" : 164332500,
       "timeIndexingWithoutContent" : 0
     }, {
-      "providerName" : "Indexable set contributor 'com.intellij.javaee.ExternalResourcesRootsProvider@5681e15d' (non-project)",
+      "providerName" : "Indexable set contributor 'com.intellij.javaee.ExternalResourcesRootsProvider@33bcaf04' (non-project)",
       "numberOfScannedFiles" : 222,
       "numberOfSkippedFiles" : 4,
       "numberOfFilesForIndexing" : 0,
       "numberOfFilesFullyIndexedByInfrastructureExtensions" : 0,
-      "scanningTime" : 1818700900,
+      "scanningTime" : 1894568400,
       "timeProcessingUpToDateFiles" : 0,
-      "timeUpdatingContentLessIndexes" : 4374900,
-      "timeIndexingWithoutContent" : 0
-    }, {
-      "providerName" : "Module 'projectToTry'",
-      "numberOfScannedFiles" : 15,
-      "numberOfSkippedFiles" : 0,
-      "numberOfFilesForIndexing" : 0,
-      "numberOfFilesFullyIndexedByInfrastructureExtensions" : 0,
-      "scanningTime" : 247029900,
-      "timeProcessingUpToDateFiles" : 0,
-      "timeUpdatingContentLessIndexes" : 530000,
+      "timeUpdatingContentLessIndexes" : 35077000,
       "timeIndexingWithoutContent" : 0
     }, {
       "providerName" : "Indexable set contributor 'Scratches & Consoles' (non-project)",
@@ -75,19 +65,19 @@
       "numberOfSkippedFiles" : 0,
       "numberOfFilesForIndexing" : 0,
       "numberOfFilesFullyIndexedByInfrastructureExtensions" : 0,
-      "scanningTime" : 171664800,
+      "scanningTime" : 622971300,
       "timeProcessingUpToDateFiles" : 0,
-      "timeUpdatingContentLessIndexes" : 51700,
+      "timeUpdatingContentLessIndexes" : 56200,
       "timeIndexingWithoutContent" : 0
     }, {
-      "providerName" : "Indexable set contributor 'com.intellij.javaee.ExternalResourcesRootsProvider@5681e15d' (project)",
-      "numberOfScannedFiles" : 0,
+      "providerName" : "Module 'projectToTry'",
+      "numberOfScannedFiles" : 17,
       "numberOfSkippedFiles" : 0,
       "numberOfFilesForIndexing" : 0,
       "numberOfFilesFullyIndexedByInfrastructureExtensions" : 0,
-      "scanningTime" : 0,
+      "scanningTime" : 376076900,
       "timeProcessingUpToDateFiles" : 0,
-      "timeUpdatingContentLessIndexes" : 0,
+      "timeUpdatingContentLessIndexes" : 718400,
       "timeIndexingWithoutContent" : 0
     }, {
       "providerName" : "Indexable set contributor 'Scratches & Consoles' (project)",
@@ -100,7 +90,7 @@
       "timeUpdatingContentLessIndexes" : 0,
       "timeIndexingWithoutContent" : 0
     }, {
-      "providerName" : "Indexable set contributor 'Kotlin Script dependencies' (non-project)",
+      "providerName" : "Indexable set contributor 'com.intellij.javaee.ExternalResourcesRootsProvider@33bcaf04' (project)",
       "numberOfScannedFiles" : 0,
       "numberOfSkippedFiles" : 0,
       "numberOfFilesForIndexing" : 0,
@@ -111,6 +101,16 @@
       "timeIndexingWithoutContent" : 0
     }, {
       "providerName" : "Indexable set contributor 'Kotlin Script dependencies' (project)",
+      "numberOfScannedFiles" : 0,
+      "numberOfSkippedFiles" : 0,
+      "numberOfFilesForIndexing" : 0,
+      "numberOfFilesFullyIndexedByInfrastructureExtensions" : 0,
+      "scanningTime" : 0,
+      "timeProcessingUpToDateFiles" : 0,
+      "timeUpdatingContentLessIndexes" : 0,
+      "timeIndexingWithoutContent" : 0
+    }, {
+      "providerName" : "Indexable set contributor 'Kotlin Script dependencies' (non-project)",
       "numberOfScannedFiles" : 0,
       "numberOfSkippedFiles" : 0,
       "numberOfFilesForIndexing" : 0,

@@ -26,7 +26,6 @@ public class TopMenuAction extends DumbAwareAction {
 
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
-
         Project rootProject = e.getProject();
         System.out.println(rootProject.getBasePath());
         List<File> dirs = getSubdirs(new File(rootProject.getBasePath()));
@@ -36,6 +35,10 @@ public class TopMenuAction extends DumbAwareAction {
         ConfigFormWindow configFormWindow = new ConfigFormWindow(configFiles, new File(rootProject.getBasePath()));
         configFormWindow.show();
 
+        makeConfigFormWindowListener(rootProject, configFormWindow);
+    }
+
+    private void makeConfigFormWindowListener(Project rootProject, ConfigFormWindow configFormWindow) {
         configFormWindow.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosed(java.awt.event.WindowEvent windowEvent) {
@@ -49,39 +52,47 @@ public class TopMenuAction extends DumbAwareAction {
                 }
                 switch (configFormWindow.getSubmitState()) {
                     case GENERATE_UML_DIAGRAM:
-                        for (File filePath : files) {
-                            MainFormWindowItems mainFormWindowItems = null;
-                            try {
-                                mainFormWindowItems = Generator.getDataFromFile(rootProject, filePath);
-                            } catch (PackageFormException ex) {
-                                ex.printStackTrace();
-                            }
-                            ConfigInfo configInfo = new ConfigInfo(mainFormWindowItems);
-                            Generator.createUmlFile(mainFormWindowItems, configInfo);
-                        }
+                        generateUmlDiagramsBySelectedConfigFiles(files, rootProject);
                         break;
                     case DELETE:
-                        for (File filePath : files) {
-                            if (filePath.exists() && filePath.isFile()) {
-                                try {
-                                    int dialogResult = JOptionPane.showConfirmDialog (null, "Would yout like to delete file / files?","Warning",JOptionPane.YES_NO_CANCEL_OPTION);
-                                    if(dialogResult == JOptionPane.YES_OPTION){
-                                        Files.deleteIfExists(filePath.toPath());
-                                        ClassToShowOptionDialogsWithTimer.showOptionDialogWithTimer("File was / files were successfully deleted.", 2);
-                                    }else {
-                                        configFormWindow.show();
-                                    }
-                                } catch (IOException ex) {
-                                    ClassToShowOptionDialogsWithTimer.showOptionDialogWithTimer("Cannot delete the file " + filePath.toString() + ".", 2);
-                                }
-                            }
-                        }
+                        deleteSelectedConfigFiles(files, configFormWindow);
                         break;
                     case CANCEL:
                         break;
                 }
             }
         });
+    }
+
+    private void deleteSelectedConfigFiles(List<File> files, ConfigFormWindow configFormWindow) {
+        for (File filePath : files) {
+            if (filePath.exists() && filePath.isFile()) {
+                try {
+                    int dialogResult = JOptionPane.showConfirmDialog(null, "Would yout like to delete file / files?", "Warning", JOptionPane.YES_NO_CANCEL_OPTION);
+                    if (dialogResult == JOptionPane.YES_OPTION) {
+                        Files.deleteIfExists(filePath.toPath());
+                        ClassToShowOptionDialogsWithTimer.showOptionDialogWithTimer("File was / files were successfully deleted.", 2);
+                    } else {
+                        configFormWindow.show();
+                    }
+                } catch (IOException ex) {
+                    ClassToShowOptionDialogsWithTimer.showOptionDialogWithTimer("Cannot delete the file " + filePath.toString() + ".", 2);
+                }
+            }
+        }
+    }
+
+    private void generateUmlDiagramsBySelectedConfigFiles(List<File> files, Project rootProject) {
+        for (File filePath : files) {
+            MainFormWindowItems mainFormWindowItems = null;
+            try {
+                mainFormWindowItems = Generator.getDataFromFile(rootProject, filePath);
+            } catch (PackageFormException ex) {
+                ex.printStackTrace();
+            }
+            ConfigInfo configInfo = new ConfigInfo(mainFormWindowItems);
+            Generator.createUmlFile(mainFormWindowItems, configInfo);
+        }
     }
 
     private List<File> getSubdirs(File file) {

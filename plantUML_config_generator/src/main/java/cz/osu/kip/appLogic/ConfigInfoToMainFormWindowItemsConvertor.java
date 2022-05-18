@@ -5,6 +5,7 @@ import cz.osu.kip.view.mainForm.FolderLevel;
 import cz.osu.kip.view.mainForm.UmlFormWindow;
 import cz.osu.kip.view.mainForm.MainFormWindowItems;
 import cz.osu.kip.view.mainForm.PackagesTreeViewWindow;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ import java.util.List;
 public class ConfigInfoToMainFormWindowItemsConvertor {
 
     public static MainFormWindowItems convert(ConfigInfo configInfo, Project rootProject, File filePath) throws PackageFormException {
-        UmlFormWindow umlFormWindow =  new UmlFormWindow(rootProject, filePath);
+        UmlFormWindow umlFormWindow = new UmlFormWindow(rootProject, filePath);
         MainFormWindowItems mainFormWindowItems = new MainFormWindowItems(filePath, umlFormWindow);
         umlFormWindow.dispose();
         convertUMLTargetDestination(configInfo, mainFormWindowItems, filePath);
@@ -45,17 +46,16 @@ public class ConfigInfoToMainFormWindowItemsConvertor {
     }
 
     private static void convertPackagesToTreeViewWindow(ConfigInfo configInfo, MainFormWindowItems mainFormWindowItems, String initialURL) throws PackageFormException {
-        if (initialURL.contains("/")) {
-            if (initialURL.substring(initialURL.lastIndexOf("/")).contains(".")) {
-                initialURL = initialURL.toString().substring(0, initialURL.toString().lastIndexOf("/"));
-            }
-        } else if (initialURL.contains("\\")) {
-            if (initialURL.substring(initialURL.lastIndexOf("\\")).contains(".")) {
-                initialURL = initialURL.substring(0, initialURL.lastIndexOf("\\"));
-            }
-        }
+        initialURL = getCorrectInitialURL(initialURL);
+        List<FolderLevel> folders = makeFolderLevelFromEachPackage(configInfo, initialURL);
+        PackagesTreeViewWindow packagesTreeViewWindow = new PackagesTreeViewWindow(folders, initialURL);
+        mainFormWindowItems.setOwnPackages(packagesTreeViewWindow, initialURL);
+        packagesTreeViewWindow.dispose();
+    }
+
+    private static List<FolderLevel> makeFolderLevelFromEachPackage(ConfigInfo configInfo, String initialURL) {
         List<FolderLevel> folders = new ArrayList<>();
-        for (String url: configInfo.getPackages()) {
+        for (String url : configInfo.getPackages()) {
             File file = new File(url);
             String folderName = "";
             int folderLevel = 0;
@@ -74,9 +74,21 @@ public class ConfigInfoToMainFormWindowItemsConvertor {
             fl.getjCheckBox().setSelected(true);
             folders.add(fl);
         }
-        PackagesTreeViewWindow packagesTreeViewWindow = new PackagesTreeViewWindow(folders, initialURL);
-        mainFormWindowItems.setOwnPackages(packagesTreeViewWindow, initialURL);
-        packagesTreeViewWindow.dispose();
+        return folders;
+    }
+
+    @NotNull
+    private static String getCorrectInitialURL(String initialURL) {
+        if (initialURL.contains("/")) {
+            if (initialURL.substring(initialURL.lastIndexOf("/")).contains(".")) {
+                initialURL = initialURL.toString().substring(0, initialURL.toString().lastIndexOf("/"));
+            }
+        } else if (initialURL.contains("\\")) {
+            if (initialURL.substring(initialURL.lastIndexOf("\\")).contains(".")) {
+                initialURL = initialURL.substring(0, initialURL.lastIndexOf("\\"));
+            }
+        }
+        return initialURL;
     }
 
     private static void convertConfigTargetDestination(ConfigInfo configInfo, MainFormWindowItems mainFormWindowItems, File filePath) {

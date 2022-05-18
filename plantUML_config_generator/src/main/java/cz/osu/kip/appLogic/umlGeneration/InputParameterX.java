@@ -16,10 +16,4 @@ public class InputParameterX {
     public String getName() {
         return name;
     }
-
-    public String convertToUmlFormat() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getName()).append(" : ").append(getType());
-        return sb.toString();
-    }
 }

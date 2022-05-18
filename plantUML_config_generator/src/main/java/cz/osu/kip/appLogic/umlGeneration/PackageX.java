@@ -19,8 +19,8 @@ public class PackageX {
         return classXES;
     }
 
-    public void addClassX(ClassX classX){
-        if (!classXES.contains(classX)){
+    public void addClassX(ClassX classX) {
+        if (!classXES.contains(classX)) {
             this.classXES.add(classX);
         }
     }
