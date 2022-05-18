@@ -14,40 +14,46 @@ public class UmlFilter {
         StringBuilder sb = new StringBuilder();
         sb.append("package ").append(packageX.getName()).append("{\n\n");
 
+        processClassesX(packageX, sb);
+        processInterfaces(packageX, sb);
+
+        sb.append("\n}\n\n");
+        return sb.toString();
+    }
+
+    private static void processInterfaces(PackageX packageX, StringBuilder sb) {
+        if (getConfigInfo().isInterfaces()) {
+            for (ClassX classX : packageX.getClassXES()) {
+                if (classX != null && classX.getType().equals("interface")) {
+                    String classXText = convertClassToUml(classX);
+                    sb.append(classXText);
+                    sb.append(convertToUmlFormatAssociations(classX));
+                }
+            }
+        }
+    }
+
+    private static void processClassesX(PackageX packageX, StringBuilder sb) {
         if (getConfigInfo().isClasses()) {
             for (ClassX classX : packageX.getClassXES()) {
                 if (classX != null && classX.getType().equals("class")) {
                     if ((getConfigInfo().isDefaultClasses() && !classX.isPublic()) || (getConfigInfo().isPublicClasses() && classX.isPublic())) {
                         String classXText = convertClassToUml(classX);
                         sb.append(classXText);
-                        if (getConfigInfo().isInnerClasses()){
-                            if (classX.getInnerClassesX() != null && classX.getInnerClassesX().size()>0){
-                                for (ClassX innerClassX:classX.getInnerClassesX()) {
+                        if (getConfigInfo().isInnerClasses()) {
+                            if (classX.getInnerClassesX() != null && classX.getInnerClassesX().size() > 0) {
+                                for (ClassX innerClassX : classX.getInnerClassesX()) {
                                     String innerClassXText = convertClassToUml(innerClassX);
                                     sb.append(innerClassXText);
                                 }
-                                sb.append(classX.convertToUmlFormatNestedClassesXAssociations());
+                                sb.append(convertToUmlFormatNestedClassesXAssociations(classX));
                             }
                         }
-                        sb.append(classX.convertToUmlFormatAssociations());
+                        sb.append(convertToUmlFormatAssociations(classX));
                     }
                 }
             }
         }
-
-        if (getConfigInfo().isInterfaces()) {
-            for (ClassX classX : packageX.getClassXES()) {
-                if (classX != null && classX.getType().equals("interface")) {
-                    String classXText = convertClassToUml(classX);
-                    sb.append(classXText);
-                    sb.append(classX.convertToUmlFormatAssociations());
-                }
-            }
-        }
-
-
-        sb.append("\n}\n\n");
-        return sb.toString();
     }
 
     private static String convertClassToUml(ClassX classX) {
@@ -137,7 +143,7 @@ public class UmlFilter {
         sb.append(methodX.getName()).append("(");
         if (methodX.getInputParameters() != null) {
             for (int i = 0; i < methodX.getInputParameters().size(); i++) {
-                sb.append(methodX.getInputParameters().get(i).convertToUmlFormat());
+                sb.append(convertInputParametersToUmlFormat(methodX.getInputParameters().get(i)));
                 if (i < methodX.getInputParameters().size() - 1) {
                     sb.append(", ");
                 }
@@ -148,5 +154,38 @@ public class UmlFilter {
         } else {
             sb.append(")").append("\n");
         }
+    }
+
+    public static String convertToUmlFormatAssociations(ClassX classX) {
+        StringBuilder sb = new StringBuilder();
+        if (classX.isExtendStatus()) {
+            if (classX.getExtendedClass() != null) {
+                sb.append(classX.getName()).append(" --|> ").append(classX.getExtendedClass()).append("\n");
+            }
+        }
+        if (classX.isImplementStatus()) {
+            if (classX.getImplementedInterface().size() != 0) {
+                for (String implementedInterface : classX.getImplementedInterface()) {
+                    sb.append(classX.getName()).append(" ..|>").append(implementedInterface).append("\n");
+                }
+            }
+        }
+        return sb.toString();
+    }
+
+    public static String convertToUmlFormatNestedClassesXAssociations(ClassX classX) {
+        StringBuilder sb = new StringBuilder();
+        if (classX.getInnerClassesX() != null && classX.getInnerClassesX().size() > 0) {
+            for (ClassX innerClassX : classX.getInnerClassesX()) {
+                sb.append(classX.getName()).append(" --> \"many\" ").append(innerClassX.getName()).append(" : +nested\n\n");
+            }
+        }
+        return sb.toString();
+    }
+
+    public static String convertInputParametersToUmlFormat(InputParameterX inputParameterX) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(inputParameterX.getName()).append(" : ").append(inputParameterX.getType());
+        return sb.toString();
     }
 }

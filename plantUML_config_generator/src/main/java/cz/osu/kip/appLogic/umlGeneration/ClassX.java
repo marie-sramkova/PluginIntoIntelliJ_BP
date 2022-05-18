@@ -26,7 +26,7 @@ public class ClassX {
         this.methodXES = methodXES;
     }
 
-    public void addInnerClassesX(List<ClassX> innerClassesX){
+    public void addInnerClassesX(List<ClassX> innerClassesX) {
         this.innerClassesX = innerClassesX;
     }
 
@@ -69,32 +69,4 @@ public class ClassX {
     public List<MethodX> getMethods() {
         return methodXES;
     }
-
-    public String convertToUmlFormatAssociations() {
-        StringBuilder sb = new StringBuilder();
-        if (isExtendStatus()) {
-            if (getExtendedClass() != null) {
-                sb.append(getName()).append(" --|> ").append(getExtendedClass()).append("\n");
-            }
-        }
-        if (isImplementStatus()) {
-            if (getImplementedInterface().size() != 0) {
-                for (String implementedInterface : getImplementedInterface()) {
-                    sb.append(getName()).append(" ..|>").append(implementedInterface).append("\n");
-                }
-            }
-        }
-        return sb.toString();
-    }
-
-    public String convertToUmlFormatNestedClassesXAssociations() {
-        StringBuilder sb = new StringBuilder();
-        if (getInnerClassesX() != null && getInnerClassesX().size() > 0) {
-            for (ClassX classX:getInnerClassesX()) {
-                sb.append(getName()).append(" --> \"many\" ").append(classX.getName()).append(" : +nested\n\n");
-            }
-        }
-        return sb.toString();
-    }
-
 }

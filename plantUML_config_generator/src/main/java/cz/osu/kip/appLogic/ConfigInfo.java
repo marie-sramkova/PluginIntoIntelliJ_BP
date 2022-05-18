@@ -39,51 +39,9 @@ public class ConfigInfo {
     private boolean methodsForInterfaces;
 
     public ConfigInfo(MainFormWindowItems mainFormWindowItems) {
-        StringBuilder stringBuilder;
-        if (mainFormWindowItems.getDefaultUMLTargetDestination().isSelected()) {
-            umlTargetDestination = UmlFormWindow.getFilePath().toPath().resolve("PlantUmlFile.puml").toFile().toString();
-        } else {
-            stringBuilder = new StringBuilder();
-            try {
-                stringBuilder.append(mainFormWindowItems.getDefaultUMLTargetFile().getSelectedFile().getAbsolutePath());
-                if (!stringBuilder.toString().endsWith(".puml")) {
-                    stringBuilder.append(".puml");
-                }
-            } catch (Exception e) {
-                int input = JOptionPane.showConfirmDialog(null,
-                        "You selected incorrect file or you didn't confirm selection. The default location: " + mainFormWindowItems.getDefaultUMLTargetDestinationDesc().getText() + " was set.", "Error", JOptionPane.DEFAULT_OPTION);
-                stringBuilder.append(UmlFormWindow.getFilePath().toPath().resolve("PlantUmlFile.puml").toFile().toString());
-            }
-            umlTargetDestination = stringBuilder.toString();
-        }
-        if (mainFormWindowItems.getDefaultConfigTargetDestination().isSelected()) {
-            configTargetDestination = UmlFormWindow.getFilePath().toPath().resolve("PlantUmlConfigFile.myuml").toFile().toString();
-        } else {
-            stringBuilder = new StringBuilder();
-            try {
-                stringBuilder.append(mainFormWindowItems.getDefaultConfigTargetFile().getSelectedFile().getAbsolutePath());
-                if (!stringBuilder.toString().endsWith(".myuml")) {
-                    stringBuilder.append(".myuml");
-                }
-            } catch (Exception e) {
-                int input = JOptionPane.showConfirmDialog(null,
-                        "You selected incorrect file or you didn't confirm selection. The default location: " + mainFormWindowItems.getDefaultUMLTargetDestinationDesc().getText() + " was set.", "Error", JOptionPane.DEFAULT_OPTION);
-                stringBuilder.append(UmlFormWindow.getFilePath().toPath().resolve("PlantUmlConfigFile.myuml").toFile().toString());
-            }
-            configTargetDestination = stringBuilder.toString();
-        }
-        if (mainFormWindowItems.getAllPackages().isSelected()) {
-            packages.add(UmlFormWindow.getFilePath().toString());
-            List<File> subdirs = getSubdirs(UmlFormWindow.getFilePath());
-            for (File file : subdirs) {
-                packages.add(file.getAbsolutePath());
-            }
-        } else if (mainFormWindowItems.getTreeViewWindow() != null && mainFormWindowItems.getTreeViewWindow().getFolders() != null) {
-            for (FolderLevel fl : mainFormWindowItems.getTreeViewWindow().getFolders()) {
-                if (fl.getjCheckBox().isSelected())
-                    packages.add(fl.getUrl().toString());
-            }
-        }
+        processUmlTargetDestination(mainFormWindowItems);
+        processConfigTargetDestination(mainFormWindowItems);
+        processPackages(mainFormWindowItems);
         classes = mainFormWindowItems.getClassesCheckBox().isSelected();
         publicClasses = mainFormWindowItems.getPublicForClassCheckBox().isSelected();
         defaultClasses = mainFormWindowItems.getDefaultForClassCheckBox().isSelected();
@@ -103,6 +61,61 @@ public class ConfigInfo {
         defaultInterfaces = mainFormWindowItems.getDefaultForInterfaceCheckBox().isSelected();
         attributesForInterfaces = mainFormWindowItems.getCheckBoxForInterfaceAttributes().isSelected();
         methodsForInterfaces = mainFormWindowItems.getCheckBoxForInterfaceMethods().isSelected();
+    }
+
+    private void processPackages(MainFormWindowItems mainFormWindowItems) {
+        if (mainFormWindowItems.getAllPackages().isSelected()) {
+            packages.add(UmlFormWindow.getFilePath().toString());
+            List<File> subdirs = getSubdirs(UmlFormWindow.getFilePath());
+            for (File file : subdirs) {
+                packages.add(file.getAbsolutePath());
+            }
+        } else if (mainFormWindowItems.getTreeViewWindow() != null && mainFormWindowItems.getTreeViewWindow().getFolders() != null) {
+            for (FolderLevel fl : mainFormWindowItems.getTreeViewWindow().getFolders()) {
+                if (fl.getjCheckBox().isSelected())
+                    packages.add(fl.getUrl().toString());
+            }
+        }
+    }
+
+    private void processConfigTargetDestination(MainFormWindowItems mainFormWindowItems) {
+        StringBuilder stringBuilder;
+        if (mainFormWindowItems.getDefaultConfigTargetDestination().isSelected()) {
+            configTargetDestination = UmlFormWindow.getFilePath().toPath().resolve("PlantUmlConfigFile.myuml").toFile().toString();
+        } else {
+            stringBuilder = new StringBuilder();
+            try {
+                stringBuilder.append(mainFormWindowItems.getDefaultConfigTargetFile().getSelectedFile().getAbsolutePath());
+                if (!stringBuilder.toString().endsWith(".myuml")) {
+                    stringBuilder.append(".myuml");
+                }
+            } catch (Exception e) {
+                int input = JOptionPane.showConfirmDialog(null,
+                        "You selected incorrect file or you didn't confirm selection. The default location: " + mainFormWindowItems.getDefaultUMLTargetDestinationDesc().getText() + " was set.", "Error", JOptionPane.DEFAULT_OPTION);
+                stringBuilder.append(UmlFormWindow.getFilePath().toPath().resolve("PlantUmlConfigFile.myuml").toFile().toString());
+            }
+            configTargetDestination = stringBuilder.toString();
+        }
+    }
+
+    private void processUmlTargetDestination(MainFormWindowItems mainFormWindowItems) {
+        StringBuilder stringBuilder;
+        if (mainFormWindowItems.getDefaultUMLTargetDestination().isSelected()) {
+            umlTargetDestination = UmlFormWindow.getFilePath().toPath().resolve("PlantUmlFile.puml").toFile().toString();
+        } else {
+            stringBuilder = new StringBuilder();
+            try {
+                stringBuilder.append(mainFormWindowItems.getDefaultUMLTargetFile().getSelectedFile().getAbsolutePath());
+                if (!stringBuilder.toString().endsWith(".puml")) {
+                    stringBuilder.append(".puml");
+                }
+            } catch (Exception e) {
+                int input = JOptionPane.showConfirmDialog(null,
+                        "You selected incorrect file or you didn't confirm selection. The default location: " + mainFormWindowItems.getDefaultUMLTargetDestinationDesc().getText() + " was set.", "Error", JOptionPane.DEFAULT_OPTION);
+                stringBuilder.append(UmlFormWindow.getFilePath().toPath().resolve("PlantUmlFile.puml").toFile().toString());
+            }
+            umlTargetDestination = stringBuilder.toString();
+        }
     }
 
     private List<File> getSubdirs(File file) {

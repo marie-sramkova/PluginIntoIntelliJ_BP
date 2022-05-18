@@ -19,22 +19,12 @@ import java.util.List;
 public class Generator {
 
     public static void createUmlFile(MainFormWindowItems mainFormWindowItems, ConfigInfo configInfo) {
-        List<File> newFolders = new ArrayList<>();
-        if (mainFormWindowItems.getTreeViewWindow() != null && mainFormWindowItems.getTreeViewWindow().getFolders() != null) {
-            for (FolderLevel fl : mainFormWindowItems.getTreeViewWindow().getFolders()) {
-                if (fl.getjCheckBox().isSelected())
-                    newFolders.add(fl.getUrl());
-            }
-        }else{
-            for (String pakage:configInfo.getPackages()) {
-                newFolders.add(new File(pakage));
-            }
-        }
+        List<File> newFolders = getFolders(mainFormWindowItems, configInfo);
         List<File> files = FileExplorer.getJavaFiles(newFolders);
         StringBuilder sb = new StringBuilder();
         sb.append("@startuml\n\n");
-        List<PackageX> packageXES = getPackageXES(files);
-        if (packageXES != null){
+        List<PackageX> packageXES = getPackageXESFromFiles(files);
+        if (packageXES != null) {
             for (PackageX packageX : packageXES) {
                 String text = UmlFilter.getTextByConfigInfo(configInfo, packageX);
                 sb.append(text);
@@ -51,9 +41,9 @@ public class Generator {
         FileController.saveToFile(configInfo.getConfigTargetDestination(), configInfo2);
     }
 
-    public static List<PackageX> getPackageXES(List<File> files) {
+    public static List<PackageX> getPackageXESFromFiles(List<File> files) {
         List<PackageX> packageXES = new ArrayList<>();
-        if (files == null){
+        if (files == null) {
             return null;
         }
         for (File file : files) {
@@ -86,31 +76,44 @@ public class Generator {
 
     public static MainFormWindowItems getDataFromFile(Project rootProject, File filePath) throws PackageFormException {
         StringBuilder text = new StringBuilder();
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(filePath.getPath()));
-            String line;
-            while((line = reader.readLine()) != null){
-                text.append(line);
-            }
-        } catch (FileNotFoundException ex) {
-            ClassToShowOptionDialogsWithTimer.showOptionDialogWithTimer("An error occurred while reading a file " + filePath.getAbsolutePath() + ".", 2);
-        } catch (IOException ex) {
-            ClassToShowOptionDialogsWithTimer.showOptionDialogWithTimer("An error occurred while reading a file " + filePath.getAbsolutePath() + ".", 2);
+        List<String> lines = FileController.loadFileToLines(filePath.getAbsolutePath().toString());
+        for (String line : lines) {
+            text.append(line);
         }
         try {
-            Gson gson = new Gson();
-            JsonParser parser = new JsonParser();
-            JsonObject object = (JsonObject) parser.parse(text.toString());
-            ConfigInfo configInfo = gson.fromJson(object, ConfigInfo.class);
+            ConfigInfo configInfo = convertTextToConfigInfoByGson(text);
             MainFormWindowItems mainFormWindowItems = ConfigInfoToMainFormWindowItemsConvertor.convert(configInfo, rootProject, filePath);
             return mainFormWindowItems;
-        } catch (PackageFormException ex){
+        } catch (PackageFormException ex) {
             throw new PackageFormException();
-//            ClassToShowOptionDialogsWithTimer.showOptionDialogWithTimer("An error occurred while processing packages.", 2);
         } catch (Exception ex) {
             int input = JOptionPane.showConfirmDialog(null,
                     "Incorrect file or impossible to load the content of the file.", "Error", JOptionPane.DEFAULT_OPTION);
             return null;
         }
+    }
+
+    private static ConfigInfo convertTextToConfigInfoByGson(StringBuilder text) {
+        Gson gson = new Gson();
+        JsonParser parser = new JsonParser();
+        JsonObject object = (JsonObject) parser.parse(text.toString());
+        ConfigInfo configInfo = gson.fromJson(object, ConfigInfo.class);
+        return configInfo;
+    }
+
+    @NotNull
+    private static List<File> getFolders(MainFormWindowItems mainFormWindowItems, ConfigInfo configInfo) {
+        List<File> newFolders = new ArrayList<>();
+        if (mainFormWindowItems.getTreeViewWindow() != null && mainFormWindowItems.getTreeViewWindow().getFolders() != null) {
+            for (FolderLevel fl : mainFormWindowItems.getTreeViewWindow().getFolders()) {
+                if (fl.getjCheckBox().isSelected())
+                    newFolders.add(fl.getUrl());
+            }
+        } else {
+            for (String pakage : configInfo.getPackages()) {
+                newFolders.add(new File(pakage));
+            }
+        }
+        return newFolders;
     }
 }
