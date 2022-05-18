@@ -1,8 +1,5 @@
 package cz.osu.kip.appLogic.umlGeneration;
 
-import cz.osu.kip.view.mainForm.FolderLevel;
-
-import java.util.Comparator;
 import java.util.List;
 
 public class PackageX {
