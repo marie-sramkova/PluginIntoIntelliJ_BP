@@ -4,10 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.intellij.openapi.project.Project;
-import cz.osu.kip.appLogic.umlGeneration.ClassX;
-import cz.osu.kip.appLogic.umlGeneration.PackageX;
-import cz.osu.kip.appLogic.umlGeneration.PackageXByFileConvertor;
-import cz.osu.kip.appLogic.umlGeneration.UmlFilter;
+import cz.osu.kip.appLogic.umlGeneration.*;
 import cz.osu.kip.view.mainForm.FolderLevel;
 import cz.osu.kip.view.mainForm.MainFormWindowItems;
 import org.jetbrains.annotations.NotNull;
@@ -15,8 +12,7 @@ import org.json.JSONObject;
 
 import javax.swing.*;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Generator {
 
@@ -26,14 +22,49 @@ public class Generator {
         StringBuilder sb = new StringBuilder();
         sb.append("@startuml\n\n");
         List<PackageX> packageXES = getPackageXESFromFiles(files);
-        if (packageXES != null) {
+        Collections.sort(packageXES, new Comparator<PackageX>(){
+            @Override
+            public int compare(PackageX p1, PackageX p2) {
+                return p1.getName().compareTo(p2.getName());
+            }
+        });
+        processPackagesAndSubpackages(configInfo, sb, packageXES);
+        sb.append("@enduml");
+        FileController.saveToFile(configInfo.getUmlTargetDestination(), sb.toString());
+    }
+
+    private static void processPackagesAndSubpackages(ConfigInfo configInfo, StringBuilder sb, List<PackageX> packageXES) {
+        List<PackageX> notClosed = new ArrayList<>();
+        int missing = 0;
+        if (packageXES != null && packageXES.size() > 0) {
             for (PackageX packageX : packageXES) {
+                if (packageX == packageXES.get(0)){
+                    notClosed.add(packageX);
+                    missing = missing + 1;
+                }else{
+                    missing = checkIfIsSubpackageOrCloseLastPackage(sb, notClosed, missing, packageX);
+                }
                 String text = UmlFilter.getTextByConfigInfo(configInfo, packageX);
                 sb.append(text);
             }
         }
-        sb.append("@enduml");
-        FileController.saveToFile(configInfo.getUmlTargetDestination(), sb.toString());
+
+        for (int i = 0; i < missing; i++) {
+            sb.append("\n}\n\n");
+        }
+    }
+
+    private static int checkIfIsSubpackageOrCloseLastPackage(StringBuilder sb, List<PackageX> notClosed, int missing, PackageX packageX) {
+        if (packageX.getName().contains(notClosed.get(notClosed.size()-1).getName())){
+            notClosed.add(packageX);
+            missing = missing + 1;
+        }else {
+            notClosed.remove(notClosed.get(notClosed.size()-1));
+            missing = missing - 1;
+            sb.append("\n}\n\n");
+            missing = checkIfIsSubpackageOrCloseLastPackage(sb, notClosed, missing, packageX);
+        }
+        return missing;
     }
 
     public static void createConfigFile(ConfigInfo configInfo) {
