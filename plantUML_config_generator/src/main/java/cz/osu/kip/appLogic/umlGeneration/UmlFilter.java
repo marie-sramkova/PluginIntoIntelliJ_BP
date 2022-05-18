@@ -17,7 +17,6 @@ public class UmlFilter {
         processClassesX(packageX, sb);
         processInterfaces(packageX, sb);
 
-        sb.append("\n}\n\n");
         return sb.toString();
     }
 
