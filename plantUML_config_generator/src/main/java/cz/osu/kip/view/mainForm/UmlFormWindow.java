@@ -40,6 +40,13 @@ public class UmlFormWindow extends JFrame {
         return mainFormWindowItems;
     }
 
+    public void setMainFormWindowItems(MainFormWindowItems mainFormWindowItems) {
+        this.mainFormWindowItems = mainFormWindowItems;
+
+        mainFormWindowPanels = new MainFormWindowPanels(currentProject, filePath, mainFormWindowItems);
+        showFormWindow();
+    }
+
     public SubmitStateForFormWindow getSubmitState() {
         return submitState;
     }

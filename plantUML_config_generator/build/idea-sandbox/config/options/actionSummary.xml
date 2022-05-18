@@ -16,34 +16,34 @@
       <i c="1" l="1651650587300" />
     </e>
     <e n="EditorBackSpace">
-      <i c="46" l="1652804416616" />
+      <i c="48" l="1652833007582" />
     </e>
     <e n="EditorChooseLookupItemReplace">
       <i c="7" l="1652791362623" />
     </e>
     <e n="EditorCopy">
-      <i c="11" l="1652804250240" />
+      <i c="12" l="1652832942825" />
     </e>
     <e n="EditorCut">
-      <i c="1" l="1652791379591" />
+      <i c="2" l="1652832964479" />
     </e>
     <e n="EditorDown">
       <i c="3" l="1652791319955" />
     </e>
     <e n="EditorEnter">
-      <i c="35" l="1652791387918" />
+      <i c="36" l="1652832946383" />
     </e>
     <e n="EditorLeft">
       <i c="2" l="1652791342394" />
     </e>
     <e n="EditorPaste">
-      <i c="11" l="1652791388268" />
+      <i c="13" l="1652832966055" />
     </e>
     <e n="EditorRight">
       <i c="5" l="1652790977959" />
     </e>
     <e n="EditorTab">
-      <i c="3" l="1652804413180" />
+      <i c="4" l="1652832948131" />
     </e>
     <e n="EditorToggleInsertState">
       <i c="2" l="1652791325409" />
@@ -82,7 +82,7 @@
       <i c="3" l="1652790434719" />
     </e>
     <e n="SaveAll">
-      <i c="10" l="1652813588261" />
+      <i c="12" l="1652833010184" />
     </e>
     <e n="ShowIntentionActions">
       <i c="2" l="1652791342781" />
@@ -103,7 +103,7 @@
       <i c="2" l="1647024469697" />
     </e>
     <e n="com.intellij.openapi.fileEditor.impl.tabActions.CloseTab">
-      <i c="3" l="1652807188743" />
+      <i c="9" l="1652833611311" />
     </e>
     <e n="com.intellij.openapi.project.DumbAwareAction$SimpleDumbAwareAction">
       <i c="1" l="1652293405588" />

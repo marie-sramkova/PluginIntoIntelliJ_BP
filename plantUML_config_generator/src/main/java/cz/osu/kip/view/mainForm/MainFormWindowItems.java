@@ -256,6 +256,14 @@ public class MainFormWindowItems {
         checkBoxForInterfaceMethods.setVisible(false);
     }
 
+    public UmlFormWindow getUmlFormWindow() {
+        return umlFormWindow;
+    }
+
+    public void setUmlFormWindow(UmlFormWindow umlFormWindow) {
+        this.umlFormWindow = umlFormWindow;
+    }
+
     @NotNull
     private String setDefaultTargetDestinationText(File filePath) {
         String defaultUmlTargetDestinationText = filePath.toString();

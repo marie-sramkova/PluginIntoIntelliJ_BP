@@ -28,11 +28,18 @@ public class ProjectMenuAction extends AnAction {
         System.out.println(rootProject);
         System.out.println(filePath);
         if (filePath.isDirectory()) {
-            showNewForm(rootProject, filePath, null);
+            UmlFormWindow umlFormWindow = showNewForm(rootProject, filePath, null);
         } else {
+            MainFormWindowItems mainFormWindowItems = null;
             try{
-                MainFormWindowItems mainFormWindowItems = Generator.getDataFromFile(rootProject, filePath);
-                showNewForm(rootProject, filePath, mainFormWindowItems);
+//                mainFormWindowItems = Generator.getDataFromFile(rootProject, filePath);
+//                UmlFormWindow umlFormWindow = showNewForm(rootProject, filePath, mainFormWindowItems);
+//                mainFormWindowItems.setUmlFormWindow(umlFormWindow);
+
+                mainFormWindowItems = Generator.getDataFromFile(rootProject, filePath);
+                if (mainFormWindowItems != null) {
+                    UmlFormWindow umlFormWindow = showNewForm(rootProject, filePath, mainFormWindowItems);
+                }
             }
             catch (PackageFormException ex){
                 ClassToShowOptionDialogsWithTimer.showOptionDialogWithTimer("An error occurred while processing packages.", 2);
@@ -40,7 +47,7 @@ public class ProjectMenuAction extends AnAction {
         }
     }
 
-    private void showNewForm(Project rootProject, File filePath, MainFormWindowItems mainFormWindowItems) {
+    private UmlFormWindow showNewForm(Project rootProject, File filePath, MainFormWindowItems mainFormWindowItems) {
         UmlFormWindow umlFormWindow;
         if (mainFormWindowItems == null) {
             umlFormWindow = new UmlFormWindow(rootProject, filePath);
@@ -69,5 +76,6 @@ public class ProjectMenuAction extends AnAction {
                 }
             }
         });
+        return umlFormWindow;
     }
 }
