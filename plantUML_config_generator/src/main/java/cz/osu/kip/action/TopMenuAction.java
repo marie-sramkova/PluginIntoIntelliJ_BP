@@ -3,11 +3,11 @@ package cz.osu.kip.action;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.DumbAwareAction;
 import com.intellij.openapi.project.Project;
-import cz.osu.kip.appLogic.PackageFormException;
-import cz.osu.kip.view.ClassToShowOptionDialogsWithTimer;
 import cz.osu.kip.appLogic.ConfigInfo;
 import cz.osu.kip.appLogic.FileExplorer;
 import cz.osu.kip.appLogic.Generator;
+import cz.osu.kip.appLogic.PackageFormException;
+import cz.osu.kip.view.ClassToShowOptionDialogsWithTimer;
 import cz.osu.kip.view.configForm.ConfigFormWindow;
 import cz.osu.kip.view.configForm.SubmitStateForConfigFormWindow;
 import cz.osu.kip.view.mainForm.FolderLevel;
@@ -15,7 +15,9 @@ import cz.osu.kip.view.mainForm.MainFormWindowItems;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
-import java.io.*;
+import java.io.File;
+import java.io.FileFilter;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -76,7 +78,7 @@ public class TopMenuAction extends DumbAwareAction {
                         configFormWindow.show();
                     }
                 } catch (IOException ex) {
-                    ClassToShowOptionDialogsWithTimer.showOptionDialogWithTimer("Cannot delete the file " + filePath.toString() + ".", 2);
+                    ClassToShowOptionDialogsWithTimer.showOptionDialogWithTimer("Cannot delete the file " + filePath + ".", 2);
                 }
             }
         }

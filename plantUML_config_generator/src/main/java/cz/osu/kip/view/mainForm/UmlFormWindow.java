@@ -11,22 +11,22 @@ import java.io.File;
 public class UmlFormWindow extends JFrame {
     private static Project currentProject;
     private static File filePath;
-    private  MainFormWindowItems mainFormWindowItems;
+    private MainFormWindowItems mainFormWindowItems;
     private MainFormWindowPanels mainFormWindowPanels;
     private SubmitStateForFormWindow submitState = SubmitStateForFormWindow.CANCEL;
     private String title = "PlantUML/config generation";
 
-    public UmlFormWindow(Project currentProject, File filePath){
-        this.currentProject = currentProject;
-        this.filePath = filePath;
+    public UmlFormWindow(Project currentProject, File filePath) {
+        UmlFormWindow.currentProject = currentProject;
+        UmlFormWindow.filePath = filePath;
         mainFormWindowItems = new MainFormWindowItems(filePath, this);
         mainFormWindowPanels = new MainFormWindowPanels(currentProject, filePath, mainFormWindowItems);
         showFormWindow();
     }
 
-    public UmlFormWindow(Project currentProject, File filePath, MainFormWindowItems mainFormWindowItems){
-        this.currentProject = currentProject;
-        this.filePath = filePath;
+    public UmlFormWindow(Project currentProject, File filePath, MainFormWindowItems mainFormWindowItems) {
+        UmlFormWindow.currentProject = currentProject;
+        UmlFormWindow.filePath = filePath;
         this.mainFormWindowItems = mainFormWindowItems;
         mainFormWindowPanels = new MainFormWindowPanels(currentProject, filePath, mainFormWindowItems);
         showFormWindow();
@@ -107,7 +107,7 @@ public class UmlFormWindow extends JFrame {
         return panel;
     }
 
-    public void refresh(){
+    public void refresh() {
         mainFormWindowPanels.getContentPanel().revalidate();
         mainFormWindowPanels.getContentPanel().repaint();
         pack();

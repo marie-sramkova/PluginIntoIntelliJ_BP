@@ -54,7 +54,7 @@ public class PackageXByFileConvertor {
             if (stillComment == true) {
                 if (line.contains("*/")
                         && (getCountOfFoundStringInStringNotInQuotation(line.substring(0, line.indexOf("*/")), "\"") % 2) == 0
-                        && (getCountOfFoundStringInStringNotInQuotation(line.substring(0, line.indexOf("*/")), "\'") % 2) == 0) {
+                        && (getCountOfFoundStringInStringNotInQuotation(line.substring(0, line.indexOf("*/")), "'") % 2) == 0) {
                     stillComment = false;
                     int endIndex = line.indexOf("*/");
                     line = line.substring(endIndex + 2);
@@ -67,11 +67,11 @@ public class PackageXByFileConvertor {
             }
             while (line.contains("/*")
                     && (getCountOfFoundStringInStringNotInQuotation(line.substring(0, line.indexOf("/*")), "\"") % 2) == 0
-                    && (getCountOfFoundStringInStringNotInQuotation(line.substring(0, line.indexOf("/*")), "\'") % 2) == 0) {
+                    && (getCountOfFoundStringInStringNotInQuotation(line.substring(0, line.indexOf("/*")), "'") % 2) == 0) {
                 int startIndex = line.indexOf("/*");
                 if (line.contains("*/")
                         && (getCountOfFoundStringInStringNotInQuotation(line.substring(0, line.indexOf("*/")), "\"") % 2) == 0
-                        && (getCountOfFoundStringInStringNotInQuotation(line.substring(0, line.indexOf("*/")), "\'") % 2) == 0) {
+                        && (getCountOfFoundStringInStringNotInQuotation(line.substring(0, line.indexOf("*/")), "'") % 2) == 0) {
                     StringBuilder sb = new StringBuilder();
                     int endIndex = line.indexOf("*/") + 2;
                     line = sb.append(line.substring(0, startIndex)).append(line.substring(endIndex)).toString();
@@ -124,13 +124,13 @@ public class PackageXByFileConvertor {
         int countNotInQuotation = 0;
         if (line.contains(foundString)) {
             int countOfFoundString = StringUtils.countMatches(line, foundString);
-            if (line.contains("\"") || line.contains("\'")) {
+            if (line.contains("\"") || line.contains("'")) {
                 String tmp;
                 int endIndex = line.indexOf(foundString);
                 for (int i = 0; i < countOfFoundString; i++) {
                     tmp = line.substring(0, endIndex);
                     int countOfDoubleQuotationMarks = StringUtils.countMatches(tmp, "\"");
-                    int countOfSimpleQuotationMarks = StringUtils.countMatches(tmp, "\'");
+                    int countOfSimpleQuotationMarks = StringUtils.countMatches(tmp, "'");
                     if (countOfDoubleQuotationMarks % 2 == 0 && countOfSimpleQuotationMarks % 2 == 0) {
                         countNotInQuotation = countNotInQuotation + 1;
                     }
@@ -149,7 +149,7 @@ public class PackageXByFileConvertor {
         if (type != null) {
             String name = getNameOfClass(lines.get(0));
             String tmp = lines.get(0).trim().substring((type.length() + name.length()) + 1).trim();
-            if (isPublic && lines.get(0).contains("public")){
+            if (isPublic && lines.get(0).contains("public")) {
                 tmp = tmp.substring(7).trim();
             }
             boolean extendsStatus = false, implementsStatus = false;
@@ -216,11 +216,11 @@ public class PackageXByFileConvertor {
     }
 
     private static boolean getIfClassIsPublic(String line) {
-        if (line.trim().startsWith("interface") || line.trim().startsWith("class"))
+        if (line.trim().startsWith("interface") || line.trim().startsWith("class")) {
             return false;
-        else if (line.trim().startsWith("public interface") || line.trim().startsWith("public class"))
+        } else if(line.trim().startsWith("public interface") || line.trim().startsWith("public class")) {
             return true;
-        else return false;
+        } else return false;
     }
 
     private static AttributeX getAttributeFromLine(String line) {
@@ -286,7 +286,7 @@ public class PackageXByFileConvertor {
             implementedInterfaces.add(implementedInterface);
             tmp = tmp.substring(lastIndex + 2);
         }
-        implementedInterface = tmp.substring(0, tmp.length()).trim();
+        implementedInterface = tmp.trim();
         implementedInterfaces.add(implementedInterface);
 
         return implementedInterfaces;
@@ -297,21 +297,21 @@ public class PackageXByFileConvertor {
         String extendedClass = tmp.substring(startIndex + 8);
         int lastIndex = extendedClass.length() - 1;
         if (extendedClass.contains("implements")
-                && getCountOfFoundStringInStringNotInQuotation(extendedClass, "implements") > 0){
+                && getCountOfFoundStringInStringNotInQuotation(extendedClass, "implements") > 0) {
             lastIndex = extendedClass.indexOf("implements");
-        }else{
+        } else {
             lastIndex = extendedClass.indexOf("{");
         }
         extendedClass = extendedClass.substring(0, lastIndex).trim();
         List<String> extendedClassesX = new ArrayList<>();
         while (extendedClass.contains(",")
-            && getCountOfFoundStringInStringNotInQuotation(extendedClass, ",") > 0) {
+                && getCountOfFoundStringInStringNotInQuotation(extendedClass, ",") > 0) {
             lastIndex = extendedClass.indexOf(",");
             String extendedClassx = extendedClass.substring(0, lastIndex);
             extendedClassesX.add(extendedClassx);
             extendedClass = extendedClass.substring(lastIndex + 2);
         }
-        extendedClass = extendedClass.substring(0, extendedClass.length()).trim();
+        extendedClass = extendedClass.trim();
         extendedClassesX.add(extendedClass);
 
         return extendedClassesX;
@@ -331,7 +331,7 @@ public class PackageXByFileConvertor {
     }
 
     private static String getNameOfClass(String line) {
-        if (line.startsWith("public")){
+        if (line.startsWith("public")) {
             line = line.substring(7);
         }
         line = line.trim();

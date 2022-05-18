@@ -51,7 +51,7 @@ public class MainFormWindowPanels {
         JBScrollPane scrollPane = new JBScrollPane(contentPanel);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        scrollPane.setPreferredSize(new Dimension(790,450));
+        scrollPane.setPreferredSize(new Dimension(790, 450));
         JPanel contentPane = new JPanel();
         contentPane.setPreferredSize(new Dimension(800, 500));
         contentPane.add(scrollPane);
@@ -168,7 +168,7 @@ public class MainFormWindowPanels {
             @Override
             public void paint(Graphics g) {
                 super.paint(g);
-                g.drawLine(0,0, 770, 0);
+                g.drawLine(0, 0, 770, 0);
             }
         };
 
@@ -229,9 +229,10 @@ public class MainFormWindowPanels {
                         .addGroup(groupLayout.createParallelGroup(BASELINE)
                                 .addComponent(mainFormWindowItems.getCheckBoxForInterfaceAttributes())
                                 .addComponent(mainFormWindowItems.getCheckBoxForInterfaceMethods()))
-                        );}
+        );
+    }
 
-    private GroupLayout setSubpanelsLayout(JPanel jPanel){
+    private GroupLayout setSubpanelsLayout(JPanel jPanel) {
         Border blackline = BorderFactory.createLineBorder(Color.black);
         jPanel.setBorder(blackline);
         jPanel.setMinimumSize(new Dimension(775, 0));

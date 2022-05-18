@@ -89,19 +89,19 @@ public class MainFormWindowItems {
                 } else {
                     if (initialUrl != null) {
                         newPackagesTreeViewWindow = new PackagesTreeViewWindow(packagesTreeViewWindow, initialUrl);
-                    }else{
+                    } else {
                         newPackagesTreeViewWindow = new PackagesTreeViewWindow(packagesTreeViewWindow, UmlFormWindow.getFilePath().toString());
                     }
                 }
                 newPackagesTreeViewWindow.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosed(java.awt.event.WindowEvent windowEvent) {
-                        if (!newPackagesTreeViewWindow.isWasCanceled()){
+                        if (!newPackagesTreeViewWindow.isWasCanceled()) {
                             packagesTreeViewWindow = newPackagesTreeViewWindow;
                         }
                     }
                 });
-            }else{
+            } else {
                 buttonToShowSelectedPackages.setVisible(false);
                 packagesTreeViewWindow = null;
             }
@@ -268,16 +268,15 @@ public class MainFormWindowItems {
     private String setDefaultTargetDestinationText(File filePath) {
         String defaultUmlTargetDestinationText = filePath.toString();
         int rowLength = 120;
-        if (defaultUmlTargetDestinationText.length() > rowLength){
+        if (defaultUmlTargetDestinationText.length() > rowLength) {
             StringBuilder sb = new StringBuilder();
             sb.append("<html>");
-            while(defaultUmlTargetDestinationText.length() > rowLength) {
-                String row = defaultUmlTargetDestinationText.substring(0,rowLength);
-                int lastIndexOfSlash = row.length()-1;
+            while (defaultUmlTargetDestinationText.length() > rowLength) {
+                String row = defaultUmlTargetDestinationText.substring(0, rowLength);
+                int lastIndexOfSlash = row.length() - 1;
                 if (row.contains("/")) {
                     lastIndexOfSlash = row.lastIndexOf("/");
-                }
-                else if (row.contains("\\")) {
+                } else if (row.contains("\\")) {
                     lastIndexOfSlash = row.lastIndexOf("\\");
                 }
                 sb.append(row.substring(0, lastIndexOfSlash)).append("<br>");
@@ -314,8 +313,29 @@ public class MainFormWindowItems {
         return classesCheckBox;
     }
 
+    public void setClassesCheckBox(boolean selected) {
+        this.classesCheckBox.setSelected(selected);
+        if (selected == true) {
+            this.publicForClassCheckBox.setVisible(true);
+            this.defaultForClassCheckBox.setVisible(true);
+            this.checkBoxForClassAttributes.setVisible(true);
+            this.checkBoxForClassMethods.setVisible(true);
+            this.checkBoxForInnerClasses.setVisible(true);
+        }
+    }
+
     public JCheckBox getInterfacesCheckBox() {
         return interfacesCheckBox;
+    }
+
+    public void setInterfacesCheckBox(boolean selected) {
+        this.interfacesCheckBox.setSelected(selected);
+        if (selected == true) {
+            this.publicForInterfaceCheckBox.setVisible(true);
+            this.defaultForInterfaceCheckBox.setVisible(true);
+            this.checkBoxForInterfaceAttributes.setVisible(true);
+            this.checkBoxForInterfaceMethods.setVisible(true);
+        }
     }
 
     public JFileChooser getDefaultUMLTargetFile() {
@@ -334,8 +354,18 @@ public class MainFormWindowItems {
         return ownUMLTargetDestination;
     }
 
+    public void setOwnUMLTargetDestination(String umlTargetDestination) {
+        this.ownUMLTargetDestination.setSelected(true);
+        defaultUMLTargetFile.setVisible(true);
+        defaultUMLTargetFile.setSelectedFile(new File(umlTargetDestination));
+    }
+
     public JLabel getDefaultUMLTargetDestinationDesc() {
         return defaultUMLTargetDestinationDesc;
+    }
+
+    public void setDefaultUMLTargetDestinationDesc(JLabel defaultUMLTargetDestinationDesc) {
+        this.defaultUMLTargetDestinationDesc = defaultUMLTargetDestinationDesc;
     }
 
     public JRadioButton getDefaultConfigTargetDestination() {
@@ -346,24 +376,50 @@ public class MainFormWindowItems {
         return ownConfigTargetDestination;
     }
 
+    public void setOwnConfigTargetDestination(String configTargetDestination) {
+        this.ownConfigTargetDestination.setSelected(true);
+        defaultConfigTargetFile.setVisible(true);
+        defaultConfigTargetFile.setSelectedFile(new File(configTargetDestination));
+    }
+
     public JLabel getDefaultConfigTargetDestinationDesc() {
         return defaultConfigTargetDestinationDesc;
+    }
+
+    public void setDefaultConfigTargetDestinationDesc(JLabel defaultConfigTargetDestinationDesc) {
+        this.defaultConfigTargetDestinationDesc = defaultConfigTargetDestinationDesc;
     }
 
     public JCheckBox getPublicForClassCheckBox() {
         return publicForClassCheckBox;
     }
 
+    public void setPublicForClassCheckBox(boolean selected) {
+        this.publicForClassCheckBox.setSelected(selected);
+    }
+
     public JCheckBox getDefaultForClassCheckBox() {
         return defaultForClassCheckBox;
+    }
+
+    public void setDefaultForClassCheckBox(boolean selected) {
+        this.defaultForClassCheckBox.setSelected(selected);
     }
 
     public JCheckBox getPublicForInterfaceCheckBox() {
         return publicForInterfaceCheckBox;
     }
 
+    public void setPublicForInterfaceCheckBox(boolean selected) {
+        this.publicForInterfaceCheckBox.setSelected(selected);
+    }
+
     public JCheckBox getDefaultForInterfaceCheckBox() {
         return defaultForInterfaceCheckBox;
+    }
+
+    public void setDefaultForInterfaceCheckBox(boolean selected) {
+        this.defaultForInterfaceCheckBox.setSelected(selected);
     }
 
     public PackagesTreeViewWindow getTreeViewWindow() {
@@ -374,122 +430,9 @@ public class MainFormWindowItems {
         return checkBoxForClassAttributes;
     }
 
-    public JCheckBox getCheckBoxForClassMethods() {
-        return checkBoxForClassMethods;
-    }
-
-    public JCheckBox getCheckBoxForInnerClasses() {
-        return checkBoxForInnerClasses;
-    }
-
-    public JCheckBox getCheckBoxForPrivateClassAttributes() {
-        return checkBoxForPrivateClassAttributes;
-    }
-
-    public JCheckBox getCheckBoxForPublicClassAttributes() {
-        return checkBoxForPublicClassAttributes;
-    }
-
-    public JCheckBox getCheckBoxForProtectedClassAttributes() {
-        return checkBoxForProtectedClassAttributes;
-    }
-
-    public JCheckBox getCheckBoxForInternalClassAttributes() {
-        return checkBoxForInternalClassAttributes;
-    }
-
-    public JCheckBox getCheckBoxForPrivateClassMethods() {
-        return checkBoxForPrivateClassMethods;
-    }
-
-    public JCheckBox getCheckBoxForPublicClassMethods() {
-        return checkBoxForPublicClassMethods;
-    }
-
-    public JCheckBox getCheckBoxForProtectedClassMethods() {
-        return checkBoxForProtectedClassMethods;
-    }
-
-    public JCheckBox getCheckBoxForInternalClassMethods() {
-        return checkBoxForInternalClassMethods;
-    }
-
-    public JCheckBox getCheckBoxForInterfaceAttributes() {
-        return checkBoxForInterfaceAttributes;
-    }
-
-    public JCheckBox getCheckBoxForInterfaceMethods() {
-        return checkBoxForInterfaceMethods;
-    }
-
-    public void setDefaultUMLTargetDestination() {
-        this.defaultUMLTargetDestination.setSelected(true);
-        defaultUMLTargetDestinationDesc.setVisible(true);
-    }
-
-    public void setOwnUMLTargetDestination(String umlTargetDestination) {
-        this.ownUMLTargetDestination.setSelected(true);
-        defaultUMLTargetFile.setVisible(true);
-        defaultUMLTargetFile.setSelectedFile(new File(umlTargetDestination));
-    }
-
-    public void setDefaultConfigTargetDestination() {
-        this.defaultConfigTargetDestination.setSelected(true);
-        this.defaultConfigTargetDestinationDesc.setVisible(true);
-    }
-
-    public void setOwnConfigTargetDestination(String configTargetDestination) {
-        this.ownConfigTargetDestination.setSelected(true);
-        defaultConfigTargetFile.setVisible(true);
-        defaultConfigTargetFile.setSelectedFile(new File(configTargetDestination));
-    }
-
-    public void setOwnPackages(PackagesTreeViewWindow packagesTreeViewWindow, String initialUrl) {
-        this.ownPackages.setSelected(true);
-        this.packagesTreeViewWindow = packagesTreeViewWindow;
-        this.initialUrl = initialUrl;
-    }
-
-    public void setClassesCheckBox(boolean selected) {
-        this.classesCheckBox.setSelected(selected);
-        if (selected == true){
-            this.publicForClassCheckBox.setVisible(true);
-            this.defaultForClassCheckBox.setVisible(true);
-            this.checkBoxForClassAttributes.setVisible(true);
-            this.checkBoxForClassMethods.setVisible(true);
-            this.checkBoxForInnerClasses.setVisible(true);
-        }
-    }
-
-    public void setInterfacesCheckBox(boolean selected) {
-        this.interfacesCheckBox.setSelected(selected);
-        if (selected == true){
-            this.publicForInterfaceCheckBox.setVisible(true);
-            this.defaultForInterfaceCheckBox.setVisible(true);
-            this.checkBoxForInterfaceAttributes.setVisible(true);
-            this.checkBoxForInterfaceMethods.setVisible(true);
-        }
-    }
-
-    public void setPublicForClassCheckBox(boolean selected) {
-        this.publicForClassCheckBox.setSelected(selected);
-    }
-
-    public void setDefaultForClassCheckBox(boolean selected) {
-        this.defaultForClassCheckBox.setSelected(selected);
-    }
-
-    public void setPublicForInterfaceCheckBox(boolean selected) {
-        this.publicForInterfaceCheckBox.setSelected(selected);
-    }
-
-    public void setDefaultForInterfaceCheckBox(boolean selected) {
-        this.defaultForInterfaceCheckBox.setSelected(selected);
-    }
-
     public void setCheckBoxForClassAttributes(boolean selected) {
         this.checkBoxForClassAttributes.setSelected(selected);
-        if (selected == true){
+        if (selected == true) {
             this.checkBoxForPrivateClassAttributes.setVisible(true);
             this.checkBoxForPublicClassAttributes.setVisible(true);
             this.checkBoxForProtectedClassAttributes.setVisible(true);
@@ -497,9 +440,13 @@ public class MainFormWindowItems {
         }
     }
 
+    public JCheckBox getCheckBoxForClassMethods() {
+        return checkBoxForClassMethods;
+    }
+
     public void setCheckBoxForClassMethods(boolean selected) {
         this.checkBoxForClassMethods.setSelected(selected);
-        if (selected == true){
+        if (selected == true) {
             this.checkBoxForPrivateClassMethods.setVisible(true);
             this.checkBoxForPublicClassMethods.setVisible(true);
             this.checkBoxForProtectedClassMethods.setVisible(true);
@@ -507,55 +454,107 @@ public class MainFormWindowItems {
         }
     }
 
+    public JCheckBox getCheckBoxForInnerClasses() {
+        return checkBoxForInnerClasses;
+    }
+
     public void setCheckBoxForInnerClasses(boolean selected) {
         this.checkBoxForInnerClasses.setSelected(selected);
+    }
+
+    public JCheckBox getCheckBoxForPrivateClassAttributes() {
+        return checkBoxForPrivateClassAttributes;
     }
 
     public void setCheckBoxForPrivateClassAttributes(boolean selected) {
         this.checkBoxForPrivateClassAttributes.setSelected(selected);
     }
 
+    public JCheckBox getCheckBoxForPublicClassAttributes() {
+        return checkBoxForPublicClassAttributes;
+    }
+
     public void setCheckBoxForPublicClassAttributes(boolean selected) {
         this.checkBoxForPublicClassAttributes.setSelected(selected);
+    }
+
+    public JCheckBox getCheckBoxForProtectedClassAttributes() {
+        return checkBoxForProtectedClassAttributes;
     }
 
     public void setCheckBoxForProtectedClassAttributes(boolean selected) {
         this.checkBoxForProtectedClassAttributes.setSelected(selected);
     }
 
+    public JCheckBox getCheckBoxForInternalClassAttributes() {
+        return checkBoxForInternalClassAttributes;
+    }
+
     public void setCheckBoxForInternalClassAttributes(boolean selected) {
         this.checkBoxForInternalClassAttributes.setSelected(selected);
+    }
+
+    public JCheckBox getCheckBoxForPrivateClassMethods() {
+        return checkBoxForPrivateClassMethods;
     }
 
     public void setCheckBoxForPrivateClassMethods(boolean selected) {
         this.checkBoxForPrivateClassMethods.setSelected(selected);
     }
 
+    public JCheckBox getCheckBoxForPublicClassMethods() {
+        return checkBoxForPublicClassMethods;
+    }
+
     public void setCheckBoxForPublicClassMethods(boolean selected) {
         this.checkBoxForPublicClassMethods.setSelected(selected);
+    }
+
+    public JCheckBox getCheckBoxForProtectedClassMethods() {
+        return checkBoxForProtectedClassMethods;
     }
 
     public void setCheckBoxForProtectedClassMethods(boolean selected) {
         this.checkBoxForProtectedClassMethods.setSelected(selected);
     }
 
+    public JCheckBox getCheckBoxForInternalClassMethods() {
+        return checkBoxForInternalClassMethods;
+    }
+
     public void setCheckBoxForInternalClassMethods(boolean selected) {
         this.checkBoxForInternalClassMethods.setSelected(selected);
+    }
+
+    public JCheckBox getCheckBoxForInterfaceAttributes() {
+        return checkBoxForInterfaceAttributes;
     }
 
     public void setCheckBoxForInterfaceAttributes(boolean selected) {
         this.checkBoxForInterfaceAttributes.setSelected(selected);
     }
 
+    public JCheckBox getCheckBoxForInterfaceMethods() {
+        return checkBoxForInterfaceMethods;
+    }
+
     public void setCheckBoxForInterfaceMethods(boolean selected) {
         this.checkBoxForInterfaceMethods.setSelected(selected);
     }
 
-    public void setDefaultUMLTargetDestinationDesc(JLabel defaultUMLTargetDestinationDesc) {
-        this.defaultUMLTargetDestinationDesc = defaultUMLTargetDestinationDesc;
+    public void setDefaultUMLTargetDestination() {
+        this.defaultUMLTargetDestination.setSelected(true);
+        defaultUMLTargetDestinationDesc.setVisible(true);
     }
 
-    public void setDefaultConfigTargetDestinationDesc(JLabel defaultConfigTargetDestinationDesc) {
-        this.defaultConfigTargetDestinationDesc = defaultConfigTargetDestinationDesc;
+    public void setDefaultConfigTargetDestination() {
+        this.defaultConfigTargetDestination.setSelected(true);
+        this.defaultConfigTargetDestinationDesc.setVisible(true);
+    }
+
+    public void setOwnPackages(PackagesTreeViewWindow packagesTreeViewWindow, String initialUrl) {
+        this.ownPackages.setSelected(true);
+        this.packagesTreeViewWindow = packagesTreeViewWindow;
+        this.initialUrl = initialUrl;
     }
 }

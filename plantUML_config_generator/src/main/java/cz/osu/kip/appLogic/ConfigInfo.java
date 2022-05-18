@@ -1,9 +1,8 @@
 package cz.osu.kip.appLogic;
 
-import cz.osu.kip.view.ClassToShowOptionDialogsWithTimer;
 import cz.osu.kip.view.mainForm.FolderLevel;
-import cz.osu.kip.view.mainForm.UmlFormWindow;
 import cz.osu.kip.view.mainForm.MainFormWindowItems;
+import cz.osu.kip.view.mainForm.UmlFormWindow;
 
 import javax.swing.*;
 import java.io.File;
@@ -92,7 +91,7 @@ public class ConfigInfo {
             } catch (Exception e) {
                 int input = JOptionPane.showConfirmDialog(null,
                         "You selected incorrect file or you didn't confirm selection. The default location: " + mainFormWindowItems.getDefaultUMLTargetDestinationDesc().getText() + " was set.", "Error", JOptionPane.DEFAULT_OPTION);
-                stringBuilder.append(UmlFormWindow.getFilePath().toPath().resolve("PlantUmlConfigFile.myuml").toFile().toString());
+                stringBuilder.append(UmlFormWindow.getFilePath().toPath().resolve("PlantUmlConfigFile.myuml").toFile());
             }
             configTargetDestination = stringBuilder.toString();
         }
@@ -112,7 +111,7 @@ public class ConfigInfo {
             } catch (Exception e) {
                 int input = JOptionPane.showConfirmDialog(null,
                         "You selected incorrect file or you didn't confirm selection. The default location: " + mainFormWindowItems.getDefaultUMLTargetDestinationDesc().getText() + " was set.", "Error", JOptionPane.DEFAULT_OPTION);
-                stringBuilder.append(UmlFormWindow.getFilePath().toPath().resolve("PlantUmlFile.puml").toFile().toString());
+                stringBuilder.append(UmlFormWindow.getFilePath().toPath().resolve("PlantUmlFile.puml").toFile());
             }
             umlTargetDestination = stringBuilder.toString();
         }

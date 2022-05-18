@@ -2,9 +2,9 @@ package cz.osu.kip.appLogic;
 
 import com.intellij.openapi.project.Project;
 import cz.osu.kip.view.mainForm.FolderLevel;
-import cz.osu.kip.view.mainForm.UmlFormWindow;
 import cz.osu.kip.view.mainForm.MainFormWindowItems;
 import cz.osu.kip.view.mainForm.PackagesTreeViewWindow;
+import cz.osu.kip.view.mainForm.UmlFormWindow;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -81,7 +81,7 @@ public class ConfigInfoToMainFormWindowItemsConvertor {
     private static String getCorrectInitialURL(String initialURL) {
         if (initialURL.contains("/")) {
             if (initialURL.substring(initialURL.lastIndexOf("/")).contains(".")) {
-                initialURL = initialURL.toString().substring(0, initialURL.toString().lastIndexOf("/"));
+                initialURL = initialURL.substring(0, initialURL.lastIndexOf("/"));
             }
         } else if (initialURL.contains("\\")) {
             if (initialURL.substring(initialURL.lastIndexOf("\\")).contains(".")) {
