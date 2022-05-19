@@ -1,0 +1,18 @@
+<options>
+  <configurable id="preferences.keymap" configurable_name="Keymap">
+    <option name="file" path="ActionManager" hit="Generate the file" />
+    <option name="generate" path="ActionManager" hit="Generate the file" />
+    <option name="the" path="ActionManager" hit="Generate the file" />
+    <option name="config" path="ActionManager" hit="PlantUML/config generation" />
+    <option name="generation" path="ActionManager" hit="PlantUML/config generation" />
+    <option name="plantuml" path="ActionManager" hit="PlantUML/config generation" />
+    <option name="config" path="ActionManager" hit="generate diagram or config file" />
+    <option name="diagram" path="ActionManager" hit="generate diagram or config file" />
+    <option name="file" path="ActionManager" hit="generate diagram or config file" />
+    <option name="generate" path="ActionManager" hit="generate diagram or config file" />
+    <option name="or" path="ActionManager" hit="generate diagram or config file" />
+    <option name="file" path="ActionManager" hit="generate the file" />
+    <option name="generate" path="ActionManager" hit="generate the file" />
+    <option name="the" path="ActionManager" hit="generate the file" />
+  </configurable>
+</options>
