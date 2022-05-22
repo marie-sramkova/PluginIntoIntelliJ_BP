@@ -1,9 +1,6 @@
 <options>
   <configurable id="preferences.keymap" configurable_name="Keymap">
     <option name="" path="ActionManager" hit="" />
-    <option name="browse" path="ActionManager" hit="Browse Perforce Shelf…" />
-    <option name="perforce" path="ActionManager" hit="Browse Perforce Shelf…" />
-    <option name="shelf" path="ActionManager" hit="Browse Perforce Shelf…" />
     <option name="checkout" path="ActionManager" hit="Checkout the file or dir from Perforce" />
     <option name="dir" path="ActionManager" hit="Checkout the file or dir from Perforce" />
     <option name="file" path="ActionManager" hit="Checkout the file or dir from Perforce" />
@@ -50,6 +47,29 @@
     <option name="offline" path="ActionManager" hit="Toggle between offline and online mode" />
     <option name="online" path="ActionManager" hit="Toggle between offline and online mode" />
     <option name="toggle" path="ActionManager" hit="Toggle between offline and online mode" />
+    <option name="unshelve" path="ActionManager" hit="Unshelve" />
+    <option name="and" path="ActionManager" hit="Unshelve and Delete" />
+    <option name="delete" path="ActionManager" hit="Unshelve and Delete" />
+    <option name="unshelve" path="ActionManager" hit="Unshelve and Delete" />
+    <option name="changelist" path="ActionManager" hit="Unshelve selected changes to the default changelist" />
+    <option name="changes" path="ActionManager" hit="Unshelve selected changes to the default changelist" />
+    <option name="default" path="ActionManager" hit="Unshelve selected changes to the default changelist" />
+    <option name="selected" path="ActionManager" hit="Unshelve selected changes to the default changelist" />
+    <option name="the" path="ActionManager" hit="Unshelve selected changes to the default changelist" />
+    <option name="to" path="ActionManager" hit="Unshelve selected changes to the default changelist" />
+    <option name="unshelve" path="ActionManager" hit="Unshelve selected changes to the default changelist" />
+    <option name="and" path="ActionManager" hit="Unshelve selected changes to the default changelist and delete them from the shelf" />
+    <option name="changelist" path="ActionManager" hit="Unshelve selected changes to the default changelist and delete them from the shelf" />
+    <option name="changes" path="ActionManager" hit="Unshelve selected changes to the default changelist and delete them from the shelf" />
+    <option name="default" path="ActionManager" hit="Unshelve selected changes to the default changelist and delete them from the shelf" />
+    <option name="delete" path="ActionManager" hit="Unshelve selected changes to the default changelist and delete them from the shelf" />
+    <option name="from" path="ActionManager" hit="Unshelve selected changes to the default changelist and delete them from the shelf" />
+    <option name="selected" path="ActionManager" hit="Unshelve selected changes to the default changelist and delete them from the shelf" />
+    <option name="shelf" path="ActionManager" hit="Unshelve selected changes to the default changelist and delete them from the shelf" />
+    <option name="the" path="ActionManager" hit="Unshelve selected changes to the default changelist and delete them from the shelf" />
+    <option name="them" path="ActionManager" hit="Unshelve selected changes to the default changelist and delete them from the shelf" />
+    <option name="to" path="ActionManager" hit="Unshelve selected changes to the default changelist and delete them from the shelf" />
+    <option name="unshelve" path="ActionManager" hit="Unshelve selected changes to the default changelist and delete them from the shelf" />
     <option name="offline" path="ActionManager" hit="Work Offline" />
     <option name="work" path="ActionManager" hit="Work Offline" />
   </configurable>
@@ -66,11 +86,22 @@
     <option name="jobs" hit="Enable Perforce Jobs support" />
     <option name="perforce" hit="Enable Perforce Jobs support" />
     <option name="support" hit="Enable Perforce Jobs support" />
-    <option name="config" hit="No P4CONFIG environment variable!" />
-    <option name="environment" hit="No P4CONFIG environment variable!" />
-    <option name="no" hit="No P4CONFIG environment variable!" />
-    <option name="p" hit="No P4CONFIG environment variable!" />
-    <option name="variable" hit="No P4CONFIG environment variable!" />
+    <option name="ignore" hit="Ignore Settings" />
+    <option name="settings" hit="Ignore Settings" />
+    <option name="config" hit="P4CONFIG environment variable is not set" />
+    <option name="environment" hit="P4CONFIG environment variable is not set" />
+    <option name="is" hit="P4CONFIG environment variable is not set" />
+    <option name="not" hit="P4CONFIG environment variable is not set" />
+    <option name="p" hit="P4CONFIG environment variable is not set" />
+    <option name="set" hit="P4CONFIG environment variable is not set" />
+    <option name="variable" hit="P4CONFIG environment variable is not set" />
+    <option name="environment" hit="P4IGNORE environment variable is not set" />
+    <option name="ignore" hit="P4IGNORE environment variable is not set" />
+    <option name="is" hit="P4IGNORE environment variable is not set" />
+    <option name="not" hit="P4IGNORE environment variable is not set" />
+    <option name="p" hit="P4IGNORE environment variable is not set" />
+    <option name="set" hit="P4IGNORE environment variable is not set" />
+    <option name="variable" hit="P4IGNORE environment variable is not set" />
     <option name="executable" hit="Path to P4 executable:" />
     <option name="p" hit="Path to P4 executable:" />
     <option name="path" hit="Path to P4 executable:" />
@@ -80,6 +111,10 @@
     <option name="path" hit="Path to P4VC executable:" />
     <option name="to" hit="Path to P4VC executable:" />
     <option name="vc" hit="Path to P4VC executable:" />
+    <option name="file" hit="Path to ignore file:" />
+    <option name="ignore" hit="Path to ignore file:" />
+    <option name="path" hit="Path to ignore file:" />
+    <option name="to" hit="Path to ignore file:" />
     <option name="perforce" hit="Perforce" />
     <option name="is" hit="Perforce is online" />
     <option name="online" hit="Perforce is online" />
@@ -119,9 +154,17 @@
     <option name="or" hit="Use P4CONFIG or default connection" />
     <option name="p" hit="Use P4CONFIG or default connection" />
     <option name="use" hit="Use P4CONFIG or default connection" />
+    <option name="environment" hit="Use P4IGNORE environment variable" />
+    <option name="ignore" hit="Use P4IGNORE environment variable" />
+    <option name="p" hit="Use P4IGNORE environment variable" />
+    <option name="use" hit="Use P4IGNORE environment variable" />
+    <option name="variable" hit="Use P4IGNORE environment variable" />
     <option name="connection" hit="Use connection parameters:" />
     <option name="parameters" hit="Use connection parameters:" />
     <option name="use" hit="Use connection parameters:" />
+    <option name="ignore" hit="Use ignore settings:" />
+    <option name="settings" hit="Use ignore settings:" />
+    <option name="use" hit="Use ignore settings:" />
     <option name="authentication" hit="Use login authentication" />
     <option name="login" hit="Use login authentication" />
     <option name="use" hit="Use login authentication" />

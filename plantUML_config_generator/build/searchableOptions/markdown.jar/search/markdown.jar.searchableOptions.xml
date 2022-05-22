@@ -1,6 +1,12 @@
 <options>
   <configurable id="preferences.keymap" configurable_name="Keymap">
     <option name="" path="ActionManager" hit="" />
+    <option name="align" path="ActionManager" hit="Align Center" />
+    <option name="center" path="ActionManager" hit="Align Center" />
+    <option name="align" path="ActionManager" hit="Align Left" />
+    <option name="left" path="ActionManager" hit="Align Left" />
+    <option name="align" path="ActionManager" hit="Align Right" />
+    <option name="right" path="ActionManager" hit="Align Right" />
     <option name="bold" path="ActionManager" hit="Bold" />
     <option name="code" path="ActionManager" hit="Code" />
     <option name="configure" path="ActionManager" hit="Configure Pandoc…" />
@@ -55,13 +61,13 @@
     <option name="strikethrough" path="ActionManager" hit="Format text with a strikethrough" />
     <option name="text" path="ActionManager" hit="Format text with a strikethrough" />
     <option name="with" path="ActionManager" hit="Format text with a strikethrough" />
-    <option name="docx" path="ActionManager" hit="Import From Docx…" />
-    <option name="from" path="ActionManager" hit="Import From Docx…" />
-    <option name="import" path="ActionManager" hit="Import From Docx…" />
-    <option name="docs" path="ActionManager" hit="Import From Google Docs…" />
-    <option name="from" path="ActionManager" hit="Import From Google Docs…" />
-    <option name="google" path="ActionManager" hit="Import From Google Docs…" />
-    <option name="import" path="ActionManager" hit="Import From Google Docs…" />
+    <option name="document" path="ActionManager" hit="Import Word Document…" />
+    <option name="import" path="ActionManager" hit="Import Word Document…" />
+    <option name="word" path="ActionManager" hit="Import Word Document…" />
+    <option name="docs" path="ActionManager" hit="Import from Google Docs…" />
+    <option name="from" path="ActionManager" hit="Import from Google Docs…" />
+    <option name="google" path="ActionManager" hit="Import from Google Docs…" />
+    <option name="import" path="ActionManager" hit="Import from Google Docs…" />
     <option name="header" path="ActionManager" hit="Increase Header Level" />
     <option name="increase" path="ActionManager" hit="Increase Header Level" />
     <option name="level" path="ActionManager" hit="Increase Header Level" />
@@ -72,8 +78,22 @@
     <option name="increase" path="ActionManager" hit="Increase level of a header by caret" />
     <option name="level" path="ActionManager" hit="Increase level of a header by caret" />
     <option name="of" path="ActionManager" hit="Increase level of a header by caret" />
+    <option name="column" path="ActionManager" hit="Insert Column Left" />
+    <option name="insert" path="ActionManager" hit="Insert Column Left" />
+    <option name="left" path="ActionManager" hit="Insert Column Left" />
+    <option name="column" path="ActionManager" hit="Insert Column Right" />
+    <option name="insert" path="ActionManager" hit="Insert Column Right" />
+    <option name="right" path="ActionManager" hit="Insert Column Right" />
     <option name="image" path="ActionManager" hit="Insert Image" />
     <option name="insert" path="ActionManager" hit="Insert Image" />
+    <option name="above" path="ActionManager" hit="Insert Row Above" />
+    <option name="insert" path="ActionManager" hit="Insert Row Above" />
+    <option name="row" path="ActionManager" hit="Insert Row Above" />
+    <option name="below" path="ActionManager" hit="Insert Row Below" />
+    <option name="insert" path="ActionManager" hit="Insert Row Below" />
+    <option name="row" path="ActionManager" hit="Insert Row Below" />
+    <option name="insert" path="ActionManager" hit="Insert Table" />
+    <option name="table" path="ActionManager" hit="Insert Table" />
     <option name="an" path="ActionManager" hit="Insert an image at the caret position" />
     <option name="at" path="ActionManager" hit="Insert an image at the caret position" />
     <option name="caret" path="ActionManager" hit="Insert an image at the caret position" />
@@ -81,7 +101,40 @@
     <option name="insert" path="ActionManager" hit="Insert an image at the caret position" />
     <option name="position" path="ActionManager" hit="Insert an image at the caret position" />
     <option name="the" path="ActionManager" hit="Insert an image at the caret position" />
+    <option name="insert" path="ActionManager" hit="Insert…" />
     <option name="italic" path="ActionManager" hit="Italic" />
+    <option name="column" path="ActionManager" hit="Move Column Left" />
+    <option name="left" path="ActionManager" hit="Move Column Left" />
+    <option name="move" path="ActionManager" hit="Move Column Left" />
+    <option name="column" path="ActionManager" hit="Move Column Right" />
+    <option name="move" path="ActionManager" hit="Move Column Right" />
+    <option name="right" path="ActionManager" hit="Move Column Right" />
+    <option name="down" path="ActionManager" hit="Move Row Down" />
+    <option name="move" path="ActionManager" hit="Move Row Down" />
+    <option name="row" path="ActionManager" hit="Move Row Down" />
+    <option name="move" path="ActionManager" hit="Move Row Up" />
+    <option name="row" path="ActionManager" hit="Move Row Up" />
+    <option name="up" path="ActionManager" hit="Move Row Up" />
+    <option name="current" path="ActionManager" hit="Open Devtools Window For The Current Markdown Preview" />
+    <option name="devtools" path="ActionManager" hit="Open Devtools Window For The Current Markdown Preview" />
+    <option name="for" path="ActionManager" hit="Open Devtools Window For The Current Markdown Preview" />
+    <option name="markdown" path="ActionManager" hit="Open Devtools Window For The Current Markdown Preview" />
+    <option name="open" path="ActionManager" hit="Open Devtools Window For The Current Markdown Preview" />
+    <option name="preview" path="ActionManager" hit="Open Devtools Window For The Current Markdown Preview" />
+    <option name="the" path="ActionManager" hit="Open Devtools Window For The Current Markdown Preview" />
+    <option name="window" path="ActionManager" hit="Open Devtools Window For The Current Markdown Preview" />
+    <option name="column" path="ActionManager" hit="Remove Column" />
+    <option name="remove" path="ActionManager" hit="Remove Column" />
+    <option name="remove" path="ActionManager" hit="Remove Row" />
+    <option name="row" path="ActionManager" hit="Remove Row" />
+    <option name="cells" path="ActionManager" hit="Select Column Cells" />
+    <option name="column" path="ActionManager" hit="Select Column Cells" />
+    <option name="select" path="ActionManager" hit="Select Column Cells" />
+    <option name="row" path="ActionManager" hit="Select Row" />
+    <option name="select" path="ActionManager" hit="Select Row" />
+    <option name="alignment" path="ActionManager" hit="Set Column Alignment" />
+    <option name="column" path="ActionManager" hit="Set Column Alignment" />
+    <option name="set" path="ActionManager" hit="Set Column Alignment" />
     <option name="strikethrough" path="ActionManager" hit="Strikethrough" />
     <option name="scroll" path="ActionManager" hit="Sync Scroll" />
     <option name="sync" path="ActionManager" hit="Sync Scroll" />
@@ -92,13 +145,13 @@
     <option name="sync" path="ActionManager" hit="Sync the preview panel scroll with the editor" />
     <option name="the" path="ActionManager" hit="Sync the preview panel scroll with the editor" />
     <option name="with" path="ActionManager" hit="Sync the preview panel scroll with the editor" />
-    <option name="a" path="ActionManager" hit="Wraps/unwraps selected text with a link" />
-    <option name="link" path="ActionManager" hit="Wraps/unwraps selected text with a link" />
-    <option name="selected" path="ActionManager" hit="Wraps/unwraps selected text with a link" />
-    <option name="text" path="ActionManager" hit="Wraps/unwraps selected text with a link" />
-    <option name="unwraps" path="ActionManager" hit="Wraps/unwraps selected text with a link" />
-    <option name="with" path="ActionManager" hit="Wraps/unwraps selected text with a link" />
-    <option name="wraps" path="ActionManager" hit="Wraps/unwraps selected text with a link" />
+    <option name="a" path="ActionManager" hit="Wrap the selected text as a link" />
+    <option name="as" path="ActionManager" hit="Wrap the selected text as a link" />
+    <option name="link" path="ActionManager" hit="Wrap the selected text as a link" />
+    <option name="selected" path="ActionManager" hit="Wrap the selected text as a link" />
+    <option name="text" path="ActionManager" hit="Wrap the selected text as a link" />
+    <option name="the" path="ActionManager" hit="Wrap the selected text as a link" />
+    <option name="wrap" path="ActionManager" hit="Wrap the selected text as a link" />
   </configurable>
   <configurable id="editor.breadcrumbs" configurable_name="Breadcrumbs">
     <option name="markdown" hit="Markdown" />
@@ -180,39 +233,12 @@
     <option name="ordered" hit="Ordered list" />
     <option name="link" hit="Reference link" />
     <option name="reference" hit="Reference link" />
-    <option name="strike" hit="Strike through" />
-    <option name="through" hit="Strike through" />
+    <option name="strikethrough" hit="Strikethrough" />
     <option name="separator" hit="Table separator" />
     <option name="table" hit="Table separator" />
     <option name="text" hit="Text" />
     <option name="list" hit="Unordered list" />
     <option name="unordered" hit="Unordered list" />
-  </configurable>
-  <configurable id="Settings.Pandoc" configurable_name="Pandoc">
-    <option name="and" hit="Download and Install" />
-    <option name="download" hit="Download and Install" />
-    <option name="install" hit="Download and Install" />
-    <option name="pandoc" hit="Pandoc" />
-    <option name="executable" hit="Path to Pandoc executable:" />
-    <option name="pandoc" hit="Path to Pandoc executable:" />
-    <option name="path" hit="Path to Pandoc executable:" />
-    <option name="to" hit="Path to Pandoc executable:" />
-    <option name="docx" hit="Save images from docx file to:" />
-    <option name="file" hit="Save images from docx file to:" />
-    <option name="from" hit="Save images from docx file to:" />
-    <option name="images" hit="Save images from docx file to:" />
-    <option name="save" hit="Save images from docx file to:" />
-    <option name="to" hit="Save images from docx file to:" />
-    <option name="test" hit="Test" />
-  </configurable>
-  <configurable id="Settings.Markdown" configurable_name="Markdown">
-    <option name="markdown" hit="Markdown" />
-    <option name="are" hit="There are no available preview providers." />
-    <option name="available" hit="There are no available preview providers." />
-    <option name="no" hit="There are no available preview providers." />
-    <option name="preview" hit="There are no available preview providers." />
-    <option name="providers" hit="There are no available preview providers." />
-    <option name="there" hit="There are no available preview providers." />
   </configurable>
   <configurable id="preferences.sourceCode.Markdown" configurable_name="Markdown">
     <option name="around" path="Blank Lines" hit="Around block elements" />
@@ -237,14 +263,14 @@
     <option name="keep" path="Blank Lines" hit="Keep maximum blank lines" />
     <option name="lines" path="Blank Lines" hit="Keep maximum blank lines" />
     <option name="maximum" path="Blank Lines" hit="Keep maximum blank lines" />
-    <option name="loading" hit="Loading..." />
+    <option name="loading" hit="Loading " />
     <option name="markdown" hit="Markdown" />
     <option name="blank" path="Blank Lines" hit="Minimum blank lines" />
     <option name="lines" path="Blank Lines" hit="Minimum blank lines" />
     <option name="minimum" path="Blank Lines" hit="Minimum blank lines" />
     <option name="scheme" hit="Scheme:" />
-    <option name="from" hit="Set from..." />
-    <option name="set" hit="Set from..." />
+    <option name="from" hit="Set from " />
+    <option name="set" hit="Set from " />
     <option name="smart" path="Tabs and Indents" hit="Smart tabs" />
     <option name="tabs" path="Tabs and Indents" hit="Smart tabs" />
     <option name="spaces" path="Spaces" hit="Spaces" />
@@ -536,5 +562,14 @@
     <option name="on" path="Wrapping and Braces" hit="Wrap on typing" />
     <option name="typing" path="Wrapping and Braces" hit="Wrap on typing" />
     <option name="wrap" path="Wrapping and Braces" hit="Wrap on typing" />
+  </configurable>
+  <configurable id="Settings.Markdown" configurable_name="Markdown">
+    <option name="markdown" hit="Markdown" />
+    <option name="are" hit="There are no available preview providers." />
+    <option name="available" hit="There are no available preview providers." />
+    <option name="no" hit="There are no available preview providers." />
+    <option name="preview" hit="There are no available preview providers." />
+    <option name="providers" hit="There are no available preview providers." />
+    <option name="there" hit="There are no available preview providers." />
   </configurable>
 </options>

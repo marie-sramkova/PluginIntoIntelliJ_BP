@@ -44,10 +44,10 @@
     <option name="keep" path="Tabs and Indents" hit="Keep indents on empty lines" />
     <option name="lines" path="Tabs and Indents" hit="Keep indents on empty lines" />
     <option name="on" path="Tabs and Indents" hit="Keep indents on empty lines" />
-    <option name="loading" hit="Loading..." />
+    <option name="loading" hit="Loading " />
     <option name="scheme" hit="Scheme:" />
-    <option name="from" hit="Set from..." />
-    <option name="set" hit="Set from..." />
+    <option name="from" hit="Set from " />
+    <option name="set" hit="Set from " />
     <option name="smart" path="Tabs and Indents" hit="Smart tabs" />
     <option name="tabs" path="Tabs and Indents" hit="Smart tabs" />
     <option name="spaces" path="Spaces" hit="Spaces" />

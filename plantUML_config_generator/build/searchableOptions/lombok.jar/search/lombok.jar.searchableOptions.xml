@@ -274,10 +274,26 @@
     <option name="value" hit="Value" />
   </configurable>
   <configurable id="Lombok" configurable_name="Lombok">
-    <option name="enable" hit="Enable lombok version warning" />
-    <option name="lombok" hit="Enable lombok version warning" />
-    <option name="version" hit="Enable lombok version warning" />
-    <option name="warning" hit="Enable lombok version warning" />
+    <option name="add" hit="Automatically add '-Djps.track.ap.dependencies=false' compile option for old (&lt;1.18.16) lombok version" />
+    <option name="ap" hit="Automatically add '-Djps.track.ap.dependencies=false' compile option for old (&lt;1.18.16) lombok version" />
+    <option name="automatically" hit="Automatically add '-Djps.track.ap.dependencies=false' compile option for old (&lt;1.18.16) lombok version" />
+    <option name="compile" hit="Automatically add '-Djps.track.ap.dependencies=false' compile option for old (&lt;1.18.16) lombok version" />
+    <option name="dependencies" hit="Automatically add '-Djps.track.ap.dependencies=false' compile option for old (&lt;1.18.16) lombok version" />
+    <option name="djps" hit="Automatically add '-Djps.track.ap.dependencies=false' compile option for old (&lt;1.18.16) lombok version" />
+    <option name="false" hit="Automatically add '-Djps.track.ap.dependencies=false' compile option for old (&lt;1.18.16) lombok version" />
+    <option name="for" hit="Automatically add '-Djps.track.ap.dependencies=false' compile option for old (&lt;1.18.16) lombok version" />
+    <option name="lombok" hit="Automatically add '-Djps.track.ap.dependencies=false' compile option for old (&lt;1.18.16) lombok version" />
+    <option name="old" hit="Automatically add '-Djps.track.ap.dependencies=false' compile option for old (&lt;1.18.16) lombok version" />
+    <option name="option" hit="Automatically add '-Djps.track.ap.dependencies=false' compile option for old (&lt;1.18.16) lombok version" />
+    <option name="track" hit="Automatically add '-Djps.track.ap.dependencies=false' compile option for old (&lt;1.18.16) lombok version" />
+    <option name="version" hit="Automatically add '-Djps.track.ap.dependencies=false' compile option for old (&lt;1.18.16) lombok version" />
+    <option name="enable" hit="Enable lombok version warning for old lombok versions" />
+    <option name="for" hit="Enable lombok version warning for old lombok versions" />
+    <option name="lombok" hit="Enable lombok version warning for old lombok versions" />
+    <option name="old" hit="Enable lombok version warning for old lombok versions" />
+    <option name="version" hit="Enable lombok version warning for old lombok versions" />
+    <option name="versions" hit="Enable lombok version warning for old lombok versions" />
+    <option name="warning" hit="Enable lombok version warning for old lombok versions" />
     <option name="general" hit="General Settings" />
     <option name="settings" hit="General Settings" />
     <option name="lombok" hit="Lombok" />
