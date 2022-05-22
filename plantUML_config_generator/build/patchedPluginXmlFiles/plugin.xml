@@ -2,13 +2,13 @@
   <version>1.0-SNAPSHOT</version>
   <change-notes>Add change notes here.&lt;br&gt;
       &lt;em&gt;most HTML tags may be used&lt;/em&gt;</change-notes>
-  <idea-version since-build="212.5457" until-build="212.*" />
   <id>org.example.plantUML_config_generator</id>
   <name>PlantUML / config generator</name>
   <vendor>R19233</vendor>
   <description><![CDATA[PlantUML / config generator plugin is developed <br>
     to help programmers become familiar with complex projects <br>
     developed in the IntelliJ IDEA platform in the Java language.]]></description>
+  <idea-version since-build="213.6777" until-build="213.*" />
   <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
          on how to target different products -->
   <depends>com.intellij.modules.platform</depends>

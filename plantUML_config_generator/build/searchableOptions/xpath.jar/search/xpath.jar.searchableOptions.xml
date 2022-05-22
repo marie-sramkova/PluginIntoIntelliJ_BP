@@ -1,8 +1,8 @@
 <options>
   <configurable id="preferences.keymap" configurable_name="Keymap">
     <option name="" path="ActionManager" hit="" />
-    <option name="evaluate" path="ActionManager" hit="Evaluate XPath..." />
-    <option name="xpath" path="ActionManager" hit="Evaluate XPath..." />
+    <option name="evaluate" path="ActionManager" hit="Evaluate XPath…" />
+    <option name="xpath" path="ActionManager" hit="Evaluate XPath…" />
     <option name="an" path="ActionManager" hit="Evaluate an XPath expression and highlight the result in the XML-Document" />
     <option name="and" path="ActionManager" hit="Evaluate an XPath expression and highlight the result in the XML-Document" />
     <option name="document" path="ActionManager" hit="Evaluate an XPath expression and highlight the result in the XML-Document" />
@@ -19,9 +19,9 @@
     <option name="files" path="ActionManager" hit="Find Files by XPath Expression" />
     <option name="find" path="ActionManager" hit="Find Files by XPath Expression" />
     <option name="xpath" path="ActionManager" hit="Find Files by XPath Expression" />
-    <option name="by" path="ActionManager" hit="Find by XPath..." />
-    <option name="find" path="ActionManager" hit="Find by XPath..." />
-    <option name="xpath" path="ActionManager" hit="Find by XPath..." />
+    <option name="by" path="ActionManager" hit="Find by XPath…" />
+    <option name="find" path="ActionManager" hit="Find by XPath…" />
+    <option name="xpath" path="ActionManager" hit="Find by XPath…" />
     <option name="show" path="ActionManager" hit="Show Unique XPath" />
     <option name="unique" path="ActionManager" hit="Show Unique XPath" />
     <option name="xpath" path="ActionManager" hit="Show Unique XPath" />

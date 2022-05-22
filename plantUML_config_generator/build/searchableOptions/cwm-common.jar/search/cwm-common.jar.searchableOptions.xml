@@ -17,11 +17,6 @@
     <option name="call" path="ActionManager" hit="Join Voice Call" />
     <option name="join" path="ActionManager" hit="Join Voice Call" />
     <option name="voice" path="ActionManager" hit="Join Voice Call" />
-    <option name="about" path="ActionManager" hit="Learn About Code With Me" />
-    <option name="code" path="ActionManager" hit="Learn About Code With Me" />
-    <option name="learn" path="ActionManager" hit="Learn About Code With Me" />
-    <option name="me" path="ActionManager" hit="Learn About Code With Me" />
-    <option name="with" path="ActionManager" hit="Learn About Code With Me" />
     <option name="call" path="ActionManager" hit="Leave Call" />
     <option name="leave" path="ActionManager" hit="Leave Call" />
     <option name="call" path="ActionManager" hit="Open Call Tool Window…" />

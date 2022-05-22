@@ -4,7 +4,7 @@
     <option name="enter" path="ActionManager" hit="Enter plugin registration data" />
     <option name="plugin" path="ActionManager" hit="Enter plugin registration data" />
     <option name="registration" path="ActionManager" hit="Enter plugin registration data" />
-    <option name="plugins" path="ActionManager" hit="Register Plugins..." />
-    <option name="register" path="ActionManager" hit="Register Plugins..." />
+    <option name="plugins" path="ActionManager" hit="Register Plugins…" />
+    <option name="register" path="ActionManager" hit="Register Plugins…" />
   </configurable>
 </options>

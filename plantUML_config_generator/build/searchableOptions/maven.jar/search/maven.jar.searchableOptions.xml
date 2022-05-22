@@ -38,8 +38,10 @@
     <option name="of" path="ActionManager" hit="Always Show ArtifactId instead of project name" />
     <option name="project" path="ActionManager" hit="Always Show ArtifactId instead of project name" />
     <option name="show" path="ActionManager" hit="Always Show ArtifactId instead of project name" />
-    <option name="assign" path="ActionManager" hit="Assign Shortcut..." />
-    <option name="shortcut" path="ActionManager" hit="Assign Shortcut..." />
+    <option name="analyze" path="ActionManager" hit="Analyze Dependencies..." />
+    <option name="dependencies" path="ActionManager" hit="Analyze Dependencies..." />
+    <option name="assign" path="ActionManager" hit="Assign Shortcut…" />
+    <option name="shortcut" path="ActionManager" hit="Assign Shortcut…" />
     <option name="assign" path="ActionManager" hit="Assign shortcut to the selected phase/goal" />
     <option name="goal" path="ActionManager" hit="Assign shortcut to the selected phase/goal" />
     <option name="phase" path="ActionManager" hit="Assign shortcut to the selected phase/goal" />
@@ -110,9 +112,9 @@
     <option name="project" path="ActionManager" hit="Edit Maven integration settings for the current project" />
     <option name="settings" path="ActionManager" hit="Edit Maven integration settings for the current project" />
     <option name="the" path="ActionManager" hit="Edit Maven integration settings for the current project" />
-    <option name="configuration" path="ActionManager" hit="Edit Run Configuration..." />
-    <option name="edit" path="ActionManager" hit="Edit Run Configuration..." />
-    <option name="run" path="ActionManager" hit="Edit Run Configuration..." />
+    <option name="configuration" path="ActionManager" hit="Edit Run Configuration…" />
+    <option name="edit" path="ActionManager" hit="Edit Run Configuration…" />
+    <option name="run" path="ActionManager" hit="Edit Run Configuration…" />
     <option name="being" path="ActionManager" hit="Exclude/Include selected Maven projects from being imported" />
     <option name="exclude" path="ActionManager" hit="Exclude/Include selected Maven projects from being imported" />
     <option name="from" path="ActionManager" hit="Exclude/Include selected Maven projects from being imported" />
@@ -133,10 +135,10 @@
     <option name="before" path="ActionManager" hit="Execute Before Rebuild" />
     <option name="execute" path="ActionManager" hit="Execute Before Rebuild" />
     <option name="rebuild" path="ActionManager" hit="Execute Before Rebuild" />
-    <option name="before" path="ActionManager" hit="Execute Before Run/Debug..." />
-    <option name="debug" path="ActionManager" hit="Execute Before Run/Debug..." />
-    <option name="execute" path="ActionManager" hit="Execute Before Run/Debug..." />
-    <option name="run" path="ActionManager" hit="Execute Before Run/Debug..." />
+    <option name="before" path="ActionManager" hit="Execute Before Run/Debug…" />
+    <option name="debug" path="ActionManager" hit="Execute Before Run/Debug…" />
+    <option name="execute" path="ActionManager" hit="Execute Before Run/Debug…" />
+    <option name="run" path="ActionManager" hit="Execute Before Run/Debug…" />
     <option name="execute" path="ActionManager" hit="Execute Maven Goal" />
     <option name="goal" path="ActionManager" hit="Execute Maven Goal" />
     <option name="maven" path="ActionManager" hit="Execute Maven Goal" />
@@ -338,6 +340,18 @@
     <option name="settings" hit="Maven Settings" />
   </configurable>
   <configurable id="MavenSettings" configurable_name="Maven">
+    <option name="" hit=" Any changes made in its configuration might be lost after reimporting." />
+    <option name="after" hit=" Any changes made in its configuration might be lost after reimporting." />
+    <option name="any" hit=" Any changes made in its configuration might be lost after reimporting." />
+    <option name="be" hit=" Any changes made in its configuration might be lost after reimporting." />
+    <option name="changes" hit=" Any changes made in its configuration might be lost after reimporting." />
+    <option name="configuration" hit=" Any changes made in its configuration might be lost after reimporting." />
+    <option name="in" hit=" Any changes made in its configuration might be lost after reimporting." />
+    <option name="its" hit=" Any changes made in its configuration might be lost after reimporting." />
+    <option name="lost" hit=" Any changes made in its configuration might be lost after reimporting." />
+    <option name="made" hit=" Any changes made in its configuration might be lost after reimporting." />
+    <option name="might" hit=" Any changes made in its configuration might be lost after reimporting." />
+    <option name="reimporting" hit=" Any changes made in its configuration might be lost after reimporting." />
     <option name="" hit="-T option" />
     <option name="option" hit="-T option" />
     <option name="t" hit="-T option" />
@@ -400,6 +414,12 @@
     <option name="plugin" hit="Use plugin registry" />
     <option name="registry" hit="Use plugin registry" />
     <option name="use" hit="Use plugin registry" />
+    <option name="config" hit="Use settings from .mvn/maven.config" />
+    <option name="from" hit="Use settings from .mvn/maven.config" />
+    <option name="maven" hit="Use settings from .mvn/maven.config" />
+    <option name="mvn" hit="Use settings from .mvn/maven.config" />
+    <option name="settings" hit="Use settings from .mvn/maven.config" />
+    <option name="use" hit="Use settings from .mvn/maven.config" />
     <option name="file" hit="User settings file:" />
     <option name="settings" hit="User settings file:" />
     <option name="user" hit="User settings file:" />
@@ -408,37 +428,37 @@
     <option name="work" hit="Work offline" />
   </configurable>
   <configurable id="reference.settings.project.maven.importing" configurable_name="Importing">
-    <option name="" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="all" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="and" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="are" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="compile" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="configured" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="discover" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="execute" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="firstly" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="folders" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="generate" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="idea" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="in" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="intellij" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="listed" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="maven" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="needs" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="note" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="of" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="one" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="order" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="phases" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="plugins" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="production" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="source" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="sources" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="test" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="that" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="the" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="to" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
-    <option name="via" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins.  Note  that all test-* phases firstly generate and compile production sources. " />
+    <option name="" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="all" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="and" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="are" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="compile" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="configured" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="discover" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="execute" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="firstly" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="folders" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="generate" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="idea" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="in" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="intellij" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="listed" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="maven" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="needs" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="note" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="of" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="one" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="order" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="phases" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="plugins" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="production" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="source" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="sources" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="test" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="that" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="the" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="to" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
+    <option name="via" hit=" IntelliJ IDEA needs to execute one of the listed phases in order to discover all source folders that are configured via Maven plugins. Note that all test-* phases firstly generate and compile production sources." />
     <option name="" hit=".idea (directory-based)" />
     <option name="based" hit=".idea (directory-based)" />
     <option name="directory" hit=".idea (directory-based)" />
@@ -620,7 +640,8 @@
     <option name="in" hit="Run in background" />
     <option name="run" hit="Run in background" />
     <option name="runner" hit="Runner" />
-    <option name="skip" hit="Skip Tests" />
+    <option name="kip" hit="Skip Tests" />
+    <option name="s" hit="Skip Tests" />
     <option name="tests" hit="Skip Tests" />
     <option name="options" hit="VM Options:" />
     <option name="vm" hit="VM Options:" />

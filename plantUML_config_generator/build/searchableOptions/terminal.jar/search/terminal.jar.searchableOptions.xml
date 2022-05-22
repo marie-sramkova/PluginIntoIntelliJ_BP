@@ -101,6 +101,9 @@
     <option name="to" hit="Copy to clipboard on selection" />
     <option name="cursor" hit="Cursor shape:" />
     <option name="shape" hit="Cursor shape:" />
+    <option name="default" hit="Default Tab name:" />
+    <option name="name" hit="Default Tab name:" />
+    <option name="tab" hit="Default Tab name:" />
     <option name="environment" hit="Environment variables:" />
     <option name="variables" hit="Environment variables:" />
     <option name="highlight" hit="Highlight hyperlinks" />
@@ -128,8 +131,6 @@
     <option name="shell" hit="Shell path:" />
     <option name="directory" hit="Start directory:" />
     <option name="start" hit="Start directory:" />
-    <option name="name" hit="Tab name:" />
-    <option name="tab" hit="Tab name:" />
     <option name="terminal" hit="Terminal" />
     <option name="underline" hit="Underline" />
     <option name="as" hit="Use Option as Meta key" />

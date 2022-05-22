@@ -156,3 +156,5 @@ shared.index.hashes.org.jetbrains.kotlin.idea.vfilefinder.KlibMetaFileIndex
 shared.index.hashes.com.android.tools.idea.model.AndroidManifestIndex$Companion$NAME$1.NAME
 shared.index.hashes.BindingXmlIndex
 shared.index.hashes.NavXmlIndex
+kotlin.primeIndexKey
+org.jetbrains.kotlin.idea.stubindex.KotlinSubclassObjectNameIndex

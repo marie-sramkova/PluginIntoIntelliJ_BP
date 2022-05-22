@@ -9,6 +9,9 @@
     developed in the IntelliJ IDEA platform in the Java language.
     ]]></description>
 
+
+    <idea-version since-build="162"/>
+
     <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
          on how to target different products -->
     <depends>com.intellij.modules.platform</depends>
