@@ -335,7 +335,7 @@
         <plugin pluginId="org.intellij.groovy" pluginName="Groovy" bundled="true" />
       </entry>
       <entry key="*.gradle">
-        <plugin pluginId="org.intellij.groovy" pluginName="Groovy" bundled="true" />
+        <plugin pluginId="org.jetbrains.plugins.gradle" pluginName="Gradle-Java" bundled="true" />
       </entry>
       <entry key="*.gy">
         <plugin pluginId="org.intellij.groovy" pluginName="Groovy" bundled="true" />
@@ -440,6 +440,18 @@
         <plugin pluginId="org.jetbrains.android" pluginName="Android" bundled="true" />
       </entry>
       <entry key="*.li">
+        <plugin pluginId="org.jetbrains.android" pluginName="Android" bundled="true" />
+      </entry>
+      <entry key="*.xpath">
+        <plugin pluginId="XPathView" pluginName="XPathView + XSLT" bundled="true" />
+      </entry>
+      <entry key="*.xpath2">
+        <plugin pluginId="XPathView" pluginName="XPathView + XSLT" bundled="true" />
+      </entry>
+      <entry key="*.perfetto-trace">
+        <plugin pluginId="org.jetbrains.android" pluginName="Android" bundled="true" />
+      </entry>
+      <entry key="*.pftrace">
         <plugin pluginId="org.jetbrains.android" pluginName="Android" bundled="true" />
       </entry>
     </plugins>
@@ -12481,6 +12493,10 @@
       <BundleConfigBean>
         <option name="name" value="yaml" />
         <option name="path" value="$APPLICATION_HOME_DIR$/plugins/textmate/lib/bundles/yaml" />
+      </BundleConfigBean>
+      <BundleConfigBean>
+        <option name="name" value="jsp" />
+        <option name="path" value="$APPLICATION_HOME_DIR$/plugins/textmate/lib/bundles/jsp" />
       </BundleConfigBean>
     </bundles>
   </component>
