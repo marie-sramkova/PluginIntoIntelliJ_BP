@@ -94,9 +94,9 @@ public class Generator {
             boolean alreadyExist = false;
             for (PackageX packageXInList : packageXES) {
                 if (packageX.getName().equals(packageXInList.getName())) {
+                    alreadyExist = true;
                     for (ClassX classX : packageX.getClassXES()) {
                         packageXInList.addClassX(classX);
-                        alreadyExist = true;
                     }
                 }
             }
