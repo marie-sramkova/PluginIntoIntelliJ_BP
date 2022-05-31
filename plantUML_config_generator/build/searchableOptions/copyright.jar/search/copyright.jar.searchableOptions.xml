@@ -18,17 +18,17 @@
     <option name="no" hit="No copyright" />
   </configurable>
   <configurable id="copyright.profiles" configurable_name="Copyright Profiles">
-    <option name="" hit=" Select a profile to view or edit its details here" />
-    <option name="a" hit=" Select a profile to view or edit its details here" />
-    <option name="details" hit=" Select a profile to view or edit its details here" />
-    <option name="edit" hit=" Select a profile to view or edit its details here" />
-    <option name="here" hit=" Select a profile to view or edit its details here" />
-    <option name="its" hit=" Select a profile to view or edit its details here" />
-    <option name="or" hit=" Select a profile to view or edit its details here" />
-    <option name="profile" hit=" Select a profile to view or edit its details here" />
-    <option name="select" hit=" Select a profile to view or edit its details here" />
-    <option name="to" hit=" Select a profile to view or edit its details here" />
-    <option name="view" hit=" Select a profile to view or edit its details here" />
+    <option name="" hit="  Select a profile to view or edit its details here  " />
+    <option name="a" hit="  Select a profile to view or edit its details here  " />
+    <option name="details" hit="  Select a profile to view or edit its details here  " />
+    <option name="edit" hit="  Select a profile to view or edit its details here  " />
+    <option name="here" hit="  Select a profile to view or edit its details here  " />
+    <option name="its" hit="  Select a profile to view or edit its details here  " />
+    <option name="or" hit="  Select a profile to view or edit its details here  " />
+    <option name="profile" hit="  Select a profile to view or edit its details here  " />
+    <option name="select" hit="  Select a profile to view or edit its details here  " />
+    <option name="to" hit="  Select a profile to view or edit its details here  " />
+    <option name="view" hit="  Select a profile to view or edit its details here  " />
     <option name="copyright" hit="Copyright Profiles" />
     <option name="profiles" hit="Copyright Profiles" />
   </configurable>

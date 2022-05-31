@@ -33,9 +33,6 @@
     <option name="on" path="ActionManager" hit="Easily share project on GitHub" />
     <option name="project" path="ActionManager" hit="Easily share project on GitHub" />
     <option name="share" path="ActionManager" hit="Easily share project on GitHub" />
-    <option name="github" path="ActionManager" hit="GitHub Repository URL" />
-    <option name="repository" path="ActionManager" hit="GitHub Repository URL" />
-    <option name="url" path="ActionManager" hit="GitHub Repository URL" />
     <option name="enterprise" path="ActionManager" hit="Log In to GitHub Enterprise…" />
     <option name="github" path="ActionManager" hit="Log In to GitHub Enterprise…" />
     <option name="in" path="ActionManager" hit="Log In to GitHub Enterprise…" />
@@ -49,13 +46,6 @@
     <option name="log" path="ActionManager" hit="Log In with Token…" />
     <option name="token" path="ActionManager" hit="Log In with Token…" />
     <option name="with" path="ActionManager" hit="Log In with Token…" />
-    <option name="as" path="ActionManager" hit="Mark as Not Viewed" />
-    <option name="mark" path="ActionManager" hit="Mark as Not Viewed" />
-    <option name="not" path="ActionManager" hit="Mark as Not Viewed" />
-    <option name="viewed" path="ActionManager" hit="Mark as Not Viewed" />
-    <option name="as" path="ActionManager" hit="Mark as Viewed" />
-    <option name="mark" path="ActionManager" hit="Mark as Viewed" />
-    <option name="viewed" path="ActionManager" hit="Mark as Viewed" />
     <option name="browser" path="ActionManager" hit="Open corresponding link in browser" />
     <option name="corresponding" path="ActionManager" hit="Open corresponding link in browser" />
     <option name="in" path="ActionManager" hit="Open corresponding link in browser" />

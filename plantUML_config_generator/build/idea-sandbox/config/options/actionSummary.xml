@@ -4,7 +4,7 @@
       <i c="4" l="1654023471498" />
     </e>
     <e n="$Delete">
-      <i c="26" l="1654026026391" />
+      <i c="27" l="1654029921544" />
     </e>
     <e n="$Paste">
       <i c="4" l="1654023475873" />
@@ -119,6 +119,9 @@
     </e>
     <e n="com.intellij.ide.util.importProject.ProjectLayoutPanel$RenameAction">
       <i c="1" l="1654023287892" />
+    </e>
+    <e n="com.intellij.notification.EventLogConsole$ClearLogAction">
+      <i c="1" l="1654029975052" />
     </e>
     <e n="com.intellij.notification.NotificationAction$Simple">
       <i c="1" l="1654022653559" />
