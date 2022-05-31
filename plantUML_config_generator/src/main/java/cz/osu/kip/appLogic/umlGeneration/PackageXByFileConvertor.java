@@ -14,8 +14,8 @@ public class PackageXByFileConvertor {
         List<ClassX> classXES = new ArrayList<>();
         top_iteration:
         for (int i = 1; i < lines.size(); i++) {
-            if ((lines.get(i).trim().startsWith("interface") || lines.get(i).trim().startsWith("public interface")
-                    || lines.get(i).trim().startsWith("class") || lines.get(i).trim().startsWith("public class") )
+            if ((lines.get(i).trim().startsWith("interface ") || lines.get(i).trim().startsWith("public interface ")
+                    || lines.get(i).trim().startsWith("class ") || lines.get(i).trim().startsWith("public class ") )
                     && !lines.get(i).contains(" abstract ")) {
                 ClassX newClass = getClassX(lines, i);
                 classXES.add(newClass);
