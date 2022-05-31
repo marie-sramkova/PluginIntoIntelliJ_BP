@@ -119,7 +119,9 @@ public class ConfigInfo {
     }
 
     private List<File> getSubdirs(File file) {
-        file = new File(ConfigInfoToMainFormWindowItemsConvertor.getCorrectInitialURL(file.getAbsolutePath()));
+        if(!file.isDirectory()){
+            file = new File(ConfigInfoToMainFormWindowItemsConvertor.getCorrectInitialURL(file.getAbsolutePath()));
+        }
         List<File> subdirs = Arrays.asList(Objects.requireNonNull(file.listFiles(new FileFilter() {
             public boolean accept(File f) {
                 return f.isDirectory();

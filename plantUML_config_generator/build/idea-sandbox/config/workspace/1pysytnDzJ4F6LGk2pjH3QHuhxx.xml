@@ -17,8 +17,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cz/osu/kip/PlantUmlFile.puml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/untitled/build.gradle">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/untitled1/build.gradle">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -67,11 +77,14 @@
     </leaf>
   </component>
   <component name="FileTypeUsageLocalSummary">
+    <fileType name="Gradle">
+      <summary usageCount="2" lastUsed="1654023427047" />
+    </fileType>
     <fileType name="JAVA">
-      <summary usageCount="15" lastUsed="1654020081384" />
+      <summary usageCount="18" lastUsed="1654023040317" />
     </fileType>
     <fileType name="PLAIN_TEXT">
-      <summary usageCount="27" lastUsed="1654020081535" />
+      <summary usageCount="32" lastUsed="1654023040427" />
     </fileType>
   </component>
   <component name="FindInProjectRecents">
@@ -98,6 +111,7 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -114,18 +128,79 @@
               <item name="generatingUML" type="b2602c69:ProjectViewProjectNode" />
               <item name="generatingUML" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="plantUML_config_generator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="generatingUML" type="b2602c69:ProjectViewProjectNode" />
+              <item name="generatingUML" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="plantUML_config_generator" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="generatingUML" type="b2602c69:ProjectViewProjectNode" />
+              <item name="generatingUML" type="462c0819:PsiDirectoryNode" />
+              <item name="untitled2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="generatingUML" type="b2602c69:ProjectViewProjectNode" />
+              <item name="generatingUML" type="462c0819:PsiDirectoryNode" />
+              <item name="untitled2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="generatingUML" type="b2602c69:ProjectViewProjectNode" />
+              <item name="generatingUML" type="462c0819:PsiDirectoryNode" />
+              <item name="untitled2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="generatingUML" type="b2602c69:ProjectViewProjectNode" />
+              <item name="generatingUML" type="462c0819:PsiDirectoryNode" />
+              <item name="untitled2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="generatingUML" type="b2602c69:ProjectViewProjectNode" />
+              <item name="generatingUML" type="462c0819:PsiDirectoryNode" />
+              <item name="untitled2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cz" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="generatingUML" type="b2602c69:ProjectViewProjectNode" />
+              <item name="generatingUML" type="462c0819:PsiDirectoryNode" />
+              <item name="untitled2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cz" type="462c0819:PsiDirectoryNode" />
+              <item name="osu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="generatingUML" type="b2602c69:ProjectViewProjectNode" />
+              <item name="generatingUML" type="462c0819:PsiDirectoryNode" />
+              <item name="untitled2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cz" type="462c0819:PsiDirectoryNode" />
+              <item name="osu" type="462c0819:PsiDirectoryNode" />
               <item name="kip" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="ToolWindowManager">
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25016266" />
       <window_info id="Structure" order="1" side_tool="true" />
@@ -144,32 +219,42 @@
       <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Build" order="8" visible="true" weight="0.3302696" />
       <window_info anchor="bottom" id="Services" order="9" show_stripe_button="false" />
       <window_info anchor="right" id="Space Automation" order="0" />
       <window_info anchor="right" id="Layout Validation" order="1" />
     </layout>
     <recentWindows>
       <value>Project</value>
+      <value>Build</value>
     </recentWindows>
   </component>
   <component name="Trusted.Project.Settings" hasCheckedIfOldProject="true" />
   <component name="WindowStateProjectService">
-    <state x="330" y="163" key="FileChooserDialogImpl" timestamp="1652790442873">
+    <state x="330" y="163" key="FileChooserDialogImpl" timestamp="1654023196546">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="330" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1652790442873" />
+    <state x="330" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1654023196546" />
     <state x="349" y="140" key="IDE.errors.dialog" timestamp="1654020512196">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="349" y="140" key="IDE.errors.dialog/0.0.1536.816@0.0.1536.816" timestamp="1654020512196" />
-    <state x="277" y="48" key="SettingsEditor" timestamp="1652790416626">
+    <state x="411" y="120" key="NewModule_or_Project.wizard" timestamp="1654023299173">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="277" y="48" key="SettingsEditor/0.0.1536.816@0.0.1536.816" timestamp="1652790416626" />
+    <state x="411" y="120" key="NewModule_or_Project.wizard/0.0.1536.816@0.0.1536.816" timestamp="1654023299173" />
+    <state x="277" y="0" key="SettingsEditor" timestamp="1654023525014">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="277" y="0" key="SettingsEditor/0.0.1536.816@0.0.1536.816" timestamp="1654023525014" />
     <state x="555" y="18" width="600" height="798" key="find.popup" timestamp="1652293405604">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="555" y="18" width="600" height="798" key="find.popup/0.0.1536.816@0.0.1536.816" timestamp="1652293405604" />
+    <state x="436" y="0" key="new project wizard" timestamp="1654023449555">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="436" y="0" key="new project wizard/0.0.1536.816@0.0.1536.816" timestamp="1654023449555" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/x/v" />
@@ -178,6 +263,9 @@
     <entry file="file://$PROJECT_DIR$/src/t" />
     <entry file="file://$PROJECT_DIR$/src/PlantUmlFiles" />
     <entry file="file://$PROJECT_DIR$/src/PlantUmlFiles.myuml" />
+    <entry file="file://$PROJECT_DIR$/PlantUmlFile.puml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/cz/osu/kip/AttributeX.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1364">
@@ -215,11 +303,39 @@
     <entry file="file://$PROJECT_DIR$/src/PlantUmlConfigFile.myuml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/PlantUmlFile.puml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cz/osu/kip/PlantUmlFile.puml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/untitled/build.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/untitled1/build.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI" />
+      <state key="GlobalLibrariesConfigurable.UI" />
+      <state key="JdkListConfigurable.UI" />
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>generatingUML</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI" />
+    </states>
   </component>
 </project>
