@@ -1,13 +1,13 @@
 <application>
   <component name="ActionsLocalSummary">
     <e n="$Copy">
-      <i c="2" l="1650395988387" />
+      <i c="4" l="1654023471498" />
     </e>
     <e n="$Delete">
-      <i c="22" l="1654020168055" />
+      <i c="24" l="1654023506727" />
     </e>
     <e n="$Paste">
-      <i c="3" l="1650395989680" />
+      <i c="4" l="1654023475873" />
     </e>
     <e n="$Undo">
       <i c="17" l="1652804419599" />
@@ -75,11 +75,14 @@
     <e n="NewForm">
       <i c="1" l="1650395911010" />
     </e>
+    <e n="NewModuleInGroup">
+      <i c="1" l="1654023437095" />
+    </e>
     <e n="NewProject">
       <i c="1" l="1652802742044" />
     </e>
     <e n="OpenFile">
-      <i c="3" l="1652790434719" />
+      <i c="4" l="1654022593323" />
     </e>
     <e n="RenameElement">
       <i c="4" l="1652874263380" />
@@ -93,8 +96,11 @@
     <e n="ShowIntentionActions">
       <i c="5" l="1652868414030" />
     </e>
+    <e n="ShowProjectStructureSettings">
+      <i c="3" l="1654023514992" />
+    </e>
     <e n="ShowSettings">
-      <i c="2" l="1652806539278" />
+      <i c="3" l="1654023079277" />
     </e>
     <e n="Tree-selectNextExtendSelection">
       <i c="2" l="1652791330274" />
@@ -111,14 +117,26 @@
     <e n="com.intellij.ide.ReopenProjectAction">
       <i c="4" l="1654015054993" />
     </e>
+    <e n="com.intellij.ide.util.importProject.ProjectLayoutPanel$RenameAction">
+      <i c="1" l="1654023287892" />
+    </e>
+    <e n="com.intellij.notification.NotificationAction$Simple">
+      <i c="1" l="1654022653559" />
+    </e>
     <e n="com.intellij.openapi.fileEditor.impl.tabActions.CloseTab">
       <i c="10" l="1652872784689" />
     </e>
     <e n="com.intellij.openapi.project.DumbAwareAction$SimpleDumbAwareAction">
       <i c="1" l="1652293405588" />
     </e>
+    <e n="com.intellij.openapi.roots.ui.configuration.projectRoot.ModuleStructureConfigurable$AddModuleAction">
+      <i c="3" l="1654023390205" />
+    </e>
     <e n="com.intellij.openapi.ui.DialogWrapper$4">
       <i c="10" l="1654015062648" />
+    </e>
+    <e n="com.intellij.ui.AnActionButton$AnActionButtonWrapper">
+      <i c="4" l="1654023519930" />
     </e>
     <e n="com.intellij.ui.ScrollingUtil$ListMoveDownAction">
       <i c="2" l="1652867666843" />
