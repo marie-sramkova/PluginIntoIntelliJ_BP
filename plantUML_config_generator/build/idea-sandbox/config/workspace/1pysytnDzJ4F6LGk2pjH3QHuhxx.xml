@@ -1,13 +1,25 @@
 <project version="4">
+  <component name="BookmarksManager">
+    <option name="groups">
+      <GroupState>
+        <option name="name" value="generatingUML" />
+      </GroupState>
+    </option>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="-1">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cz/osu/kip/AttributeX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
+            <state relative-caret-position="1364">
               <caret line="70" column="24" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/cz/osu/kip/PlantUmlFile.puml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -54,6 +66,14 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTypeUsageLocalSummary">
+    <fileType name="JAVA">
+      <summary usageCount="15" lastUsed="1654020081384" />
+    </fileType>
+    <fileType name="PLAIN_TEXT">
+      <summary usageCount="27" lastUsed="1654020081535" />
+    </fileType>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>break</find>
@@ -96,12 +116,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="kip" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="generatingUML" type="b2602c69:ProjectViewProjectNode" />
-              <item name="generatingUML" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="x" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -111,6 +125,7 @@
     </panes>
   </component>
   <component name="ToolWindowManager">
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25016266" />
       <window_info id="Structure" order="1" side_tool="true" />
@@ -119,6 +134,7 @@
       <window_info id="Learn" order="4" />
       <window_info id="Pull Requests" order="5" />
       <window_info id="Space Code Reviews" order="6" />
+      <window_info id="Bookmarks" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="2" />
@@ -142,6 +158,10 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="330" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1652790442873" />
+    <state x="349" y="140" key="IDE.errors.dialog" timestamp="1654020512196">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="349" y="140" key="IDE.errors.dialog/0.0.1536.816@0.0.1536.816" timestamp="1654020512196" />
     <state x="277" y="48" key="SettingsEditor" timestamp="1652790416626">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
@@ -160,7 +180,7 @@
     <entry file="file://$PROJECT_DIR$/src/PlantUmlFiles.myuml" />
     <entry file="file://$PROJECT_DIR$/src/cz/osu/kip/AttributeX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
+        <state relative-caret-position="1364">
           <caret line="70" column="24" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
         </state>
       </provider>
@@ -193,6 +213,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PlantUmlConfigFile.myuml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PlantUmlFile.puml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/osu/kip/PlantUmlFile.puml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>

@@ -12197,6 +12197,11 @@
                 <plugin pluginId="com.jetbrains.space" pluginName="Space" bundled="true" />
               </featurePlugin>
             </entry>
+            <entry key="ComposePreviewRunConfiguration">
+              <featurePlugin displayName="Compose Preview">
+                <plugin pluginId="org.jetbrains.android" pluginName="Android" bundled="true" />
+              </featurePlugin>
+            </entry>
           </featureMap>
         </features>
       </entry>
@@ -12256,6 +12261,11 @@
             </entry>
             <entry key="apk">
               <featurePlugin displayName="APK">
+                <plugin pluginId="org.jetbrains.android" pluginName="Android" bundled="true" />
+              </featurePlugin>
+            </entry>
+            <entry key="android-artifact">
+              <featurePlugin displayName="Android Artifact">
                 <plugin pluginId="org.jetbrains.android" pluginName="Android" bundled="true" />
               </featurePlugin>
             </entry>

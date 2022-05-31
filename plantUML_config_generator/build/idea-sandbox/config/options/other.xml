@@ -2,6 +2,11 @@
   <component name="DynamicPluginEnabler">
     <trackers>
       <map>
+        <entry key="1pysytnDzJ4F6LGk2pjH3QHuhxx">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
         <entry key="29FsCPYnWrSZmQLAtc9uIaw5lau">
           <value>
             <ProjectPluginTracker />
@@ -68,12 +73,9 @@
     <property name="last_opened_file_path" value="D:/sramk/Documents/vysoka_skola/1_rocnik/java/projekty/appStore" />
     <property name="packagesearch.endpoint.url.fulltext" value="https://package-search.services.jetbrains.com/api/search/idea/fulltext" />
     <property name="packagesearch.endpoint.url.suggest" value="https://package-search.services.jetbrains.com/api/search/idea/suggest" />
-    <property name="packagesearch.status.updated.ts" value="1652997868252" />
+    <property name="packagesearch.status.updated.ts" value="1654014977307" />
     <property name="project.wizard.group" value="JAVA_MODULE" />
     <property name="registry.to.advanced.settings.migration.build" value="IC-213.6777.52" />
     <property name="tasks.pass.word.conversion.enforced" value="true" />
-  </component>
-  <component name="ToolbarSettingsService">
-    <option name="NEW_TOOLBAR_SETTINGS" value="OLD_NAVBAR" />
   </component>
 </application>

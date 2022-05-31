@@ -61,6 +61,9 @@ public class Generator {
     }
 
     private static int checkIfIsSubpackageOrCloseLastPackage(StringBuilder sb, List<PackageX> notClosed, int missing, PackageX packageX) {
+        if(notClosed.size() == 0){
+            return 0;
+        }
         if (packageX.getName().contains(notClosed.get(notClosed.size() - 1).getName())) {
             notClosed.add(packageX);
             missing = missing + 1;

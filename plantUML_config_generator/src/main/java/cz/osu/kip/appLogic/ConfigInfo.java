@@ -1,5 +1,6 @@
 package cz.osu.kip.appLogic;
 
+import cz.osu.kip.appLogic.umlGeneration.PackageXByFileConvertor;
 import cz.osu.kip.view.mainForm.FolderLevel;
 import cz.osu.kip.view.mainForm.MainFormWindowItems;
 import cz.osu.kip.view.mainForm.UmlFormWindow;
@@ -118,6 +119,7 @@ public class ConfigInfo {
     }
 
     private List<File> getSubdirs(File file) {
+        file = new File(ConfigInfoToMainFormWindowItemsConvertor.getCorrectInitialURL(file.getAbsolutePath()));
         List<File> subdirs = Arrays.asList(Objects.requireNonNull(file.listFiles(new FileFilter() {
             public boolean accept(File f) {
                 return f.isDirectory();
