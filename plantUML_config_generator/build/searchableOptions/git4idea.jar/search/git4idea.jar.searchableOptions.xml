@@ -222,18 +222,6 @@
     <option name="the" path="ActionManager" hit="Produce a new commit(s), which reverts the changes made in the original commit(s)" />
     <option name="which" path="ActionManager" hit="Produce a new commit(s), which reverts the changes made in the original commit(s)" />
     <option name="pull" path="ActionManager" hit="Pull…" />
-    <option name="all" path="ActionManager" hit="Push All up to Here…" />
-    <option name="here" path="ActionManager" hit="Push All up to Here…" />
-    <option name="push" path="ActionManager" hit="Push All up to Here…" />
-    <option name="to" path="ActionManager" hit="Push All up to Here…" />
-    <option name="up" path="ActionManager" hit="Push All up to Here…" />
-    <option name="all" path="ActionManager" hit="Push all commits before this including itself" />
-    <option name="before" path="ActionManager" hit="Push all commits before this including itself" />
-    <option name="commits" path="ActionManager" hit="Push all commits before this including itself" />
-    <option name="including" path="ActionManager" hit="Push all commits before this including itself" />
-    <option name="itself" path="ActionManager" hit="Push all commits before this including itself" />
-    <option name="push" path="ActionManager" hit="Push all commits before this including itself" />
-    <option name="this" path="ActionManager" hit="Push all commits before this including itself" />
     <option name="rebase" path="ActionManager" hit="Rebase" />
     <option name="rebase" path="ActionManager" hit="Rebase…" />
     <option name="refresh" path="ActionManager" hit="Refresh Stashes" />
@@ -424,37 +412,37 @@
     <option name="when" path="ActionManager" hit="When a branch is selected, navigate the log to this branch head" />
   </configurable>
   <configurable id="vcs.Git" configurable_name="Git">
-    <option name="" hit=" GitHub rules are added to the local rules and synced on every fetch" />
-    <option name="added" hit=" GitHub rules are added to the local rules and synced on every fetch" />
-    <option name="and" hit=" GitHub rules are added to the local rules and synced on every fetch" />
-    <option name="are" hit=" GitHub rules are added to the local rules and synced on every fetch" />
-    <option name="every" hit=" GitHub rules are added to the local rules and synced on every fetch" />
-    <option name="fetch" hit=" GitHub rules are added to the local rules and synced on every fetch" />
-    <option name="github" hit=" GitHub rules are added to the local rules and synced on every fetch" />
-    <option name="local" hit=" GitHub rules are added to the local rules and synced on every fetch" />
-    <option name="on" hit=" GitHub rules are added to the local rules and synced on every fetch" />
-    <option name="rules" hit=" GitHub rules are added to the local rules and synced on every fetch" />
-    <option name="synced" hit=" GitHub rules are added to the local rules and synced on every fetch" />
-    <option name="the" hit=" GitHub rules are added to the local rules and synced on every fetch" />
-    <option name="to" hit=" GitHub rules are added to the local rules and synced on every fetch" />
-    <option name="" hit=" This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface." />
-    <option name="all" hit=" This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface." />
-    <option name="and" hit=" This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface." />
-    <option name="changelists" hit=" This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface." />
-    <option name="commit" hit=" This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface." />
-    <option name="delete" hit=" This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface." />
-    <option name="disable" hit=" This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface." />
-    <option name="for" hit=" This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface." />
-    <option name="in" hit=" This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface." />
-    <option name="interface" hit=" This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface." />
-    <option name="modal" hit=" This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface." />
-    <option name="non" hit=" This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface." />
-    <option name="only" hit=" This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface." />
-    <option name="project" hit=" This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface." />
-    <option name="support" hit=" This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface." />
-    <option name="the" hit=" This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface." />
-    <option name="this" hit=" This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface." />
-    <option name="will" hit=" This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface." />
+    <option name="" hit="   GitHub rules are added to the local rules and synced on every fetch   " />
+    <option name="added" hit="   GitHub rules are added to the local rules and synced on every fetch   " />
+    <option name="and" hit="   GitHub rules are added to the local rules and synced on every fetch   " />
+    <option name="are" hit="   GitHub rules are added to the local rules and synced on every fetch   " />
+    <option name="every" hit="   GitHub rules are added to the local rules and synced on every fetch   " />
+    <option name="fetch" hit="   GitHub rules are added to the local rules and synced on every fetch   " />
+    <option name="github" hit="   GitHub rules are added to the local rules and synced on every fetch   " />
+    <option name="local" hit="   GitHub rules are added to the local rules and synced on every fetch   " />
+    <option name="on" hit="   GitHub rules are added to the local rules and synced on every fetch   " />
+    <option name="rules" hit="   GitHub rules are added to the local rules and synced on every fetch   " />
+    <option name="synced" hit="   GitHub rules are added to the local rules and synced on every fetch   " />
+    <option name="the" hit="   GitHub rules are added to the local rules and synced on every fetch   " />
+    <option name="to" hit="   GitHub rules are added to the local rules and synced on every fetch   " />
+    <option name="" hit="   This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface.   " />
+    <option name="all" hit="   This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface.   " />
+    <option name="and" hit="   This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface.   " />
+    <option name="changelists" hit="   This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface.   " />
+    <option name="commit" hit="   This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface.   " />
+    <option name="delete" hit="   This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface.   " />
+    <option name="disable" hit="   This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface.   " />
+    <option name="for" hit="   This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface.   " />
+    <option name="in" hit="   This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface.   " />
+    <option name="interface" hit="   This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface.   " />
+    <option name="modal" hit="   This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface.   " />
+    <option name="non" hit="   This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface.   " />
+    <option name="only" hit="   This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface.   " />
+    <option name="project" hit="   This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface.   " />
+    <option name="support" hit="   This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface.   " />
+    <option name="the" hit="   This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface.   " />
+    <option name="this" hit="   This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface.   " />
+    <option name="will" hit="   This will disable changelists support and delete all changelists in the project. Only for non-modal commit interface.   " />
     <option name="add" hit="Add the 'cherry-picked from  ' suffix when picking commits pushed to protected branches" />
     <option name="branches" hit="Add the 'cherry-picked from  ' suffix when picking commits pushed to protected branches" />
     <option name="cherry" hit="Add the 'cherry-picked from  ' suffix when picking commits pushed to protected branches" />
@@ -485,10 +473,6 @@
     <option name="tree" hit="Clean working tree using:" />
     <option name="using" hit="Clean working tree using:" />
     <option name="working" hit="Clean working tree using:" />
-    <option name="commit" hit="Commit" />
-    <option name="configure" hit="Configure GPG Key " />
-    <option name="gpg" hit="Configure GPG Key " />
-    <option name="key" hit="Configure GPG Key " />
     <option name="area" hit="Enable staging area" />
     <option name="enable" hit="Enable staging area" />
     <option name="staging" hit="Enable staging area" />
@@ -520,12 +504,6 @@
     <option name="rules" hit="Load branch protection rules from GitHub" />
     <option name="merge" hit="Merge" />
     <option name="never" hit="Never" />
-    <option name="git" hit="No git roots in the project" />
-    <option name="in" hit="No git roots in the project" />
-    <option name="no" hit="No git roots in the project" />
-    <option name="project" hit="No git roots in the project" />
-    <option name="roots" hit="No git roots in the project" />
-    <option name="the" hit="No git roots in the project" />
     <option name="" hit="Path to Git executable:" />
     <option name="executable" hit="Path to Git executable:" />
     <option name="git" hit="Path to Git executable:" />
@@ -533,7 +511,6 @@
     <option name="to" hit="Path to Git executable:" />
     <option name="branches" hit="Protected branches:" />
     <option name="protected" hit="Protected branches:" />
-    <option name="push" hit="Push" />
     <option name="rebase" hit="Rebase" />
     <option name="current" hit="Set this path only for the current project" />
     <option name="for" hit="Set this path only for the current project" />
@@ -560,8 +537,10 @@
     <option name="to" hit="Show Push dialog only when committing to protected branches" />
     <option name="when" hit="Show Push dialog only when committing to protected branches" />
     <option name="stash" hit="Stash" />
+    <option name="for" hit="Supported for Git 2.9+" />
+    <option name="git" hit="Supported for Git 2.9+" />
+    <option name="supported" hit="Supported for Git 2.9+" />
     <option name="test" hit="Test" />
-    <option name="update" hit="Update" />
     <option name="method" hit="Update method:" />
     <option name="update" hit="Update method:" />
     <option name="credential" hit="Use credential helper" />

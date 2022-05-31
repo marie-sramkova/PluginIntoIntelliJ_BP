@@ -314,6 +314,15 @@
     <option name="groovy" hit="Groovy" />
   </configurable>
   <configurable id="debugger.hotswap" configurable_name="HotSwap">
+    <option name="" hit="   May cause serialization issues in the debugged application   " />
+    <option name="application" hit="   May cause serialization issues in the debugged application   " />
+    <option name="cause" hit="   May cause serialization issues in the debugged application   " />
+    <option name="debugged" hit="   May cause serialization issues in the debugged application   " />
+    <option name="in" hit="   May cause serialization issues in the debugged application   " />
+    <option name="issues" hit="   May cause serialization issues in the debugged application   " />
+    <option name="may" hit="   May cause serialization issues in the debugged application   " />
+    <option name="serialization" hit="   May cause serialization issues in the debugged application   " />
+    <option name="the" hit="   May cause serialization issues in the debugged application   " />
     <option name="agent" hit="Enable hot-swap agent for Groovy code" />
     <option name="code" hit="Enable hot-swap agent for Groovy code" />
     <option name="enable" hit="Enable hot-swap agent for Groovy code" />
@@ -325,18 +334,12 @@
   </configurable>
   <configurable id="preferences.sourceCode.Groovy" configurable_name="Groovy">
     <option name="absolute" path="Tabs and Indents" hit="Absolute" />
-    <option name="a" path="Code Generation" hit="Add a space at line comment start" />
-    <option name="add" path="Code Generation" hit="Add a space at line comment start" />
-    <option name="at" path="Code Generation" hit="Add a space at line comment start" />
-    <option name="comment" path="Code Generation" hit="Add a space at line comment start" />
-    <option name="line" path="Code Generation" hit="Add a space at line comment start" />
-    <option name="space" path="Code Generation" hit="Add a space at line comment start" />
-    <option name="start" path="Code Generation" hit="Add a space at line comment start" />
-    <option name="add" path="Code Generation" hit="Add spaces around block comments" />
-    <option name="around" path="Code Generation" hit="Add spaces around block comments" />
-    <option name="block" path="Code Generation" hit="Add spaces around block comments" />
-    <option name="comments" path="Code Generation" hit="Add spaces around block comments" />
-    <option name="spaces" path="Code Generation" hit="Add spaces around block comments" />
+    <option name="a" path="Code Generation" hit="Add a space at comment start" />
+    <option name="add" path="Code Generation" hit="Add a space at comment start" />
+    <option name="at" path="Code Generation" hit="Add a space at comment start" />
+    <option name="comment" path="Code Generation" hit="Add a space at comment start" />
+    <option name="space" path="Code Generation" hit="Add a space at comment start" />
+    <option name="start" path="Code Generation" hit="Add a space at comment start" />
     <option name="after" path="Blank Lines" hit="After class header:" />
     <option name="class" path="Blank Lines" hit="After class header:" />
     <option name="header" path="Blank Lines" hit="After class header:" />
@@ -432,7 +435,7 @@
     <option name="comment" path="Code Generation" hit="Line comment at first column" />
     <option name="first" path="Code Generation" hit="Line comment at first column" />
     <option name="line" path="Code Generation" hit="Line comment at first column" />
-    <option name="loading" hit="Loading " />
+    <option name="loading" hit="Loading..." />
     <option name="blank" path="Blank Lines" hit="Minimum blank lines" />
     <option name="lines" path="Blank Lines" hit="Minimum blank lines" />
     <option name="minimum" path="Blank Lines" hit="Minimum blank lines" />
@@ -447,8 +450,8 @@
     <option name="of" path="Code Generation" hit="Order of Members" />
     <option name="order" path="Code Generation" hit="Order of Members" />
     <option name="scheme" hit="Scheme:" />
-    <option name="from" hit="Set from " />
-    <option name="set" hit="Set from " />
+    <option name="from" hit="Set from..." />
+    <option name="set" hit="Set from..." />
     <option name="smart" path="Tabs and Indents" hit="Smart tabs" />
     <option name="tabs" path="Tabs and Indents" hit="Smart tabs" />
     <option name="spaces" path="Spaces" hit="Spaces" />
@@ -700,10 +703,6 @@
     <option name="left" path="Spaces" hit="Before left brace" />
     <option name="before" path="Spaces" hit="Before parentheses" />
     <option name="parentheses" path="Spaces" hit="Before parentheses" />
-    <option name="before" path="Spaces" hit="Before record parameter list" />
-    <option name="list" path="Spaces" hit="Before record parameter list" />
-    <option name="parameter" path="Spaces" hit="Before record parameter list" />
-    <option name="record" path="Spaces" hit="Before record parameter list" />
     <option name="binary" path="Wrapping and Braces" hit="Binary expressions" />
     <option name="expressions" path="Wrapping and Braces" hit="Binary expressions" />
     <option name="bitwise" path="Spaces" hit="Bitwise operators (&amp;, |, ^)" />

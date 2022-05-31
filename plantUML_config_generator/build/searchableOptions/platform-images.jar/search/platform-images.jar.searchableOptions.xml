@@ -19,11 +19,11 @@
     <option name="convert" path="ActionManager" hit="Convert to PNG" />
     <option name="png" path="ActionManager" hit="Convert to PNG" />
     <option name="to" path="ActionManager" hit="Convert to PNG" />
-    <option name="edit" path="ActionManager" hit="Edit Path to External Editor…" />
-    <option name="editor" path="ActionManager" hit="Edit Path to External Editor…" />
-    <option name="external" path="ActionManager" hit="Edit Path to External Editor…" />
-    <option name="path" path="ActionManager" hit="Edit Path to External Editor…" />
-    <option name="to" path="ActionManager" hit="Edit Path to External Editor…" />
+    <option name="edit" path="ActionManager" hit="Edit Path to External Editor..." />
+    <option name="editor" path="ActionManager" hit="Edit Path to External Editor..." />
+    <option name="external" path="ActionManager" hit="Edit Path to External Editor..." />
+    <option name="path" path="ActionManager" hit="Edit Path to External Editor..." />
+    <option name="to" path="ActionManager" hit="Edit Path to External Editor..." />
     <option name="edit" path="ActionManager" hit="Edit path to external editor" />
     <option name="editor" path="ActionManager" hit="Edit path to external editor" />
     <option name="external" path="ActionManager" hit="Edit path to external editor" />

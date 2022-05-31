@@ -335,7 +335,7 @@
         <plugin pluginId="org.intellij.groovy" pluginName="Groovy" bundled="true" />
       </entry>
       <entry key="*.gradle">
-        <plugin pluginId="org.jetbrains.plugins.gradle" pluginName="Gradle-Java" bundled="true" />
+        <plugin pluginId="org.intellij.groovy" pluginName="Groovy" bundled="true" />
       </entry>
       <entry key="*.gy">
         <plugin pluginId="org.intellij.groovy" pluginName="Groovy" bundled="true" />
