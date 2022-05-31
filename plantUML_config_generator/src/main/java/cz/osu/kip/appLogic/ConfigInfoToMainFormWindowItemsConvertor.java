@@ -78,14 +78,26 @@ public class ConfigInfoToMainFormWindowItemsConvertor {
     }
 
     @NotNull
-    private static String getCorrectInitialURL(String initialURL) {
+    public static String getCorrectInitialURL(String initialURL) {
         if (initialURL.contains("/")) {
-            if (initialURL.substring(initialURL.lastIndexOf("/")).contains(".")) {
-                initialURL = initialURL.substring(0, initialURL.lastIndexOf("/"));
+            if (!initialURL.substring(initialURL.lastIndexOf("/")).contains(".")){
+                if(initialURL.substring(initialURL.lastIndexOf("/")).contains(".")) {
+                    initialURL = initialURL.substring(0, initialURL.lastIndexOf("/"));
+                }
+            }else{
+                if(initialURL.substring(initialURL.lastIndexOf("/")+2).contains(".")) {
+                    initialURL = initialURL.substring(0, initialURL.lastIndexOf("/"));
+                }
             }
         } else if (initialURL.contains("\\")) {
-            if (initialURL.substring(initialURL.lastIndexOf("\\")).contains(".")) {
-                initialURL = initialURL.substring(0, initialURL.lastIndexOf("\\"));
+            if (!initialURL.substring(initialURL.lastIndexOf("\\")).contains(".")){
+                if(initialURL.substring(initialURL.lastIndexOf("\\")).contains(".")) {
+                    initialURL = initialURL.substring(0, initialURL.lastIndexOf("\\"));
+                }
+            }else{
+                if(initialURL.substring(initialURL.lastIndexOf("\\")+2).contains(".")) {
+                    initialURL = initialURL.substring(0, initialURL.lastIndexOf("\\"));
+                }
             }
         }
         return initialURL;

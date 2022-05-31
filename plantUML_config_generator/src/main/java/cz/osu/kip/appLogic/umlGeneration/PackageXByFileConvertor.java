@@ -182,7 +182,10 @@ public class PackageXByFileConvertor {
                     } else if (others.get(i).isBlank()) {
                         continue;
                     } else {
-                        methodXES.add(getMethodsFromList(others.get(i)));
+                        MethodX methodX = getMethodsFromList(others.get(i));
+                        if (methodX != null){
+                            methodXES.add(methodX);
+                        }
                     }
                 }
             } else if (type.equals("class")) {
@@ -199,7 +202,10 @@ public class PackageXByFileConvertor {
                     if (trimmedLine.startsWith("}") || trimmedLine.startsWith("@")) {
                         continue;
                     } else if (others.get(i).contains("{")) {
-                        methodXES.add(getMethodsFromList(others.get(i)));
+                        MethodX methodX = getMethodsFromList(others.get(i));
+                        if (methodX != null){
+                            methodXES.add(methodX);
+                        }
                         skip = skip + 1;
                     } else {
                         try {
@@ -354,29 +360,38 @@ public class PackageXByFileConvertor {
     }
 
     private static MethodX getMethodsFromList(String line) {
-        String tmp = line.trim();
-        String status = getStatus(tmp);
-        if (line.contains(status)) {
-            tmp = tmp.substring(status.length()).trim();
-        }
+        String status = null;
         boolean isStatic = false;
-        if (line.contains(" static ")
-                && getCountOfFoundStringInStringNotInQuotation(tmp, "static") > 0
-        ) {
-            isStatic = true;
-            tmp = tmp.substring(7);
-        }
-        String returningType = getReturningType(tmp);
-        tmp = tmp.substring(returningType.length()).trim();
-        String name = "";
-        if (!tmp.startsWith("(")) {
-            name = getNameOfMethod(tmp);
-            tmp = tmp.substring(name.length());
-        }
-        tmp = tmp.substring(1).trim();
+        String returningType = null;
+        String name = null;
         List<InputParameterX> inputParameterXES = null;
-        if (!tmp.startsWith(")")) {
-            inputParameterXES = getInputParameters(tmp);
+        try {
+            String tmp = line.trim();
+            status = getStatus(tmp);
+            if (line.contains(status)) {
+                tmp = tmp.substring(status.length()).trim();
+            }
+            isStatic = false;
+            if (line.contains(" static ")
+                    && getCountOfFoundStringInStringNotInQuotation(tmp, "static") > 0
+            ) {
+                isStatic = true;
+                tmp = tmp.substring(7);
+            }
+            returningType = getReturningType(tmp);
+            tmp = tmp.substring(returningType.length()).trim();
+            name = "";
+            if (!tmp.startsWith("(")) {
+                name = getNameOfMethod(tmp);
+                tmp = tmp.substring(name.length());
+            }
+            tmp = tmp.substring(1).trim();
+            inputParameterXES = null;
+            if (!tmp.startsWith(")")) {
+                inputParameterXES = getInputParameters(tmp);
+            }
+        } catch (Exception e) {
+            return null;
         }
         if (name.equals("") && !returningType.isEmpty()) {
             MethodX methodX = new MethodX(status, name, returningType, inputParameterXES, isStatic);
@@ -404,7 +419,9 @@ public class PackageXByFileConvertor {
         String inputParameterType;
         int lastIndex = (line.indexOf(" "));
         inputParameterType = line.substring(0, lastIndex);
-        lastIndex = line.indexOf(")");
+        if (line.contains(")")){
+            lastIndex = line.indexOf(")");
+        }
         inputParameterName = line.substring(inputParameterType.length() + 1, lastIndex);
 
         InputParameterX inputParameterX = new InputParameterX(inputParameterType, inputParameterName);

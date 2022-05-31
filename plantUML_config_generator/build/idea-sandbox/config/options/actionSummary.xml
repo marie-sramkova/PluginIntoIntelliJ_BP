@@ -4,7 +4,7 @@
       <i c="2" l="1650395988387" />
     </e>
     <e n="$Delete">
-      <i c="20" l="1652998131897" />
+      <i c="22" l="1654020168055" />
     </e>
     <e n="$Paste">
       <i c="3" l="1650395989680" />
@@ -105,8 +105,11 @@
     <e n="WelcomeScreen.OpenProject">
       <i c="1" l="1636920303486" />
     </e>
+    <e n="com.intellij.diagnostic.IdeMessagePanel$4">
+      <i c="2" l="1654019197698" />
+    </e>
     <e n="com.intellij.ide.ReopenProjectAction">
-      <i c="2" l="1647024469697" />
+      <i c="4" l="1654015054993" />
     </e>
     <e n="com.intellij.openapi.fileEditor.impl.tabActions.CloseTab">
       <i c="10" l="1652872784689" />
@@ -115,7 +118,7 @@
       <i c="1" l="1652293405588" />
     </e>
     <e n="com.intellij.openapi.ui.DialogWrapper$4">
-      <i c="8" l="1652998132694" />
+      <i c="10" l="1654015062648" />
     </e>
     <e n="com.intellij.ui.ScrollingUtil$ListMoveDownAction">
       <i c="2" l="1652867666843" />
